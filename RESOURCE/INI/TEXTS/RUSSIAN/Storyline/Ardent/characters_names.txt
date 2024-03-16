@@ -1,0 +1,154 @@
+// MAXIMUS 05.06.2019: file created by script. For ease of later comparison please keep its structure. 
+
+Charles{Чарльз}
+Ardent{Ардент}
+
+
+William{Уильям}
+McMurrough{МакМарра}
+O'Brien{О'Брайен}
+
+
+de la Vega{Де Ла Вега}
+Two Dogs{Два Пса}
+Fighting{Дерущихся}
+Two Dogs Fighting{Два Дерущихся Пса}
+not-Fighting{Не Дерущихся}
+Two Dogs not-Fighting{Два Не Дерущихся Пса}
+Carlos{Карлос}
+Ardenta{Ардота}
+Indian{Индеец}
+Cardinal{Кардинал}
+Ximinez{Хименес}
+Fang{Фанг}
+
+
+Indian Warrior{Индейский Воин}
+Louwe{Лау}
+Louwman{Лауман}
+Giraldo{Жиральдо}
+Annibal{Аннибал}
+Gheerkin{Геркан}
+Kamalaas{Камаллас}
+Morys{Морис}
+Badlad{Бадлад}
+Ralph{Ральф}
+Partridge{Партридж}
+Coper{Копер}
+Blumberger{Блумбергер}
+Amtуnio{Амтиньо}
+Guajira{Гуахира}
+Ayol{Айол}
+Bacha{Баша}
+Lucнa{Люсия}
+Edmundo{Эдмундо}
+Valerie{Валери}
+Downing{Даунинг}
+Piers{Пирс}
+Gilbert{Гилберт}
+Emmett{Эммет}
+Dawson{Доусон}
+
+
+Inquisitor{Инквизитор}
+Monkey{Обезьяна}
+Crescent Moon{Растущая Луна}
+Rain Cloud{Грозовая Туча}
+Golden Flower{Золотой Цветок}
+Nervous Elk{Нервный Лось}
+Ringboned Wolf{Мозоленогий Волк}
+Strong Deer{Сильный Олень}
+White Crow{Белый Ворон}
+Soaring Hawk{Парящий Ястреб}
+Ronald{Рональд}
+McDonald{МакДональд}
+Doolin{Дулин}
+Becart{Бекарт}
+Grigorio{Григорио}
+Formoselle{Формозель}
+Coenen{Конэн}
+Barberien{Барбнриен}
+Garfield{Гарфилд}
+Leighton{Лейтон}
+Wilfred{Уилфред}
+Roscoe{Роско}
+Felix{Феликс}
+Prost{Прост}
+Steven{Стивен}
+Seagull{Сигал}
+Jusepe{Джузепе}
+Guimaraes{Гимарайнш}
+Lazaro{Лазаро}
+Trillo{Трилло}
+Suarius{Суариус}
+Escudero{Эскудеро}
+Elizabeth{Элизабет}
+Constantino{Константин}
+de Malaspina{Маласпинский}
+Maria{Мария}
+Antonia{Антуанетта}
+of Austria{Австрийская}
+
+
+Guard{Стражник}
+1{1-й}
+2{2-й}
+3{3-й}
+Atanagildo{Атанагильдо}
+Galнndez{Галинде}
+Eldo{Елдо}
+Fiz{Фиц}
+Javier{Хавьер}
+Mendieta{Мендита}
+Felipe{Филипп}
+Becerra{Бецерра}
+Basilio{Базилио}
+Carretero{Карретеро}
+Esteban{Эстебан}
+Rovapera{Ровапера}
+Mauricio{Маурисио}
+Juradu{Жураду}
+Malbert{Малберт}
+Sangier{Сонжи}
+Randolph{Рэндольф}
+Waghorn{Ваджхорн}
+Leonard{Леонард}
+Bowyer{Бойер}
+Marvin{Марвин}
+Corker{Коркер}
+James{Джеймс}
+Haresign{Асайн}
+Guinemant{Гинемо}
+Lavignen{Лавиньен}
+Valerian{Валериан}
+Decaux{Деко}
+Arnald{Арнальд}
+Rimeaux{Римо}
+Bruyant{Брайант}
+Moncoutie{Монкутье}
+Philip{Филип}
+de Malvoisin{де Мальвозан}
+Franзois-Louis{Франсуа-Луи}
+Rousselet{Русселе}
+de Chвteaurenault{Де Шато-Рено}
+4{4-й}
+Guibert{Гиберт}
+Mollaret{Молларе}
+Guillaume{Гильям}
+Suguenot{Сюгно}
+Louis{Луи}
+Erignac{Эриньяк}
+Corin{Корин}
+Arzillires{Арзиллирес}
+Renouart{Ренуар}
+Bonnefroy{Боннефруа}
+Jaime{Хайме}
+Lezcano{Лескано}
+Pelayo{Пелайо}
+Nъсez{Нусез}
+Emiliano{Эмильяно}
+de Guzmбn{Де Гузман}
+Gilles{Жиль}
+Clouzot{Клозу}
+
+Helen{Хелен}

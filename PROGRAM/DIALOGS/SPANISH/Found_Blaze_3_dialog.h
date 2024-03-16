@@ -1,0 +1,20 @@
+string DLG_TEXT[17] = {
+"¡Capitán! ¡Eres tú! ¡No puedo creer lo que veo!",
+"¡Créelo, amigo mío!",
+"¡No pensé que volvería a verte con vida, ",
+"! ¡Pero mírate! No solo estás con vida, ¡parece que has pasado un mes en Londres!",
+"Muchachos...",
+"... ¡Es un verdadero milagro que hayas sobrevivido! Dios está contigo, capitán, ¡te lo aseguro!",
+"¡Oh, eso lo dudo!",
+"¡Será el diablo de los mares, etonces! ¡He oído decir que favorece a los marineros audaces y los aleja del desastre!",
+"¡Me cambias un cuento por otro!",
+"¡No es un cuento, capitán! ¡Jovannie Speckled del bergantín 'Ardent' dijo que vio al mismísimo diablo de los mares!",
+"¿Vio al diablo? ¿Después de cuántas botellas de ron?",
+"Juró que ni una gota había tocado su lengua, capitán...",
+"¡Esperadme aquí, muchachos!",
+"Aquí estaremos. Si pasa algo, ¡vuelve con nosotros y te cubriremos la huida!",
+"Confío en que lo haréis. Pero no os mostréis antes de tiempo.",
+"Lo llevaremos al barco, capitán. Me alegro de que todo haya acabado tan bien.",
+"¿Ha acabado bien? Ve. Ve, amigo mío, y te seguiré pronto.",
+
+};

@@ -1,0 +1,21 @@
+string DLG_TEXT[18] = {
+"¡A la orden, capitán! ¡Me alegro de verte aquí!",
+"¡Salud, amigo! Tú eres el carpintero, ¿verdad?",
+"¡Sí, capitán! ¡Esperando órdenes!",
+"Bien; necesitamos tablas para reparar nuestro barco. ¡Esta selva parece estar llena de buenos árboles!",
+"Por hoy, llévate a tus mejores hombres a la selva para cortar algunos árboles y hacer tablas.",
+"A la orden, capitán, subiremos las tablas a bordo lo antes posible.",
+"Gracias. Infórmame en cuanto regreses.",
+"¡He cambiado de opinión!",
+"¿Cuále sson las órdenes, capitán?",
+"¡Ahora no, camarada, por favor!",
+"Capitán, hoy hemos cortado y embarcado ",
+"tablas ",
+"pero ",
+" hombres han muerto atacados por criaturas salvajes o han desaparecido en la selva...",
+"No me gusta tu reputación ni las compañías que frecuentas. Me niego a comerciar contigo. Ahora, vete",
+", antes de que llame a los guardias.",
+"Muy bien.",
+"Necesitas un uniforme mejor.",
+
+};

@@ -1,0 +1,131 @@
+# Prerequisites
+*._lc
+*.d
+*.ppk
+*.log
+*.bat
+*.exe.manifest
+*.pdb
+
+# Compiled Object files
+*.slo
+*.lo
+*.o
+*.obj
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+*.dll
+*.ncb
+
+# Fortran module files
+*.mod
+*.smod
+
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+*.lib
+
+# Executables
+*.exe
+*.out
+*.app
+
+# Файлы моделей
+*.qch
+*.gm
+*.dat
+*.COL
+*.xps
+*.an
+*.ptc
+*.grs
+
+# Текстуры
+*.tga
+*.tx
+*.zap
+*.txx
+*.dds
+*.png
+
+# Видео
+*.mp4
+*.wmv
+
+# Звуки/музыка
+*.mp3
+
+# Шейдеры
+*.sha
+*.scc
+*.wav
+*.ogg
+
+# Архивы
+*.7z
+*.zip
+*.rar
+*.lnk
+
+# Папки
+*Program/__cache__/
+*SAVE/
+# *RESOURCE/animation/
+*RESOURCE/foam/
+*RESOURCE/MODELS/
+*RESOURCE/Particles/
+*RESOURCE/Sea/
+*RESOURCE/Sounds/
+*RESOURCE/techniques/
+*RESOURCE/Textures/
+# *RESOURCE/Textures/
+*RESOURCE/VIDEOS/
+*RESOURCE_Copy/
+*modules/
+options
+options_start
+Buccaneer's Reef
+
+#Конфиги
+engine.ini
+
+.vscode
+.idea
+*.ilk
+.gitattributes
+RESOURCE/animation/amazon.ani
+shaders.fxo
+*RESOURCE/INI/texts/russian/questbook/
+*RESOURCE/INI/texts/russian/DIALOGS/
+*RESOURCE/INI/texts/russian/INTERFACE/
+*RESOURCE/INI/texts/russian/LogInfo/
+*RESOURCE/INI/texts/russian/Names/
+*RESOURCE/INI/texts/english_backup/
+*RESOURCE/INI/texts/english/questbook/
+*RESOURCE/INI/texts/english/DIALOGS/
+*RESOURCE/INI/texts/english/INTERFACE/
+*RESOURCE/INI/texts/english/LogInfo/
+*RESOURCE/INI/texts/english/Names/
+*RESOURCE/INI/texts/english_backup/
+*Program/DIALOGS/untranslated_backup
+*Program/DIALOGS/untranslated
+*Program/DIALOGS/big_D
+*Program/DIALOGS/big_D_backup
+*Program/DIALOGS/english_modified
+*Program/DIALOGS/english_modified
+*Program/DIALOGS/english_refactored
+*Program/DIALOGS/english_refactored_translate
+*Program/DIALOGS/english_refactored_translate_backup
+*Program/DIALOGS/from_log_files_translated
+*Program/DIALOGS/from_log_files_translated_backup
+*Program/DIALOGS/russian_modified
+*Program/DIALOGS/russian_modified_backup
+*Program/DIALOGS/log.txt

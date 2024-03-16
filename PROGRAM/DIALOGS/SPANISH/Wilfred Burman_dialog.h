@@ -1,0 +1,16 @@
+string DLG_TEXT[14] = {
+"......",
+"......",
+"¿Supongo que tú eres su capitán?",
+"Sí. ¿Por que ha sido arrestado? ¿Estaba borracho?",
+"No, no estaba borracho. No conoces las reglas de esta isla. Estas reglas deben ser obedecidas por todos y las penas son duras para aquellos que no lo hacen.",
+"¿Qué reglas?",
+"Casi toda la isla es un área militar. Tus hombres y tú no podéis or más allá de los confines del puerto. Deberían haberte informado de esto antes de aceptar la misión.",
+"Pero tengo un salvoconducto.",
+"Ya lo sé. Ya he hablado con el Sr. Blecher, el administrador del puerto. Pero ese salvoconducto se limita al puerto, no permite entrar al fuerte, como tu oficial trató de hacer.",
+"Lo siento mucho, no conocíamos todas estas restricciones. Esta misión se nos confió justo cuando el comerciante estaba ya a punto de zarpar y no fuimos informados.",
+"Hum... Bueno, tu oficial es libre de irse contigo. Recuerda que podría acusarlo de espionaje y la pena por espionaje es la muerte.",
+"¿Espionaje, señor? ¿Solo por dar un paseo?...",
+"Exactamente. He sido indulgente solo porque este es tu primera visita a la isla. Pero no habrá una segunda advertencia. Adiós, capitán.",
+"Informaré a mi tripulación para que se quede en el puerto y solo allí. Gracias.",
+};

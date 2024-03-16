@@ -1,0 +1,83 @@
+itmname_chest	{Сундучок МакДори}
+itmdescr_chest
+{
+Небольшой сундучок, который Оуэн МакДори попросил вас доставить Чарльзу Уиндему на остров #sisland_Redmond#.
+}
+
+itmname_coins	{Проклятые Монеты}
+itmdescr_coins
+{
+Крупные золотые монеты с изображением черепа. Улыбочка у него та ещё.
+}
+
+itmname_gov_letter	{Письмо Губернатора}
+itmdescr_gov_letter
+{
+Письмо от губернатора Сайлхарда, которое он поручил нам доставить Изенбрандту Юрксену на остров #sisland_Quebradas Costillas#.
+}
+
+itmname_incas_idol	{Золотой Идол}
+itmdescr_incas_idol
+{
+Золотой идол Хурукацелитипочтли, индейского бога смерти.
+}
+
+itmname_incas_collection	{Сокровища Инков}
+itmdescr_incas_collection
+{
+Коллекция сокровищ инков.
+}
+
+itmname_piece_of_legend	{Скрижаль}
+itmdescr_piece_of_legend
+{
+Половинка глиняной таблички, покрытой древними письменами инков.
+}
+
+itmname_notes_of_legend	{Запись Легенды}
+itmdescr_notes_of_legend
+{
+Текст древней легенды инков, переписанный на бумагу.
+}
+
+itmname_copyes_of_legend	{Копия Легенды}
+itmdescr_copyes_of_legend
+{
+Копия текста древней легенды инков.
+}
+
+itmname_rheims_journal	{Судовой Журнал Реймса}
+itmdescr_rheims_journal
+{
+Судовой журнал капитана Реймса.
+}
+
+itmname_compramat_to_domigues	{Компрометирующие Документы}
+itmdescr_compramat_to_domigues
+{
+Документы, полностью дискредитирующие падре Домингеса.
+}
+
+itmname_rheims_letter	{Письмо Реймса}
+itmdescr_rheims_letter
+{
+Письмо от капитана Реймса губернатору города #sRedmond# на острове #sisland_Redmond#, Роберту Кристоферу Сайлхарду.
+}
+
+itmname_massoni_papers	{Бумаги Валентина Массони}
+itmdescr_massoni_papers
+{
+Бумаги, из которых следует, что барк с боеприпасами сейчас находится в городе #sFalaise de Fleur# на острове #sisland_Falaise de Fleur#, и ждёт судно сопровождения.
+}
+
+itmname_artefact	{Артефакт}
+itmdescr_artefact
+{
+Таинственный артефакт, который вы нашли в древнем храме. Когда вы держите его в руках, в ладонях ощущается покалывание.
+}
+
+itmname_story_gramota	{Документы}
+itmdescr_story_gramota
+{
+Эти документы дают вам право сопровождать 'Птица' и должны быть предъявлены начальнику порта.
+}

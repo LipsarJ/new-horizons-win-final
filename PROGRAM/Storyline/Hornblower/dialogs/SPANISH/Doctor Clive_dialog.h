@@ -1,0 +1,17 @@
+string DLG_TEXT[15] = {
+"Buen día, Hornblower.",
+"Doctor.",
+"Sr. Hornblower. ¿Está buscando al Sr. Wellard, supongo?",
+"Sí, doctor. ¿Cómo está?",
+"Deje de preocuparse, Sr. Hornblower. Unos pocos bastonazos nunca mataron a nadie. Estará bien por la mañana. Ahora está durmiendo.",
+"Gracias, doctor Clive.",
+"Caballeros, si nos dieran un momento.",
+"...",
+"Caballeros. El capitán vive, pero ha perdido la memoria. ¿Qué pasó anoche?",
+"Parece que el capitán se cayó por la escotilla de la bodega, doctor.",
+"¿Cayó a la bodega? ¿Cayó... o fue empujado? ¿Quién lo vio?",
+"El Sr. Kennedy, el Sr. Wellard y yo estábamos en cubierta, señor. Oímos al capitán subiendo hacia la cubierta, pero no vimos nada.",
+"Esto tendrá que ser investigado más a fondo, caballeros. Mientras tanto, Sr. Buckland, usted está al mando del 'Renown'. Debo volver con el capitán.",
+".",
+"",
+}

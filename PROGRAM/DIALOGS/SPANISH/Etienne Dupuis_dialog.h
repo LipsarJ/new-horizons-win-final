@@ -1,0 +1,26 @@
+string DLG_TEXT[23] = {
+"¡Alto, #ssir#! ¿Qué estás haciendo aquí?",
+"Hace unos minutos arrestasteis a un hombre en el burdel.",
+"Sí. ¿Y qué?",
+"Quiero hablar con él. ¿Es posible?",
+"¡Por supuesto que no! ¡Podrías intentar liberarlo! No confío en él ni en ti."",
+"¿Cuánto quieres?",
+"¿Qué quieres decir?",
+"Excelente. Ahora vamos por buen camino. Aquí tienes tus 500 piezas de oro. Ahora déjame entrar.",
+"Es mucho oro ese que pides. Volveré más tarde.",
+"Muy bien. Te permitiré entrar. Pero no te quedes dentro mucho tiempo.",
+"No hay problema. No tengo intención de quedarme en esta sombría prisión más tiempo del necesario.",
+"Adiós y gracias por tu visita. Haré buen uso de tu oro cuando el burdel abra de nuevo.",
+"En realidad, me preguntaba si podrías hacerme un favor más. Te daré otras 500 piezas de oro si me ayudas.",
+"Por favor, dime que no quieres que libere al prisionero. No lo haré. Ni siquiera por 50000 piezas de oro. El gobernador me arrestaría inmediatamente. Y probablemente me ejecutaría también.",
+Es una lástima. Eso es exactamente lo que iba a pedirte. Entonces, ¿sabes cómo puedo hacer para liberar al prisionero?",
+"...",
+"...",
+"¿Puedes darme el dinero ahora?",
+"Sí. Aquí está. Ahora déjame entrar.",
+"Sabes muy bien lo que quiero decir.",
+"Hum. Si me das 500 piezas de oro, eso podría convencerme de tu confiabilidad.",
+"La única persona con ese poder es el gobernador. Háblale al respecto. Pero no esperes que sea barato."
+"Gracias. iré a hacerle una visita.",
+
+};

@@ -1,0 +1,233 @@
+// MAXIMUS 05.06.2019: file created by script. For ease of later comparison please keep its structure. 
+
+Jack{Джек}
+Sparrow{Воробей}
+
+
+Verbinski{Вербинский}
+
+
+Heumac{Хьюмак}
+Tezcacoatl{Тезкакоатль}
+Angler{Англер}
+Ogilvey{Огилвей}
+Maccus{Маккус}
+Clanker{Кланкер}
+James{Джеймс}
+Norrington{Норрингтон}
+Lieutenant{Лейтенант}
+Gillette{Джилетт}
+Helmsman{Хэлмсмэн}
+French{Французский}
+Soldier{Солдат}
+Hadras{Хадрас}
+Urchin{Урчин}
+Wheelback{Уилбэк}
+Wyvern{Вайверн}
+Quittance{Квитанс}
+Penrod{Пэнрод}
+French Soldier{Французский Солдат}
+
+
+Captaine{Капитан}
+Chevalle{Шевалье}
+Lucas{Лукас}
+Da Saldanha{Де Салданья}
+Jaoquin{Хоакин}
+De Masse{Де Массе}
+Gombo{Гомбо}
+the Slave{Раб}
+Prognatus{Прогнатус}
+Solvo{Сольво}
+
+
+Ines{Инес}
+Diaz{Диас}
+Skull{Скулл}
+
+
+Henry{Генри}
+Weatherby{Уэзерби}
+Swann{Суонн}
+
+
+Joshamee{Джошеми}
+Gibbs{Гиббс}
+Random{Случайный}
+Drunk{Пьяница}
+Random Drunk{Случайный Пьяница}
+
+
+Matthew{Мэтью}
+Shaw{Шоу}
+Billy{Билли}
+Brock{Брок}
+Bligh{Блай}
+Edward{Эдвард}
+Teague{Тиг}
+Oswald{Освальд}
+Chappel{Чаппель}
+Sir Christopher{Сэр Кристофер}
+Mings{Мингс}
+Will{Уилл}
+Turner{Тёрнер}
+Annabella{Аннабелла}
+Brin{Брин}
+Bella{Белла}
+Susan{Сьюзан}
+Shaypen{Шаупен}
+Bootstrap Bill{Прихлоп Билл}
+Cutler{Катлер}
+Beckett{Беккет}
+Brinkley{Бринкли}
+Anamaria{Аннамария}
+Tia{Тиа}
+Dalma{Далма}
+Pirate{Пират}
+1{1-й}
+2{2-й}
+3{3-й}
+Morris{Моррис}
+Murtogg{Муртогг}
+Malvert{Малверт}
+Mullroy{Маллрой}
+Captain{Капитан}
+Elizabeth{Элизабет}
+Simon{Саймон}
+Blunden{Бланден}
+Turpin{Турпин}
+Cabanel{Кабанель}
+Pieter{Питер}
+Boelen{Боэлен}
+John{Джон}
+Clifford{Клиффорд}
+Hector{Гектор}
+Barbossa{Барбосса}
+Anne{Энни}
+Bonny{Бонни}
+Davy{Дэйви}
+Jones{Джонс}
+Konrad{Конрад}
+Kulczycki{Кульчицкий}
+Petros{Петрос}
+Maykin{Мэйкин}
+Blundas{Бландез}
+Cap'n{Капитан}
+Drow{Дроу}
+Thomas{Томас}
+the Terror{Террор}
+Nathan{Нэйтан}
+Kell{Келл}
+Rackham{Рэкхем}
+Peter{Питер}
+Willemoes{Виллемоус}
+Damski{Дамски}
+Maximus{Максимус}
+Philippe{Филипп}
+Couch Captain{Капитан Коуч}
+Charles{Чарльз}
+Claudio{Клаудио}
+Burrieza{Бурриеза}
+Port Guard{Портовый Стражник}
+Silas{Сайлес}
+Simpkins{Симпкинс}
+Tipman{Типман}
+William{Уильям}
+Wanderman{Вандермэн}
+Arthur{Артур}
+Straightly{Стрэйтли}
+Stephen{Стивен}
+Walsh{Уолш}
+Howard{Говард}
+Cummins{Камминс}
+Ragetti{Раджетти}
+Pintel{Пинтел}
+Bartolomeu{Бартоломью}
+o Portugues{Португалец}
+Paul Jones{Пол Джонс}
+Seb'{Себ}
+Hylie{Хайли}
+Pistof{Пистоф}
+Jean-Bart{Жан-Барт}
+Lafin{Лафин}
+Johan{Йоган}
+Klaesz{Клаз}
+Eduardo{Эдуардо}
+Villanueva{Вильянуэва}
+Francois{Франсуа}
+de Hadoque{де Хадоке}
+Sri Sumbhajee{Шри Сумбаджи}
+Angria{Ангрия}
+Pusasn{Пусан}
+Askay{Аскай}
+Ammand{Аман}
+the Corsair{Корсар}
+Yedam{Йедам}
+Kinne{Кинн}
+Captain Sao{Капитан Сяо}
+Feng{Фэнь}
+Park{Парк}
+Lian{Лиан}
+Tai{Тай}
+Huang{Хуанг}
+Short{Коротышка}
+Mergildo{Мергильдо}
+Hurtado{Хартадо}
+Jordano{Джордано}
+Marbatico{Марбатико}
+Masked Man{Человек в Маске}
+Old Salt{Старый Моряк}
+Meigger{Мэйггер}
+Stallion{Сталион}
+Skyliner{Скайлайнер}
+Morgan{Морган}
+Terror{Террор}
+Bos'un{Босун}
+Joaquin{Хоакин}
+Justine{Жюстин}
+Le Moigne{Ле Муань}
+Justine's guard{Охранник Жюстина}
+Smith{Смит}
+Snorri{Снорри}
+Baldursson{Балдурсон}
+Francis{Франсис}
+Snake{Снэйк}
+Maggee{Мэгги}
+Reynoud{Рейноуд}
+Verheugen{Верхейге}
+Palafico{Палафико}
+Jimmy{Джимми}
+Legs{Легс}
+Port Admiral{Начальник Порта}
+Talicerdor{Талицердор}
+Guard Captain {Начальник Стражи}
+Prison Guard {Тюремный Стражник}
+Atwood {Этвуд}
+Paddley {Паддли}
+Elton {Элтон}
+Garfield {Гарфилд}
+Cannibal Chief {Вождь Каннибалов}
+Cannibal{Каннибал}
+
+
+Ronald{Рональд}
+Blacklock{Блэклок}
+Harris{Харрис}
+Spanish{Испанец}
+Prison{Арестант}
+Commendant{Комендант}
+Officer{Офицер}
+Midshipman{Мичман}
+Crewmember{Член Команды}
+Mr.{Мистер}
+Mercer{Мерсер}
+Gentleman{Джентельмен}
+Jocard{Жокар}
+Spanish Lieutenant{Испанский Лейтенант}
+Spanish Officer{Испанский Офицер}
+Prison Commendant{Комендант Тюрьмы}
+Spanish Midshipman{Испанский Мичман}
+
+
+Nigel{Найджел}
+

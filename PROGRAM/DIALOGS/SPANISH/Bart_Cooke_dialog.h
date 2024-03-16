@@ -1,0 +1,22 @@
+string DLG_TEXT[20] = {
+"Hola, ",
+". ¿Eres ",
+"?",
+"¿Eres tú el que va a estibar la carga en mi barco?",
+"Sí. ¿Quién eres? ¿El capataz de los estibadores?",
+"Sí, ¿qué quieres?",
+"¿Estás aquí para cargar mercancías en mi barco?",
+"Muy bien, camarada. Verás, hemos decidido enseñarle una lección a ese bribón llamado ",
+"Thomas O'Reily",
+". Rechazó nuestros servicios y tú también verás lo que pasa cuando alguien se interpone en nuestro camino...",
+"¿Qué quieres decir?",
+"¿De qué estás hablando?",
+"Sí, soy el jefe de esos tipos. ¿Dónde está tu barco? No podemos empezar a cargar si no está aquí.",
+"Mi barco está en el puerto. Solo quería comprobarlo todo antes de traerlo aquí.",
+"No hay problema. Volveré al puerto ahora y daré a mi gente la orden de traer el barco hasta esta bahía.",
+"No importa. ¡Venga chicos! ¡Matad#spronoun#!",
+"¡Maldición!",
+"¡Espera! Sabía que algo raro estaba pasando aquí. Dejadme ayudaros.",
+"Hum... ¡Me gustas! Pero no puedes ayudar, sube a tu barco y zarpa de aquí. Nosotros nos encargaremos de todo.",
+"Esta bien."
+};

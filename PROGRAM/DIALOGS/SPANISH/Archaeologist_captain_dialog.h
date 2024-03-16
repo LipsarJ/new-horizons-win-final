@@ -1,0 +1,18 @@
+string DLG_TEXT[16] = {
+"¡Qué casualidad verte aquí, capitán!",
+"El mundo es un pañuelo, ¿no crees?",
+"¡Hola! Soy ",
+". Tienes algo que quiero, una calavera de ámbar, para ser precisos. Entrégamela, por favor.",
+"Soy ",
+"y este es ",
+". Acabamos de matar a una banda de malhechores, presumiblemente la tuya. Entonces, ¿por qué te íbamos a entregar la calavera ahora?",
+"Porque tengo un cañón ahí fuera. Sus servidores tienen órdenes de derrumbar esta cueba sobre vuestras cabezas si no salgo ileso, con la calavera de ámbar en mis manos. Luego excavaremos entre los escombros y recuperaremos la calavera de vuestros cuerpos.",
+"¿Y se supone que debemos creernos que tienes un cañón?",
+"Sois combatientes competentes. Como tú dijiste, derrotasteis a mi equipo de búsqueda. ¿Estaría aquí solo si no tuviera alguna garantía?",
+"Está bien, digamos que te creemos. ¿Cómo sabemos que no dispararás de todos modos tan pronto como salgas de la cueva?",
+"¡Dinero, #sgender#! Los disparos de cañón no son baratos\n Además, hay mucha tierra sin usar al otro lado. Si el gobierno #snationdesc# no quiere aprovecharla, tal vez yo pueda hacerlo.",
+"No te falta razón.",
+"Una sabia decisión. Ahora no abandones el camino de sabiduría y no intentes salir de la cueva durante al menos 10 minutos. Adiós.",
+"Hasta que nos volvamos a encontrar, Capitán ",
+"Aquí está la calavera.",
+}

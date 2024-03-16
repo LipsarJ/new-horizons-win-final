@@ -1,0 +1,26 @@
+string DLG_TEXT[23] = {
+
+"¿Sí, #ssir#?",
+"¿Eres un oficial?",
+"Sí, lo soy. ¿Qué deseas?",
+"Bueno, soy comerciante y mientras navegaba costeando de camino a esta ciudad para vender mis mercancías, vi a algunos hombres descargando mercancías en la Bahía de Moa.",
+"Podrían ser contrabandistas. Lo investigaré. Gracias por tu ayuda.",
+"Es mi deber asistir a las autoridades españolas.",
+"¡Oye! ¿Qué haces aquí? ¿Y dónde están esos hombres de los que hablabas?",
+"No existen. Me inventé esa historia para que vinieras aquí solo, lejos de la ciudad.",
+"¿Y por qué hiciste eso? Soy un honrado oficial español, así que no me hagas perder el tiempo, por favor. Mi paciencia tiene límites.",
+"Lo entenderás en un momento. Parece que tu gobernador está preparando algún tipo de acción contra los piratas en #sisland_Turks# y me vas a decir exactamente qué y cuándo.",
+"Ya entiendo, pobre #sgender#. Además de pirata, eres idiota. ¿Realmente creías que vendría aquí solo? ¡Guardias! ¡Que no escape!",
+"¡Mala decisión! Te arrepentirás.",
+"¡Detente! Me rindo.",
+"Ah, entonces SÍ eres razonable después de todo. Ahora me dirás lo que quiero saber. A menos que quieras que te mate. Y no fallaré como lo has hecho tú. Puedes estar seguro de eso.",
+"Está bien. Mi gobernador no está contento con los piratas de #sisland_Turks# y quiere hacerse con la isla para disminuir la amenaza pirata a los convoyes españoles.",
+"Eso suena como una operación arriesgada.",
+"Lo sé. Pero nuestro gobernador es una persona ambiciosa y si tiene éxito, nuestro Rey lo recompensará con el cargo de gobernador de #sisland_Turks# también.",
+"¿Un gobernador español en el hermosa paraíso pirata de #sisland_Turks#? ¡Eso suena horrible! ¿Cuándo se llevará a cabo la operación?",
+"Durante los próximos días. El gobernador solo informará a las tropas un día antes de partir.",
+"Ah. Debo apresurarme de regreso a #sisland_Turks# entonces. Y tú vendrás conmigo. No te mataré, pero no puedo arriesgarme a que el gobernador descubra que los piratas de #sisland_Turks# están advertidos de su llegada. Te dejaré ir tan pronto como se resuelva esta situación.",
+"...",
+"...",
+
+};
