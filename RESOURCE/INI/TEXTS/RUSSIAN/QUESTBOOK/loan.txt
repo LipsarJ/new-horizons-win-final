@@ -1,0 +1,16 @@
+title=«айм у ростовщика
+text.t1=ѕришлось зан€ть #dammount# золотых монет у ростовщика #sloanshark# в городе #stown# на #sisland#, и теперь его нужно вернуть до #sdeadline#.
+text.t2=ѕришлось зан€ть #dammount# золотых монет у ростовщика #sloanshark# в городе #stown# на #sisland#, и теперь его нужно вернуть до #sdeadline#.
+text.t3=ѕришлось зан€ть #dammount# золотых монет у ростовщика #sloanshark# в городе #stown# на #sisland#, и теперь его нужно вернуть до #sdeadline#.
+text.t4=ѕришлось зан€ть #dammount# золотых монет у ростовщика #sloanshark# в городе #stown# на #sisland#, и теперь его нужно вернуть до #sdeadline#.
+text.t5=ѕришлось зан€ть #dammount# золотых монет у ростовщика #sloanshark# в городе #stown# на #sisland#, и теперь его нужно вернуть до #sdeadline#.
+text.t6=ѕришлось зан€ть #dammount# золотых монет у ростовщика #sloanshark# в городе #stown# на #sisland#, и теперь его нужно вернуть до #sdeadline#.
+text.t7=ѕришлось зан€ть #dammount# золотых монет у ростовщика #sloanshark# в городе #stown# на #sisland#, и теперь его нужно вернуть до #sdeadline#.
+text.t8=ѕришлось зан€ть #dammount# золотых монет у ростовщика #sloanshark# в городе #stown# на #sisland#, и теперь его нужно вернуть до #sdeadline#.
+text.t9=ѕришлось зан€ть #dammount# золотых монет у ростовщика #sloanshark# в городе #stown# на #sisland#, и теперь его нужно вернуть до #sdeadline#.
+text.t10=ѕришлось зан€ть #dammount# золотых монет у ростовщика #sloanshark# в городе #stown# на #sisland#, и теперь его нужно вернуть до #sdeadline#.
+text.t11=ѕришлось зан€ть #dammount# золотых монет у ростовщика #sloanshark# в городе #stown# на #sisland#, и теперь его нужно вернуть до #sdeadline#.
+text.t12=ѕришлось зан€ть #dammount# золотых монет у ростовщика #sloanshark# в городе #stown# на #sisland#, и теперь его нужно вернуть до #sdeadline#.
+text.t13=ѕришлось зан€ть #dammount# золотых монет у ростовщика #sloanshark# в городе #stown# на #sisland#, и теперь его нужно вернуть до #sdeadline#.
+text.t14=ѕришлось зан€ть #dammount# золотых монет у ростовщика #sloanshark# в городе #stown# на #sisland#, и теперь его нужно вернуть до #sdeadline#.
+text.t15=ѕришлось зан€ть #dammount# золотых монет у ростовщика #sloanshark# в городе #stown# на #sisland#, и теперь его нужно вернуть до #sdeadline#.
