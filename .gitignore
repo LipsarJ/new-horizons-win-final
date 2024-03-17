@@ -77,7 +77,7 @@
 
 # Папки
 *SAVE/
-# *RESOURCE/animation/
+*RESOURCE/animation/
 *RESOURCE/foam/
 *RESOURCE/MODELS/
 *RESOURCE/Particles/
