@@ -483,6 +483,10 @@ void ProcessDialogEvent()
 
 			GiveItem2Character(Pchar,"aztec_compass");
 			GiveItem2Character(Pchar,"EITC_Passport");
+			GiveItem2Character(Pchar,"blade42");
+			EquipCharacterByItem(Pchar, "blade42");
+			
+			bQuestDisableSeaEnter = false;
 			
 			// TALISMAN - to give bits of map to open Muerte Treasure Cave -->
 			GiveItem2Character(Pchar,"Map_Doc_1");
@@ -551,6 +555,8 @@ void ProcessDialogEvent()
 			PChar.quest.Story_Artois_Nigel.win_condition = "Install_Voysey_And_Blythe";
 
 			GiveItem2Character(Pchar,"aztec_compass");
+			GiveItem2Character(Pchar,"blade42");
+			EquipCharacterByItem(Pchar, "blade42");
 			
 			// TALISMAN - to give bits of map to open Muerte Treasure Cave -->
 			GiveItem2Character(Pchar,"Map_Doc_1");
@@ -576,6 +582,9 @@ void ProcessDialogEvent()
 
 		case "Jungle_Church":
 			Characters[GetCharacterIndex("James Norrington")].model = "cnorrington";
+			PChar.name = TranslateString("", "Jack");
+			PChar.lastname = TranslateString("", "Sparrow");
+			GiveModel2Player("Jack",true);
 			DoQuestReloadToLocation("Jungle_Church", "reload", "reload1" ,"_");
 			ChangeCharacterAddressGroup(CharacterFromID("James Norrington"), "Jungle_Church", "goto", "goto10");
 			ChangeCharacterAddressGroup(CharacterFromID("Will Turner"), "Jungle_Church", "goto", "goto5");

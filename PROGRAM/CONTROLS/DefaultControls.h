@@ -82,7 +82,7 @@ Please follow these rules when editing settings:
 #define CTL_SHIP_TURN_LEFT 			"KEY_A"
 #define CTL_SHIP_TURN_RIGHT 		"KEY_D"
 // #define CTL_SHIP_SAIL_RAISE 		"KEY_W"
-// #define CTL_SHIP_SAIL_STRIKE 		"KEY_S"
+// #define CTL_SHIP_SAIL_STRIKE 	"KEY_S"
 #define CTL_SHIP_POWER_UP 			"VK_ADD"
 #define CTL_SHIP_POWER_DOWN	 		"VK_SUBTRACT"
 #define CTL_SHIP_POWER_ZERO			"VK_MULTIPLY"

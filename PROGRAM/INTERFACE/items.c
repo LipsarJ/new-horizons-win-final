@@ -87,7 +87,7 @@ void InitInterface_I(string iniName, int item)
 
 	//JRH -->
 	if (selection == BLADE_ITEM_TYPE || selection == ARMOR_ITEM_TYPE || selection == AMMUNITION_ITEM_TYPE || selection == FLASK_ITEM_TYPE || selection == POUCH_ITEM_TYPE || selection == BELT_ITEM_TYPE || selection == OPEN_ITEM_TYPE) selection = GUN_ITEM_TYPE;
-	if (selection == SPYGLASS_ITEM_TYPE  || selection == LOCKPICK_ITEM_TYPE || selection == CLOCK_ITEM_TYPE || selection == COMPASS_ITEM_TYPE || selection == DOCUMENT_ITEM_TYPE || selection == OUTFIT_ITEM_TYPE) selection = OBJECT_ITEM_TYPE;
+	if (selection == SPYGLASS_ITEM_TYPE  || selection == LOCKPICK_ITEM_TYPE || selection == CLOCK_ITEM_TYPE || selection == COMPASS_ITEM_TYPE || selection == DOCUMENT_ITEM_TYPE || selection == OUTFIT_ITEM_TYPE || selection == FLIP_ITEM_TYPE) selection = OBJECT_ITEM_TYPE;
 	if (selection == EQUIP_ITEM_TYPE || selection == EQUIP2_ITEM_TYPE || selection == EQUIP3_ITEM_TYPE || selection == EXAMINE_ITEM_TYPE) selection = QUEST_ITEM_TYPE;
 	//<-- JRH
 
@@ -98,7 +98,7 @@ void InitInterface_I(string iniName, int item)
 
 // KK -->
 	bool hasShip = false;
-	for (int i = 0; i < 4; i++) {
+	for (int i = 0; i < COMPANION_MAX; i++) {
 		int cidx = GetCompanionIndex(GetMainCharacter(), i);
 		if (cidx < 0) continue;
 		if (GetCharacterShipType(GetCharacter(cidx)) != SHIP_NOTUSED) {
@@ -1498,7 +1498,6 @@ if(comName=="activate" || comName=="click")
 							GiveItem2Character(Pchar, "portugize");
 						
 							LAi_QuestDelay("portugize_equip", 0.2);
-							// LAi_QuestDelay("delete_library_map", 0.5);
 						break;
 
 						case "4":
@@ -1604,7 +1603,7 @@ if(comName=="activate" || comName=="click")
 			SendMessage(&GameInterface,"lls", MSG_INTERFACE_LOCK_NODE, 1, "MSC_CONFIRM_NO_BUTTON");
 			SendMessage(&GameInterface,"lls", MSG_INTERFACE_LOCK_NODE, 2, "MSC_CONFIRM_YES_BUTTON");
 			SetFormatedText("MSC_TEXTWINDOW", TranslateString("", "TossItemInterface"));
-			SetFormatedText("MSC_TEXTWINDOW", "Are you sure you want to toss this item?");
+			//SetFormatedText("MSC_TEXTWINDOW", TranslateString("", "Are you sure you want to toss this item?"));
 		}
 	break;
 // <-- Levis
@@ -3948,6 +3947,9 @@ void UpdateItemData()
 			case "Russian":
 				GameInterface.strings.ItemName = GameInterface.strings.ItemName + " " + Quality;
 			break;
+			case "Spanish":
+				GameInterface.strings.ItemName = GameInterface.strings.ItemName + " " + Quality;
+			break;
 			GameInterface.strings.ItemName = Quality + " " + GameInterface.strings.ItemName;//default for English
 		}
 		// MAXIMUS 31.05.2019: corrected for russian spelling <==
@@ -4158,7 +4160,7 @@ void IDoExit(int exitCode)
 	EndCancelInterface(true);
 // MAXIMUS interface MOD <--
 
-	// if(sti(GetStorylineVar(FindCurrentStoryline(), "WR_PUZZLES")) > 0) LAi_QuestDelay("pchar_outfit_check", 0.1);	//JRH: see quest_reaction
+//	if(sti(GetStorylineVar(FindCurrentStoryline(), "WR_PUZZLES")) > 0) LAi_QuestDelay("pchar_outfit_check", 0.1);	//JRH: see quest_reaction
 }
 
 void ProcEquipPress()
@@ -4368,6 +4370,9 @@ void FillSelectedScroll(string itemsID)
 						switch(LanguageGetLanguage())
 						{
 							case "Russian":
+								name = name + " " + TranslateString("", "q"+arItem.QualityName);
+							break;
+							case "Spanish":
 								name = name + " " + TranslateString("", "q"+arItem.QualityName);
 							break;
 							name = TranslateString("", "q"+arItem.QualityName) + " " + name; // PB: Correct quality name //default for English

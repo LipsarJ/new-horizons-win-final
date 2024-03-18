@@ -55,11 +55,9 @@ int iSelectedKeyboardLayout = GetKeyboardLayout();
 ref PlayerProfile;
 string current_profile;
 // <-- KK
-int iOrigMode = iRealismMode;
 
 void InitInterface(string iniName)
 {
-	 iOrigMode = iRealismMode;
 	// PB: Prevent players from seeing the "stuck with all menu options" bug -->
 	// Code responsible for this found and disabled below in IDoExit
 	// InterfaceStates.Buttons.Resume.enable = false;
@@ -347,11 +345,6 @@ void IDoExit(int exitCode)
 //	ClearPostEvents();				// PB: This prevents actions from updating properly during the game
 
 	interfaceResultCommand = exitCode;
-	if (iOrigMode != iRealismMode && IsEntity(&objISpyGlass))
-    {
-        InterfaceSpyGlassRelease();
-        InterfaceSpyGlassInit();
-	}
 	if( CheckAttribute(&InterfaceStates,"InstantExit") && sti(InterfaceStates.InstantExit)==true ) {
 		EndCancelInterface(true);
 	} else {

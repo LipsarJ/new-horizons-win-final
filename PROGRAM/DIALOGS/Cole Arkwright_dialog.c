@@ -249,7 +249,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "gov_29":
-			ChangeCharacterAddressGroup(characterFromID("Jean Lafitte"), "Eleuthera_Port", "goto", "goto25");		
+			ChangeCharacterAddressGroup(characterFromID("Jean Lafitte"), "Eleuthera_town", "goto", "goto25");		
             PlayStereoSound("INTERFACE\took_item.wav");
 			AddMoneyToCharacter(pchar, 25000);
 			ChangeRMRelation(pchar, AMERICA, 20.0);				

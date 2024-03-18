@@ -389,6 +389,14 @@ void CreateJunglesOnIslands()
 		Islands[n].jungle.scale = 12.5;
 	}
 
+	n = FindIsland("Cuba");
+	if(n != -1)
+	{
+		Islands[n].jungle.patch = "Cuba_jungle";
+		Islands[n].jungle.texture = "junglesprites2";
+		Islands[n].jungle.scale = 10.0;
+	}
+
 	n = FindIsland("Curacao");
 	if(n != -1)
 	{
@@ -400,7 +408,7 @@ void CreateJunglesOnIslands()
 	n = FindIsland("Dominica");
 	if(n != -1)
 	{
-		Islands[n].jungle.patch = "dominica_jungle";
+		Islands[n].jungle.patch = "Dominica_jungle";
 		Islands[n].jungle.texture = "junglesprites2";
 		Islands[n].jungle.scale = 12.5;
 	}
@@ -482,10 +490,10 @@ void CreateJunglesOnIslands()
 	{
 		Islands[n].jungle.patch = "SantaCatalina_jungle";
 		Islands[n].jungle.texture = "junglesprites2";
-		Islands[n].jungle.scale = 16.0;
+		Islands[n].jungle.scale = 12.5;
 	}
 	
-	n = FindIsland("SaintMartin");
+	n = FindIsland("Saint Martin");
 	if(n != -1)
 	{
 		Islands[n].jungle.patch = "Sent_jungle";

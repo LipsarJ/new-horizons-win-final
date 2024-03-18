@@ -475,8 +475,7 @@ void LAi_ActorSetStayMode(aref chr)
 	if(LAi_type_actor_Error(chr, false)) return;
 	chr.chr_ai.type.mode = "stay";
 	LAi_SetDefaultStayAnimation(chr);
-}
-
+	}
 //”становить анимацию сид€чего персонажа
 void LAi_ActorSetSitMode(aref chr)
 {

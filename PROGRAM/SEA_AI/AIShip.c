@@ -115,10 +115,8 @@ void CreateFlagEnvironment()
 		int nIdx = ntexture;
 		if (!IsEntity(&PirateFlag[nIdx])) {
 			sid = "" + nIdx;
-			//PirateFlag[nIdx].ratioLimit = 1;
-            //PirateFlag[nIdx].sizeRatio = 3.5;
-            DeleteAttribute(&PirateFlag[nIdx], "ratioLimit");
-            DeleteAttribute(&PirateFlag[nIdx], "sizeRatio");										
+			PirateFlag[nIdx].ratioLimit = 1;
+            PirateFlag[nIdx].sizeRatio = 3.5;
 			PirateFlag[nIdx].iniSection = "PFg" + sid;
 			CreateEntity(&PirateFlag[nIdx], "Flag");
 			LayerAddObject(sCurrentSeaExecute, &PirateFlag[nIdx], iPriority);
@@ -153,10 +151,8 @@ void CreateFlagEnvironment()
 		GetPersonalFlag(chr, &ntexture);
 		if (!IsEntity(&PersonalFlag[ntexture])) {
 			sid = "" + ntexture;
-			//PersonalFlag[ntexture].ratioLimit = 1;
-            //PersonalFlag[ntexture].sizeRatio = 3.5;
-            DeleteAttribute(&PersonalFlag[ntexture], "ratioLimit");
-            DeleteAttribute(&PersonalFlag[ntexture], "sizeRatio");		  
+			PersonalFlag[ntexture].ratioLimit = 1;
+            PersonalFlag[ntexture].sizeRatio = 3.5;
 			PersonalFlag[ntexture].iniSection = "QFg" + sid;
 			CreateEntity(&PersonalFlag[ntexture], "Flag");
 			LayerAddObject(sCurrentSeaExecute, &PersonalFlag[ntexture], iPriority);
@@ -227,10 +223,8 @@ void CreateRiggingEnvironment()
 	LayerAddObject(sCurrentSeaRealize, &Vant, iPriority);
 	iPriority++;
 
-	//Flag.ratioLimit = 1;
-	//Flag.sizeRatio = 3.5;
-	DeleteAttribute(&Flag, "ratioLimit");
-    DeleteAttribute(&Flag, "sizeRatio");			
+	Flag.ratioLimit = 1;
+	Flag.sizeRatio = 3.5;
 	Flag.iniSection = "Flg" + sPeriod;
 	CreateEntity(&Flag, "Flag");
 	LayerAddObject(sCurrentSeaExecute, &Flag, iPriority);
@@ -250,10 +244,8 @@ void CreateRiggingEnvironment()
 
 	GetPirateFlag(mchr, &ntexture);
 	sid = "" + ntexture;
-	//PirateFlag[ntexture].ratioLimit = 1;
-	//PirateFlag[ntexture].sizeRatio = 3.5;
-	DeleteAttribute(&PirateFlag[ntexture], "ratioLimit");
-    DeleteAttribute(&PirateFlag[ntexture], "sizeRatio");					
+	PirateFlag[ntexture].ratioLimit = 1;
+	PirateFlag[ntexture].sizeRatio = 3.5;
 	PirateFlag[ntexture].iniSection = "PFg" + sid;
 	CreateEntity(&PirateFlag[ntexture], "Flag");
 	LayerAddObject(sCurrentSeaExecute, &PirateFlag[ntexture], iPriority);
@@ -273,10 +265,8 @@ void CreateRiggingEnvironment()
 
 	GetPersonalFlag(mchr, &ntexture);
 	sid = "" + ntexture;
-	//PersonalFlag[ntexture].ratioLimit = 1;
-	//PersonalFlag[ntexture].sizeRatio = 3.5;
-	DeleteAttribute(&PersonalFlag[ntexture], "ratioLimit");
-    DeleteAttribute(&PersonalFlag[ntexture], "sizeRatio");			  
+	PersonalFlag[ntexture].ratioLimit = 1;
+	PersonalFlag[ntexture].sizeRatio = 3.5;
 	PersonalFlag[ntexture].iniSection = "QFg" + sid;
 	CreateEntity(&PersonalFlag[ntexture], "Flag");
 	LayerAddObject(sCurrentSeaExecute, &PersonalFlag[ntexture], iPriority);

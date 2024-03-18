@@ -622,7 +622,7 @@ void InitModels(bool isstart)
 	model.description = "I want to join the 95th and I can afford to buy a sergeancy.";
 	model.id = "SharpeS_Rif8_18";
 	model.FaceId = 449;
-	model.nation = ENGLAND;
+	model.nation = BROKEN;
 	model.price = 1000;
 	model.assigned = true;
 	model.sex = "man";
@@ -631,7 +631,7 @@ void InitModels(bool isstart)
 	model.description = "I want to join the 95th and I can afford to buy a commission.";
 	model.id = "SharpeL_Rif7_18";
 	model.FaceId = 450;
-	model.nation = ENGLAND;
+	model.nation = BROKEN;
 	model.price = 3000;
 	model.assigned = true;
 	model.sex = "man";
@@ -640,16 +640,16 @@ void InitModels(bool isstart)
 	model.description = "I want to be a major in the 95th and I can afford to buy a commission.";
 	model.id = "Dunnitt_Rif7_18";
 	model.FaceId = 451;
-	model.nation = ENGLAND;
+	model.nation = BROKEN;
 	model.price = 5000;
 	model.assigned = true;
 	model.sex = "man";
 	AddCharacterModel(model);
 
 	model.description = "I want to join the 33rd.";
-	model.id = "Sold_E33_Sharp";
+	model.id = "Soldier_Eng7_18";
 	model.FaceId = 567;
-	model.nation = ENGLAND;
+	model.nation = BROKEN;
 	model.price = 500;
 	model.assigned = true;
 	model.sex = "man";
@@ -658,7 +658,7 @@ void InitModels(bool isstart)
 	model.description = "I want to join the 33rd.";
 	model.id = "HarperR_Eng3_18";
 	model.FaceId = 453;
-	model.nation = ENGLAND;
+	model.nation = BROKEN;
 	model.price = 500;
 	model.assigned = true;
 	model.sex = "man";
@@ -667,7 +667,7 @@ void InitModels(bool isstart)
 	model.description = "I want to join the 95th as an unruly rifleman.";
 	model.id = "Rifleman_Harper";
 	model.FaceId = 454;
-	model.nation = ENGLAND;
+	model.nation = BROKEN;
 	model.price = 800;
 	model.assigned = true;
 	model.sex = "man";
@@ -820,7 +820,7 @@ void InitModels(bool isstart)
 	model.description = "I want to join the 95th as a Sergeant.";
 	model.id = "Harper_Sergeant";
 	model.FaceId = 455;
-	model.nation = ENGLAND;
+	model.nation = BROKEN;
 	model.price = 1000;
 	model.assigned = true;
 	model.sex = "man";
@@ -829,7 +829,7 @@ void InitModels(bool isstart)
 	model.description = "I wish to purchase a captaincy.";
 	model.id = "PellewX_18";
 	model.FaceId = 456;
-	model.nation = ENGLAND;
+	model.nation = BROKEN;
 	model.price = 2000;
 	model.assigned = true;
 	model.sex = "man";
@@ -838,7 +838,7 @@ void InitModels(bool isstart)
 	model.description = "I wish to purchase a captaincy.";
 	model.id = "SawyerX_18";
 	model.FaceId = 457;
-	model.nation = ENGLAND;
+	model.nation = BROKEN;
 	model.price = 2000;
 	model.assigned = true;
 	model.sex = "man";
@@ -847,7 +847,7 @@ void InitModels(bool isstart)
 	model.description = "I wish to purchase a sea captaincy.";
 	model.id = "Sawyer2_18";
 	model.FaceId = 458;
-	model.nation = ENGLAND;
+	model.nation = BROKEN;
 	model.price = 2000;
 	model.assigned = true;
 	model.sex = "man";
@@ -856,7 +856,7 @@ void InitModels(bool isstart)
 	model.description = "I wish to purchase a captaincy.";
 	model.id = "KeeneCX_18";
 	model.FaceId = 459;
-	model.nation = ENGLAND;
+	model.nation = BROKEN;
 	model.price = 2000;
 	model.assigned = true;
 	model.sex = "man";
@@ -865,7 +865,7 @@ void InitModels(bool isstart)
 	model.description = "I want a British Admirals uniform.";
 	model.id = "KeeneAD_18";
 	model.FaceId = 459;
-	model.nation = ENGLAND;
+	model.nation = BROKEN;
 	model.price = 2000;
 	model.assigned = true;
 	model.sex = "man";
@@ -874,7 +874,7 @@ void InitModels(bool isstart)
 	model.description = "I wish to purchase a Colonel's Uniform.";
 	model.id = "WellR_eng_18";
 	model.FaceId = 460;
-	model.nation = ENGLAND;
+	model.nation = BROKEN;
 	model.price = 2000;
 	model.assigned = true;
 	model.sex = "man";
@@ -1002,228 +1002,124 @@ void InitModels(bool isstart)
 	model.description = "I want to look like Lieutenant Bush.";
 	model.id = "BushLtn_18";
 	model.FaceId = 464;
-	model.minlevel = 4;
-	model.minrank = 2;
-	model.nation = ENGLAND;
+	model.nation = BROKEN;
 	model.price = 2000;
 	model.assigned = true;
-	model.playertype = PLAYER_TYPE_NAVAL_OFFICER;
-	model.period = "" + PERIOD_COLONIAL_POWERS + PERIOD_REVOLUTIONS + PERIOD_NAPOLEONIC;
 	model.sex = "man";
 	AddCharacterModel(model);
 
 	model.description = "I want to look like Midshipman Kennedy.";
 	model.id = "Kennedy_Md";
 	model.FaceId = 465;
-	model.minlevel = 2;
-	model.minrank = 1;
-	model.nation = ENGLAND;
-	model.price = 1000;
+	model.nation = BROKEN;
+	model.price = 2000;
 	model.assigned = true;
-	model.playertype = PLAYER_TYPE_NAVAL_OFFICER;
-	model.period = "" + PERIOD_COLONIAL_POWERS + PERIOD_REVOLUTIONS + PERIOD_NAPOLEONIC;
 	model.sex = "man";
 	AddCharacterModel(model);
 
 	model.description = "I want to look like Lieutenant Kennedy.";
 	model.id = "Kennedy_Lt";
 	model.FaceId = 466;
-	model.minlevel = 4;
-	model.minrank = 3;
-	model.nation = ENGLAND;
+	model.nation = BROKEN;
 	model.price = 2000;
 	model.assigned = true;
-	model.playertype = PLAYER_TYPE_NAVAL_OFFICER;
-	model.period = "" + PERIOD_COLONIAL_POWERS + PERIOD_REVOLUTIONS + PERIOD_NAPOLEONIC;
 	model.sex = "man";
 	AddCharacterModel(model);
 
 	model.description = "I want to look like Midshipman Simpson.";
 	model.id = "Simpson_18";
 	model.FaceId = 467;
-	model.minlevel = 2;
-	model.minrank = 1;
-	model.nation = ENGLAND;
-	model.price = 1000;
+	model.nation = BROKEN;
+	model.price = 2000;
 	model.assigned = true;
-	model.playertype = PLAYER_TYPE_NAVAL_OFFICER;
-	model.period = "" + PERIOD_COLONIAL_POWERS + PERIOD_REVOLUTIONS + PERIOD_NAPOLEONIC;
 	model.sex = "man";
 	AddCharacterModel(model);
 
 	model.description = "I want to look like Midshipman Clayton.";
 	model.id = "Clayton_18";
 	model.FaceId = 468;
-	model.minlevel = 2;
-	model.minrank = 1;
-	model.nation = ENGLAND;
-	model.price = 1000;
+	model.nation = BROKEN;
+	model.price = 2000;
 	model.assigned = true;
-	model.playertype = PLAYER_TYPE_NAVAL_OFFICER;
-	model.period = "" + PERIOD_COLONIAL_POWERS + PERIOD_REVOLUTIONS + PERIOD_NAPOLEONIC;
 	model.sex = "man";
 	AddCharacterModel(model);
 
 	model.description = "I want to look like Midshipman Wellard.";
 	model.id = "Wellard_18";
 	model.FaceId = 469;
-	model.minlevel = 2;
-	model.minrank = 1;
-	model.nation = ENGLAND;
-	model.price = 1000;
+	model.nation = BROKEN;
+	model.price = 2000;
 	model.assigned = true;
-	model.playertype = PLAYER_TYPE_NAVAL_OFFICER;
-	model.period = "" + PERIOD_COLONIAL_POWERS + PERIOD_REVOLUTIONS + PERIOD_NAPOLEONIC;
 	model.sex = "man";
 	AddCharacterModel(model);
 
 	model.description = "I want to look like Midshipman Hammond.";
 	model.id = "JackHammond";
 	model.FaceId = 91;
-	model.minlevel = 2;
-	model.minrank = 1;
-	model.nation = ENGLAND;
-	model.price = 1000;
+	model.nation = BROKEN;
+	model.price = 2000;
 	model.assigned = true;
-	model.playertype = PLAYER_TYPE_NAVAL_OFFICER;
-	model.period = "" + PERIOD_COLONIAL_POWERS + PERIOD_REVOLUTIONS + PERIOD_NAPOLEONIC;
 	model.sex = "man";
 	AddCharacterModel(model);
 
 	model.description = "I want to look like Midshipman Hunter.";
 	model.id = "HunterM_18";
 	model.FaceId = 470;
-	model.minlevel = 2;
-	model.minrank = 1;
-	model.nation = ENGLAND;
-	model.price = 1000;
+	model.nation = BROKEN;
+	model.price = 2000;
 	model.assigned = true;
-	model.playertype = PLAYER_TYPE_NAVAL_OFFICER;
-	model.period = "" + PERIOD_COLONIAL_POWERS + PERIOD_REVOLUTIONS + PERIOD_NAPOLEONIC;
 	model.sex = "man";
 	AddCharacterModel(model);
 
 	model.description = "I want to look like Lieutenant Buckland.";
 	model.id = "Bucklnd_18";
 	model.FaceId = 471;
-	model.minlevel = 4;
-	model.minrank = 3;
-	model.nation = ENGLAND;
+	model.nation = BROKEN;
 	model.price = 2000;
 	model.assigned = true;
-	model.playertype = PLAYER_TYPE_NAVAL_OFFICER;
-	model.period = "" + PERIOD_COLONIAL_POWERS + PERIOD_REVOLUTIONS + PERIOD_NAPOLEONIC;
 	model.sex = "man";
 	AddCharacterModel(model);
 
 	model.description = "I want to look like Lieutenant Bracegirdle.";
 	model.id = "Bracegrdle";
 	model.FaceId = 472;
-	model.minlevel = 4;
-	model.minrank = 3;
-	model.nation = ENGLAND;
+	model.nation = BROKEN;
 	model.price = 2000;
 	model.assigned = true;
-	model.playertype = PLAYER_TYPE_NAVAL_OFFICER;
-	model.period = "" + PERIOD_COLONIAL_POWERS + PERIOD_REVOLUTIONS + PERIOD_NAPOLEONIC;
 	model.sex = "man";
 	AddCharacterModel(model);
 
 	model.description = "I want to look like Lieutenant Quelp.";
 	model.id = "LtQuelp_18";
 	model.FaceId = 473;
-	model.minlevel = 4;
-	model.minrank = 3;
-	model.nation = ENGLAND;
+	model.nation = BROKEN;
 	model.price = 2000;
 	model.assigned = true;
-	model.playertype = PLAYER_TYPE_NAVAL_OFFICER;
-	model.period = "" + PERIOD_COLONIAL_POWERS + PERIOD_REVOLUTIONS + PERIOD_NAPOLEONIC;
 	model.sex = "man";
 	AddCharacterModel(model);
 
 	model.description = "I want to look like Lieutenant Eccleston.";
 	model.id = "EcclestonH";
 	model.FaceId = 474;
-	model.minlevel = 4;
-	model.minrank = 3;
-	model.nation = ENGLAND;
+	model.nation = BROKEN;
 	model.price = 2000;
 	model.assigned = true;
-	model.playertype = PLAYER_TYPE_NAVAL_OFFICER;
-	model.period = "" + PERIOD_COLONIAL_POWERS + PERIOD_REVOLUTIONS + PERIOD_NAPOLEONIC;
 	model.sex = "man";
 	AddCharacterModel(model);
-	
+
 	model.description = "I want the other commanders outfit.";
 	model.id = "BracegrdlC";
 	model.FaceId = 475;
-	model.minlevel = 6;
-	model.minrank = 5;
-	model.nation = ENGLAND;
+	model.nation = BROKEN;
 	model.price = 2000;
 	model.assigned = true;
-	model.playertype = PLAYER_TYPE_NAVAL_OFFICER;
-	model.period = "" + PERIOD_COLONIAL_POWERS + PERIOD_REVOLUTIONS + PERIOD_NAPOLEONIC;
-	model.sex = "man";
-	AddCharacterModel(model);
-		
-	model.description = "A typical Royal Navy sailor outfit if you please";
-	model.id = "RNSail01HB";
-	model.FaceId = "99";
-	model.minlevel = 2;
-	model.minrank = 1;
-	model.nation = ENGLAND;
-	model.price = 100;
-	model.assigned = true;
-	model.playertype = PLAYER_TYPE_NAVAL_OFFICER;
-	model.period = "" + PERIOD_COLONIAL_POWERS + PERIOD_REVOLUTIONS + PERIOD_NAPOLEONIC;
-	model.sex = "man";
-	AddCharacterModel(model);
-	
-	model.description = "Another typical Royal Navy sailor outfit if you please";
-	model.id = "RNSail02HB";
-	model.FaceId = "99";
-	model.minlevel = 2;
-	model.minrank = 1;
-	model.nation = ENGLAND;
-	model.price = 100;
-	model.assigned = true;
-	model.playertype = PLAYER_TYPE_NAVAL_OFFICER;
-	model.period = "" + PERIOD_COLONIAL_POWERS + PERIOD_REVOLUTIONS + PERIOD_NAPOLEONIC;
-	model.sex = "man";
-	AddCharacterModel(model);
-	
-	model.description = "Aye, Royal Navy sailor outfit, for ma ";
-	model.id = "RNSail03HB";
-	model.FaceId = "99";
-	model.minlevel = 2;
-	model.minrank = 1;
-	model.nation = ENGLAND;
-	model.price = 100;
-	model.assigned = true;
-	model.playertype = PLAYER_TYPE_NAVAL_OFFICER;
-	model.period = "" + PERIOD_COLONIAL_POWERS + PERIOD_REVOLUTIONS + PERIOD_NAPOLEONIC;
-	model.sex = "man";
-	AddCharacterModel(model);
-	
-	model.description = "Gimme a typical Royal Navy sailors tar jacket";
-	model.id = "RNSail04HB";
-	model.FaceId = "99";
-	model.minlevel = 2;
-	model.minrank = 1;
-	model.nation = ENGLAND;
-	model.price = 100;
-	model.assigned = true;
-	model.playertype = PLAYER_TYPE_NAVAL_OFFICER;
-	model.period = "" + PERIOD_COLONIAL_POWERS + PERIOD_REVOLUTIONS + PERIOD_NAPOLEONIC;
 	model.sex = "man";
 	AddCharacterModel(model);
 
 	model.description = "I want to join the 95th as a rifleman.";
 	model.id = "Rifleman95F3_18";
 	model.FaceId = 476;
-	model.nation = ENGLAND;
+	model.nation = BROKEN;
 	model.price = 800;
 	model.assigned = true;
 	model.sex = "man";
@@ -1232,7 +1128,7 @@ void InitModels(bool isstart)
 	model.description = "I want a British Admirals uniform.";
 	model.id = "PellewA_18";
 	model.FaceId = 477;
-	model.nation = ENGLAND;
+	model.nation = BROKEN;
 	model.price = 5000;
 	model.assigned = true;
 	model.sex = "man";
@@ -1241,7 +1137,7 @@ void InitModels(bool isstart)
 	model.description = "I want to be a captain in the 95th and I can afford to buy a commission.";
 	model.id = "Cmurray_Rif7_18";
 	model.FaceId = 478;
-	model.nation = ENGLAND;
+	model.nation = BROKEN;
 	model.price = 3000;
 	model.assigned = true;
 	model.sex = "man";
@@ -1250,7 +1146,7 @@ void InitModels(bool isstart)
 	model.description = "I want the Civilian Hornblower.";
 	model.id = "CivilianHB";
 	model.FaceId = 479;
-	model.nation = ENGLAND;
+	model.nation = BROKEN;
 	model.price = 500;
 	model.assigned = true;
 	model.sex = "man";
@@ -1259,7 +1155,7 @@ void InitModels(bool isstart)
 	model.description = "I wish to purchase a tough captaincy.";
 	model.id = "Hammond_18";
 	model.FaceId = 480;
-	model.nation = ENGLAND;
+	model.nation = BROKEN;
 	model.price = 2000;
 	model.assigned = true;
 	model.sex = "man";
@@ -1270,7 +1166,7 @@ void InitModels(bool isstart)
 	model.FaceId = 116;
 	model.minlevel = 12;
 	model.minrank = 6;
-	model.nation = ENGLAND;
+	model.nation = BROKEN;
 	model.price = 7000;
 	model.assigned = true;
 	model.sex = "man";
@@ -1279,7 +1175,7 @@ void InitModels(bool isstart)
 	model.description = "I wish to purchase Captain Foster's uniform.";
 	model.id = "Foster1_18";
 	model.FaceId = 481;
-	model.nation = ENGLAND;
+	model.nation = BROKEN;
 	model.price = 2000;
 	model.assigned = true;
 	model.sex = "man";
@@ -1288,7 +1184,7 @@ void InitModels(bool isstart)
 	model.description = "I wish to purchase Styles' uniform.";
 	model.id = "StylesHB";
 	model.FaceId = 118;
-	model.nation = ENGLAND;
+	model.nation = BROKEN;
 	model.price = 1000;
 	model.assigned = true;
 	model.sex = "man";
@@ -1297,7 +1193,7 @@ void InitModels(bool isstart)
 	model.description = "I wish to purchase Wolfe's uniform.";
 	model.id = "WolfHB";
 	model.FaceId = 115;
-	model.nation = ENGLAND;
+	model.nation = BROKEN;
 	model.price = 1000;
 	model.assigned = true;
 	model.sex = "man";
@@ -1306,7 +1202,7 @@ void InitModels(bool isstart)
 	model.description = "I wish to purchase Wolfe's uniform.";
 	model.id = "WolfFrench";
 	model.FaceId = 115;
-	model.nation = ENGLAND;
+	model.nation = BROKEN;
 	model.price = 1000;
 	model.assigned = true;
 	model.sex = "man";
@@ -1315,7 +1211,7 @@ void InitModels(bool isstart)
 	model.description = "I feel like Mr. Matthews today.";
 	model.id = "MatthewsHB";
 	model.FaceId = 483;
-	model.nation = ENGLAND;
+	model.nation = BROKEN;
 	model.price = 1000;
 	model.assigned = true;
 	model.sex = "man";
@@ -1324,7 +1220,7 @@ void InitModels(bool isstart)
 	model.description = "I feel like Mr. Oldroyd today.";
 	model.id = "OldroydHB";
 	model.FaceId = 88;
-	model.nation = ENGLAND;
+	model.nation = BROKEN;
 	model.price = 1000;
 	model.assigned = true;
 	model.sex = "man";
@@ -8862,7 +8758,7 @@ void InitModels(bool isstart)
 	model.price	=  1000;
 	model.assigned = true;
 	model.playertype = PLAYER_TYPE_MILITARY;
-	model.period = "" + PERIOD_COLONIAL_POWERS + PERIOD_REVOLUTIONS;
+	model.period = "" + PERIOD_COLONIAL_POWERS + PERIOD_REVOLUTIONS + PERIOD_NAPOLEONIC;
 	model.sex = "man";
 	AssignModelTypeNation(isstart, model, "Soldiers", 1.0, sti(model.nation));
 	AddCharacterModel(model);
@@ -8875,7 +8771,7 @@ void InitModels(bool isstart)
 	model.price	=  1000;
 	model.assigned = true;
 	model.playertype = PLAYER_TYPE_MILITARY;
-	model.period = "" + PERIOD_COLONIAL_POWERS + PERIOD_REVOLUTIONS;
+	model.period = "" + PERIOD_COLONIAL_POWERS + PERIOD_REVOLUTIONS + PERIOD_NAPOLEONIC;
 	model.sex = "man";
 	AssignModelTypeNation(isstart, model, "Soldiers", 1.0, sti(model.nation));
 	AddCharacterModel(model);
@@ -8888,7 +8784,7 @@ void InitModels(bool isstart)
 	model.price	=  1000;
 	model.assigned = true;
 	model.playertype = PLAYER_TYPE_MILITARY;
-	model.period = "" + PERIOD_COLONIAL_POWERS + PERIOD_REVOLUTIONS;
+	model.period = "" + PERIOD_COLONIAL_POWERS + PERIOD_REVOLUTIONS + PERIOD_NAPOLEONIC;
 	model.sex = "man";
 	AssignModelTypeNation(isstart, model, "Soldiers", 1.0, sti(model.nation));
 	AddCharacterModel(model);
@@ -8901,7 +8797,7 @@ void InitModels(bool isstart)
 	model.price	=  1000;
 	model.assigned = true;
 	model.playertype = PLAYER_TYPE_MILITARY;
-	model.period = "" + PERIOD_COLONIAL_POWERS + PERIOD_REVOLUTIONS;
+	model.period = "" + PERIOD_COLONIAL_POWERS + PERIOD_REVOLUTIONS + PERIOD_NAPOLEONIC;
 	model.sex = "man";
 	AssignModelTypeNation(isstart, model, "Soldiers", 1.0, sti(model.nation));
 	AddCharacterModel(model);
@@ -8914,7 +8810,7 @@ void InitModels(bool isstart)
 	model.price	=  1000;
 	model.assigned = true;
 	model.playertype = PLAYER_TYPE_MILITARY;
-	model.period = "" + PERIOD_COLONIAL_POWERS + PERIOD_REVOLUTIONS;
+	model.period = "" + PERIOD_COLONIAL_POWERS + PERIOD_REVOLUTIONS + PERIOD_NAPOLEONIC;
 	model.sex = "man";
 	AssignModelTypeNation(isstart, model, "Soldiers", 1.0, sti(model.nation));
 	AddCharacterModel(model);
@@ -8927,98 +8823,7 @@ void InitModels(bool isstart)
 	model.price	=  1000;
 	model.assigned = true;
 	model.playertype = PLAYER_TYPE_MILITARY;
-	model.period = "" + PERIOD_COLONIAL_POWERS + PERIOD_REVOLUTIONS;
-	model.sex = "man";
-	AssignModelTypeNation(isstart, model, "Soldiers", 1.0, sti(model.nation));
-	AddCharacterModel(model);
-	
-	model.description = "A typical late english red-coat uniform, now fit to fend of Napoleon.";
-	model.id	=  "Soldier_Eng_19";
-	model.FaceId	= 623;	// GR: was 99
-	model.minrank	=  1;
-	model.nation	=  ENGLAND;
-	model.price	=  1000;
-	model.assigned = true;
-	model.playertype = PLAYER_TYPE_MILITARY;
-	model.period = "" + PERIOD_NAPOLEONIC;
-	model.sex = "man";
-	AssignModelTypeNation(isstart, model, "Soldiers", 1.0, sti(model.nation));
-	AddCharacterModel(model);
-	
-	model.description = "A typical late english red-coat uniform, now fit to fend of Napoleon 2.";
-	model.id	=  "Soldier_Eng2_19";
-	model.FaceId	= 623;	// GR: was 99
-	model.minrank	=  1;
-	model.nation	=  ENGLAND;
-	model.price	=  1000;
-	model.assigned = true;
-	model.playertype = PLAYER_TYPE_MILITARY;
-	model.period = "" + PERIOD_NAPOLEONIC;
-	model.sex = "man";
-	AssignModelTypeNation(isstart, model, "Soldiers", 1.0, sti(model.nation));
-	AddCharacterModel(model);
-	
-	model.description = "A typical late english red-coat uniform, now fit to fend of Napoleon 3.";
-	model.id	=  "Soldier_Eng3_19";
-	model.FaceId	= 623;	// GR: was 99
-	model.minrank	=  1;
-	model.nation	=  ENGLAND;
-	model.price	=  1000;
-	model.assigned = true;
-	model.playertype = PLAYER_TYPE_MILITARY;
-	model.period = "" + PERIOD_NAPOLEONIC;
-	model.sex = "man";
-	AssignModelTypeNation(isstart, model, "Soldiers", 1.0, sti(model.nation));
-	AddCharacterModel(model);
-	
-	model.description = "A typical late english red-coat uniform, now fit to fend of Napoleon 4.";
-	model.id	=  "Soldier_Eng4_19";
-	model.FaceId	= 623;	// GR: was 99
-	model.minrank	=  1;
-	model.nation	=  ENGLAND;
-	model.price	=  1000;
-	model.assigned = true;
-	model.playertype = PLAYER_TYPE_MILITARY;
-	model.period = "" + PERIOD_NAPOLEONIC;
-	model.sex = "man";
-	AssignModelTypeNation(isstart, model, "Soldiers", 1.0, sti(model.nation));
-	AddCharacterModel(model);
-
-	model.description = "A typical late english red-coat uniform, now fit to fend of Napoleon 5.";
-	model.id	=  "Soldier_Eng5_19";
-	model.FaceId	= 623;	// GR: was 99
-	model.minrank	=  1;
-	model.nation	=  ENGLAND;
-	model.price	=  1000;
-	model.assigned = true;
-	model.playertype = PLAYER_TYPE_MILITARY;
-	model.period = "" + PERIOD_NAPOLEONIC;
-	model.sex = "man";
-	AssignModelTypeNation(isstart, model, "Soldiers", 1.0, sti(model.nation));
-	AddCharacterModel(model);
-
-	model.description = "A typical late english red-coat uniform, now fit to fend of Napoleon 6.";
-	model.id	=  "Soldier_Eng6_19";
-	model.FaceId	= 623;	// GR: was 99
-	model.minrank	=  1;
-	model.nation	=  ENGLAND;
-	model.price	=  1000;
-	model.assigned = true;
-	model.playertype = PLAYER_TYPE_MILITARY;
-	model.period = "" + PERIOD_NAPOLEONIC;
-	model.sex = "man";
-	AssignModelTypeNation(isstart, model, "Soldiers", 1.0, sti(model.nation));
-	AddCharacterModel(model);
-
-	model.description = "A typical late english red-coat uniform, now fit to fend of Napoleon 7.";
-	model.id	=  "Soldier_Eng7_19";
-	model.FaceId	= 623;	// GR: was 99
-	model.minrank	=  1;
-	model.nation	=  ENGLAND;
-	model.price	=  1000;
-	model.assigned = true;
-	model.playertype = PLAYER_TYPE_MILITARY;
-	model.period = "" + PERIOD_NAPOLEONIC;
+	model.period = "" + PERIOD_COLONIAL_POWERS + PERIOD_REVOLUTIONS + PERIOD_NAPOLEONIC;
 	model.sex = "man";
 	AssignModelTypeNation(isstart, model, "Soldiers", 1.0, sti(model.nation));
 	AddCharacterModel(model);
@@ -12691,45 +12496,45 @@ void InitModels(bool isstart)
 	model.sex = "man";
 	AddCharacterModel(model);
 
-//	model.description = "";
-//	model.id = "RNSail01HB";
-//	model.FaceId = 99;
-//	model.nation = BROKEN;
-//	model.assigned = true;
-//	model.sex = "man";
-//	AddCharacterModel(model);
+	model.description = "";
+	model.id = "RNSail01HB";
+	model.FaceId = 99;
+	model.nation = BROKEN;
+	model.assigned = true;
+	model.sex = "man";
+	AddCharacterModel(model);
 
-//	model.description = "";
-//	model.id = "RNSail02HB";
-//	model.FaceId = 99;
-//	model.nation = BROKEN;
-//	model.assigned = true;
-//	model.sex = "man";
-//	AddCharacterModel(model);
+	model.description = "";
+	model.id = "RNSail02HB";
+	model.FaceId = 99;
+	model.nation = BROKEN;
+	model.assigned = true;
+	model.sex = "man";
+	AddCharacterModel(model);
 
-//	model.description = "";
-//	model.id = "RNSail03HB";
-//	model.FaceId = 99;
-//	model.nation = BROKEN;
-//	model.assigned = true;
-//	model.sex = "man";
-//	AddCharacterModel(model);
+	model.description = "";
+	model.id = "RNSail03HB";
+	model.FaceId = 99;
+	model.nation = BROKEN;
+	model.assigned = true;
+	model.sex = "man";
+	AddCharacterModel(model);
 
-//	model.description = "";
-//	model.id = "RNSail04HB";
-//	model.FaceId = 99;
-//	model.nation = BROKEN;
-//	model.assigned = true;
-//	model.sex = "man";
-//	AddCharacterModel(model);
+	model.description = "";
+	model.id = "RNSail04HB";
+	model.FaceId = 99;
+	model.nation = BROKEN;
+	model.assigned = true;
+	model.sex = "man";
+	AddCharacterModel(model);
 
-//	model.description = "";
-//	model.id = "RNSail05HB";
-//	model.FaceId = 99;
-//	model.nation = BROKEN;
-//	model.assigned = true;
-//	model.sex = "man";
-//	AddCharacterModel(model);
+	model.description = "";
+	model.id = "RNSail05HB";
+	model.FaceId = 99;
+	model.nation = BROKEN;
+	model.assigned = true;
+	model.sex = "man";
+	AddCharacterModel(model);
 
 //.......................................................................................
 //Rogers officers

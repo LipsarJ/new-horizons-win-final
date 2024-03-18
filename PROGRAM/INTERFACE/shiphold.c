@@ -103,9 +103,9 @@ void FillFourImage()
 	GameInterface.FourImage.current = 0;
 	if(bNewInterface==true)
 	{
-	GameInterface.FourImage.BadTwoPicture = "interfaces\blank_ship.tga";
+		GameInterface.FourImage.BadTwoPicture = "interfaces\blank_ship.tga";
 	} else {
-	GameInterface.FourImage.BadTwoPicture = "interfaces\blank_ship2.tga";
+		GameInterface.FourImage.BadTwoPicture = "interfaces\blank_ship2.tga";
 	}
 
 	GameInterface.FourImage.ImagesGroup.t0 = "ICONS";

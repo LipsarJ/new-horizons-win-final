@@ -55,23 +55,23 @@ int GetStoreGoodsQuantity(ref _refStore,int _Goods)
 	{
 		q = sti(_refStore.Goods.(tmpstr).Quantity);
 	}
+	// Levis: Fetch Quest New -->
 	if (CheckAttribute(_refStore, "group"))
     {
-        // Levis: Fetch Quest New -->
-        ref ctown = GetTownFromID(GetTownIDFromGroup(_refStore.group));
-        int count = 0;
-        string cargoid = getAllFetchQuestCargo(count,ctown);
-        while(cargoid != "")
-        {
-            if(sti(getCargoGood(Islands[FindIsland(ctown.island)], cargoid))==_Goods)
-            {
-                q = 0;
-            }
-            count++;
-            cargoid = getAllFetchQuestCargo(count,ctown);
-        }
-        // Levis: Fetch Quest New <--
-    }
+		ref ctown = GetTownFromID(GetTownIDFromGroup(_refStore.group));
+		int count = 0;
+		string cargoid = getAllFetchQuestCargo(count,ctown);
+		while(cargoid != "")
+		{
+			if(sti(getCargoGood(Islands[FindIsland(ctown.island)], cargoid))==_Goods)
+			{
+				q = 0;
+			}
+			count++;
+			cargoid = getAllFetchQuestCargo(count,ctown);
+		}
+	}
+	// Levis: Fetch Quest New <--
 	return q;
 }
 
@@ -213,7 +213,7 @@ int GetStoreGoodsPrice(ref _refStore,int _Goods,int _PriceType,ref chref, int of
 		tradeModify = 0.5 + stf(refGoods.RndPriceModify);
 	}
 	qtyModify = fclamp(GQTY_PRICE_MINSCL, GQTY_PRICE_MAXSCL, qtyModify); // NK 05-04-15 to clamp qty modifier.
-	return MakeInt(basePrice * tradeModify * skillModify - discount); // KK
+	return MakeInt(basePrice * tradeModify * skillModify * qtyModify - discount); // KK
 	// NK <--
 }
 

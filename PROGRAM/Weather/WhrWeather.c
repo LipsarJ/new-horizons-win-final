@@ -1466,11 +1466,6 @@ string	GetLmLightingPath()
 		return "storm";
 	}
 //navy <--
-	//Myth (Dmitry) fix shadows
-    string sPart = strcut(sLmLightingPath, 0, 2);
-    if (sPart == "day")
-        return "day";
-    //else
 	return sLmLightingPath;
 }
 

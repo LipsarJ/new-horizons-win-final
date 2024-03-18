@@ -147,7 +147,7 @@ void InitInterface_B(string iniName, bool isSave)
 	CreateString(true,"SaveName","",FONT_NORMAL,COLOR_NORMAL,50,330,SCRIPT_ALIGN_LEFT,1.0);
 // KK -->
 	CreateString(false,"NoSave","",FONT_NORMAL,COLOR_NORMAL,320,360,SCRIPT_ALIGN_CENTER,0.75); // NK for nosave mod
-	CreateString(true, "Storyline_Profile", TranslateString("", "Storyline") + ": " + GetStorylineTitle(iCurStoryline) + ";  " + TranslateString("", "Profile") + ": " + FirstLetterUp(sCurProfile), FONT_NORMAL, COLOR_NORMAL, 34, 384, SCRIPT_ALIGN_LEFT, 1.0);
+	CreateString(true, "Storyline_Profile", TranslateString("", "Storyline") + ": " + GetTranslatedStoryLine(iCurStoryline, GetStorylineTitle(iCurStoryline)) + ";  " + TranslateString("", "Profile") + ": " + FirstLetterUp(sCurProfile), FONT_NORMAL, COLOR_NORMAL, 34, 384, SCRIPT_ALIGN_LEFT, 1.0);
 	CreateString(true, "ScreenTitle", "", FONT_TITLE, COLOR_NORMAL, 320, 6, SCRIPT_ALIGN_CENTER, 1.0);
 	CreateString(false, "Storyline_selection", TranslateString("", "Storyline") + ":", FONT_NORMAL, COLOR_NORMAL, 70, 62, SCRIPT_ALIGN_LEFT, 1.0);
 	CreateString(false, "StorylineTitle", "", FONT_NORMAL, COLOR_NORMAL, 370, 62, SCRIPT_ALIGN_CENTER, 1.0);
@@ -1181,7 +1181,16 @@ string GetCurLocationName()
 			if (CheckAttribute(&Locations[locidx], "island"))
 				curIsland = FindIslandName(Locations[locidx].island);
 			else
+			{
+					if (HasSubStr(Locations[locidx].id, "estate"))
+					{
+					curIsland = "Europe";
+					}
+				else
+				{
 				curIsland = FindIslandName(Islands[FindIslandBySeaLocation(GetCharacterShipLocation(PChar))].id);
+				}
+			}
 			Preprocessor_Add("island_name", curIsland);
 			curComma = GetSymbol(locLabel, strlen(locLabel)-1);
 			if(curComma==".")
@@ -1285,7 +1294,7 @@ void StartSelectProfileScreen()
 	SetNodeUsing("PROFILESRECTANGLE", true);
 	// SetNodeUsing("PROFILESBOUND", true);
 	EnableString("Storyline_selection");
-	GameInterface.strings.StorylineTitle = GetStorylineTitle(iShowStoryline);
+	GameInterface.strings.StorylineTitle = GetTranslatedStoryLine(iShowStoryline, GetStorylineTitle(iShowStoryline));
 	EnableString("StorylineTitle");
 	SetNodeUsing("STORYLINES_BACKGROUND", true);
 	SetNodeUsing("STORYLINES_RAMKA", true);
@@ -1525,7 +1534,7 @@ void UpdateLoadScreen(int slidx, string profile)
 	//Boyer change
 	SaveLoadFillScroll();
 	SendMessage(&GameInterface, "ls", MSG_INTERFACE_REFRESH_SCROLL, "SAVESLIST");
-	GameInterface.strings.Storyline_Profile = TranslateString("", "Storyline") + ": " + GetStorylineTitle(iCurStoryline) + ";  " + TranslateString("", "Profile") + ": " + FirstLetterUp(sCurProfile);
+	GameInterface.strings.Storyline_Profile = TranslateString("", "Storyline") + ": " + GetTranslatedStoryLine(iCurStoryline, GetStorylineTitle(iCurStoryline)) + ";  " + TranslateString("", "Profile") + ": " + FirstLetterUp(sCurProfile);
 	Event("exitProfiles");
 }
 
@@ -1576,9 +1585,9 @@ void ProcessProfileDelete()
 
 	SetFormatedText("TEXTWINDOW", TranslateString("","Delete profile confirm"));
 	if (iShowStoryline == iCurStoryline && sCurProfile == sShowProfile)
-		SetFormatedText("TEXTWINDOW1", TranslateString("", "Storyline") + ": " + GetStorylineTitle(iShowStoryline) + ", " + TranslateString("", "Profile") + ": " + sShowProfile + GlobalStringConvert("newline") + TranslateString("", "Warning: this profile is currently active!"));
+		SetFormatedText("TEXTWINDOW1", TranslateString("", "Storyline") + ": " + GetTranslatedStoryLine(iShowStoryline, GetStorylineTitle(iShowStoryline)) + ", " + TranslateString("", "Profile") + ": " + sShowProfile + GlobalStringConvert("newline") + TranslateString("", "Warning: this profile is currently active!"));
 	else
-		SetFormatedText("TEXTWINDOW1", TranslateString("", "Storyline") + ": " + GetStorylineTitle(iShowStoryline) + ", " + TranslateString("", "Profile") + ": " + sShowProfile);
+		SetFormatedText("TEXTWINDOW1", TranslateString("", "Storyline") + ": " + GetTranslatedStoryLine(iShowStoryline, GetStorylineTitle(iShowStoryline)) + ", " + TranslateString("", "Profile") + ": " + sShowProfile);
 
 }
 

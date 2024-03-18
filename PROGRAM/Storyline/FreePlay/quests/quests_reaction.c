@@ -1551,13 +1551,13 @@ void QuestComplete(string sQuestName)
 			LAi_ActorRunToLocation(characterFromID("Henri Caesar"), "goto", "goto2", "none", "", "", "", 8.0);				
 
 			pchar.quest.goodbye_caesar.win_condition.l1 = "location";
-			pchar.quest.goodbye_caesar.win_condition.l1.location = "Eleuthera_Port";
+			pchar.quest.goodbye_caesar.win_condition.l1.location = "Eleuthera_town";
 			pchar.quest.goodbye_caesar.win_condition = "return_to_eleuthera2";		
 		break;
 
 		case "return_to_eleuthera2":
 			Characters[GetCharacterIndex("Cole Arkwright")].dialog.currentnode = "gov_27";				
-			ChangeCharacterAddressGroup(characterFromID("Henri Caesar"), "Eleuthera_Port", "goto", "goto8");		
+			ChangeCharacterAddressGroup(characterFromID("Henri Caesar"), "Eleuthera_town", "goto", "goto8");		
 			Characters[GetCharacterIndex("Henri Caesar")].dialog.currentnode = "begin_12";
 			LAi_SetActorType(characterFromID("Henri Caesar"));
 			LAi_ActorDialog(characterFromID("Henri Caesar"), pchar, "", 3.0, 1.0);		    
@@ -1569,7 +1569,7 @@ void QuestComplete(string sQuestName)
 		break;
 
 		case "leave_governor_eleuthera":				
-			DoQuestReloadToLocation("Eleuthera_Port", "goto", "goto3" ,"leave_governor_eleuthera2");				
+			DoQuestReloadToLocation("Eleuthera_town", "goto", "goto3" ,"leave_governor_eleuthera2");				
 		break;
 
 		case "leave_governor_eleuthera2":				
@@ -2581,7 +2581,7 @@ void QuestComplete(string sQuestName)
 					PChar.quest.agentquest.ship.reload_disable4 = "l5";
 				break;
 
-				case "Eleuthera_Port":
+				case "Eleuthera_town":
 					PChar.quest.agentquest.docker_location.group = "goto";
 					PChar.quest.agentquest.docker_location.locator = "goto8";
 					PChar.quest.agentquest.docker_depart.locator = "reload4_back";

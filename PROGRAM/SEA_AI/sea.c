@@ -456,7 +456,6 @@ void Sea_MapLoad()
 	bSkipSeaLogin = true;
 
 	ref rPlayer = GetMainCharacter();
-	// trace("Sea_MapLoad calling wmpos");							   
 	SetCorrectWorldMapPosition();
 
 	SeaMapLoadX = stf(rPlayer.Ship.Pos.x);
@@ -1068,7 +1067,7 @@ void SeaLogin(ref Login)
 	PostEvent(SHIP_CHECK_RELOAD_ENABLE, 100);
 
 	SetSchemeForSea();								ReloadProgressUpdate(); //Screwface : Restored and removed from Battleinterface.c because of CTD
-trace("SeaLogin calling wmpos");
+
 	SetCorrectWorldMapPosition(); //Screwface
 
 	iRDTSC = RDTSC_E(iRDTSC);
@@ -1889,61 +1888,26 @@ void SetCorrectWorldMapPosition()
 
 	float psX = MakeFloat(pchar.Ship.Pos.x);
 	float psZ = MakeFloat(pchar.Ship.Pos.z);
-	int scale = WDM_MAP_TO_SEA_SCALE;
-	string island = WDM_NONE_ISLAND;
 
 	// trace("Sea instance char.pos: " + psX + " , " + psZ);
 
 	float ix, iz;
 	if(Pchar.location != WDM_NONE_ISLAND && Pchar.location != "error")
 	{
-		island = Pchar.location;
-	 
-		ix = MakeFloat(worldMap.islands.(Island).position.x); //rx);
-		iz = MakeFloat(worldMap.islands.(Island).position.z); //rz);
-	   
-	   
+		string island = Pchar.location;
+		ix = MakeFloat(worldMap.islands.(Island).position.rx);
+		iz = MakeFloat(worldMap.islands.(Island).position.rz);
+
 	}
 	else
 	{
 		ix = worldMap.seaEntryX;
 		iz = worldMap.seaEntryZ;
 	}
-	//worldMap.playerShipAY = getRTplayerShipAY();
-	worldMap.island = island;
-	worldMap.zeroX = ix;
-	worldMap.zeroZ = iz;
-	float RTplayerShipX;
-    float RTplayerShipZ;
-    getRTplayerShipXZ(&RTplayerShipX, &RTplayerShipZ, &scale);
-	worldMap.playerShipX = RTplayerShipX;
-	worldMap.playerShipZ = RTplayerShipZ;
-											   
-						  
-					 
-					 
-
-	//trace("SetCorrectWorldMapPosition");
-	//trace("island = " + island);
-	//trace("pchar.Ship.Pos.x " + pchar.Ship.Pos.x);
-	//trace("pchar.Ship.Pos.z " + pchar.Ship.Pos.z);
-	//trace("ix " + ix);
-	//trace("iz " + iz);
-	//trace("worldMap.zeroX " + worldMap.zeroX);
-	//trace("worldMap.zeroZ " + worldMap.zeroZ);
-	//trace("worldMap.island " + worldMap.island);
-	//trace("worldMap.island.x " + worldMap.island.x);
-	//trace("worldMap.island.z " + worldMap.island.z);
-	//trace("worldMap.playerShipX " + worldMap.playerShipX);
-	//trace("worldMap.playerShipZ " + worldMap.playerShipZ);
-
 	//REAL CONVERTION OF YOUR SEAVIEW COORDS IN WORLD MAP COORDS
-	//worldMap.playerShipX = (psX/scale) + ix;
-	//worldMap.playerShipZ = (psZ/scale) + iz;
+	worldMap.playerShipX = (psX/WDM_MAP_TO_SEA_SCALE) + ix;
+	worldMap.playerShipZ = (psZ/WDM_MAP_TO_SEA_SCALE) + iz;
 	// Trace("SetCorrectWorldMapPosition: x=" + worldMap.playerShipX + ", z=" + worldMap.playerShipZ)
-
-	//trace("after worldMap.playerShipX " + worldMap.playerShipX);
-    //trace("after worldMap.playerShipZ " + worldMap.playerShipZ);
 
 }
 

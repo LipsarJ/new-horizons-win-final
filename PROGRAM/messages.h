@@ -5,87 +5,88 @@
 //Backscene messages
 //============================================================================================
 
-#define MSG_BACKSCENE_LOADMODEL 0
-#define MSG_BACKSCENE_SETCAMERA 1
-#define MSG_BACKSCENE_SETSHIPPOSITION 2
-#define MSG_BACKSCENE_CREATEMENULIST 3
-#define MSG_BACKSCENE_MENUCONTROL 4
-#define MSG_BACKSCENE_GETCURRENTMENU 5
-#define MSG_BACKSCENE_SETCURRENTMENU 6
-#define MSG_BACKSCENE_SETMENUSELECT 7
-#define MSG_BACKSCENE_SETLIGHTSOURCE 8
-#define MSG_BACKSCENE_ADDANIMATION 9
-#define MSG_BACKSCENE_ADDMODEL 10
-#define MSG_BACKSCENE_MOVECAMERA 15
+#define MSG_BACKSCENE_LOADMODEL				0
+#define MSG_BACKSCENE_SETCAMERA				1
+#define MSG_BACKSCENE_SETSHIPPOSITION		2
+#define MSG_BACKSCENE_CREATEMENULIST		3
+#define MSG_BACKSCENE_MENUCONTROL			4
+#define MSG_BACKSCENE_GETCURRENTMENU		5
+#define MSG_BACKSCENE_SETCURRENTMENU		6
+#define MSG_BACKSCENE_SETMENUSELECT			7
+#define MSG_BACKSCENE_SETLIGHTSOURCE		8
+#define MSG_BACKSCENE_ADDANIMATION			9
+#define MSG_BACKSCENE_ADDMODEL				10
+#define MSG_BACKSCENE_MOVECAMERA			15
 
 //============================================================================================
 //Model messages
 //============================================================================================
-#define MSG_MODEL_LOAD_GEO			20500		// "ls", string
-#define MSG_MODEL_LOAD_ANI			20501
-#define MSG_MODEL_SET_PARENT		20502		// "li", entity_id
-#define MSG_MODEL_SET_LIGHT_PATH	20503
-#define MSG_MODEL_RELEASE			20504
-#define MSG_MODEL_RESTORE			20505
-#define MSG_MODEL_SET_POSITION			20506
-#define MSG_MODEL_BLEND        			20507
-#define MSG_MODEL_SET_LIGHT_LMPATH	20508
-#define MSG_MODEL_SET_DIRPATH		20509 // "s" = "texture_path\\"
-#define MSG_MODEL_SET_TECHNIQUE		20510 // "s" = technique
-#define MSG_MODEL_SET_FOG			20511
-#define MSG_MODEL_SET_MAX_VIEW_DIST	20512
-#define MODEL_PLAY_ACTION			20515
+
+#define MSG_MODEL_LOAD_GEO					20500		// "ls", string
+#define MSG_MODEL_LOAD_ANI					20501
+#define MSG_MODEL_SET_PARENT				20502		// "li", entity_id
+#define MSG_MODEL_SET_LIGHT_PATH			20503
+#define MSG_MODEL_RELEASE					20504
+#define MSG_MODEL_RESTORE					20505
+#define MSG_MODEL_SET_POSITION				20506
+#define MSG_MODEL_BLEND						20507
+#define MSG_MODEL_SET_LIGHT_LMPATH			20508
+#define MSG_MODEL_SET_DIRPATH				20509		// "s" = "texture_path\\"
+#define MSG_MODEL_SET_TECHNIQUE				20510		// "s" = technique
+#define MSG_MODEL_SET_FOG					20511
+#define MSG_MODEL_SET_MAX_VIEW_DIST			20512
+#define MODEL_PLAY_ACTION					20515
 //#20170911-01 Ambient light mod
-#define MSG_MODEL_SET_AMBIENT_LIGHT 20530 // "ll"
+#define MSG_MODEL_SET_AMBIENT_LIGHT 		20530		// "ll"
 //#20180325-02
-#define MSG_MODEL_LOAD_GEO_ALT			20600		// "lsffff"
+#define MSG_MODEL_LOAD_GEO_ALT				20600		// "lsffff"
 
 //============================================================================================
 //blade messages
 //============================================================================================
-#define MSG_BLADE_SET 21000	//"lisfll, entity, modelName, lifeTime, color[2]
-#define MSG_BLADE_BELT 21001	//"l", default
-#define MSG_BLADE_HAND 21002	//"l"
-#define MSG_BLADE_TRACE_ON 21003	//"l"
-#define MSG_BLADE_TRACE_OFF 21004	//"l"
-#define MSG_BLADE_BLOOD 21005	//"l"
-#define MSG_BLADE_LIGHT 21006	//"l"
-#define MSG_BLADE_GUNSET 21007	//"lis, entity, modelName
-#define MSG_BLADE_GUNBELT 21008	//l
-#define MSG_BLADE_GUNHAND 21009	//l
-#define MSG_BLADE_GUNFIRE 21010	//l
-#define MSG_CHARACTER_BLADEHAND 21011 //"ll", boolBladeInHand
-#define MSG_BLADE_ALPHA 21012	//"ll", alpha|0xFFFFFF
+#define MSG_BLADE_SET						21000	//"lisfll, entity, modelName, lifeTime, color[2]
+#define MSG_BLADE_BELT						21001	//"l", default
+#define MSG_BLADE_HAND						21002	//"l"
+#define MSG_BLADE_TRACE_ON					21003	//"l"
+#define MSG_BLADE_TRACE_OFF					21004	//"l"
+#define MSG_BLADE_BLOOD						21005	//"l"
+#define MSG_BLADE_LIGHT						21006	//"l"
+#define MSG_BLADE_GUNSET					21007	//"lis, entity, modelName
+#define MSG_BLADE_GUNBELT					21008	//l
+#define MSG_BLADE_GUNHAND					21009	//l
+#define MSG_BLADE_GUNFIRE					21010	//l
+#define MSG_CHARACTER_BLADEHAND				21011	//"ll", boolBladeInHand
+#define MSG_BLADE_ALPHA						21012	//"ll", alpha|0xFFFFFF
 //#20171102-01 Add hat/helmet
-#define MSG_BLADE_HEADSET 21050	//"lis, entity, modelName
-#define MSG_BLADE_HEADMOUNT 21051 //l
+#define MSG_BLADE_HEADSET					21050	//"lis, entity, modelName
+#define MSG_BLADE_HEADMOUNT					21051	//l
 //#20200610-01
-#define MSG_BLADE_LOOKEYES 21055
+#define MSG_BLADE_LOOKEYES					21055
 
 //Grass Messages
-#define MSG_GRASS_LOAD_DATA			40666
-#define MSG_GRASS_SET_TEXTURE		41666
-#define MSG_GRASS_SET_PARAM			42666
-#define MSG_GRASS_SET_QUALITY		43666
-#define MSG_GRASS_SET_STORM			43670
+#define MSG_GRASS_LOAD_DATA					40666
+#define MSG_GRASS_SET_TEXTURE				41666
+#define MSG_GRASS_SET_PARAM					42666
+#define MSG_GRASS_SET_QUALITY				43666
+#define MSG_GRASS_SET_STORM					43670
 
 //============================================================================================
 //Island Messages
 //============================================================================================
-#define MSG_ISLAND_LOAD_GEO				50100		// "ls", island name
-#define MSG_ISLAND_SET_GEO				50101		// "lis", model_id,island name
-#define MSG_ISLAND_START				50102		// "lis", model_id,island name
-#define MSG_ISLAND_ADD_FORT				50103		// "li", model_id
+#define MSG_ISLAND_LOAD_GEO					50100		// "ls", island name
+#define MSG_ISLAND_SET_GEO					50101		// "lis", model_id,island name
+#define MSG_ISLAND_START					50102		// "lis", model_id,island name
+#define MSG_ISLAND_ADD_FORT					50103		// "li", model_id
 //#20180325-02
-#define MSG_ISLAND_LOAD_GEO_ALT			50110		// "lsffff"
+#define MSG_ISLAND_LOAD_GEO_ALT				50110		// "lsffff"
 //#20180618-01
-#define MSG_ISLAND_SET_TECHNIQUE		50120		// "ls"
+#define MSG_ISLAND_SET_TECHNIQUE			50120		// "ls"
 
 //============================================================================================
 //Sea Reflection Messages
 //============================================================================================
-#define MSG_SEA_REFLECTION_DRAW			50200		// "ls", island name
-#define MSG_SEA_SUNROAD_DRAW			50201		// "ls", island name
+#define MSG_SEA_REFLECTION_DRAW				50200		// "ls", island name
+#define MSG_SEA_SUNROAD_DRAW				50201		// "ls", island name
 
 //============================================================================================
 //Ship Messages
@@ -105,7 +106,7 @@
 #define MSG_SHIP_GET_SAIL_STATE				50325
 #define MSG_SHIP_CURVES						50400
 //Boyer add #20170201
-#define MSG_SHIP_FLAG_REFRESH_ENTITY				50500
+#define MSG_SHIP_FLAG_REFRESH_ENTITY		50500
 #define MSG_SHIP_FLAG_REMOVE				50510
 //#20181027-02 
 #define MSG_SHIP_RESETISLAND				50520
@@ -118,7 +119,7 @@
 //============================================================================================
 //Weather Messages
 //============================================================================================
-#define MSG_WHR_LIGHTNING_ADD			54000
+#define MSG_WHR_LIGHTNING_ADD				54000
 
 //============================================================================================
 //Location messages
@@ -272,31 +273,33 @@
 //============================================================================================
 // Particle system
 //============================================================================================
-#define PS_CREATE			10000
-#define PS_SETVECTORS		10001
-#define PS_CREATEX			10002
-#define PS_CREATEXX			10003
-#define PS_ADDTRACKPOINT	10004
-#define PS_USESURFACE		10005
-#define PS_CLEARALL			10006
-#define PS_DELETE			10007
-#define PS_CREATE_RIC		10008
-#define PS_CREATEX_RIC		10009
-#define PS_PAUSEALL		10010
-#define PS_CREATIONCAPTURE_BEG    10011
-#define PS_CREATIONCAPTURE_END    10012
-#define PS_CLEAR_CAPTURED 10013
-#define PS_VALIDATE_PARTICLE	10014
 
-#define LM_SET_GEOMETRY		1500
-#define LM_LOCATE			1501
-#define LM_LOCATE_FIRST		1502
-#define LM_LOCATE_NEXT		1503
-#define LM_LOCATE_I			1504
+#define PS_CREATE							10000
+#define PS_SETVECTORS						10001
+#define PS_CREATEX							10002
+#define PS_CREATEXX							10003
+#define PS_ADDTRACKPOINT					10004
+#define PS_USESURFACE						10005
+#define PS_CLEARALL							10006
+#define PS_DELETE							10007
+#define PS_CREATE_RIC						10008
+#define PS_CREATEX_RIC						10009
+#define PS_PAUSEALL							10010
+#define PS_CREATIONCAPTURE_BEG    			10011
+#define PS_CREATIONCAPTURE_END				10012
+#define PS_CLEAR_CAPTURED					10013
+#define PS_VALIDATE_PARTICLE				10014
 
-#define LM_SETPOINT				1600
-#define LM_SETPOINTANDANGLES	1601
-#define LM_SETPOINTANDVECTOR	1602
+#define LM_SET_GEOMETRY						1500
+#define LM_LOCATE							1501
+#define LM_LOCATE_FIRST						1502
+#define LM_LOCATE_NEXT						1503
+#define LM_LOCATE_I							1504
+
+#define LM_SETPOINT							1600
+#define LM_SETPOINTANDANGLES				1601
+#define LM_SETPOINTANDVECTOR				1602
+
 
 //============================================================================================
 //Sound Service messages
@@ -338,15 +341,15 @@
 //============================================================================================
 #define MSG_ANIMALS_SEAGULLS_SHOW			77100	//""
 #define MSG_ANIMALS_SEAGULLS_HIDE			77101	//""
-#define MSG_ANIMALS_SEAGULLS_FRIGHTEN			77102	//""
-#define MSG_ANIMALS_SEAGULLS_ADD        		77103	//"fff"         x,y,z
+#define MSG_ANIMALS_SEAGULLS_FRIGHTEN		77102	//""
+#define MSG_ANIMALS_SEAGULLS_ADD        	77103	//"fff"         x,y,z
 #define MSG_ANIMALS_SHARKS_SHOW				77104	//""
 #define MSG_ANIMALS_SHARKS_HIDE				77105	//""
-#define MSG_ANIMALS_FISHSCHOOLS_SHOW			77106	//""
-#define MSG_ANIMALS_FISHSCHOOLS_HIDE			77107	//""
-#define MSG_ANIMALS_BUTTERFLIES_SHOW			77108	//""
-#define MSG_ANIMALS_BUTTERFLIES_HIDE			77109	//""
-#define MSG_ANIMALS_BUTTERFLIES_XYZ				77110	//""
+#define MSG_ANIMALS_FISHSCHOOLS_SHOW		77106	//""
+#define MSG_ANIMALS_FISHSCHOOLS_HIDE		77107	//""
+#define MSG_ANIMALS_BUTTERFLIES_SHOW		77108	//""
+#define MSG_ANIMALS_BUTTERFLIES_HIDE		77109	//""
+#define MSG_ANIMALS_BUTTERFLIES_XYZ			77110	//""
 
 //============================================================================================
 //Ball splash messages
@@ -365,7 +368,7 @@
 //Sea operator messages
 //============================================================================================
 #define MSG_SEA_OPERATOR_FIRE				77400 //"isfff"		shipID, bortName, x,y,z
-#define MSG_SEA_OPERATOR_BALL_UPDATE			77401 //...fff...
+#define MSG_SEA_OPERATOR_BALL_UPDATE		77401 //...fff...
 #define MSG_SEA_OPERATOR_SHIP_HIT			77402 //fffi		ballX,ballY,ballZ, hitShipCharacter
 
 //============================================================================================
@@ -377,6 +380,6 @@
 //============================================================================================
 //Camera on ship
 //============================================================================================
-#define MSG_DECK_CAMERA_SET_VIEWPOINT			41800 //"fff"		point.x, point.y, point.z
+#define MSG_DECK_CAMERA_SET_VIEWPOINT		41800 //"fff"		point.x, point.y, point.z
 
 #endif

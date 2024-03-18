@@ -577,6 +577,10 @@ void SetSchemeForLocation(ref loc)
 			SetSoundScheme("deck");
 			SetMusicAlarm("Ardent_end");
 			break;
+		case "Murphy_house":
+			SetSoundScheme("residence");
+			SetMusicAlarm("murphy_tribute");
+			break;
         case "San_Felipe_fort":
 	        ResetSoundScheme();
 	        SetTimeScheme("land");
@@ -953,10 +957,10 @@ void SetSchemeForLocation(ref loc)
 			SetSoundScheme("jungle");
 			SetMusicAlarm("OP_wood");
 			break;
-                case "yohoho_tavern":
-                        SetSoundScheme("tavern");
-                        SetMusicAlarm("music_yohoho");
-                        break;
+        case "yohoho_tavern":
+            SetSoundScheme("tavern");
+            SetMusicAlarm("music_yohoho");
+            break;
 	//<-- DEVLIN
 	// CARTAGENA -->
 		case "inquisition":
@@ -1259,7 +1263,7 @@ void SetSchemeForSea()
 		}
 		else
 		{
-		    AddSoundScheme("sea_weather");
+			AddSoundScheme("sea_weather");
 			int water2SoundID = PlayStereoSoundLooped_JustCache("water_sea", 0.35);
 			//SendMessage(&Sound,"llf",MSG_SOUND_SET_VOLUME, water2SoundID, 0.35);
 			//SendMessage(&Sound,"lll",MSG_SOUND_RESUME, water2SoundID, 0);

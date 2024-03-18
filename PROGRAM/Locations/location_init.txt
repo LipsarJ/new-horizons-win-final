@@ -180,7 +180,9 @@
 Погодные эффекты
 ------------------------------------------------------------------------------------------------
 
-	Locations[n].environment.weather = "false"; нет неба и погодных эффектов
+	locations[n].environment.weather = "true";
+locations[n].lockWeather = "Inside";
+ нет неба и погодных эффектов
 	Locations[n].environment.weather = "true";  наличие неба и погодных эффектов
 	
 	Locations[n].environment.sea = "false";    нет моря

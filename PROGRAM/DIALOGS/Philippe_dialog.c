@@ -96,7 +96,7 @@ void ProcessDialogEvent()
 			}			
 			DialogExit();
 			tradeHigh = true;
-			setCharacterShipLocation(pchar,"Eleuthera_Port");	//ccc survival
+			setCharacterShipLocation(pchar,"Eleuthera_town");	//ccc survival
 			LaunchShipyard(npchar);
 		break;
 
@@ -146,7 +146,7 @@ void ProcessDialogEvent()
 			}
 		
 			DialogExit();
-			setCharacterShipLocation(pchar,"Eleuthera_Port");	//ccc survival
+			setCharacterShipLocation(pchar,"Eleuthera_town");	//ccc survival
 			LaunchShipyard(npchar);
 		break;
 

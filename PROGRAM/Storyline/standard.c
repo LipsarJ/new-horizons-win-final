@@ -9,7 +9,7 @@ void RegisterStoryline(int n)
 	sl.(sn).dir = "standard\";
 
 	sl.(sn).start.location = "Tutorial_Deck";
-	sl.(sn).start.port = "Oxbay_port";
+	sl.(sn).start.port = "Oxbay_town";
 	sl.(sn).start.model = "Blaze";
 	sl.(sn).start.name = "Nathaniel";
 	sl.(sn).start.lastname = "Hawk";
@@ -24,6 +24,7 @@ void RegisterStoryline(int n)
 	sl.(sn).start.date.month = 4;
 	sl.(sn).start.date.year = 1750; // was 1690
 	sl.(sn).start.date.lock = true;
+	sl.(sn).start.freedom_level = 4;
 
 	switch (LanguageGetLanguage())
 	{

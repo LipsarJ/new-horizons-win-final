@@ -334,7 +334,7 @@ void Reinit(bool start, bool show)
  		Build_at("Greenford_suburb", "box", "mine", -4.1, 0.0, 56.7, -2.5, "building");
  		Build_at("Greenford_suburb", "box", "mine", 2.0, 0.0, 52.8, -2.5, "building");
 // KK -->
-		//Build_at("Greenford_suburb", "mansion", "", -31.19, -2.6, 28.79, 0.61, "building"); // Sulan: free Bridgetown exit
+		//Build_at("Greenford_suburb", "mansion", "", -31.19, -2.6, 28.79, 0.61, "building"); // Sulan: free Greenford exit
 		Build_at("Greenford_suburb", "keep", "", 8.01, -0.46, 21.30, 0.61, "building");
 // <-- KK
 
@@ -383,7 +383,6 @@ void Reinit(bool start, bool show)
 		UnloadSegment("Interface\BaseInterface.c");
 		if(show) Log_SetStringToLog("Interfaces...");
 	}*/
-
 
 
 	// swap between USE_REAL_CANNONS 1 and 0.

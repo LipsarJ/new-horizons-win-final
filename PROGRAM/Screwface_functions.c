@@ -281,7 +281,7 @@ bool CheckAllShips(string type, bool initialize)
 					if (CheckAttribute(chr, "PlayerShip") && !HasThisShip(chr.PlayerShip))	bCheckInitial = true;	// GR: If you are already logged and the log is out of date, update it
 					if (bCheckInitial) CheckInitialFlagRelations(chr, visibility_range, ship_range);
 				}
-				// Recognized = CheckForMainCharacterfalseflag(chr, visibility_range, ship_range);
+//				Recognized = CheckForMainCharacterfalseflag(chr, visibility_range, ship_range);
 				Recognized = Recognized || CheckForMainCharacterfalseflag(chr, visibility_range, ship_range);
 			}
 		}
@@ -347,7 +347,7 @@ void UpdateAllShipsAtSea(ref chr, bool IsFort)
 
 		if (IsFort) // Forts aren't part of this loop, so need to use the BOTH function
 		{
-		    if (oNation == PIRATE)
+			if (oNation == PIRATE)
 			{
 				SetCharacterRelationBoth(Char_index, sti(otherChar.index), GetFortRelationToPirates(chr));
 			}
@@ -358,7 +358,7 @@ void UpdateAllShipsAtSea(ref chr, bool IsFort)
 		}
 		else // Relations between ships can be set only one way, because they'll be set the other way later
 		{
-		    if (IsCompanion(chr) && IsCompanion(otherChar))
+			if (IsCompanion(chr) && IsCompanion(otherChar))
 			{
 				nNation = GetCurrentFlag();
 				oNation = nNation;
@@ -439,7 +439,6 @@ void CheckInitialFlagRelations(ref chr, float visibility_range, float ship_range
 				else
 				{
 					iNation = sti(chr.PlayerNation);
-					trace("Resetting from chr.PlayerNation " + iNation);
 					Trace("FLAGS: The " + GetMyShipNameShow(chr) + " remembers us as " + GetNationDescByType(iNation) );
 				}
 			}
@@ -478,8 +477,8 @@ bool CheckForMainCharacterfalseflag(ref chr, float visibility_range, float ship_
 {
 	if (IsCompanion(chr))						return false; // Companions don't care
 	if (CheckForPirateException(chr))			return false; // You are friendly to the pirates, flying a pirate flag and the town is tolerant of pirates
-	if (CheckAttribute(chr, "skipFalseFlag"))		return false; // Quest ship that will always believe your false flag
-	if (iForceDetectionFalseFlag == -1)		return false; // Don't calculate chances because -1 means never recognise you
+	if (CheckAttribute(chr, "skipFalseFlag"))	return false; // Quest ship that will always believe your false flag
+	if (iForceDetectionFalseFlag == -1)			return false; // Don't calculate chances because -1 means never recognise you
 
 	ref PChar = GetMainCharacter();
 
@@ -493,7 +492,7 @@ bool CheckForMainCharacterfalseflag(ref chr, float visibility_range, float ship_
  trace("CheckForMainCharacterfalseflag: visibility range = " + visibility_range + ", actual range = " + ship_range);
  trace("CheckForMainCharacterfalseflag: range factor to recognition = " + chance);
  trace("CheckForMainCharacterfalseflag: fame/skill factor to recognition = " + GetChanceDetectFalseFlag());
-			//	chance = 0.5 + chance; // 0.5 will be decreased if you are too easily recognized
+//			chance = 0.5 + chance;				// 0.5 will be decreased if you are too easily recognized
 			chance = chance / 20.0;				// GR: because you're checked repeatedly and frequently
 			chance = chance * GetChanceDetectFalseFlag();
 			if(iForceDetectionFalseFlag == 1) chance = 1.0; // PB: Obeys "iForceDetectionFalseFlag" setting to always see through false flag

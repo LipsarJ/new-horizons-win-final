@@ -91,7 +91,7 @@ void InitTowns(bool first)
 	ctown.boarding.l4 = "Falaise_de_Fleur_location_03";
 	ctown.boarding.l5 = "Falaise_de_Fleur_location_04";
 	ctown.boarding.l6 = "Falaise_de_Fleur_location_05";
-	ctown.laigroup = "FRANCE";
+	ctown.laigroup = "FALAISEDEFLEUR";
 	ctown.economy = TOWN_ECONOMY_PROSPERING;
 	AddTown(q, ctown);
 
@@ -122,7 +122,7 @@ void InitTowns(bool first)
 	ctown.boarding.l3 = "Muelle_town_02";
 	ctown.boarding.l4 = "Muelle_town_03";
 	ctown.boarding.l5 = "Muelle_town_04";
-	ctown.laigroup = "SPAIN";
+	ctown.laigroup = "ISLAMUELLE";
 	ctown.economy = TOWN_ECONOMY_PROSPERING;
 	AddTown(q, ctown);
 
@@ -150,7 +150,7 @@ void InitTowns(bool first)
 	ctown.boarding.l1 = "Oxbay_port";
 	ctown.boarding.l2 = "Oxbay_town";
 	ctown.boarding.l3 = "Oxbay_suburb";
-	ctown.laigroup = "ENGLAND";
+	ctown.laigroup = "OXBAY";
 	ctown.economy = TOWN_ECONOMY_SURVIVING;
 	AddTown(q, ctown);
 
@@ -178,7 +178,7 @@ void InitTowns(bool first)
 	ctown.boarding.l1 = "Greenford_port";
 	ctown.boarding.l2 = "Greenford_town";
 	ctown.boarding.l3 = "Greenford_suburb";
-	ctown.laigroup = "ENGLAND";
+	ctown.laigroup = "GREENFORD";
 	ctown.economy = TOWN_ECONOMY_STRUGGLING;
 	AddTown(q, ctown);
 
@@ -208,7 +208,7 @@ void InitTowns(bool first)
 	ctown.boarding.l2 = "Redmond_Town_01";
 	ctown.boarding.l3 = "Redmond_town_03";
 	ctown.boarding.l4 = "Redmond_town_04";
-	ctown.laigroup = "ENGLAND";
+	ctown.laigroup = "REDMOND";
 	ctown.economy = TOWN_ECONOMY_SURVIVING;
 	AddTown(q, ctown);
 
@@ -235,7 +235,7 @@ void InitTowns(bool first)
 	ctown.crew.data.day = GetDataDay();
 	ctown.shipberth = 1; // KK
 	ctown.boarding.l1 = "Charlestown_Port";
-	ctown.laigroup = "ENGLAND";
+	ctown.laigroup = "CHARLESTOWN";
 	ctown.economy = TOWN_ECONOMY_STRUGGLING;
 	AddTown(q, ctown);
 
@@ -263,7 +263,7 @@ void InitTowns(bool first)
 	ctown.boarding.l1 = "QC_port";
 	ctown.boarding.l2 = "QC_town_exit";
 	ctown.boarding.l3 = "QC_town";
-	ctown.laigroup = "QC";
+	ctown.laigroup = "QUEBRADASCOSTILLAS";
 	ctown.economy = TOWN_ECONOMY_STRUGGLING;
 	AddTown(q, ctown);
 
@@ -345,7 +345,7 @@ void InitTowns(bool first)
 	ctown.boarding.l1 = "PoPrince_Port";
 	ctown.boarding.l2 = "PoPrince_town";
 	ctown.boarding.l3 = "PoPrince_town_02";
-	ctown.laigroup = "FRANCE";
+	ctown.laigroup = "PORTAUPRINCE";
 	ctown.economy = TOWN_ECONOMY_WEALTHY;
 	AddTown(q, ctown);
 
@@ -373,7 +373,7 @@ void InitTowns(bool first)
 	ctown.shipberth = 0; // KK
 	ctown.boarding.l1 = "Tortuga_port";
 	//ctown.boarding.l2 = "Tortuga_town_01";		//JRH: not used any longer
-	ctown.laigroup = "QC";
+	ctown.laigroup = "TORTUGA";
 	ctown.economy = TOWN_ECONOMY_SURVIVING;
 	AddTown(q, ctown);
 
@@ -399,7 +399,7 @@ void InitTowns(bool first)
 	ctown.boarding.l1 = "Hispaniola_shore_02";
 	ctown.boarding.l2 = "Hispaniola_Jungle_03";
 	ctown.boarding.l3 = "Buccaneers_Camp";
-	ctown.laigroup = "DOUWESEN_PIRATE";
+	ctown.laigroup = "BUCCANEERSCAMP";
 	ctown.economy = TOWN_ECONOMY_SURVIVING;
 	AddTown(q, ctown);
 
@@ -427,7 +427,7 @@ void InitTowns(bool first)
 	ctown.crew.data.day = GetDataDay();
 	ctown.shipberth = 0; // KK
 	ctown.boarding.l1 = "Turks_port";
-	ctown.laigroup = "QC";
+	ctown.laigroup = "GRANDTURK";
 	ctown.economy = TOWN_ECONOMY_SURVIVING;
 	AddTown(q, ctown);
 
@@ -456,7 +456,7 @@ void InitTowns(bool first)
 	ctown.shipberth = 1; // KK
 	ctown.boarding.l1 = "Santo_Domingo_port";
 	ctown.boarding.l2 = "Santo_Domingo_town";
-	ctown.laigroup = "SPAIN";
+	ctown.laigroup = "GrandTurk":
 	ctown.economy = TOWN_ECONOMY_PROSPERING;
 	AddTown(q, ctown);
 
@@ -484,7 +484,7 @@ void InitTowns(bool first)
 	ctown.shipberth = 1; // KK
 	ctown.boarding.l1 = "Cayman_Port";
 	ctown.boarding.l2 = "Grand_Cayman_town";
-	ctown.laigroup = "ENGLAND";
+	ctown.laigroup = "GRANDCAYMAN";
 	ctown.economy = TOWN_ECONOMY_SURVIVING;
 	AddTown(q, ctown);
 
@@ -514,7 +514,7 @@ void InitTowns(bool first)
 	ctown.boarding.l2 = "Havana_town_01";
 	ctown.boarding.l3 = "Havana_town_02";
 	ctown.boarding.l4 = "Havana_town_05";
-	ctown.laigroup = "SPAIN";
+	ctown.laigroup = "HAVANA";
 	ctown.economy = TOWN_ECONOMY_WEALTHY;
 	AddTown(q, ctown);
 
@@ -542,7 +542,7 @@ void InitTowns(bool first)
 	ctown.shipberth = 1; // KK
 	ctown.boarding.l1 = "Santiago_port";
 	ctown.boarding.l2 = "Santiago_town_01";
-	ctown.laigroup = "SPAIN";
+	ctown.laigroup = "SANTIAGO";
 	ctown.economy = TOWN_ECONOMY_PROSPERING;
 	AddTown(q, ctown);
 
@@ -570,7 +570,7 @@ void InitTowns(bool first)
 	ctown.shipberth = 2; // KK
 	ctown.boarding.l1 = "Guadeloupe_Port";
 	ctown.boarding.l2 = "Guadeloupe_Plantation";
-	ctown.laigroup = "FRANCE";
+	ctown.laigroup = "POINTEAPITRE";
 	ctown.economy = TOWN_ECONOMY_SURVIVING;
 	AddTown(q, ctown);
 
@@ -599,7 +599,7 @@ void InitTowns(bool first)
 	ctown.boarding.l1 = "Philipsburg_port";
 	ctown.boarding.l2 = "Philipsburg_town";
 	ctown.boarding.l3 = "Philipsburg_town_02";
-	ctown.laigroup = "DOUWESEN";
+	ctown.laigroup = "PHILIPSBURG";
 	ctown.economy = TOWN_ECONOMY_STRUGGLING;
 	AddTown(q, ctown);
 
@@ -629,7 +629,7 @@ void InitTowns(bool first)
 	ctown.boarding.l2 = "Marigot_town";
 	ctown.boarding.l3 = "Marigot_town_01";
 	ctown.boarding.l4 = "Marigot_town_02";
-	ctown.laigroup = "FRANCE";
+	ctown.laigroup = "MARIGOT";
 	ctown.economy = TOWN_ECONOMY_STRUGGLING;
 	AddTown(q, ctown);
 
@@ -656,7 +656,7 @@ void InitTowns(bool first)
 	ctown.crew.data.day = GetDataDay();
 	ctown.shipberth = 1; // KK ?
 	ctown.boarding.l1 = "Antigua_port"; // KK
-	ctown.laigroup = "ENGLAND";
+	ctown.laigroup = "STJOHN'S";
 	ctown.economy = TOWN_ECONOMY_SURVIVING;
 	AddTown(q, ctown);
 
@@ -685,7 +685,7 @@ void InitTowns(bool first)
 	ctown.boarding.l1 = "Willemstad_port";
 	ctown.boarding.l2 = "Willemstad_town";
 	ctown.boarding.l3 = "Willemstad_town_2";
-	ctown.laigroup = "DOUWESEN";
+	ctown.laigroup = "WILLEMSTAD";
 	ctown.economy = TOWN_ECONOMY_PROSPERING;
 	AddTown(q, ctown);
 
@@ -713,7 +713,7 @@ void InitTowns(bool first)
 	ctown.shipberth = 1; // KK
 	ctown.boarding.l1 = "Eleuthera_port";
 	ctown.boarding.l2 = "EleutheraPlantation";
-	ctown.laigroup = "ENGLAND";
+	ctown.laigroup = "ELEUTHERA";
 	ctown.economy = TOWN_ECONOMY_SURVIVING;
 	AddTown(q, ctown);
 
@@ -739,7 +739,7 @@ void InitTowns(bool first)
 	ctown.crew.data.day = GetDataDay();
 	ctown.shipberth = 2; // KK
 	ctown.boarding.l1 = "Alice_Port";
-	ctown.laigroup = "ENGLAND";
+	ctown.laigroup = "ALICE";
 	ctown.economy = TOWN_ECONOMY_SURVIVING;
 	AddTown(q, ctown);
 
@@ -767,7 +767,7 @@ void InitTowns(bool first)
 	ctown.shipberth = 1; // KK
 	ctown.boarding.l1 = "Oranjestad_port";
 	ctown.boarding.l2 = "Oranjestad_town";
-	ctown.laigroup = "DOUWESEN";
+	ctown.laigroup = "ORANJESTAD";
 	ctown.economy = TOWN_ECONOMY_SURVIVING;
 	AddTown(q, ctown);
 
@@ -819,11 +819,10 @@ void InitTowns(bool first)
 	ctown.boarding.l2 = "Cartagena_town_01";
 	ctown.boarding.l3 = "Cartagena_town_02";
 	ctown.boarding.l4 = "Cartagena_Center";
-	ctown.laigroup = "SPAIN";
+	ctown.laigroup = "CARTAGENA";
 	ctown.economy = TOWN_ECONOMY_WEALTHY;
 	AddTown(q, ctown);
 	
-	/*
 	ctown.id = "Bermudes";
 	ctown.island = "Bermudes";
 	ctown.storegroup = "Turks"; // NK 05-05-04
@@ -849,7 +848,6 @@ void InitTowns(bool first)
 	ctown.laigroup = "Bermudes";
 	ctown.economy = TOWN_ECONOMY_SURVIVING;
 	AddTown(q, ctown);
-	*/
 
 	TOWNS_QUANTITY = q;
 }

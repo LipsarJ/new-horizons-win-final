@@ -7,6 +7,8 @@ object objISpyGlass;
 
 void InterfaceSpyGlassInit()
 {
+	DeleteAttribute(&objISpyGlass,""); //Add this line
+	FillISpyGlassParameters();
 	FillISpyGlassParameters();
 	CreateEntity(&objISpyGlass,"ispyglass");
 	DeleteAttribute(&objISpyGlass,"parameters");
@@ -570,7 +572,7 @@ void FillISpyGlassParameters()
 	objISpyGlass.info.speed.pos = RecalculateHIconScaled(485)+","+(ntop+RecalculateVIconScaled(16)) + "," + RecalculateHIconScaled(535)+","+(ntop+RecalculateVIconScaled(65));
 	objISpyGlass.info.speed.uv = "0.25,0.25,0.375,0.375";
 
-	objISpyGlass.info.sailto.texture = "battle_interface\\list_icons.tga.tx";   // boal
+	objISpyGlass.info.sailto.texture = "battle_interface\\blank.tga.tx";   // boal
 	objISpyGlass.info.sailto.pos = RecalculateHIconScaled(350)+","+(ntop+RecalculateVIconScaled(16)) + "," + RecalculateHIconScaled(400)+","+(ntop+RecalculateVIconScaled(65));
 	objISpyGlass.info.sailto.uv = "0.75,0.25,0.8125,0.375";
 
@@ -608,7 +610,7 @@ void FillISpyGlassParameters()
 	objISpyGlass.text.shiptype.color = argb(255,255,255,168);
 	objISpyGlass.text.shiptype.scale = fBaseScale * 1.2;
 	//
-	objISpyGlass.text.shipname.font = "interface_normal";
+	objISpyGlass.text.shipname.font = "blank";
 	objISpyGlass.text.shipname.pos = RecalculateHIconScaled(120)+","+(ntop+RecalculateVIconScaled(25));
 	objISpyGlass.text.shipname.color = argb(255,255,255,168);
 	objISpyGlass.text.shipname.scale = fBaseScale * 1.2;
@@ -625,7 +627,7 @@ void FillISpyGlassParameters()
 	objISpyGlass.text.speed.color = argb(255,255,255,168);
 	objISpyGlass.text.speed.scale = fBaseScale * 1.2;
 	// boal
-	objISpyGlass.text.sailto.font = "interface_normal";
+	objISpyGlass.text.sailto.font = "blank";
 	objISpyGlass.text.sailto.pos = RecalculateHIconScaled(375)+","+(ntop+RecalculateVIconScaled(0));
 	objISpyGlass.text.sailto.align = "center";
 	objISpyGlass.text.sailto.color = argb(255,255,255,168);
@@ -724,7 +726,7 @@ void setTelescopeInitParameters(aref arItmScope)
 	/*	if( CheckAttribute(arItmScope,"scope.texture") )
 	{	texName = arItmScope.scope.texture;
 	}*/
-	// PB: This is handled by FillISpyGlassParameters now <--		
+	// PB: This is handled by FillISpyGlassParameters now <--									  
 	if( CheckAttribute(arItmScope,"scope.zoom") )
 	{
 	    fZoom = stf(arItmScope.scope.zoom);
@@ -735,14 +737,14 @@ void setTelescopeInitParameters(aref arItmScope)
 	if( CheckAttribute(arItmScope,"scope.time_update") )
 	{	updateTime = sti(arItmScope.scope.time_update);
 	}
-	// ChezJfrey & PB: Automatic Switch -->
-	string widescreen = "";
-	float screen_x = stf(showWindow.width);
-	float screen_y = stf(showWindow.height);
-	float screen_ratio = screen_x/screen_y;
-	if(screen_ratio > 1.4){ widescreen = "\\battle_interface\\widescreen\\";}
-	texName = widescreen + texName;
-	// ChezJfrey & PB: Automatic Switch <--
+
+
+
+
+
+
+
+
 
 	SendMessage(&objISpyGlass, "lsflll", MSG_TELESCOPE_SET_TYPE, texName, fZoom, nShowItm, activateTime, updateTime);
 }

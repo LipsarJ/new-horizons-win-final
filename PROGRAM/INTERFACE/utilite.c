@@ -671,7 +671,7 @@ void SetCharacterName(ref chr, string newName)
 	newName = part2;
 	while (DivideString(newName, " ", &part1, &part2)) {
 		if (part1 == "de" || part1 == "van" || part1 == "da" || part1 == "la" || part1 == "di" || part1 == "o" || part1 == "von") break;
-			if (chr.middlename == "") chr.middlename = part1;
+		if (chr.middlename == "") chr.middlename = part1;
 		else chr.middlename = chr.middlename + " " + part1;
 		
 		if(strcut(chr.middlename,0,0)==" ") chr.middlename = strRight(chr.middlename,strlen(chr.middlename)-1); //MAXIMUS: fix for some names, which somehow have space before first letter
@@ -681,7 +681,7 @@ void SetCharacterName(ref chr, string newName)
 	chr.lastname = newName;
 	if(strcut(chr.lastname,0,0)==" ") chr.lastname = strRight(chr.lastname,strlen(chr.lastname)-1); //MAXIMUS: fix for some names, which somehow have space before first letter
 	if(!bNamed) chr.old.lastname = chr.lastname;
-		if (CheckAttribute(chr, "middlename") == true && chr.middlename == "") {
+	if (CheckAttribute(chr, "middlename") == true && chr.middlename == "") {
 		DeleteAttribute(chr, "middlename");
 		if (CheckAttribute(chr, "old.middlename")) DeleteAttribute(chr, "old.middlename");
 	}

@@ -29,7 +29,9 @@ void LocationInitFalaiseDeFleur(ref n)
 	Locations[n].models.night.lights.candles = "candelabrum_small";
 
 	//Environment
-	Locations[n].environment.weather = "false";
+	locations[n].environment.weather = "true";
+locations[n].lockWeather = "Inside";
+
 	Locations[n].environment.sea = "false";
 	Locations[n].models.back = "back\redrsb_";
 	//Reload map
@@ -71,7 +73,9 @@ void LocationInitFalaiseDeFleur(ref n)
 	Locations[n].models.night.charactersPatch = "bed_p";	
 
 	//Environment
-	Locations[n].environment.weather = "false";
+	locations[n].environment.weather = "true";
+locations[n].lockWeather = "Inside";
+
 	Locations[n].environment.sea = "false";
 	Locations[n].models.back = "back\redb_";
 	//Reload map
@@ -111,7 +115,9 @@ void LocationInitFalaiseDeFleur(ref n)
 	Locations[n].models.night.charactersPatch = "sh_p";
 
 	//Environment
-	Locations[n].environment.weather = "false";
+	locations[n].environment.weather = "true";
+locations[n].lockWeather = "Inside";
+
 	Locations[n].environment.sea = "false";
 	Locations[n].models.back = "back\ffsh_";
 	//Reload map

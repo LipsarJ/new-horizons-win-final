@@ -13,7 +13,7 @@ void SideQuestComplete(string sQuestName)
 
 	switch(sQuestName)
 	{
-///////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////
 ///// OFFICER TUTORIAL
 ///////////////////////////////////////////////////////////////
 
@@ -13868,7 +13868,7 @@ void SideQuestComplete(string sQuestName)
 			LAi_ActorTurnToCharacter(PChar, CharacterFromID("Sir Rodney Leighton"));
 			LAi_ActorWaitDialog(PChar, CharacterFromID("Sir Rodney Leighton"));
 			LAi_SetActorType(characterFromID("Sir Rodney Leighton"));
-			Characters[GetCharacterIndex("Sir Rodney Leighton")].dialog.CurrentNode = "bridgetown_intro";
+			Characters[GetCharacterIndex("Sir Rodney Leighton")].dialog.CurrentNode = "Greenford_intro";
 			LAi_ActorDialog(characterFromID("Sir Rodney Leighton"), PChar, "Hornblower_barbara_to_join_leighton",5.0,5.0);
 		break;
 

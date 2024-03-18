@@ -22,7 +22,7 @@ string DLG_TEXT[28] = {
 "En mi opinión, todavía no tiene sentido. ¿Cómo encuentro la nueva ubicación de la Hermandad después del cambio del tesoro?",
 "Te preocupas demasiado. Uno de nosotros te seguirá, y una vez que el cambio esté completo, se unirá a ti para llevarte a casa.",
 "Siguiéndome la pista, ¿eh? De acuerdo, lo haré. ¿Cuándo zarpamos?",
-"No hay tiempo suficiente. Cuando estés listo podemos irnos, y yo sugeriría que cuanto antes mejor. Beckett debe saber que ya has dejado Bridgetown, y vendrá hacia aquí.",
+"No hay tiempo suficiente. Cuando estés listo podemos irnos, y yo sugeriría que cuanto antes mejor. Beckett debe saber que ya has dejado Greenford, y vendrá hacia aquí.",
 "¡Hey Ho! Consigamos las provisiones y lancemos las velas entonces.",
 "",
 "",

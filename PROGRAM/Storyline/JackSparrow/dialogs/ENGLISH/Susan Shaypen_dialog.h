@@ -64,7 +64,7 @@ string DLG_TEXT[101] = {
 "WHAT! ...",
 "Needs must, I'm afraid. --- [You give Susan a knowing wink unseen by Skull. --- She gives an imperceptible nod that she understands.]",
 "What are you playing at? Two ships? How will that help?",
-"Simple my dear Susan. When we get out to sea, we will sail for Bridgetown, not Jamaica. You sail ahead, once there, you will land first and hand over Miss Brinkley to the Prison Commander. Then you sell your ship, which was mine, if you remember, give me the money, and we part company. I return the Brin sisters to their father at #sRedmond#.",
+"Simple my dear Susan. When we get out to sea, we will sail for Greenford, not Jamaica. You sail ahead, once there, you will land first and hand over Miss Brinkley to the Prison Commander. Then you sell your ship, which was mine, if you remember, give me the money, and we part company. I return the Brin sisters to their father at #sRedmond#.",
 "Oh! And you also just happen to collect the ransom money as well, I suppose?",
 "Trust me my dear, trust me! This way your occupation as an Excise Agent remains a secret, so you can continue your 'good works' on the islands. The girls get safely home, and I can continue with my own affairs. Everybody wins!",
 "I see. Well, that might just work, but you still haven't mentioned the ransom money, won't Skull be looking for that?",

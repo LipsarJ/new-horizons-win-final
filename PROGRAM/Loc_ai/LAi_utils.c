@@ -521,7 +521,14 @@ ref LAi_CreateFantomCharacterExOtAt(bool isfriend, string officertype, string at
 		mheight = stf(rmodel.height);
 	}
 	chr.model.entity = "NPCharacter";
+if(findsubstr(chr.model, "carrier" , 0)!= -1)
+	{
+	chr.model.animation = "carrier";	
+	}
+	else
+	{
 	chr.model.animation = ani;
+	}
 	chr.model.height = mheight; // 1.8;
 	chr.sex = sex;
 	// NK <--
@@ -544,7 +551,7 @@ ref LAi_CreateFantomCharacterExOtAt(bool isfriend, string officertype, string at
 	if(attr2 != "") chr.(attr2) = true;
 	if(attr3 != "") chr.(attr3) = true;
 
-	//nation - moved up here for consistency
+	//nation - moved up here for consistency.
 	int nat = GetLocationNation(loadedLocation);
 	if(nat >= 0)
 	{
@@ -801,6 +808,23 @@ void LAi_SetDefaultLayAnimation(aref chr)
 }
 //MAXIMUS <-[17.09.2007]-
 
+void LAi_SetDefaultCarrierAnimation(aref chr)
+{
+	if(IsEntity(chr))
+	{
+	string sTemp = chr.model;
+	sTemp =	strcut(sTemp, 0, strlen(sTemp)-2);
+	BeginChangeCharacterActions(chr);
+	chr.actions.idle.i1 = sTemp + "IdleStay";
+	chr.actions.nfhit = sTemp + "IdleStay";
+	chr.actions.walk = sTemp;
+	chr.actions.stsUp = "Stairs_" + sTemp;
+	chr.actions.stsDown = "Stairs_" + sTemp;
+	chr.actions.turnLeft = sTemp;
+	chr.actions.turnRight = sTemp;
+	EndChangeCharacterActions(chr);
+	}
+}
 //Вывести экран в темноту, выполнить квест questFadeOut, вернуть всё обратно, выполнить квест questFadeIn
 object LAi_QuestFader;
 void LAi_Fade(string questFadeOut, string questFadeIn)

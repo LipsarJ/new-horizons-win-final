@@ -42,7 +42,7 @@ void CreateSea(string sExecuteLayer, string sRealizeLayer)
 
 	MoveSeaToLayers(sExecuteLayer, sRealizeLayer);
 
-	LayerFreeze("sea_reflection", false);
+	LayerFreeze("sea_reflection2", false);
 
 	Sea.AbordageMode = false;
 }

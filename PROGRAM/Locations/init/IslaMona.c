@@ -105,7 +105,9 @@ void LocationInitIslaMona(ref n)
 	Locations[n].models.night.charactersPatch = "MT_p";
 
 	//Environment
-	Locations[n].environment.weather = "false";
+	locations[n].environment.weather = "true";
+locations[n].lockWeather = "Inside";
+
 	Locations[n].environment.sea = "false";
 	Locations[n].models.back = "back\smumt_";
 	//Reload map
@@ -197,7 +199,9 @@ void LocationInitIslaMona(ref n)
 	Locations[n].models.night.fn = "Sh01_fn";
 
 	//Environment
-	Locations[n].environment.weather = "false";
+	locations[n].environment.weather = "true";
+locations[n].lockWeather = "Inside";
+
 	Locations[n].environment.sea = "false";
 	//Reload map
 	Locations[n].reload.l1.name = "reload1";
@@ -234,7 +238,9 @@ void LocationInitIslaMona(ref n)
 	Locations[n].models.night.charactersPatch = "resp_p";
 
 	//Environment
-	Locations[n].environment.weather = "false";
+	locations[n].environment.weather = "true";
+locations[n].lockWeather = "Inside";
+
 	Locations[n].environment.sea = "false";
 	Locations[n].models.back = "back\qcresp_";
 	//Reload map
@@ -418,7 +424,9 @@ void LocationInitIslaMona(ref n)
 	//Night
 	Locations[n].models.night.charactersPatch = "mine_p";
 	//Environment
-	Locations[n].environment.weather = "false";
+	locations[n].environment.weather = "true";
+locations[n].lockWeather = "Inside";
+
 	Locations[n].environment.sea = "false";
 
 	//Reload map

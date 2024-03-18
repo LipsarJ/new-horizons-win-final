@@ -67,7 +67,9 @@ void LocationInitAlanSmitheeLocations(ref n)
 	Locations[n].models.night.charactersPatch = "MH_p";
 
 	//Environment
-	Locations[n].environment.weather = "false";
+	locations[n].environment.weather = "true";
+locations[n].lockWeather = "Inside";
+
 	Locations[n].environment.sea = "false";
 	Locations[n].models.back = "back\doumh_";
 	//Reload map
@@ -144,7 +146,9 @@ void LocationInitAlanSmitheeLocations(ref n)
 	Locations[n].models.night.charactersPatch = "MH02_p";
 
 	//Environment
-	Locations[n].environment.weather = "false";
+	locations[n].environment.weather = "true";
+locations[n].lockWeather = "Inside";
+
 	Locations[n].environment.sea = "false";
 	Locations[n].models.back = "back\smumh2_";
 	//Reload map
@@ -225,7 +229,9 @@ void LocationInitAlanSmitheeLocations(ref n)
 	Locations[n].models.night.charactersPatch = "MH02_p";
 
 	//Environment
-	Locations[n].environment.weather = "false";
+	locations[n].environment.weather = "true";
+locations[n].lockWeather = "Inside";
+
 	Locations[n].environment.sea = "false";
 	Locations[n].models.back = "back\smumh2_";
 	//Reload map
@@ -306,7 +312,9 @@ void LocationInitAlanSmitheeLocations(ref n)
 	Locations[n].models.night.charactersPatch = "MH_p";
 
 	//Environment
-	Locations[n].environment.weather = "false";
+	locations[n].environment.weather = "true";
+locations[n].lockWeather = "Inside";
+
 	Locations[n].environment.sea = "false";
 	Locations[n].models.back = "back\doumh_";
 	//Reload map
@@ -431,7 +439,9 @@ void LocationInitAlanSmitheeLocations(ref n)
 	Locations[n].models.night.charactersPatch = "MH02_p";
 
 	//Environment
-	Locations[n].environment.weather = "false";
+	locations[n].environment.weather = "true";
+locations[n].lockWeather = "Inside";
+
 	Locations[n].environment.sea = "false";
 	Locations[n].models.back = "back\smumh2_";
 	//Reload map
@@ -511,7 +521,9 @@ void LocationInitAlanSmitheeLocations(ref n)
 	Locations[n].models.night.charactersPatch = "MH_p";
 
 	//Environment
-	Locations[n].environment.weather = "false";
+	locations[n].environment.weather = "true";
+locations[n].lockWeather = "Inside";
+
 	Locations[n].environment.sea = "false";
 	Locations[n].models.back = "back\doumh_";
 	//Reload map
@@ -559,7 +571,9 @@ void LocationInitAlanSmitheeLocations(ref n)
 	Locations[n].models.night.charactersPatch = "resp_p";
 
 	//Environment
-	Locations[n].environment.weather = "false";
+	locations[n].environment.weather = "true";
+locations[n].lockWeather = "Inside";
+
 	Locations[n].environment.sea = "false";
 	Locations[n].models.back = "back\grms_";
 	//Reload map
@@ -635,7 +649,9 @@ void LocationInitAlanSmitheeLocations(ref n)
 	Locations[n].models.night.charactersPatch = "MH02_p";
 
 	//Environment
-	Locations[n].environment.weather = "false";
+	locations[n].environment.weather = "true";
+locations[n].lockWeather = "Inside";
+
 	Locations[n].environment.sea = "false";
 	Locations[n].models.back = "back\smumh2_";
 	//Reload map
@@ -714,7 +730,9 @@ void LocationInitAlanSmitheeLocations(ref n)
 	Locations[n].models.night.charactersPatch = "MH_p";
 
 	//Environment
-	Locations[n].environment.weather = "false";
+	locations[n].environment.weather = "true";
+locations[n].lockWeather = "Inside";
+
 	Locations[n].environment.sea = "false";
 	Locations[n].models.back = "back\shp_";
 
@@ -762,7 +780,9 @@ void LocationInitAlanSmitheeLocations(ref n)
 	Locations[n].models.night.charactersPatch = "resp_p";
 
 	//Environment
-	Locations[n].environment.weather = "false";
+	locations[n].environment.weather = "true";
+locations[n].lockWeather = "Inside";
+
 	Locations[n].environment.sea = "false";
 	Locations[n].models.back = "back\grms_";
 	//Reload map
@@ -839,7 +859,9 @@ void LocationInitAlanSmitheeLocations(ref n)
 	Locations[n].models.night.charactersPatch = "MH02_p";
 
 	//Environment
-	Locations[n].environment.weather = "false";
+	locations[n].environment.weather = "true";
+locations[n].lockWeather = "Inside";
+
 	Locations[n].environment.sea = "false";
 	Locations[n].models.back = "back\smumh2_";
 	//Reload map

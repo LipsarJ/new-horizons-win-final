@@ -689,7 +689,6 @@ void InitQCBrothel()
 	Locations[n].reload.l7.name = "Reload9";
 	Locations[n].reload.l7.go = "QC_brothel";
 	Locations[n].reload.l7.emerge = "reload1";
-	// Locations[n].reload.l7.autoreload = "0";
 	Locations[n].reload.l7.label = "#stown_name# Brothel.";
 	if(iRealismMode>0 && DISCOVER_FAST_TRAVEL) Locations[n].reload.l7.goto_disable = 1;
 
@@ -720,7 +719,9 @@ void InitQCBrothel()
 	Locations[n].models.night.charactersPatch = "LT_p";
 
 	//Environment
-	Locations[n].environment.weather = "false";
+	locations[n].environment.weather = "true";
+locations[n].lockWeather = "Inside";
+
 	Locations[n].environment.sea = "false";
 	Locations[n].models.back = "back\redlt_";
 
@@ -730,6 +731,7 @@ void InitQCBrothel()
 	Locations[n].reload.l1.emerge = "reload9";
 	Locations[n].reload.l1.autoreload = "0";
 	Locations[n].reload.l1.label = "#stown_name#.";
+
 	Locations[n].reload.l2.name = "reload2";
 	Locations[n].reload.l2.go = "QC_brothel_upstairs";
 	Locations[n].reload.l2.emerge = "reload1";
@@ -739,7 +741,7 @@ void InitQCBrothel()
 	Locations[n].monsters = "0";
 	LAi_LocationFightDisable(Locations[n], true);
 
-		Locations[n].permanent_mom = true; // GR: needed so that LEnc_monsters.c does not spawn random mistress
+	Locations[n].permanent_mom = true; // GR: needed so that LEnc_monsters.c does not spawn random mistress
 	Locations[n].island = "QuebradasCostillas"; // NK 04-08-29
 
 	// Bedroom
@@ -788,7 +790,7 @@ void InitTortugaBrothel()
 	Locations[n].reload.l3.emerge = "reload1";
 	Locations[n].reload.l3.label = "Opium Den";
 
-		Locations[n].permanent_mom = true; // GR: needed so that LEnc_monsters.c does not spawn random mistress
+	Locations[n].permanent_mom = true; // GR: needed so that LEnc_monsters.c does not spawn random mistress
 	Locations[n].island = "Hispaniola";
 
 	// Bedroom
@@ -842,7 +844,7 @@ void InitPaPBrothel()
 	Locations[n].reload.l3.emerge = "reload1";
 	Locations[n].reload.l3.label = "Opium Den";
 
-		Locations[n].permanent_mom = true; // GR: needed so that LEnc_monsters.c does not spawn random mistress
+	Locations[n].permanent_mom = true; // GR: needed so that LEnc_monsters.c does not spawn random mistress
 	Locations[n].island = "Guadeloupe";
 
 	// Bedroom
@@ -870,7 +872,7 @@ void InitCharlestownBrothel()
 	locations[n].reload.l9.emerge = "reload1";
 	locations[n].reload.l9.autoreload = "0";
 	locations[n].reload.l9.label = "Brothel";
-	// locations[n].reload.l9.disable = 0;
+//	locations[n].reload.l9.disable = 0;
 	Locations[n].reload.l9.close_for_night = 0;
 	if(iRealismMode>0 && DISCOVER_FAST_TRAVEL) Locations[n].reload.l9.goto_disable = 1;
 
@@ -898,7 +900,7 @@ void InitCharlestownBrothel()
 	Locations[n].reload.l2.emerge = "reload1";
 	Locations[n].reload.l2.label = "Brothel Bedroom";
 
-		Locations[n].permanent_mom = true; // GR: needed so that LEnc_monsters.c does not spawn random mistress																										
+	Locations[n].permanent_mom = true; // GR: needed so that LEnc_monsters.c does not spawn random mistress
 	Locations[n].island = "QuebradasCostillas";
 
 	// Bedroom
@@ -911,9 +913,9 @@ void InitCharlestownBrothel()
 
 void InitEleutheraBrothel()
 {
-	if (FindLocation("Eleuthera_Brothel") < 0 || FindLocation("Eleuthera_Town") < 0 || FindLocation("Eleuthera_Brothel_room") < 0) return;
+	if (FindLocation("Eleuthera_Brothel") < 0 || FindLocation("Eleuthera_town") < 0 || FindLocation("Eleuthera_Brothel_room") < 0) return;
 
-	int n = FindLocation("Eleuthera_Town");
+	int n = FindLocation("Eleuthera_town");
 	locations[n].reload.l9.name = "houseS2";
 	locations[n].reload.l9.go = "Eleuthera_Brothel";
 	locations[n].reload.l9.emerge = "reload1";
@@ -942,7 +944,6 @@ void InitEleutheraBrothel()
 	locations[n].models.always.window = "Brothel_window";
 	locations[n].models.always.window.tech = "LocationWindows";
 	locations[n].models.always.window.level = 50;
-
 	locations[n].models.always.back = "..\inside_back";
 
 	//Day
@@ -969,8 +970,9 @@ void InitEleutheraBrothel()
 	locations[n].reload.l2.label = "Brothel room";
 	Locations[n].reload.l2.disable = 1;
 
-		Locations[n].permanent_mom = true; // GR: needed so that LEnc_monsters.c does not spawn random mistress
-	Locations[n].island = "Eleuthera";						   
+	Locations[n].permanent_mom = true; // GR: needed so that LEnc_monsters.c does not spawn random mistress
+	Locations[n].island = "Eleuthera";
+	
 	// Room
 	n = FindLocation("Eleuthera_Brothel_bedroom");
 	Locations[n].reload.l1.name = "reload1";
@@ -1017,7 +1019,7 @@ void InitAliceTownBrothel()
 	Locations[n].reload.l3.emerge = "reload1";
 	Locations[n].reload.l3.label = "Opium Den";
 
-		Locations[n].permanent_mom = true; // GR: needed so that LEnc_monsters.c does not spawn random mistress
+	Locations[n].permanent_mom = true; // GR: needed so that LEnc_monsters.c does not spawn random mistress
 	Locations[n].island = "Eleuthera";
 
 	// Bedroom
@@ -1144,7 +1146,9 @@ void InitArsenal(string locationID)
 	//Night
 	Locations[n].models.night.charactersPatch = "Arsenal_patch";
 	//Environment
-	Locations[n].environment.weather = "false";
+	locations[n].environment.weather = "true";
+locations[n].lockWeather = "Inside";
+
 	Locations[n].environment.sea = "false";
 
 	//Reload map
@@ -1177,7 +1181,9 @@ void InitBank(string locationID)
 	//Night
 	Locations[n].models.night.charactersPatch = "Bank_patch";
 	//Environment
-	Locations[n].environment.weather = "false";
+	locations[n].environment.weather = "true";
+locations[n].lockWeather = "Inside";
+
 	Locations[n].environment.sea = "false";
 
 	//Reload map
@@ -1207,7 +1213,9 @@ void InitResidence7(string locationID)
 	//Night
 	Locations[n].models.night.charactersPatch = "res07_patch";
 	//Environment
-	Locations[n].environment.weather = "false";
+	locations[n].environment.weather = "true";
+locations[n].lockWeather = "Inside";
+
 	Locations[n].environment.sea = "false";
 
 	//Reload map
@@ -1239,7 +1247,9 @@ void InitChurch1(string locationID)
 	//Night
 	Locations[n].models.night.charactersPatch = "church_1_patch";
 	//Environment
-	Locations[n].environment.weather = "false";
+	locations[n].environment.weather = "true";
+locations[n].lockWeather = "Inside";
+
 	Locations[n].environment.sea = "false";
 
 	//Reload map
@@ -1271,7 +1281,9 @@ void InitStorehouse(string locationID)
 	//Night
 	Locations[n].models.night.charactersPatch = "storehouse_patch";
 	//Environment
-	Locations[n].environment.weather = "false";
+	locations[n].environment.weather = "true";
+locations[n].lockWeather = "Inside";
+
 	Locations[n].environment.sea = "false";
 
 	//Reload map
@@ -1303,7 +1315,9 @@ void InitStore02(string locationID)
 	//Night
 	Locations[n].models.night.charactersPatch = "store02_patch";
 	//Environment
-	Locations[n].environment.weather = "false";
+	locations[n].environment.weather = "true";
+locations[n].lockWeather = "Inside";
+
 	Locations[n].environment.sea = "false";
 
 	//Reload map
@@ -1335,7 +1349,9 @@ void InitStore01(string locationID)
 	//Night
 	Locations[n].models.night.charactersPatch = "store01_patch";
 	//Environment
-	Locations[n].environment.weather = "false";
+	locations[n].environment.weather = "true";
+locations[n].lockWeather = "Inside";
+
 	Locations[n].environment.sea = "false";
 
 	//Reload map
@@ -1366,7 +1382,9 @@ void InitShipyard4(string locationID)
 	//Night
 	Locations[n].models.night.charactersPatch = "Sh04_patch";
 	//Environment
-	Locations[n].environment.weather = "false";
+	locations[n].environment.weather = "true";
+locations[n].lockWeather = "Inside";
+
 	Locations[n].environment.sea = "false";
 
 	//Reload map
@@ -1394,7 +1412,9 @@ void InitBrothel(string locationID)
 	//Night
 	Locations[n].models.night.charactersPatch = "Brothel_patch";
 	//Environment
-	Locations[n].environment.weather = "false";
+	locations[n].environment.weather = "true";
+locations[n].lockWeather = "Inside";
+
 	Locations[n].environment.sea = "false";
 
 	//Reload map
@@ -1431,7 +1451,9 @@ void InitBrothelRoom(string locationID)
 	//Night
 	Locations[n].models.night.charactersPatch = "brothel_room_patch";
 	//Environment
-	Locations[n].environment.weather = "false";
+	locations[n].environment.weather = "true";
+locations[n].lockWeather = "Inside";
+
 	Locations[n].environment.sea = "false";
 
 	//Reload map
@@ -1461,7 +1483,9 @@ void InitTavern02(string locationID)
 	//Night
 	Locations[n].models.night.charactersPatch = "tavern02_patch";
 	//Environment
-	Locations[n].environment.weather = "false";
+	locations[n].environment.weather = "true";
+locations[n].lockWeather = "Inside";
+
 	Locations[n].environment.sea = "false";
 
 	//Reload map
@@ -1494,7 +1518,9 @@ void InitTavern01(string locationID)
 	//Night
 	Locations[n].models.night.charactersPatch = "Tavern01_patch";
 	//Environment
-	Locations[n].environment.weather = "false";
+	locations[n].environment.weather = "true";
+locations[n].lockWeather = "Inside";
+
 	Locations[n].environment.sea = "false";
 
 	//Reload map
@@ -1527,7 +1553,9 @@ void InitStoneHouse(string locationID)
 	//Night
 	Locations[n].models.night.charactersPatch = "StoneHouse_patch";
 	//Environment
-	Locations[n].environment.weather = "false";
+	locations[n].environment.weather = "true";
+locations[n].lockWeather = "Inside";
+
 	Locations[n].environment.sea = "false";
 
 	//Reload map
@@ -1555,7 +1583,9 @@ void InitHut(string locationID)
 	//Night
 	Locations[n].models.night.charactersPatch = "hut_patch";
 	//Environment
-	Locations[n].environment.weather = "false";
+	locations[n].environment.weather = "true";
+locations[n].lockWeather = "Inside";
+
 	Locations[n].environment.sea = "false";
 
 	//Reload map
@@ -3739,7 +3769,6 @@ void EncRecalcReloadToSea()
 			{
 				totalInfo = totalInfo + " " + XI_ConvertString("vs.") + " ";
 			}
-			trace("What is this? " + sti(worldMap.encounter.type));
 			//rEncounter = &MapEncounters[sti(worldMap.encounter.type)];
 			//Boyer fix
 			string encID = worldMap.encounter.id;

@@ -22,22 +22,22 @@ int iScriptVersion = 8675309;       //54128  --  15650
 // ======================================
 // Included in Realistic Game Mode:
 #define REALISTIC_SHIP_INERTIA			0		// BOOL - 1=ON - Ships require counter-rudder and don't sail as if on rails
-#define SHORE_DANGER_ALARM			0		// BOOL - 1=ON - Red flashing icon and danger music do not start until enemies draw their blade
-#define DISCOVER_SAIL_TO			0		// BOOL - 0=OFF - Shores and ports must be discovered by sailing there manually or having the island's map before you can use Sail To
-#define DISCOVER_FAST_TRAVEL			0		// BOOL - 0=OFF - Town locations must be discovered by finding them manually or asking for directions before you can use Fast Travel
+#define SHORE_DANGER_ALARM				0		// BOOL - 1=ON - Red flashing icon and danger music do not start until enemies draw their blade
+#define DISCOVER_SAIL_TO				1		// BOOL - 0=OFF - Shores and ports must be discovered by sailing there manually or having the island's map before you can use Sail To
+#define DISCOVER_FAST_TRAVEL			1		// BOOL - 0=OFF - Town locations must be discovered by finding them manually or asking for directions before you can use Fast Travel
 #define NAVIGATION_EQUIPMENT			0		// BOOL - 1=ON - Items required for certain navigational information to become available
 #define ENABLE_LIMITED_SHIPCLASS		0		// BOOL - 1=ON - When player takes command of ship of too high tier, Leadership and Sailing skills drops
-#define CANNOT_RELOAD_WHILE_FIGHTING		1		// INT - 1=DEFAULT: Controlled by Realism Mode - 0 or 2 override the Realism Mode setting
-#define SAIL_OPERATE_DELAY			3		// INT - sailors will operate sails this amount of seconds after receiving command (set to 0 to restore stock PotC)
+#define CANNOT_RELOAD_WHILE_FIGHTING	1		// INT - 1=DEFAULT: Controlled by Realism Mode - 0 or 2 override the Realism Mode setting
+#define SAIL_OPERATE_DELAY				3		// INT - sailors will operate sails this amount of seconds after receiving command (set to 0 to restore stock PotC)
 // Included in Iron Man Mode:
-#define OPEN_SEA_MOD				0		// BOOL - 1=ON - Worldmap enlarged for realistic DirectSail
-#define WORLDMAP_DISABLED			0		// BOOL - 1=ON - DirectSail enforced
-#define SAILTO_DISABLED				0		// BOOL - 1=ON - Cannot Sail-To any ships at sea
-#define ONSEA_DATA_DISABLED			0		// BOOL - 1=ON - Spyglass and compass additional information disabled, cannot move camera to non-player ships
-#define REALISTIC_ABILITIES			1		// INT  - 1=DEFAULT: Controlled by Realism Mode - 0 or 2 override the Realism Mode setting
-#define ITEM_REALISM				0		// BOOL - 1=ON - Items like rubies, diamonds and inca statuettes give no skill bonuses (books and items like compass etc. still do)
-#define CLINT_SHOTGUN				1		// BOOL - 0=OFF - Clint Eastwood carries brace of four horse pistols in Arcade Mode; 1=ON - Clint Eastwood carries shotgun in Arcade Mode.  In any other mode he always has brace of four horse pistols.
-#define CURSES_DISABLED				0		// INT - 0=default: Cursed items can be dumped or given away. 1 = cursed coins, 2 = cursed albatross, 0 = neither, 3 = both
+#define OPEN_SEA_MOD					0		// BOOL - 1=ON - Worldmap enlarged for realistic DirectSail
+#define WORLDMAP_DISABLED				0		// BOOL - 1=ON - DirectSail enforced
+#define SAILTO_DISABLED					0		// BOOL - 1=ON - Cannot Sail-To any ships at sea
+#define ONSEA_DATA_DISABLED				0		// BOOL - 1=ON - Spyglass and compass additional information disabled, cannot move camera to non-player ships
+#define REALISTIC_ABILITIES				1		// INT  - 1=DEFAULT: Controlled by Realism Mode - 0 or 2 override the Realism Mode setting
+#define ITEM_REALISM					0		// BOOL - 1=ON - Items like rubies, diamonds and inca statuettes give no skill bonuses (books and items like compass etc. still do)
+#define CLINT_SHOTGUN					1		// BOOL - 0=OFF - Clint Eastwood carries brace of four horse pistols in Arcade Mode; 1=ON - Clint Eastwood carries shotgun in Arcade Mode.  In any other mode he always has brace of four horse pistols.
+#define CURSES_DISABLED					0		// INT - 0=default: Cursed items can be dumped or given away. 1 = cursed coins, 2 = cursed albatross, 0 = neither, 3 = both
 
 
 // ======================================
@@ -266,7 +266,6 @@ float	MIN_ENEMY_DISTANCE_TO_DISABLE_ENTER_2_LOCATION =	800.0;	// FLOAT - origina
 #define BEST_RATE_FOR_ALL_CREW		1.25		// FLOAT - if crew is at 1.0 ratio (i.e. crew = mincrew*5) reloading is sped up by this
 
 #define RELOAD_TIME_MULTIPLIER		1.0			// FLOAT - Cannon reload time scalar.  2.0 will make cannons take twice as long to reload
-// #define SEQUENTIAL_CANNONFIRE       0           // 0=Fire at will, 1=Fire in sequence		Mirsaneli: Moved it to BuildSettings.h to enable/disable it in Settings Menu
 
 // Amount added to mast damage when mast hit by the following things
 #define MAST_ISLAND_SCL				0.5			// FLOAT - (no description)
@@ -750,8 +749,6 @@ Set all to -1 to disable this mod
 
 #define FORT_RAIDSUCCESS				50		// INT - chance in % that fortgarrisons yield to your demands
 
-#define CCC_PITFALLS					1		// INT - set to -1 to turn off autoreload, or above 0 to set the locator radius
-
 #define RANDOM_DUNGEON_BLADES           0		// BOOL - set weather blades in dungeons from stock POTC are randomised. set to 0 to return to stock functionality.
 #define OBJECTS_IN_BOX					3		// INT - Changed from build-default of 5 to 3 on 05-07-25 for randitem...tone down boxes now that we can loot corpses.
 
@@ -876,7 +873,7 @@ Set all to -1 to disable this mod
 #define USE_PARTICLES_CANNONS			2		// Sets the realism of the cannon visual effects.
 												// 0: Low - Stock POTC cannon smoke
 												// 1: Medium - Realistic cannon smoke
-												// 2: High - Extremely Realistic cannon smoke, high-end computer recommended.
+												// 2: High - Extremely Realistic cannon smoke, high-end computer recommended
 
 // ======================================
 // NK's ORIGINAL SETTINGS:
@@ -1011,10 +1008,11 @@ Set all to -1 to disable this mod
 // ======================================
 #define RANDOM_LOCS_TOGGLE				0
 #define DISARM_MODE						0
-#define VISIBLE_LOCATORS				0
-#define WITH_BRIGHT_COLOURS				0		// VISIBLE_LOCATORS must be on to change this
+#define VISIBLE_LOCATORS				1
+#define WITH_BRIGHT_COLOURS				1	// VISIBLE_LOCATORS must be on to change this
 #define FREE_CAMERA						0
 #define SIDESTEP_ENABLED				0		// BOOL - 0 (default) = off, 1 = on: you can use sidestep during the game (NOTE: No collision detection!)
 #define ENABLE_CHEATMODE				0		// Cheats can be triggered with numpad buttons
 //Boyer add
-#define USE_NEW_WEATHER 1
+#define USE_NEW_WEATHER					1
+#define SLAVES_IN_STORES					1

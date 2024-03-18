@@ -3481,8 +3481,7 @@ if(sti(GetStorylineVar(FindCurrentStoryline(), "WR_PUZZLES")) > 0 || sti(GetStor
   //-----------------------------------------------------------------------------------------------
   //  scheffnow - tailorsmod <--
 
-  if(iRealismMode > 0)
-  {
+
   //-----------------------------------------------------------------------------------------------------------------------------------------------------------------
   // SPYGLASSES: ItemIndex                                        Price  texture                activate    nation     cannons   crew     morale    skipsell
   //               |    itmID   model         icIndex  rare          |      |                      | update  | shipname  | hull    | speed     quality| skiprand
@@ -3490,19 +3489,11 @@ if(sti(GetStorylineVar(FindCurrentStoryline(), "WR_PUZZLES")) > 0 || sti(GetStor
   //---------------|------|-------|-----------|---|-----|----|-------|------|------------------|---|----|----|-|-|-------|-|-|-----|-|-|--|------|----|-|-|----------
   n = InitSpyglass(n,"spyglass0","",          8, 14,  0.01,  1,    600, "eye_BadTub.tga",    1.5, 500, 150,  1,1,1,      0,0,0,    0,0,0, 0,     1,   1,1,0);// PB: Spyglass of Shame, Easter-Egg inspired by interview with Yuri (Ursus) Rogach
   n = InitSpyglass(n,"spyglass1","",          8, 14,  0.30,  1,    600, "eye_BadTub.tga",    3.0, 500, 150,  1,1,1,      0,0,0,    0,0,0, 0,     1,   0,0,0);// Cheap Spyglass  //BB increased price
-  n = InitSpyglass(n,"spyglass2","",          8, 15,  0.10,  1,   1200, "eye_CommonTub.tga", 5.0, 500, 150,  1,1,1,      0,1,1,    0,1,0, 0,     3,   0,0,0);// Average Spyglass//BB increased price
-  n = InitSpyglass(n,"spyglass3","",          8, 16,  0.05,  8,   4500, "eye_GoodTub.tga",   6.0, 500, 150,  1,1,1,      1,1,1,    1,1,0, 1,     7,   0,0,0);// Great Spyglass  //BB increased price
-  n = InitSpyglass(n,"spyglass4","spyglass4", 1, 14,  0.01, 15,   9800, "eye_BestTub.tga",  8.0, 500, 150,  1,1,1,      1,1,1,    1,1,1, 1,     9,   0,0,0);// Master Spyglass //BB increased price
-  //-----------------------------------------------------------------------------------------------------------------------------------------------------------------
-  }
-  else
-  {
-  n = InitSpyglass(n,"spyglass0","",          8, 14,  0.01,  1,    600, "eye_BadTub.tga",    1.5, 500, 150,  1,1,1,      0,0,0,    0,0,0, 0,     1,   1,1,0);// PB: Spyglass of Shame, Easter-Egg inspired by interview with Yuri (Ursus) Rogach
-  n = InitSpyglass(n,"spyglass1","",          8, 14,  0.30,  1,    600, "eye_BadTub.tga",    3.0, 500, 150,  1,1,1,      0,0,0,    0,0,0, 0,     1,   0,0,0);// Cheap Spyglass  //BB increased price
   n = InitSpyglass(n,"spyglass2","",          8, 15,  0.10,  1,   1200, "eye_CommonTub.tga", 6.0, 500, 150,  1,1,1,      0,1,1,    0,1,0, 0,     3,   0,0,0);// Average Spyglass//BB increased price
   n = InitSpyglass(n,"spyglass3","",          8, 16,  0.05,  8,   4500, "eye_GoodTub.tga",   8.0, 500, 150,  1,1,1,      1,1,1,    1,1,0, 1,     7,   0,0,0);// Great Spyglass  //BB increased price
   n = InitSpyglass(n,"spyglass4","spyglass4", 1, 14,  0.01, 15,   9800, "eye_BestTub.tga",  10.0, 500, 150,  1,1,1,      1,1,1,    1,1,1, 1,     9,   0,0,0);// Master Spyglass //BB increased price
-  }
+  //-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 
   //-----------------------------------------------------------------------------------------------------------------------------------------------------------------
   // POTIONS: ItemIndex                         picIndex               numrandmod     antidote        skipsell
@@ -4845,6 +4836,7 @@ int InitQuestItem(  ref ItemIndex, string id, string txtname, string model,
 	case "engineer_letter1":		qstitm.groupID		= EXAMINE_ITEM_TYPE; 			break;
 	case "engineer_letter2":		qstitm.groupID		= EXAMINE_ITEM_TYPE; qstitm.price = 1;	break;
 	case "engineer_letter3":		qstitm.groupID		= EXAMINE_ITEM_TYPE; qstitm.price = 1;	break;
+
 	case "full_map":			qstitm.groupID		= EXAMINE_ITEM_TYPE;			break;  // BTP: Devlin Opera
 	case "full_map_scaled":			qstitm.groupID		= EXAMINE_ITEM_TYPE;			break;  // BTP: Devlin Opera
   }

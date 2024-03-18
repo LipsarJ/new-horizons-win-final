@@ -260,7 +260,9 @@ void LocationInitguadeloupe(ref n)
 	//Night
 	Locations[n].models.night.charactersPatch = "Pri_p";
 	//Environment
-	Locations[n].environment.weather = "false";
+	locations[n].environment.weather = "true";
+locations[n].lockWeather = "Inside";
+
 	Locations[n].environment.sea = "false";
 	//Reload map
 	Locations[n].reload.l1.name = "reload1";
@@ -413,7 +415,9 @@ void LocationInitguadeloupe(ref n)
 		//Night
 		Locations[n].models.night.charactersPatch = "mh5_p";
 		//Environment
-		Locations[n].environment.weather = "false";
+		locations[n].environment.weather = "true";
+locations[n].lockWeather = "Inside";
+
 		Locations[n].environment.sea = "false";
 
 		LAi_LocationFightDisable(&Locations[n], true);
@@ -924,7 +928,9 @@ void LocationInitguadeloupe(ref n)
 	Locations[n].models.night.charactersPatch = "Res03_p";
 
 	//Environment
-	Locations[n].environment.weather = "false";
+	locations[n].environment.weather = "true";
+locations[n].lockWeather = "Inside";
+
 	Locations[n].environment.sea = "false";
 	Locations[n].models.back = "back\mures3_";
 	//Reload map
@@ -965,7 +971,9 @@ void LocationInitguadeloupe(ref n)
 	Locations[n].models.night.charactersPatch = "bed_p";	
 
 	//Environment
-	Locations[n].environment.weather = "false";
+	locations[n].environment.weather = "true";
+locations[n].lockWeather = "Inside";
+
 	Locations[n].environment.sea = "false";
 	Locations[n].models.back = "back\redb_";
 	//Reload map
@@ -1239,7 +1247,9 @@ void LocationInitguadeloupe(ref n)
 	Locations[n].models.night.charactersPatch = "LS_p";
 
 	//Environment
-	Locations[n].environment.weather = "false";
+	locations[n].environment.weather = "true";
+locations[n].lockWeather = "Inside";
+
 	Locations[n].environment.sea = "false";
 	Locations[n].models.back = "back\douls_";
 	//Reload map
@@ -1283,7 +1293,9 @@ void LocationInitguadeloupe(ref n)
 	Locations[n].models.night.charactersPatch = "LS_p";
 
 	//Environment
-	Locations[n].environment.weather = "false";
+	locations[n].environment.weather = "true";
+locations[n].lockWeather = "Inside";
+
 	Locations[n].environment.sea = "false";
 	Locations[n].models.back = "back\ffls_";
 	//Reload map
@@ -1327,7 +1339,9 @@ void LocationInitguadeloupe(ref n)
 	Locations[n].models.night.fn = "sh01_fn";
 
 	//Environment
-	Locations[n].environment.weather = "false";
+	locations[n].environment.weather = "true";
+locations[n].lockWeather = "Inside";
+
 	Locations[n].environment.sea = "false";
 	Locations[n].models.back = "back\oxsh1_";
 	//Reload map
@@ -1370,7 +1384,9 @@ void LocationInitguadeloupe(ref n)
 	Locations[n].models.night.charactersPatch = "MT_p";
 
 	//Environment
-	Locations[n].environment.weather = "false";
+	locations[n].environment.weather = "true";
+locations[n].lockWeather = "Inside";
+
 	Locations[n].environment.sea = "false";
 	Locations[n].models.back = "back\smumt_";
 	//Reload map
@@ -1421,7 +1437,9 @@ void LocationInitguadeloupe(ref n)
 	//Night
 	Locations[n].models.night.charactersPatch = "Sh_p";
 	//Environment
-	Locations[n].environment.weather = "false";
+	locations[n].environment.weather = "true";
+locations[n].lockWeather = "Inside";
+
 	Locations[n].environment.sea = "false";
 	Locations[n].models.back = "back\smush_";
 	//Reload map
@@ -1463,7 +1481,9 @@ void LocationInitguadeloupe(ref n)
 	Locations[n].models.night.charactersPatch = "LH_F1_p";
 
 	//Environment
-	Locations[n].environment.weather = "false";
+	locations[n].environment.weather = "true";
+locations[n].lockWeather = "Inside";
+
 	Locations[n].environment.sea = "false";
 	Locations[n].models.back = "back\fflf1_";
 	//Reload map
@@ -1504,7 +1524,9 @@ void LocationInitguadeloupe(ref n)
 	Locations[n].models.night.charactersPatch = "MH_p";
 
 	//Environment
-	Locations[n].environment.weather = "false";
+	locations[n].environment.weather = "true";
+locations[n].lockWeather = "Inside";
+
 	Locations[n].environment.sea = "false";
 	Locations[n].models.back = "back\doumh_";
 	//Reload map

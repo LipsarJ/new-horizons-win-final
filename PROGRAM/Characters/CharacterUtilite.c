@@ -430,11 +430,11 @@ int GetCaracterShipCannonsType(ref _refCharacter)
 }
 int GetCannonQuantity(ref refCharacter)
 {
-    int nShipType = GetCharacterShipType(refCharacter);
-    if (nShipType <0 || nShipType >= SHIP_TYPES_QUANTITY) { return 0; } // PB: Prevent CTDs
-    ref rShip = GetShipByType(nShipType);
-    aref arship; makearef(arship, refCharacter.ship); return sti(GetLocalShipAttrib(arship, &rShip, "CurCanQty")); //NK can qty 05-04-18
-    //return sti(rShip.CannonsQuantity);
+	int nShipType = GetCharacterShipType(refCharacter);
+	if (nShipType <0 || nShipType >= SHIP_TYPES_QUANTITY) { return 0; } // PB: Prevent CTDs
+	ref rShip = GetShipByType(nShipType);
+	aref arship; makearef(arship, refCharacter.ship); return sti(GetLocalShipAttrib(arship, &rShip, "CurCanQty")); //NK can qty 05-04-18
+	//return sti(rShip.CannonsQuantity);
 }
 // NK 05-04-19 -->
 int GetCannonMaxQuantity(ref refCharacter)
@@ -882,7 +882,7 @@ int GetWoundedKilledPerDay(ref _refCharacter)
 		death_rate = death_rate - HEALED_WITH_MEDS;
 	if(death_rate <= 0) return 0;
 	else return makeint(0.5 * death_rate + rand(death_rate));
-	}
+}
 
 bool CharacterHasOfficerType(ref _refCharacter, string OfficerType)
 {
@@ -2448,7 +2448,6 @@ string GetRankNameDirect(ref char, int iNation, int rank)
 		if(CheckAttribute(Nations[PIRATE],"Ranks."+rn))		return Nations[PIRATE].Ranks.(rn);		// PB: Fame Levels
 	}
 
-										   
 	if (ProfessionalNavyNationChar(char) == iNation)		// GR: Look at whether this char, not player char, is in the navy
 	{
 		if(CheckAttribute(Nations[iNation],"Ranks."+rn))	return Nations[iNation].Ranks.(rn);		// NK: Navy Ranks

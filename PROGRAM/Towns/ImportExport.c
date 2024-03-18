@@ -19,14 +19,12 @@ void GetIslandOptions(ref island, ref q, string tradetype)
 					AddIslandOption(island, q, GOOD_GOLD);
 					AddIslandOption(island, q, GOOD_SILVER);
 					AddIslandOption(island, q, GOOD_BRICKS);
-					AddIslandOption(island, q, GOOD_SLAVES);
 				break;
 				//Import
 				case TRADE_TYPE_IMPORT_NAME:
 					AddIslandOption(island, q, GOOD_MAHOGANY);
 					AddIslandOption(island, q, GOOD_GUNPOWDER);
 					AddIslandOption(island, q, GOOD_COFFEE);
-					AddIslandOption(island, q, GOOD_SLAVES);
 				break;
 				//Contraband
 				case TRADE_TYPE_CONTRABAND_NAME:
@@ -109,14 +107,12 @@ void GetIslandOptions(ref island, ref q, string tradetype)
 					AddIslandOption(island, q, GOOD_COFFEE);
 					AddIslandOption(island, q, GOOD_COTTON);
 					AddIslandOption(island, q, GOOD_TOBACCO);
-					AddIslandOption(island, q, GOOD_SLAVES);
 				break;
 				//Import
 				case TRADE_TYPE_IMPORT_NAME:
 					AddIslandOption(island, q, GOOD_PLANKS);
 					AddIslandOption(island, q, GOOD_ALE);
 					AddIslandOption(island, q, GOOD_FOOD);
-					AddIslandOption(island, q, GOOD_SLAVES);
 				break;
 				//Contraband
 				case TRADE_TYPE_CONTRABAND_NAME:
@@ -218,12 +214,10 @@ void GetEconomyOptions(ref ctown, ref island, ref q, string tradetype)
 				case TRADE_TYPE_EXPORT_NAME:
 					AddIslandOption(island, q, GOOD_WINE);
 					AddIslandOption(island, q, GOOD_SILK);
-					AddIslandOption(island, q, GOOD_SLAVES);
 				break;
 				//Import
 				case TRADE_TYPE_IMPORT_NAME:
 					AddIslandOption(island, q, GOOD_OIL);
-					AddIslandOption(island, q, GOOD_SLAVES);
 				break;
 				//Contraband
 				case TRADE_TYPE_CONTRABAND_NAME:
@@ -239,12 +233,10 @@ void GetEconomyOptions(ref ctown, ref island, ref q, string tradetype)
 				case TRADE_TYPE_EXPORT_NAME:
 					AddIslandOption(island, q, GOOD_CHOCOLATE);
 					AddIslandOption(island, q, GOOD_TREATMENT);
-					AddIslandOption(island, q, GOOD_SLAVES);
 				break;
 				//Import
 				case TRADE_TYPE_IMPORT_NAME:
 					AddIslandOption(island, q, GOOD_GOLD);
-					AddIslandOption(island, q, GOOD_SLAVES);
 				break;
 				//Contraband
 				case TRADE_TYPE_CONTRABAND_NAME:
@@ -266,13 +258,11 @@ void GetNationOptions(ref ctown, ref island, ref q, string tradetype)
 				//Export
 				case TRADE_TYPE_EXPORT_NAME:
 					AddIslandOption(island, q, GOOD_GUNPOWDER);
-					AddIslandOption(island, q, GOOD_SLAVES);
 				break;
 				//Import
 				case TRADE_TYPE_IMPORT_NAME:
 					AddIslandOption(island, q, GOOD_CINNAMON);
 					AddIslandOption(island, q, GOOD_SUGAR);
-					AddIslandOption(island, q, GOOD_SLAVES);
 				break;
 				//Contraband
 				case TRADE_TYPE_CONTRABAND_NAME:
@@ -287,13 +277,11 @@ void GetNationOptions(ref ctown, ref island, ref q, string tradetype)
 				//Export
 				case TRADE_TYPE_EXPORT_NAME:
 					AddIslandOption(island, q, GOOD_WINE);
-					AddIslandOption(island, q, GOOD_SLAVES);
 				break;
 				//Import
 				case TRADE_TYPE_IMPORT_NAME:
 					AddIslandOption(island, q, GOOD_EBONY);
 					AddIslandOption(island, q, GOOD_FRUITS);
-					AddIslandOption(island, q, GOOD_SLAVES);
 				break;
 				//Contraband
 				case TRADE_TYPE_CONTRABAND_NAME:
@@ -308,13 +296,11 @@ void GetNationOptions(ref ctown, ref island, ref q, string tradetype)
 				//Export
 				case TRADE_TYPE_EXPORT_NAME:
 					AddIslandOption(island, q, GOOD_LEATHER);
-					AddIslandOption(island, q, GOOD_SLAVES);
 				break;
 				//Import
 				case TRADE_TYPE_IMPORT_NAME:
 					AddIslandOption(island, q, GOOD_GOLD);
 					AddIslandOption(island, q, GOOD_SILVER);
-					AddIslandOption(island, q, GOOD_SLAVES);
 				break;
 				//Contraband
 				case TRADE_TYPE_CONTRABAND_NAME:
@@ -348,13 +334,11 @@ void GetNationOptions(ref ctown, ref island, ref q, string tradetype)
 				//Export
 				case TRADE_TYPE_EXPORT_NAME:
 					AddIslandOption(island, q, GOOD_LINEN);
-					AddIslandOption(island, q, GOOD_SLAVES);
 				break;
 				//Import
 				case TRADE_TYPE_IMPORT_NAME:
 					AddIslandOption(island, q, GOOD_TOBACCO);
 					AddIslandOption(island, q, GOOD_MAHOGANY);
-					AddIslandOption(island, q, GOOD_SLAVES);
 				break;
 				//Contraband
 				case TRADE_TYPE_CONTRABAND_NAME:
@@ -369,13 +353,11 @@ void GetNationOptions(ref ctown, ref island, ref q, string tradetype)
 				//Export
 				case TRADE_TYPE_EXPORT_NAME:
 					AddIslandOption(island, q, GOOD_SILK);
-					AddIslandOption(island, q, GOOD_SLAVES);
 				break;
 				//Import
 				case TRADE_TYPE_IMPORT_NAME:
 					AddIslandOption(island, q, GOOD_WINE);
 					AddIslandOption(island, q, GOOD_SILK);
-					AddIslandOption(island, q, GOOD_SLAVES);
 				break;
 				//Contraband
 				case TRADE_TYPE_CONTRABAND_NAME:
@@ -390,13 +372,11 @@ void GetNationOptions(ref ctown, ref island, ref q, string tradetype)
 				//Export
 				case TRADE_TYPE_EXPORT_NAME:
 					AddIslandOption(island, q, GOOD_GOLD);
-					AddIslandOption(island, q, GOOD_SLAVES);
 				break;
 				//Import
 				case TRADE_TYPE_IMPORT_NAME:
 					AddIslandOption(island, q, GOOD_PLANKS);
 					AddIslandOption(island, q, GOOD_LINEN);
-					AddIslandOption(island, q, GOOD_SLAVES);
 				break;
 				//Contraband
 				case TRADE_TYPE_CONTRABAND_NAME:

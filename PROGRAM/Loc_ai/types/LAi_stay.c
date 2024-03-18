@@ -1,7 +1,7 @@
 /*
-Тип: стоячий, всегда стоит, отвечает на диалоги, никогда не боится
+пїЅпїЅпїЅ: пїЅпїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
 
-	Используемые шаблоны:
+	пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ:
 		stay
 		dialog
 */
@@ -11,22 +11,22 @@
 #define LAI_TYPE_STAY		"stay"
 
 
-//Инициализация
+//пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 void LAi_type_stay_Init(aref chr)
 {
 	DeleteAttribute(chr, "location.follower");
 	DeleteAttribute(chr, "chr_ai.type");
 	chr.chr_ai.type = LAI_TYPE_STAY;
 	LAi_tmpl_stay_InitTemplate(chr);
-	//Установим анимацию персонажу
+	//пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 	LAi_SetDefaultStayAnimation(chr);
 	SendMessage(&chr, "lsl", MSG_CHARACTER_EX_MSG, "SetFightWOWeapon", false);
 }
 
-//Процессирование типа персонажа
+//пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 void LAi_type_stay_CharacterUpdate(aref chr, float dltTime)
 {
-	int num = FindNearCharacters(chr, 5.0, -1.0, -1.0, 0.001, false, true);
+	int num = FindNearCharacters(chr, 5.0, -1.0, -1.0, 0.001, true, true);
 	int idx;
 	if(num > 0)
 	{
@@ -34,6 +34,17 @@ void LAi_type_stay_CharacterUpdate(aref chr, float dltTime)
 		{
 			idx = sti(chrFindNearCharacters[i].index);
 			if(LAi_group_IsEnemy(chr, &Characters[idx])) break;
+				if (CheckAttribute(chr, "talker") && idx == GetMainCharacterIndex() && LAi_Character_CanDialog(chr, pchar))
+			{
+				LAi_tmpl_SetDialog(chr, pchar, -1.0);
+				DeleteAttribute(chr, "talker");
+				return;
+			}
+			if (CheckAttribute(chr, "talker") && idx == GetMainCharacterIndex() && !LAi_Character_CanDialog(chr, pchar))
+			{
+				trace ("пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ");
+				return;
+			}
 		}
 		if(i < num)
 		{
@@ -56,72 +67,82 @@ void LAi_type_stay_CharacterUpdate(aref chr, float dltTime)
 			LAi_SetDefaultDead(chr);
 		}
 	}
+
 }
 
-//Загрузка персонажа в локацию
+//пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 bool LAi_type_stay_CharacterLogin(aref chr)
 {
 	return true;
 }
 
-//Выгрузка персонажа из локацию
+//пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 bool LAi_type_stay_CharacterLogoff(aref chr)
 {
 	return true;
 }
 
-//Завершение работы темплейта
+//пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 void LAi_type_stay_TemplateComplite(aref chr, string tmpl)
 {
 }
 
-//Сообщить о желании завести диалог
+//пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
 void LAi_type_stay_NeedDialog(aref chr, aref by)
 {
 }
 
-//Запрос на диалог, если возвратить true то в этот момент можно начать диалог
+//пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ true пїЅпїЅ пїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
 bool LAi_type_stay_CanDialog(aref chr, aref by)
 {
-	//Если уже говорим, то откажем
+	// PB: Allow Dialog Initiation (copied from LAi_citizen.c) -->
+	if(chr.chr_ai.tmpl == LAI_TMPL_DIALOG)
+	{
+		if(sti(by.index) == GetMainCharacterIndex())
+		{
+			if(LAi_tmpl_dialog_StopNPC(chr)) return true;
+		}
+	}
+	// PB: Allow Dialog Initiation (copied from LAi_citizen.c) <--
+	//пїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 	if(chr.chr_ai.tmpl != LAI_TMPL_STAY) return false;
-	//Согласимся на диалог
+	//пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
 	return true;
 }
 
-//Начать диалог
+//пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
 void LAi_type_stay_StartDialog(aref chr, aref by)
 {
-	//Если мы пасивны, запускаем шаблон без времени завершения
+	//пїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 	LAi_CharacterSaveAy(chr);
 	CharacterTurnByChr(chr, by);
 	LAi_tmpl_SetActivatedDialog(chr, by);
 }
 
-//Закончить диалог
+//пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
 void LAi_type_stay_EndDialog(aref chr, aref by)
 {
 	LAi_tmpl_stay_InitTemplate(chr);
 	LAi_CharacterRestoreAy(chr);
 }
 
-//Персонаж атаковал другого персонажа
+//пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 void LAi_type_stay_Attack(aref attack, aref enemy, float attackDmg, float hitDmg)
 {
 }
 
-//Персонаж атоковал заблокировавшегося персонажа
+//пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 void LAi_type_stay_Block(aref attack, aref enemy, float attackDmg, float hitDmg)
 {
 }
 
-//Персонаж выстрелил
+//пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 void LAi_type_stay_Fire(aref attack, aref enemy, float kDist, bool isFindedEnemy)
 {
 }
 
 
-//Персонаж атакован
+//пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 void LAi_type_stay_Attacked(aref chr, aref by)
 {
 	

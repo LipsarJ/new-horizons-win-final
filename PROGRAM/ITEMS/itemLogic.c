@@ -1,3 +1,4 @@
+
 #include "items\items.h"
 extern void OpenBoxProcedure_WR(); // PB: Create external function
 extern void OpenBoxProcedure_BUG(); // PB: Create external function
@@ -837,6 +838,21 @@ void Box_EnterToLocator(aref loc, string locName)
 
 	ref chr = GetMainCharacter();
 	chr.boxname = locName;
+	if(CheckAttribute(Locations[FindLocation(chr.location)], "boxneedkey."+locName) && Locations[FindLocation(chr.location)].boxneedkey.(locName) == true)
+	{
+	if(CheckAttribute(Locations[FindLocation(chr.location)], "boxneedkey."+locName+".KeyItem") && CheckCharacterItem(chr, Locations[FindLocation(chr.location)].boxneedkey.(locName).KeyItem))
+	{
+	PlaySound("INTERFACE\took_item.wav");
+	Locations[FindLocation(chr.location)].boxneedkey.(locName) = false;
+	TakeItemFromCharacter(chr, Locations[FindLocation(chr.location)].boxneedkey.(locName).KeyItem);
+	}
+	else
+	{
+	PlaySound("knock");
+	return;
+	}
+	
+	}
 
 	//MAXIMUS: moved here for preventing wrong action showing -->
 	Log_SetActiveAction("OpenBox");
@@ -977,7 +993,7 @@ void Box_EnterToLocator(aref loc, string locName)
 		PlaySound("people\step_sand.wav");
 		Logit(TranslateString("","Looks like someone has been digging here.."));
 		if(GetCharacterEquipByGroup(chr,BLADE_ITEM_TYPE) == "Minersspade" && CheckCharacterItem(chr, "Minersspade"))
-			Logit(TranslateString("","Do you want to dig as well? With your ") + GetItemNameByID(chr.equip.blade) + "???"));
+			Logit(TranslateString("","Do you want to dig as well? With your ") + GetItemNameByID(chr.equip.blade) + "???");
 		else
 			LogIt(TranslateString("","What am I going to dig with? My HANDS? I need a spade!"));
 	}
@@ -1050,6 +1066,11 @@ void OpenBoxProcedure()
 		ref corpse;
 		GetCharacterPos(chr, &x, &y, &z);
 
+	if(CheckAttribute(Locations[locidx], "boxneedkey."+atrName) && Locations[locidx].boxneedkey.(atrName) == true)
+		{
+		PlaySound("knock");
+		return;
+	}
 		//JRH -->
 		if(Locations[locidx].id=="Santo_Domingo_town")
 		{

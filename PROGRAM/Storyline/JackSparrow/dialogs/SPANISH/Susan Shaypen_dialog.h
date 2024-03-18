@@ -64,7 +64,7 @@ string DLG_TEXT[101] = {
 "¡QUÉ! ...",
 "Me temo que las necesidades lo requieren. --- [Le haces un guiño a Susan sin que te vea Skull. --- Ella hace un gesto imperceptible de que lo entiende.]",
 "¿A qué estás jugando? ¿Dos barcos? ¿Cómo ayudará eso?",
-"Simple, mi querida Susan. Cuando salgamos al mar, navegaremos hacia Bridgetown, no hacia Jamaica. Una vez allí, desembarcarás primero y entregarás a la Srta. Brinkley al comandante de la prisión. Luego venderás tu barco, que era mío, si recuerdas, me darás el dinero y nos separaremos. Yo devolveré a las hermanas Brin a su padre en #sRedmond#.",
+"Simple, mi querida Susan. Cuando salgamos al mar, navegaremos hacia Greenford, no hacia Jamaica. Una vez allí, desembarcarás primero y entregarás a la Srta. Brinkley al comandante de la prisión. Luego venderás tu barco, que era mío, si recuerdas, me darás el dinero y nos separaremos. Yo devolveré a las hermanas Brin a su padre en #sRedmond#.",
 "¡Oh! ¿Y supongo que también recoges el dinero del rescate?",
 "Confía en mí, querida, confía en mí. De esta manera tu ocupación como Agente de Impuestos Especiales permanece en secreto, para que puedas continuar tus 'buenas obras' en las islas. Las chicas llegarán a salvo a casa, y yo podré continuar con mis propios asuntos. ¡Todo el mundo gana!",
 "Ya veo. Bueno, eso podría funcionar, pero aún no has mencionado el dinero del rescate, ¿no estará Skull buscando eso?",

@@ -37,8 +37,7 @@
 #define GOOD_BRICKS	32	// 2.5
 #define GOOD_SLAVES	33
 
-
-object  Goods[GOODS_QUANTITY]; // NK
+object Goods[GOODS_QUANTITY]; // NK
 
 ref GetGoodByType(int iGoodType)
 {

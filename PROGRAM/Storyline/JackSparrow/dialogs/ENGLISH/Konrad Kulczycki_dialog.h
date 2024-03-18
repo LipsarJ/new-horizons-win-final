@@ -22,7 +22,7 @@ string DLG_TEXT[28] = {
 "It still doesn't quite add up to me. How do I find the Brotherhood's new location after the treasure switch?",
 "You worry too much. One of us will be shadowing you, and once the switch is complete, will join you to lead you home.",
 "Shadowing me, eh? Alright, I'll do it. When do we set sail?",
-"No time like the present. Whenever you are ready we can leave, and I would suggest the sooner the better. Beckett must know you have left Bridgetown by now, and will be on his way here.",
+"No time like the present. Whenever you are ready we can leave, and I would suggest the sooner the better. Beckett must know you have left Greenford by now, and will be on his way here.",
 "Hey Ho! Let's get the supplies and make sail then.",
 "",
 "",

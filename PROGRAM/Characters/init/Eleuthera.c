@@ -136,7 +136,7 @@ void CreateEleutheraCharacters(ref n)
 	ch.model	= "sailor16";
 	ch.sex = "man";
 	ch.sound_type = "seaman";
-	ch.location	= "Eleuthera_Port";
+	ch.location	= "Eleuthera_town";
 	ch.location.group = "goto";
 	ch.location.locator = "goto24";
 	ch.Dialog.Filename = "eleuthera citizen_dialog.c";
@@ -167,7 +167,7 @@ void CreateEleutheraCharacters(ref n)
 	ch.model	= "sailor5";
 	ch.sex = "man";
 	ch.sound_type = "seaman";
-	ch.location	= "Eleuthera_Port";
+	ch.location	= "Eleuthera_town";
 	ch.location.group = "goto";
 	ch.location.locator = "goto5";
 	ch.Dialog.Filename = "eleuthera citizen_dialog.c";
@@ -475,7 +475,7 @@ void CreateEleutheraCharacters(ref n)
 	ch.sex = "man";
 	GiveItem2Character(ch, "blade4");
 	ch.equip.blade = "blade4";
-	ch.location	= "Eleuthera_Port";
+	ch.location	= "Eleuthera_town";
 	ch.location.group = "soldiers";
 	ch.location.locator = "soldier1";
 	ch.Dialog.Filename = "Eleuthera soldier_dialog.c";
@@ -512,7 +512,7 @@ void CreateEleutheraCharacters(ref n)
 	ch.sex = "man";
 	GiveItem2Character(ch, "blade4");
 	ch.equip.blade = "blade4";
-	ch.location	= "Eleuthera_Port";
+	ch.location	= "Eleuthera_town";
 	ch.location.group = "soldiers";
 	ch.location.locator = "soldier2";
 	ch.Dialog.Filename = "Eleuthera soldier_dialog.c";
@@ -550,7 +550,7 @@ void CreateEleutheraCharacters(ref n)
 	ch.sex = "man";
 	GiveItem2Character(ch, "blade4");
 	ch.equip.blade = "blade4";
-	ch.location	= "Eleuthera_Port";
+	ch.location	= "Eleuthera_town";
 	ch.location.group = "soldiers";
 	ch.location.locator = "soldier3";
 	ch.Dialog.Filename = "Eleuthera soldier_dialog.c";
@@ -587,7 +587,7 @@ void CreateEleutheraCharacters(ref n)
 	ch.sex = "man";
 	GiveItem2Character(ch, "blade4");
 	ch.equip.blade = "blade4";
-	ch.location	= "Eleuthera_Port";
+	ch.location	= "Eleuthera_town";
 	ch.location.group = "soldiers";
 	ch.location.locator = "soldier4";
 	ch.Dialog.Filename = "Eleuthera soldier_dialog.c";
@@ -856,7 +856,7 @@ void CreateEleutheraCharacters(ref n)
 	ch.sex = "man";
 	GiveItem2Character(ch, "blade4");
 	ch.equip.blade = "blade4";
-	ch.location	= "Eleuthera_Port";
+	ch.location	= "Eleuthera_town";
 	ch.location.group = "patrol";
 	ch.location.locator = "patrol1";
 	ch.Dialog.Filename = "patrol_dialog.c";
@@ -893,7 +893,7 @@ void CreateEleutheraCharacters(ref n)
 	ch.sex = "man";
 	GiveItem2Character(ch, "blade4");
 	ch.equip.blade = "blade4";
-	ch.location	= "Eleuthera_Port";
+	ch.location	= "Eleuthera_town";
 	ch.location.group = "patrol";
 	ch.location.locator = "patrol2";
 	ch.Dialog.Filename = "patrol_dialog.c";
@@ -931,7 +931,7 @@ void CreateEleutheraCharacters(ref n)
 	ch.sex = "man";
 	GiveItem2Character(ch, "blade4");
 	ch.equip.blade = "blade4";
-	ch.location	= "Eleuthera_Port";
+	ch.location	= "Eleuthera_town";
 	ch.location.group = "patrol";
 	ch.location.locator = "patrol3";
 	ch.Dialog.Filename = "patrol_dialog.c";
@@ -968,7 +968,7 @@ void CreateEleutheraCharacters(ref n)
 	ch.sex = "man";
 	GiveItem2Character(ch, "blade4");
 	ch.equip.blade = "blade4";
-	ch.location	= "Eleuthera_Port";
+	ch.location	= "Eleuthera_town";
 	ch.location.group = "patrol";
 	ch.location.locator = "patrol4";
 	ch.Dialog.Filename = "patrol_dialog.c";
@@ -1005,7 +1005,7 @@ void CreateEleutheraCharacters(ref n)
 	ch.sex = "man";
 	GiveItem2Character(ch, "blade4");
 	ch.equip.blade = "blade4";
-	ch.location	= "Eleuthera_Port";
+	ch.location	= "Eleuthera_town";
 	ch.location.group = "patrol";
 	ch.location.locator = "patrol5";
 	ch.Dialog.Filename = "patrol_dialog.c";
@@ -1042,7 +1042,7 @@ void CreateEleutheraCharacters(ref n)
 	ch.sex = "man";
 	GiveItem2Character(ch, "blade4");
 	ch.equip.blade = "blade4";
-	ch.location	= "Eleuthera_Port";
+	ch.location	= "Eleuthera_town";
 	ch.location.group = "patrol";
 	ch.location.locator = "patrol6";
 	ch.Dialog.Filename = "patrol_dialog.c";

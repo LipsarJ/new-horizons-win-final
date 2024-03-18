@@ -847,7 +847,7 @@ void ProcessDialogEvent()
 							case FRANCE:	PChar.quest.agentquest.port1 = "Marigot_port"; break;
 							case SPAIN:	PChar.quest.agentquest.port1 = "Muelle_port"; break;
 							case HOLLAND:	PChar.quest.agentquest.port1 = "Willemstad_port"; break;
-							case AMERICA:	PChar.quest.agentquest.port1 = "Eleuthera_Port"; break;
+							case AMERICA:	PChar.quest.agentquest.port1 = "Eleuthera_town"; break;
 							PChar.quest.agentquest.port1 = "QC_port";
 						}
 						PChar.quest.agentquest.port2 = "Conceicao_port";
@@ -857,7 +857,7 @@ void ProcessDialogEvent()
 					case GUEST1_NATION:
 						if (GetCurrentPeriod() >= PERIOD_REVOLUTIONS)
 						{
-							PChar.quest.agentquest.port1 = "Eleuthera_Port";
+							PChar.quest.agentquest.port1 = "Eleuthera_town";
 							PChar.quest.agentquest.port2 = "Alice_Port";
 						}
 						else

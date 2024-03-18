@@ -332,8 +332,15 @@ void InitGoods()
 	Goods[GOOD_TREATMENT].Units		= 1;
 	Goods[GOOD_TREATMENT].Swim.Model= "box";
 	Goods[GOOD_TREATMENT].Swim.Time	= 5;
-	
+
+if(SLAVES_IN_STORES)
+{
 	Goods[GOOD_SLAVES].Name		= "Slaves";
+}
+else
+{
+	Goods[GOOD_SLAVES].Name		= "Palms_Oil";
+}
 	Goods[GOOD_SLAVES].Weight		= 2;
 	Goods[GOOD_SLAVES].Cost		= 55 * GOODS_PRICE_SCALAR;          // Sulan (4)
 	Goods[GOOD_SLAVES].Units		= 1;

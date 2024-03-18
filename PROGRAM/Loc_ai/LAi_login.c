@@ -208,6 +208,8 @@ void LAi_CharacterPostLogin(ref location)
 		{
 			//Расставляем монстров
 			LAi_CreateMonsters(location);
+			CreateCarriers(location);
+
 		}
 	}
 }
