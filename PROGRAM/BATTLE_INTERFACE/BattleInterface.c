@@ -2205,10 +2205,6 @@ void SetParameterData()
 	BattleInterface.CommandShowParam.buttonTexture = "battle_interface\lr_buttons.tga.tx";
 	BattleInterface.CommandShowParam.shipStateWidth = RecalculateHIcon(makeint(64 * fHtRatio));
 	BattleInterface.CommandShowParam.shipStateHeight = RecalculateVIcon(makeint(16 * fHtRatio));
-	BattleInterface.CommandShowParam.shipStateTexture = "battle_interface\indicators.tga.tx";
-	BattleInterface.CommandShowParam.shipStateOffset = RecalculateVIcon(0);
-	BattleInterface.CommandShowParam.GeraldWidth = RecalculateHIcon(makeint(32 * fHtRatio));
-	BattleInterface.CommandShowParam.GeraldHeight = RecalculateVIcon(makeint(32 * fHtRatio));
 	BattleInterface.CommandShowParam.commandFont = "bold_numbers";
 	BattleInterface.CommandShowParam.printXOffset = RecalculateHIcon(makeint(32 * fHtRatio));
 	BattleInterface.CommandShowParam.printYOffset = RecalculateVIcon(makeint(-26 * fHtRatio));
@@ -2556,14 +2552,9 @@ void SetParameterData()
 	BattleInterface.CommandList.CommandNoteScale = 1.0 * fHtRatio;
 	BattleInterface.CommandList.CommandNoteOffset = RecalculateHIcon(0) + "," + RecalculateVIcon(makeint(-54 * fHtRatio));
 
-	BattleInterface.CommandList.UDArrow_Texture = "battle_interface\arrowly.tga.tx";
-	BattleInterface.CommandList.UDArrow_UV_Up = "0.0,1.0,1.0,0.0";
-	BattleInterface.CommandList.UDArrow_UV_Down = "0.0,0.0,1.0,1.0";
-	BattleInterface.CommandList.UDArrow_Size = RecalculateHIcon(makeint(32 * fHtRatio)) + "," + RecalculateVIcon(makeint(32 * fHtRatio));
-	BattleInterface.CommandList.UDArrow_Offset_Up = RecalculateHIcon(makeint(-41 * fHtRatio)) + "," + RecalculateVIcon(makeint(-30 * fHtRatio));
-	BattleInterface.CommandList.UDArrow_Offset_Down = RecalculateHIcon(makeint(-41 * fHtRatio)) + "," + RecalculateVIcon(makeint(46 * fHtRatio));
-
 	//ShipsBars
+	BattleInterface.ShifInfoVisible = SHIP_INFO;
+
 	BattleInterface.ShipInfoImages.RelationTexture = "battle_interface\ship_arrows1.tga";
 	BattleInterface.ShipInfoImages.RelationOffset.x = 0.0;
 	BattleInterface.ShipInfoImages.RelationOffset.y = 0.3;
@@ -2573,7 +2564,7 @@ void SetParameterData()
 	BattleInterface.ShipInfoImages.RelationUV2 = "0.25,0.0,0.5,1.0"; // enemy
 	BattleInterface.ShipInfoImages.RelationUV3 = "0.5,0.0,0.75,1.0"; // neutral
 
-	BattleInterface.ShipInfoImages.ProgressTexture = "battle_interface\indicators.tga";
+	BattleInterface.ShipInfoImages.ProgressTexture = "battle_interface\indicators.tga.tx";
 	BattleInterface.ShipInfoImages.ProgressSize = "2.0,0.1";
 
 	BattleInterface.ShipInfoImages.ProgressBackOffset.x = 0.0;
@@ -2599,8 +2590,6 @@ void SetParameterData()
 	BattleInterface.ShipInfoImages.CrewOffset.y = 0.55;
 	BattleInterface.ShipInfoImages.CrewOffset.z = 0.0;
 	BattleInterface.ShipInfoImages.CrewUV = "0.0,0.0,1.0,0.166";
-
-	BattleInterface.ShifInfoVisible = SHIP_INFO;
 
 	LanguageCloseFile(idLngFile);
 // <-- KK
