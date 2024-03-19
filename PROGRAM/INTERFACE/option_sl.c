@@ -391,6 +391,7 @@ void InitBuildOptions(bool bDefault, bool bGlobal)
 		/////////////////////////////////////////////////////////////////////
 		Settings.BuildSettings.GRAPHICAL = GRAPHICAL;
 		/////////////////////////////////////////////////////////////////////
+				Settings.BuildSettings.SHIP_INFO = SHIP_INFO;
 				Settings.BuildSettings.LOC_CAMERA = LOC_CAMERA;
 				Settings.BuildSettings.DIALOG_CAMERA = DIALOG_CAMERA;
 				Settings.BuildSettings.HUD_SCALING = HUD_SCALING;
@@ -466,6 +467,7 @@ void InitBuildOptions(bool bDefault, bool bGlobal)
 		/////////////////////////////////////////////////////////////////////
 		GRAPHICAL = Settings.BuildSettings.GRAPHICAL;
 		/////////////////////////////////////////////////////////////////////
+				SHIP_INFO = Settings.BuildSettings.SHIP_INFO;
 				LOC_CAMERA = Settings.BuildSettings.LOC_CAMERA;
 				DIALOG_CAMERA = Settings.BuildSettings.DIALOG_CAMERA;
 				HUD_SCALING = Settings.BuildSettings.HUD_SCALING;
