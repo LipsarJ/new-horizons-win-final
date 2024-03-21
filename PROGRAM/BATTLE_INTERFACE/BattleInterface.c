@@ -182,7 +182,7 @@ void InitBattleInterface()
 	SetEventHandler("DoSailHole","ProcessSailDamage",0);
 	SetEventHandler("evntBISelectShip","procBISelectShip",0);
 
-	procLoadIntoNew(); // Проинитим таблицу активных перков
+	procLoadIntoNew(); // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
 	SetEventHandler("Control Activation","BI_ProcessControlPress",0);
 
 	RefreshFlags();
@@ -194,10 +194,10 @@ void InitBattleInterface()
 	if (!bRealBattleInterface) Event("evntUpdateCannonInfo"); // KK
 
 	Log_SetActiveAction("Nothing");
-
-	BIVisible(sti(InterfaceStates.BIVisible)); // KK
+	
 	//#20190424-02
     ReconnectShips();
+	BIVisible(sti(InterfaceStates.BIVisible)); // KK
 }
 
 ref BI_GetFortRelation()
@@ -1164,11 +1164,11 @@ void BI_LaunchCommand()
 // <-- KK
 	case "BI_SailTo":
 		if(targetNum==-1)
-		{ // приплыть в локатор с именем locName
+		{ // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅ locName
 			SeaAI_SailToLocator(locName);
 		}
 		else
-		{ // догнать перса с индексом targetNum
+		{ // пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ targetNum
 			SeaAI_SailToCharacter(targetNum);
 		}
 	break;
@@ -1192,7 +1192,7 @@ void BI_LaunchCommand()
 	break;
 	case "BI_ImmDeath":
 		if(targetNum==-1)
-		{ // смерть форта
+		{ // пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
 			targetNum = Fort_FindCharacter(AISea.Island,"reload",locName);
 			if(targetNum>=0)
 			{
@@ -1548,7 +1548,7 @@ void BI_SetPossibleCommands()
 		return;
 	}
 
-	// для главного персонажа
+	// пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 	if(mainIdx==chIdx)
 	{
 		//speak interface
@@ -1594,7 +1594,7 @@ void BI_SetPossibleCommands()
 		BattleInterface.Commands.CCommand.enable		= GetCompanionQuantity(mainCh)>1;
 		BattleInterface.Commands.Ability.enable			= true;
 	}
-	// для спутников
+	// пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 	else
 	{
 		BattleInterface.Commands.Moor.enable				= false;
@@ -2001,7 +2001,7 @@ ref BI_GetData()
 
 	switch (dataType)
 	{
-	// Получаем номер картинки корабля
+	// пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 		case BIDT_SHIPPICTURE:
 			enable = distance < GetCharVisibilityRange(GetMainCharacter(), 1); // PB: Ship type is visible inside LONG range
 			if (CheckAttribute(chRef, "unknownShip") == true && sti(chRef.unknownShip) == true) {
@@ -2205,10 +2205,6 @@ void SetParameterData()
 	BattleInterface.CommandShowParam.buttonTexture = "battle_interface\lr_buttons.tga.tx";
 	BattleInterface.CommandShowParam.shipStateWidth = RecalculateHIcon(makeint(64 * fHtRatio));
 	BattleInterface.CommandShowParam.shipStateHeight = RecalculateVIcon(makeint(16 * fHtRatio));
-	BattleInterface.CommandShowParam.shipStateTexture = "battle_interface\indicators.tga.tx";
-	BattleInterface.CommandShowParam.shipStateOffset = RecalculateVIcon(0);
-	BattleInterface.CommandShowParam.GeraldWidth = RecalculateHIcon(makeint(32 * fHtRatio));
-	BattleInterface.CommandShowParam.GeraldHeight = RecalculateVIcon(makeint(32 * fHtRatio));
 	BattleInterface.CommandShowParam.commandFont = "bold_numbers";
 	BattleInterface.CommandShowParam.printXOffset = RecalculateHIcon(makeint(32 * fHtRatio));
 	BattleInterface.CommandShowParam.printYOffset = RecalculateVIcon(makeint(-26 * fHtRatio));
@@ -2556,12 +2552,44 @@ void SetParameterData()
 	BattleInterface.CommandList.CommandNoteScale = 1.0 * fHtRatio;
 	BattleInterface.CommandList.CommandNoteOffset = RecalculateHIcon(0) + "," + RecalculateVIcon(makeint(-54 * fHtRatio));
 
-	BattleInterface.CommandList.UDArrow_Texture = "battle_interface\arrowly.tga.tx";
-	BattleInterface.CommandList.UDArrow_UV_Up = "0.0,1.0,1.0,0.0";
-	BattleInterface.CommandList.UDArrow_UV_Down = "0.0,0.0,1.0,1.0";
-	BattleInterface.CommandList.UDArrow_Size = RecalculateHIcon(makeint(32 * fHtRatio)) + "," + RecalculateVIcon(makeint(32 * fHtRatio));
-	BattleInterface.CommandList.UDArrow_Offset_Up = RecalculateHIcon(makeint(-41 * fHtRatio)) + "," + RecalculateVIcon(makeint(-30 * fHtRatio));
-	BattleInterface.CommandList.UDArrow_Offset_Down = RecalculateHIcon(makeint(-41 * fHtRatio)) + "," + RecalculateVIcon(makeint(46 * fHtRatio));
+	//ShipsBars
+	BattleInterface.ShifInfoVisible = SHIP_INFO;
+
+	BattleInterface.ShipInfoImages.RelationTexture = "battle_interface\ship_arrows1.tga";
+	BattleInterface.ShipInfoImages.RelationOffset.x = 0.0;
+	BattleInterface.ShipInfoImages.RelationOffset.y = 0.3;
+	BattleInterface.ShipInfoImages.RelationOffset.z = 0.0;
+	BattleInterface.ShipInfoImages.RelationSize = "0.75,0.5";
+	BattleInterface.ShipInfoImages.RelationUV1 = "0.0,0.0,0.25,1.0"; // friend
+	BattleInterface.ShipInfoImages.RelationUV2 = "0.25,0.0,0.5,1.0"; // enemy
+	BattleInterface.ShipInfoImages.RelationUV3 = "0.5,0.0,0.75,1.0"; // neutral
+
+	BattleInterface.ShipInfoImages.ProgressTexture = "battle_interface\indicators.tga.tx";
+	BattleInterface.ShipInfoImages.ProgressSize = "2.0,0.1";
+
+	BattleInterface.ShipInfoImages.ProgressBackOffset.x = 0.0;
+	BattleInterface.ShipInfoImages.ProgressBackOffset.y = 0.65;
+	BattleInterface.ShipInfoImages.ProgressBackOffset.z = 0.0;
+	BattleInterface.ShipInfoImages.ProgressBackSize = "2.0,0.3";
+	BattleInterface.ShipInfoImages.ProgressBackUV = "0.0,0.5,1.0,1.0";
+
+	// Hull
+	BattleInterface.ShipInfoImages.HullOffset.x = 0.0;
+	BattleInterface.ShipInfoImages.HullOffset.y = 0.75;
+	BattleInterface.ShipInfoImages.HullOffset.z = 0.0;
+	BattleInterface.ShipInfoImages.HullUV = "0.0,0.333,1.0,0.5";
+
+	// Sails
+	BattleInterface.ShipInfoImages.SailOffset.x = 0.0;
+	BattleInterface.ShipInfoImages.SailOffset.y = 0.65;
+	BattleInterface.ShipInfoImages.SailOffset.z = 0.0;
+	BattleInterface.ShipInfoImages.SailUV = "0.0,0.167,1.0,0.333";
+
+	// Crew
+	BattleInterface.ShipInfoImages.CrewOffset.x = 0.0;
+	BattleInterface.ShipInfoImages.CrewOffset.y = 0.55;
+	BattleInterface.ShipInfoImages.CrewOffset.z = 0.0;
+	BattleInterface.ShipInfoImages.CrewUV = "0.0,0.0,1.0,0.166";
 
 	LanguageCloseFile(idLngFile);
 // <-- KK
@@ -2569,19 +2597,19 @@ void SetParameterData()
 
 ref ProcessSailDamage()
 {
-	// от кого удар
+	// пїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ
 	int shootIdx = GetEventData();
-	// перс
+	// пїЅпїЅпїЅпїЅ
 	int chrIdx = GetEventData();
 	string sMastName = GetEventData();
-	// координаты паруса
+	// пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
 	string reyName = GetEventData();
 	int groupNum = GetEventData();
-	// данные о дырках
+	// пїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
 	int holeCount = GetEventData();
 	int holeData = GetEventData();
 	int maxHoleCount = GetEventData();
-	// мощность паруса
+	// пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
 	float sailPower = GetEventData();
 
 // KK -->
@@ -2648,7 +2676,7 @@ void ProcessDayRepair()
 		chref = GetCharacter(cn);
 		RepairAllCannons(&chref); // NK can qty. For now repair all fixable guns. Later go back and set repair rates. 05-04-19
 
-		// расчет починки корпуса
+		// пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 		if( GetHullPercent(chref)<100.0 )
 		{
 			repPercent = GetHullRPD(chref);
@@ -2660,7 +2688,7 @@ void ProcessDayRepair()
 			RemoveRepairGoods(true,chref,matQ);
 		}
 
-		// расчет починки парусов
+		// пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 		if( GetSailPercent(chref)<100.0 )
 		{
 			repPercent = GetSailRPD(chref);
@@ -2997,7 +3025,7 @@ void procSetUsingAbility()
 		return;
 	}
 
-	// для главного персонажа
+	// пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 	if (mainIdx == chIdx)
 	{
 		BattleInterface.AbilityIcons.Brander.enable			= false;
@@ -3289,7 +3317,7 @@ ref BI_GetLandData()
 	}
 	// NK <--
 
-	// Заглушка
+	// пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 	if( BI_intNRetValue[2]<0 || BI_intNRetValue[3]<0 )
 	{
 		BI_intNRetValue[2] = AddTextureToList( &BattleInterface, "battle_interface\LandTarget1.tga.tx", 4, 2 ); // KK

@@ -720,6 +720,7 @@ void CreateDateTimeDisplay()
 	int imonth = GetDataMonth();
 	int iday = GetDataDay();
 	sDateTimeDisplay = XI_ConvertString(GetDayName(GetWeekday(iday, imonth, iyear))) + ", " + GetHumanDate(iyear, imonth, iday);
+	sDateTimeDisplay  += ". " + CreateLocDescribe();
 
 	ref chMain = GetMainCharacter();
 	bool btmp = true;
@@ -1089,6 +1090,7 @@ void procUpdateTime()
 			if(GetTime() >= 21 && GetTime() < 22) TimeOfDay = XI_ConvertString("Dusk");
 			sDateTimeDisplay += ", " + FirstLetterUp(TimeOfDay);
 		}
+		sDateTimeDisplay  +=". " + CreateLocDescribe();
 		// PB: Only show this if Various Logs are enabled -->
 		if(LogsToggle >= LOG_LACONIC) SendMessage(&IDateTimeDisplay, "lls", LOG_ADD_STRING, true, sDateTimeDisplay);
 		else SendMessage(&IDateTimeDisplay, "lls", LOG_ADD_STRING, true, "");

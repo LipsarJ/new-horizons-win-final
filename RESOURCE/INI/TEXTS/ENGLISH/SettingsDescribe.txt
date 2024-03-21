@@ -192,9 +192,7 @@ settingvisit_deck1
 You go straight to port or shore. Prisoner ransoming is via Passenger Interface.
 }
 settingvisit_deck2
-{
-You go to deck first. Prisoner ransoming is done by talking to them in your ship's cargo hold.
-}
+{You go to deck first. Prisoner ransoming is done by talking to them in your ship's cargo hold.}
 settingvisit_deck3
 {
 #Visit ship deck when traveling between port/shore and sea.
@@ -401,9 +399,7 @@ settingenable_buildingset1
 No additional buildings in any locations. Building yourself is not possible.
 }
 settingenable_buildingset2
-{
-"Additional" buildings in some new locations. You can construct your own buildings on shore for various purposes.
-}
+{"Additional" buildings in some new locations. You can construct your own buildings on shore for various purposes.}
 settingenable_buildingset3
 {
 #These buildings are required for the added storylines to make sense.
@@ -418,6 +414,15 @@ lock_open{Chest Locks}
 settinglock_open1
 {
 You need some skill to pick a chest's lock. And some may be booby-trapped! Above 33 you won't hurt yourself anymore, above 66 chests are always open.
+}
+ship_info{Ships info bars in sea}
+settingship_info2
+{
+Show ships info bars in sea 
+}
+settingship_info1
+{
+Hide ships info bars in sea 
 }
 loc_camera{Door Camera}
 settingloc_camera1

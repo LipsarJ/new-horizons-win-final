@@ -178,6 +178,8 @@ int LOCK_OPEN = 0;
 // LOG, LOOKS & EFFECTS:
 // ======================================
 
+bool SHIP_INFO = true;
+
 bool LOC_CAMERA = false;
 	// 0: Near doors camera view will stay locked to view FROM player
 	// 1: Stock PotC: Near doors camera will swerve and focus ON the playercharacter
