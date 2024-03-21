@@ -1105,7 +1105,7 @@ void StartStoryLine()
 				rldGroup = "reload";
 				rldLocator = "reload3_back";		*/
 
-				sTeleportLocName = "Eleuthera_port";
+				sTeleportLocName = "Eleuthera_town";
 				rldGroup = "reload";
 				rldLocator = "reload1";
 
@@ -1131,7 +1131,7 @@ void StartStoryLine()
 				SetModel(PChar, "Howard_Pyle_3", Pchar.model.animation, PChar.sex, stf(PChar.model.height), true);
 
 				GiveShip2Character(pchar,"SloopBermuda","Marquis",-1,PIRATE,true,true);
-				SetCharacterShipLocation(Pchar, "Eleuthera_port");
+				SetCharacterShipLocation(Pchar, "Eleuthera_town");
 
 			//	GiveItem2Character(Pchar, "bladelever");	//temp
 			//	GiveItem2Character(Pchar, "bladeanchor_big");

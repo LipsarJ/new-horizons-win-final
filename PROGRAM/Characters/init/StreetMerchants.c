@@ -289,7 +289,7 @@ void CreateStreetMerchantsCharacters(ref n)
 	ch.id		= "El_Street_merchant_1";
 	ch.model	= "towngirl6"; 
 	ch.sex = "woman";
-	ch.location = "Eleuthera_Port";
+	ch.location = "Eleuthera_town";
 	ch.location.group = "barmen";
 	ch.location.locator = "bar1";
 	ch.dialog.filename = "Item Trader_Dialog.c";
@@ -321,7 +321,7 @@ void CreateStreetMerchantsCharacters(ref n)
 	ch.id		= "El_Street_merchant_2";
 	ch.model	= "chelovek1"; // Estharos Change from Man1_2 to this model
 	ch.sex = "man";
-	ch.location = "Eleuthera_Port";
+	ch.location = "Eleuthera_town";
 	ch.location.group = "barmen";//"barmen";
 	ch.location.locator = "bar2";//"bar2";
 	ch.dialog.filename = "Item Trader_Dialog.c";
@@ -353,7 +353,7 @@ void CreateStreetMerchantsCharacters(ref n)
 	ch.id		= "El_Street_merchant_3";
 	ch.model	= "Sailor1"; 
 	ch.sex = "man";
-	ch.location = "Eleuthera_Port";
+	ch.location = "Eleuthera_town";
 	ch.location.group = "barmen";//"merchant";
 	ch.location.locator = "bar3";//"merchant3";
 	ch.dialog.filename = "Item Trader_Dialog.c";
@@ -386,7 +386,7 @@ void CreateStreetMerchantsCharacters(ref n)
 	ch.model = "sailor6"; // Estharos Change from fatman1 to this model
 	ch.sex = "man";
 	ch.sound_type = "merchant";
-	ch.location	= "Eleuthera_Port";
+	ch.location	= "Eleuthera_town";
 	ch.location.group = "barmen";
 	ch.location.locator = "bar4";
 	ch.Dialog.Filename = "Item Trader_Dialog.c";

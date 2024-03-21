@@ -566,11 +566,9 @@ void AnnounceFetchQuestEvent(String IslandID, string cargoid) //will be moved la
 			case "blacksmith":
 				logEntry = GetTranslatedLog("The military ordered new weapons as it is time to amortize their current stock. The blacksmith needs help to acquire the resources to make them.");
 			break;
-			
 			case "gunsmith":
 				logEntry = GetTranslatedLog("The gunsmith has gotten lots of new orders lately. Everyone wants a new sword or a firearm and he doesn't have the means to make them all.");
 			break;
-			
 			// TALISMAN -->
 			// added to fill blank page in Ship's Log
 			case "apothecary":
@@ -591,7 +589,7 @@ void UpdateAllCargos() //for now placed here. will be moved later
 {
 	bool fetch_expired;
 	if(DEBUG_FETCH_QUEST) trace("FETCH QUEST: Update all cargos");
-	for(int n=0; n<ISLANDS_QUANTITY; n++) 
+	for(int n=0; n<ISLANDS_QUANTITY; n++)
 	{
 		ref tisland = GetIslandByIndex(n);
 		if(IsIslandDisabled(tisland.id)) continue; // PB
@@ -977,7 +975,7 @@ void ProcessLateLoan(string town)
 		Pchar.mad_usurer = makeint(Pchar.mad_usurer) + 1;
 	else
 		PChar.mad_usurer = 1;
-	rUsurer.is_mad = true; 
+	rUsurer.is_mad = true;
 	// a simple virtual sailor <--
 	rUsurer.Dialog.CurrentNode = "DeadMotherfucker";
 
@@ -1069,7 +1067,6 @@ void CommonQuestComplete(string sQuestName)
 			DeleteAttribute(NPChar,"fetch_quest_active");
 			if(!CheckAttribute(PChar,"fetchquestfailed")) PChar.fetchquestfailed = 0;
 			PChar.fetchquestfailed = sti(PChar.fetchquestfailed) + 1;
-			
 		break;
 
 		////////////////////////////////////////////////////////////////////////
@@ -3213,9 +3210,9 @@ Cost for level 50 is 55,374,000
 		case "girl_for_sale_2":
 			LAi_SetHP(characterFromID("danielle_quests_corsair_1"), 80.0, 80.0);
 //			ChangeCharacterAddressGroup(characterFromID("danielle_quests_corsair_1"), pchar.location, "reload", "reload1");								// PB: Reset this to normal
-			if(pchar.location == "Antigua_Port")						// PB: Weird pier needs special case
+			if(pchar.location == "Antigua_Port")																										// PB: Weird pier needs special case
 				ChangeCharacterAddressGroup(CharacterFromID("danielle_quests_corsair_1"), homelocation, "reload", "reload2");
-			else										// GR: attempt to spawn pirate wherever you are. 
+			else																																		// GR: attempt to spawn pirate wherever you are
 				SetCharacterToNearLocatorFromMe("danielle_quests_corsair_1", 3);	// 'SetCharacterToNearLocatorFromMe' takes character ID, not ref, as parameter
 
 			LAi_SetActorType(characterFromID("danielle_quests_corsair_1"));
@@ -3815,7 +3812,7 @@ Cost for level 50 is 55,374,000
 //				break;
 			}
 
-			if (!CheckAttribute(PChar,"quest.poker.started")) 
+			if (!CheckAttribute(PChar,"quest.poker.started"))
 			{
 				TeleportCharacterToPosAy(pchar, Land_posx[0], Land_posy[0], Land_posz[0], Land_angle[0]);
 			}
@@ -3824,9 +3821,9 @@ Cost for level 50 is 55,374,000
 				ChangeCharacterAddressGroup(pchar, "Turks_poker_room", "goto", "goto13");
 				LAi_SetActorType(Pchar);
 				Lai_ActorRunToLocator(pchar, "goto", "goto12", "Competition_day_end", 0);
-			
+
 			}
-			
+
 		break;
 
 		case "kill_tavern_fightman_complete":
@@ -4181,7 +4178,7 @@ Cost for level 50 is 55,374,000
 			{
 				NPChar.rank = PChar.rank*2;
 				NPChar.experience = PChar.experience*2;
-				NPChar.skill.Fencing = 10;	
+				NPChar.skill.Fencing = 10;
 				NPChar.perks.list.BasicDefence = true;
 				NPChar.perks.list.AdvancedDefence = true;
 				NPChar.perks.list.SwordplayProfessional = true;
@@ -4220,11 +4217,11 @@ Cost for level 50 is 55,374,000
 
 			LAi_SetFightMode(PChar, true);
 
-			LAi_SetActorTypeNoGroup(NPChar); 
+			LAi_SetActorTypeNoGroup(NPChar);
 			LAi_ActorAttack(NPChar, PChar, "");
 
-			Lai_SetCheckMinHP(PChar, 0.5*LAi_GetCharacterHP(PChar), false, "TrainingFightFinished1"); 
-			Lai_SetCheckMinHP(NPChar, 0.5*LAi_GetCharacterHP(NPChar), true, "TrainingFightFinished2"); 
+			Lai_SetCheckMinHP(PChar, 0.5*LAi_GetCharacterHP(PChar), false, "TrainingFightFinished1");
+			Lai_SetCheckMinHP(NPChar, 0.5*LAi_GetCharacterHP(NPChar), true, "TrainingFightFinished2");
 		break;
 
 		case "TrainingFightFinished1":
@@ -4293,14 +4290,14 @@ Cost for level 50 is 55,374,000
 
 			// Turks: Not in Jack Sparrow Storyline
 			if (sti(GetStorylineVar(FindCurrentStoryline(), "JACK_SPARROW")) != 1)
-			{ 
+			{
 				Characters[GetCharacterIndex("Dante Siciliano")].Dialog.Filename = "PGov_dialog.c";
 				Characters[GetCharacterIndex("Dante Siciliano")].Dialog.Filename.GroupDialog = "governor.c";
 			}
 
 			// Nevis: Not in Standard Storyline
 			if (sti(GetStorylineVar(FindCurrentStoryline(), "START_MIN_LEVEL")) != 1)
-			{ 
+			{
 				Characters[GetCharacterIndex("Isenbrandt Jurcksen")].Dialog.Filename = "PGov_dialog.c";
 				Characters[GetCharacterIndex("Isenbrandt Jurcksen")].Dialog.Filename.GroupDialog = "governor.c";
 			}
@@ -4371,7 +4368,7 @@ Cost for level 50 is 55,374,000
 
 			// Turks: Not in Jack Sparrow Storyline
 			if (sti(GetStorylineVar(FindCurrentStoryline(), "JACK_SPARROW")) != 1)
-			{ 
+			{
 				Characters[GetCharacterIndex("Dante Siciliano")].Dialog.Filename = "Nathan Kell (Gov)_dialog.c";
 				Characters[GetCharacterIndex("Dante Siciliano")].Dialog.CurrentNode = "First time";
 				DeleteAttribute(CharacterFromID("Dante Siciliano"), "Dialog.Filename.GroupDialog");
@@ -4558,7 +4555,7 @@ Cost for level 50 is 55,374,000
 	
 		case "stand_up":
 			LAi_Fade("stand_up1", "stand_up2");
-			LAi_SetPlayerType(Pchar); 
+			LAi_SetPlayerType(Pchar);
 		break;
 	
 		case "stand_up1":
@@ -4575,7 +4572,7 @@ Cost for level 50 is 55,374,000
 		break;
 	
 		case "stand_up2":
-			LAi_SetPlayerType(Pchar); 
+			LAi_SetPlayerType(Pchar);
 		break;
 
 //============================================================================
@@ -4618,8 +4615,8 @@ Cost for level 50 is 55,374,000
 
 						GiveShip2Character(characterFromID("Tor_soldier_1"),"Sloop2","Victory",-1,PIRATE,true,true);
 						GiveShip2Character(characterFromID("Tor_soldier_2"),"PiratBrig50","Victory",-1,PIRATE,true,true);
-						setCharacterShipLocation(characterFromID("Tor_soldier_1"), "Tortuga_port"); 	
-						setCharacterShipLocation(characterFromID("Tor_soldier_2"), "Tortuga_port");	
+						setCharacterShipLocation(characterFromID("Tor_soldier_1"), "Tortuga_port");
+						setCharacterShipLocation(characterFromID("Tor_soldier_2"), "Tortuga_port");
 					}
 				}
 			}
@@ -5074,7 +5071,7 @@ Cost for level 50 is 55,374,000
 			{
 				//ok
 			}
-			else RemoveCharacterEquip(Pchar, GUN_ITEM_TYPE);	
+			else RemoveCharacterEquip(Pchar, GUN_ITEM_TYPE);
 		break;
 
 		case "indian_pistols_equip_check":
@@ -5250,7 +5247,7 @@ Cost for level 50 is 55,374,000
 			//LogIt("PCHAR");
 			weapon.model = "whip_rolled";
 			RemoveCharacterEquip(Pchar, GUN_ITEM_TYPE );
-			EquipCharacterByItem(Pchar, "pistolwhip");		
+			EquipCharacterByItem(Pchar, "pistolwhip");
 		break;
 	
 		case "reset_whip_rolled_officer":
@@ -5267,7 +5264,7 @@ Cost for level 50 is 55,374,000
 
 			weaponID = GetCharacterEquipByGroup(OPchar,GUN_ITEM_TYPE);
 			Items_FindItem(weaponID, &weapon);
-			//LogIt("officer model 2 = " + weapon.model);		
+			//LogIt("officer model 2 = " + weapon.model);
 		break;
 
 		case "pchar_hip_mode_check":
@@ -5437,7 +5434,7 @@ Cost for level 50 is 55,374,000
 				pchar.cloister_stair1 = "up_ready";
 				ChangeCharacterAddressGroup(pchar, "new_cloister_inside", "goto", "st1_do");
 			}
-			else 
+			else
 			{
 				pchar.cloister_stair1 = "down_ready";
 				ChangeCharacterAddressGroup(pchar, "new_cloister_inside", "goto", "st1_up");
@@ -5478,7 +5475,7 @@ Cost for level 50 is 55,374,000
 				pchar.cloister_stair2 = "up_ready";
 				ChangeCharacterAddressGroup(pchar, "new_cloister_inside", "goto", "st2A_do");
 			}
-			else 
+			else
 			{
 				pchar.cloister_stair2 = "down_ready";
 				ChangeCharacterAddressGroup(pchar, "new_cloister_inside", "goto", "st2A_up");
@@ -5499,7 +5496,7 @@ Cost for level 50 is 55,374,000
 				pchar.cloister_stair2 = "up_ready";
 				ChangeCharacterAddressGroup(pchar, "new_cloister_inside", "goto", "st2B_do");
 			}
-			else 
+			else
 			{
 				pchar.cloister_stair2 = "down_ready";
 				ChangeCharacterAddressGroup(pchar, "new_cloister_inside", "goto", "st2B_up");
@@ -5813,7 +5810,7 @@ void gun_mketK()
 		weapon.model = "musket_back";
 		RemoveCharacterEquip(attack, GUN_ITEM_TYPE );
 		EquipCharacterByItem(attack, "pistolmket");
-	}	
+	}
 
 	attack.chr_ai.charge = GunCurCharge; // Levis
 
@@ -6383,7 +6380,7 @@ void reset_check_mguns()
 
 			string weaponID2 = GetCharacterEquipByGroup(tmpChr,BLADE_ITEM_TYPE);
 			aref weapon2;
-			Items_FindItem(weaponID2, &weapon2);			
+			Items_FindItem(weaponID2, &weapon2);
 
 			if (!LAi_IsDead(tmpChr) && !LAi_IsFightMode(tmpChr))
 			{
@@ -6407,9 +6404,9 @@ void reset_check_mguns()
 					weapon.model = "battleax_back";
 					EquipCharacterByItem(tmpChr, "battleax");
 				}
-			
-				if(IsEquipCharacterByItem(tmpChr, "witcher_steel-2") || IsEquipCharacterByItem(tmpChr, "witcher_steel-1") 
-				|| IsEquipCharacterByItem(tmpChr, "witcher_steel") || IsEquipCharacterByItem(tmpChr, "witcher_steel+1") 
+
+				if(IsEquipCharacterByItem(tmpChr, "witcher_steel-2") || IsEquipCharacterByItem(tmpChr, "witcher_steel-1")
+				|| IsEquipCharacterByItem(tmpChr, "witcher_steel") || IsEquipCharacterByItem(tmpChr, "witcher_steel+1")
 				|| IsEquipCharacterByItem(tmpChr, "witcher_steel+2") || IsEquipCharacterByItem(tmpChr, "witcher_steel+3"))
 				{
 					weapon2.model = "witcher_steel_back";
@@ -6685,7 +6682,7 @@ void SupplyAmmo(bool bOverride)
 							DeleteAttribute(NPChar,"Items.pistolgrapes");
 							DeleteAttribute(NPChar,"Items.musketbullets");
 
-							if(CheckCharacterItem(NPChar,"powderbarrel")) { TakeNItems(NPChar,"gunpowder", (4 * MAX_GUNPOWDER)); } 
+							if(CheckCharacterItem(NPChar,"powderbarrel")) { TakeNItems(NPChar,"gunpowder", (4 * MAX_GUNPOWDER)); }
 							else
 							{
 								if(CheckCharacterItem(NPChar,"powderflask")) { TakeNItems(NPChar,"gunpowder", (2 * MAX_GUNPOWDER)); }
@@ -6700,7 +6697,7 @@ void SupplyAmmo(bool bOverride)
 							//LogIt("cc = " + cc);
 							if(cc > OpriorGP)																										{ bGotAmmo = true; }
 
-							if(weapon.shottype == "pg2" || weapon.shottype == "pg")	{ TakeNItems(NPChar,"pistolgrapes" , cc);    if (cc > OpriorPG)	{ bGotAmmo = true; } }	
+							if(weapon.shottype == "pg2" || weapon.shottype == "pg")	{ TakeNItems(NPChar,"pistolgrapes" , cc);    if (cc > OpriorPG)	{ bGotAmmo = true; } }
 							if(weapon.shottype == "mb") 							{ TakeNItems(NPChar,"musketbullets", cc/2);  if (cc > OpriorMB)	{ bGotAmmo = true; } }
 							if(weapon.shottype == "pb2" || weapon.shottype == "pb")	{ TakeNItems(NPChar,"pistolbullets", cc);    if (cc > OpriorPB)	{ bGotAmmo = true; } }
 						}

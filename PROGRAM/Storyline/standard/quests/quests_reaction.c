@@ -1562,7 +1562,6 @@ void QuestComplete(string sQuestName)
 			Locations[FindLocation("Oxbay_town")].reload.l3.disable = 1;
 			Locations[FindLocation("Oxbay_town")].reload.l4.disable = 1;
 // KK -->
-			if (CCC_PITFALLS > 0) Locations[FindLocation("Oxbay_town")].reload.l5.disable = 1;
 			Locations[FindLocation("Oxbay_town")].reload.l6.disable = 1;
 			Locations[FindLocation("Oxbay_town")].reload.l7.disable = 1;
 			Locations[FindLocation("Oxbay_town")].reload.l8.disable = 1;
@@ -1773,7 +1772,6 @@ void QuestComplete(string sQuestName)
 			Locations[FindLocation("Oxbay_town")].reload.l3.disable = 0;
 			Locations[FindLocation("Oxbay_town")].reload.l4.disable = 0;
 // KK -->
-			if (CCC_PITFALLS > 0) Locations[FindLocation("Oxbay_town")].reload.l5.disable = 0;
 			Locations[FindLocation("Oxbay_town")].reload.l6.disable = 0;
 			Locations[FindLocation("Oxbay_town")].reload.l7.disable = 0;
 			Locations[FindLocation("Oxbay_town")].reload.l8.disable = 0;
@@ -3000,7 +2998,7 @@ void QuestComplete(string sQuestName)
 			LAi_group_MoveCharacter(characterFromID("Mine_soldier_05"), "ENGLAND_SOLDIERS");
 			LAi_group_MoveCharacter(characterFromID("Mine_soldier_06"), "ENGLAND_SOLDIERS");
 			SetTownFortCommander("Greenford", characterFromID("Greenford Commander"));
-			SetTownName("Greenford", "Bridgetown");	// In case the player renamed the town while it was Personal
+			SetTownName("Greenford", TranslateString("","Greenford"));	// In case the player renamed the town while it was Personal
 			CaptureTownForNation("Greenford", ENGLAND);
 			ChangeCharacterAddressGroup(characterFromID("Greenford Commander"), "Oxbay", "reload", "reload_fort1");
 
@@ -3016,7 +3014,7 @@ void QuestComplete(string sQuestName)
 			Characters[GetCharacterIndex("Greenford Commander")].Ship.Cargo.Goods.Bombs = Characters[GetCharacterIndex("Greenford Commander")].orig.Ship.Cargo.Goods.Bombs;
 		//	Characters[GetCharacterIndex("Greenford Commander")].Ship.Cargo.Goods.Gunpowder = Characters[GetCharacterIndex("Greenford Commander")].orig.Ship.Cargo.Goods.Gunpowder; // This crashes the game???
 
-			// Tavern characters sometimes get confused after capture of Bridgetown, so reset them
+			// Tavern characters sometimes get confused after capture of Greenford, so reset them
 			sld = CharacterFromID("Simon Hanpool");
 			sld.greeting = "Gr_Simon Hanpool";
 			LAi_SetBarmanType(sld);

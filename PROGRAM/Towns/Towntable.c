@@ -1829,13 +1829,12 @@ void AddTown(ref n, ref ctown)
 			case "Falaise de Fleur":    rTown.name = "St Pierre";         break;
 			case "Isla Muelle":         rTown.name = "San Juan";          break;
 			case "Oxbay":               rTown.name = "Speightstown";      break;
-			case "Greenford":           rTown.name = "Bridgetown";        break;
 			case "Redmond":             rTown.name = "Port Royale";       break;
 			case "Quebradas Costillas": rTown.name = "Pirate Settlement"; break;
 			case "Tortuga":             rTown.name = "La Tortue";         break;
 			case "Eleuthera":           rTown.name = "Governor's Harbor"; break;
 			case "Alice":               rTown.name = "Alice Town";        break;
-			case "Khael Roa":           rTown.name = "Cozumel";           break;
+			case "Khael Roa":           rTown.name = "Temple";            break;
 			// default:
 			                            rTown.name = stmp;
 		}

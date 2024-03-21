@@ -280,6 +280,7 @@ void QuestComplete(string sQuestName)
 
 		case "seguircaptain":
             ChangeCharacterAddressGroup(CharacterFromID("Harold Flesher"), "Grand_Cayman_town", "reload", "reload9");
+			LAi_SetHP(CharacterFromID("Harold Flesher"), 30.0, 30.0); // PB: Override so he can die early enough
 
 			pchar.quest.captain_died.win_condition.l1 = "NPC_Death";
 			pchar.quest.captain_died.win_condition.l1.character = "Harold Flesher";
@@ -3885,7 +3886,7 @@ void QuestComplete(string sQuestName)
 		break;
 
 		case "messenger_done":			
-            DoQuestReloadToLocation("Eleuthera_Port", "goto", "goto17","messenger_donebis");		
+            DoQuestReloadToLocation("Eleuthera_town", "goto", "goto17","messenger_donebis");		
 		break;
 
 		case "messenger_donebis":			
@@ -4088,19 +4089,19 @@ void QuestComplete(string sQuestName)
         break;
 
         case "ver_padilla3":
-			Locations[FindLocation("Eleuthera_Port")].vcskip = true;
-			SetCharacterShipLocation(characterFromID("Enrique Padilla"), "Eleuthera_Port");			
+			Locations[FindLocation("Eleuthera_town")].vcskip = true;
+			SetCharacterShipLocation(characterFromID("Enrique Padilla"), "Eleuthera_town");			
 			LAi_SetActorType(characterFromID("Enrique Padilla"));			
 			Characters[GetCharacterIndex("Enrique Padilla")].dialog.currentnode = "begin_25";
 			LAi_ActorDialog(characterFromID("Enrique Padilla"), pchar, "", 3.0, 1.0);	
         break;
 
         case "retourner_eleuthera":
-           DoQuestReloadToLocation("Eleuthera_Port", "goto", "goto1","retourner_eleutherabis");		
+           DoQuestReloadToLocation("Eleuthera_town", "goto", "goto1","retourner_eleutherabis");		
         break;
 
         case "retourner_eleutherabis":
-            ChangeCharacterAddressGroup(CharacterFromID("Enrique Padilla"), "Eleuthera_Port", "goto", "goto7");
+            ChangeCharacterAddressGroup(CharacterFromID("Enrique Padilla"), "Eleuthera_town", "goto", "goto7");
 			SetCompanionIndex(Pchar, 1, GetCharacterIndex("Enrique Padilla"));
 			SetCharacterRemovable(characterFromID("Enrique Padilla"), false);
 			Characters[GetCharacterIndex("Enrique Padilla")].dialog.currentnode = "begin_29";			
@@ -4109,7 +4110,7 @@ void QuestComplete(string sQuestName)
         break;
 
         case "retourner_eleutherabis2":
-			DeleteAttribute(&Locations[FindLocation("Eleuthera_Port")],"vcskip");			
+			DeleteAttribute(&Locations[FindLocation("Eleuthera_town")],"vcskip");			
             LAi_SetActorType(characterFromID("Enrique Padilla"));			
 			LAi_ActorRunToLocation(characterFromID("Enrique Padilla"), "reload", "reload1", "none", "", "", "revenir_havana", 12.0);
         break;

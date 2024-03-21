@@ -126,6 +126,7 @@
 #define FRP_FWIC		53 //29
 #define FRT_FWIC		0
 #define FRN_FWIC		"go_fwic"
+
 #define FRP_PORT		2
 #define FRT_PORT		1
 #define FRN_PORT		"go_port"
@@ -1275,7 +1276,7 @@ void initFastReloadTable()
 	curTable.l7.tex = FRT_TAILORSHOP;
 	curTable.l7.note = FRN_TAILORSHOP;
 	curTable.l7.location = "Eleuthera_TailorsShop";
-
+	
 	makearef(curTable,objFastReloadTable.table.Cartagena);
 	// store
 	curTable.l1.pic = FRP_STORE;

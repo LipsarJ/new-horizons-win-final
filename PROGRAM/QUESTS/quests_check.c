@@ -63,6 +63,9 @@ bool ProcessCondition(aref condition)
 	case "item":
 		return CheckCharacterItem(refCharacter,condition.item);
 	break;
+		case "item_equip":
+		return IsEquipCharacterByItem(refCharacter,condition.item_equip);
+	break;
 	case "passenger":
 		if(CheckAttribute(condition,"npc"))
 		{

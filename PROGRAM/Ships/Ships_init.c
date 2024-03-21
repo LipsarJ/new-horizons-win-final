@@ -12345,6 +12345,105 @@ void InitShips()
 		refShip.InertiaAccelerationZ	= 4.0;	refShip.InertiaBrakingZ		= 3.0;
 	}
 
+///-------------------------------------------------------------------------
+/// 	Guineaman - Bristol Merchantman (real Queen Anne's Revenge thanks to MK)
+///-------------------------------------------------------------------------
+
+	makeref(refShip,ShipsTypes[n]);
+	n++;
+	refShip.Name			= "Guineaman1";
+	refShip.id				= "Guineaman1";
+	refShip.Class		   	= 6;
+	refShip.Cannon			= CANNON_TYPE_LONG_LBS12;
+	refShip.MaxCaliber		= 12;
+	refShip.Weight			= Tonnes2CWT(680);
+	refShip.Capacity		= 4000;
+	refShip.CannonsQuantity = 16;
+
+	refShip.Track.Enable	= true;
+    refShip.Track1.ZStart	= 0.30;
+    refShip.Track1.LifeTime = 14.5;
+    refShip.Track1.Width	= "5.7, 7.9";
+    refShip.Track1.Speed	= "6.0, 8.0";
+
+    refShip.Track2.ZStart	= -0.15;
+    refShip.Track2.LifeTime = 8.5;
+    refShip.Track2.Width	= "10.0, 12.0";
+    refShip.Track2.Speed	= "0.15, 0.25";
+
+	refShip.Cannons.Borts.cannonf.qty = 2;
+	refShip.Cannons.Borts.cannonb.qty = 0;
+	// NK <--
+	refShip.MaxCrew		 = 97;
+	refShip.MinCrew		 = 15;
+	refShip.Price		   = 78000;
+	refShip.HP			  = 3850;
+	refShip.SP			  = 250;
+
+	refShip.BigPicTexName = "SHIPS5";
+// KK -->
+	refShip.BI.Tex = 16;
+	refShip.BI.Pic = 68;
+	refShip.QDeck = "ShipDeck5";
+	refShip.CannonsDeck = 0;
+	refShip.CargoHold = 1;
+	refShip.CabinType          = "Cabin_Medium";
+    refShip.DeckType           = "Medium";
+// <-- KK
+
+	//Period
+	refShip.period.0 = 0.1; //
+	refShip.period.1 = 1.0; //
+	refShip.period.2 = 0.9; //
+	refShip.period.3 = 0.8; //
+	refShip.period.4 = 0.6; //
+	refShip.period.5 = 0.3; //
+	//Nation
+	refShip.england = 1.0; //
+	refShip.france = 1.0; //
+	refShip.holland = 0.0; //
+	refShip.portugal = 0.5; //
+	refShip.pirate = 1.0; //
+	refShip.spain = 0.0; //
+	refShip.america = 0.0; //
+	refShip.sweden = 0.0; //
+
+	refShip.CanBuy			= true;
+	refShip.CanEncounter		= true;
+	refShip.Model = "Gunship"; // KK
+	refShip.Type.Trade = true;
+	refShip.Type.War = false;
+
+	refShip.WaterLine = 0.9;
+	refShip.SpeedDependWeight = 0.3;
+	refShip.SubSeaDependWeight = 1.0;
+
+	refShip.GeraldSails.rey_b2		= 1;
+    refShip.GeraldSails.rey_b3		= 1;
+    refShip.GeraldSails.rey_b1		= 1;
+    refShip.GeraldSails.rey_b1.vscale		= 0.85;
+    refShip.GeraldSails.rey_b2.vscale		= 0.65;
+    refShip.GeraldSails.rey_b3.vscale		= 0.65;
+
+// lateen x2 aft and square main
+	refShip.ClosestPoint = 0.20;
+	refShip.BestPoint = 0.65;
+	refShip.RigType = "Sch";
+
+	if(iRealismMode>0 || REALISTIC_SHIP_INERTIA){
+		refShip.SpeedRate		= 12.6;
+		refShip.TurnRate		= 75;
+		refShip.InertiaAccelerationX	= 3.5;	refShip.InertiaBrakingX		= 4.0;
+		refShip.InertiaAccelerationY	= 5.4;	refShip.InertiaBrakingY		= 6.0;
+		refShip.InertiaAccelerationZ	= 4.0;	refShip.InertiaBrakingZ		= 4.2;
+	}else{
+		refShip.SpeedRate		= 11.6;
+		refShip.TurnRate		= 30;
+		refShip.InertiaAccelerationX	= 3.5;	refShip.InertiaBrakingX		= 4.0;
+		refShip.InertiaAccelerationY	= 5.4;	refShip.InertiaBrakingY		= 6.0;
+		refShip.InertiaAccelerationZ	= 4.0;	refShip.InertiaBrakingZ		= 4.2;
+
+	}
 
 //-------------------------------------------------------------------------
 // AOP Caravel1 - Retextured by Seb (Caravela Redonda)

@@ -263,7 +263,7 @@ string GetNationIDByType(int iNationType)
 {
 	string retText = InvalidNation(iNationType);
 	if (retText != "")	return retText;
-	
+
 	ref rNation = GetNationByType(iNationType);
 	return rNation.id;
 }
@@ -283,7 +283,7 @@ string GetNationNameByType(int iNationType)
 {
 	string retText = InvalidNation(iNationType);
 	if (retText != "")	return retText;
-	
+
 	ref rNation = GetNationByType(iNationType);
 	return rNation.Name;
 }
@@ -293,7 +293,7 @@ string GetNationOfficialNameByType(int iNationType)
 {
 	string retText = InvalidNation(iNationType);
 	if (retText != "")	return retText;
-	
+
 	string stmp = GetNationIDByType(iNationType);
 	ref rPeriod; makeref(rPeriod, Periods[GetCurrentPeriod()]);
 	if (CheckAttribute(rPeriod, "Nations.OfficialName." + stmp)) return rPeriod.Nations.OfficialName.(stmp);
@@ -315,7 +315,7 @@ string GetNationDescByType(int iNationType)
 {
 	string retText = InvalidNation(iNationType);
 	if (retText != "")	return retText;
-	
+
 	ref rNation = GetNationByType(iNationType);
 	return rNation.Desc;
 }
@@ -331,7 +331,7 @@ string GetNationRoyalByType(int iNationType)
 	sRet = "";
 
 	int tmpRoyalFileID = -1; // MAXIMUS 14.08.2019: changes for translation
-	if(FindFile("RESOURCE\INI\TEXTS\"+LanguageGetLanguage(), "*.txt", "periods_strings.txt") != "") tmpRoyalFileID = LanguageOpenFile("periods_strings.txt"); // MAXIMUS 14.08.2019: changes for translation
+	if(FindFile(GetResourceDirectory() + "INI\TEXTS\"+LanguageGetLanguage(), "*.txt", "periods_strings.txt") != "") tmpRoyalFileID = LanguageOpenFile("periods_strings.txt"); // MAXIMUS 14.08.2019: changes for translation
 
 	if (iNationType >= 0 && iNationType < NATIONS_QUANTITY)	// LDH fix for iNationType < 0
 	{
@@ -342,7 +342,7 @@ string GetNationRoyalByType(int iNationType)
 		}
 		if (CheckAttribute(rPeriod, "Royal." + sNation + ".Name"))
 		{
-			if(sRet == "")	
+			if(sRet == "")
 			{
 				sRet  =       rPeriod.Royal.(sNation).Name;
 				if(tmpRoyalFileID!=-1) sRet = LanguageConvertString(tmpRoyalFileID, sRet); // MAXIMUS 14.08.2019: changes for translation
@@ -686,8 +686,8 @@ bool UpdateRMRelation(ref char, int iNation, float fPoints)
 	float relChange   = 0.0;
 
 	bool bValidAttack = GetFlagRMRelation(iNation) == RELATION_ENEMY && !CheckAttribute(char, "traitor");	// You were flying a hostile flag and did not deliberately betray them
-	bValidAttack      = bValidAttack || iActOfPiracy == 0;												// Never an invalid attack if you hit the pirates (even under a pirate flag)
-	DeleteAttribute(char, "traitor");														// This was temporarily added to the player
+	bValidAttack      = bValidAttack || iActOfPiracy == 0;													// Never an invalid attack if you hit the pirates (even under a pirate flag)
+	DeleteAttribute(char, "traitor");																		// This was temporarily added to the player
 	if (bValidAttack)
 	{
 		// Loop through nations to determine if this was an act of piracy
@@ -700,24 +700,24 @@ bool UpdateRMRelation(ref char, int iNation, float fPoints)
 				if (GetLetterOfMarqueQuantity() > 1)	relChange = relChange * (1 - GetLetterOfMarqueQuantity()/10); // GR: Reduce points for multiple LoMs
 			//	TraceAndLog("Add " + relChange + " points: You are in the service of " + GetNationNameByType(i) + ", which is at war with " + GetNationNameByType(iNation));
 				ChangeRMRelation(char, i, relChange);
-				if (curFlag != PIRATE)	iActOfPiracy = 0;										// Any act under a pirate flag IS an act of piracy
+				if (curFlag != PIRATE)	iActOfPiracy = 0;													// Any act under a pirate flag IS an act of piracy
 			}
 		}
 
 		// This happens if you aren't in any service OR you did this attack under a pirate flag, but not if it was the pirates you attacked
-		if (iActOfPiracy > 0)	iActOfPiracy = fPoints;												// For an act of piracy, add full points with the pirates
+		if (iActOfPiracy > 0)	iActOfPiracy = fPoints;														// For an act of piracy, add full points with the pirates
 
 		// Loop through nations to determine how the attacked nation and its allies should respond to this
 		for(i = 0; i < NATIONS_QUANTITY; i++)
 		{
-			if(GetNationRelation(i, iNation) == RELATION_FRIEND)										// This is the nation you attacked OR an ally
+			if(GetNationRelation(i, iNation) == RELATION_FRIEND)											// This is the nation you attacked OR an ally
 			{
-				rel = GetRMRelation(char, i);												// Relation between the checked nation and the player
-				if (i == iNation)													// This is the nation you attacked
+				rel = GetRMRelation(char, i);																// Relation between the checked nation and the player
+				if (i == iNation)																			// This is the nation you attacked
 				{
-					relChange = rel  -  REL_WAR + 1;										// You may immediately become HOSTILE with this nation!
-					if (makeint(rel) <= REL_WAR) relChange = fPoints;								// They are already hostile, so just subtract the number
-					else														// You were friendly with them before, bastard!	
+					relChange = rel  -  REL_WAR + 1;														// You may immediately become HOSTILE with this nation!
+					if (makeint(rel) <= REL_WAR)								relChange = fPoints;		// They are already hostile, so just subtract the number
+					else																					// You were friendly with them before, bastard!
 					{
 						if (i == PIRATE) relChange = fPoints;									// The pirates aren't too concerned with you attacking other pirates
 						else
@@ -731,11 +731,11 @@ bool UpdateRMRelation(ref char, int iNation, float fPoints)
 						}	// You had no legal reason for this attack, TRAITOR!
 					}
 				}
-				else															// This is an ally
+				else																						// This is an ally
 				{
-					relChange = rel  -  REL_AFTERATTACK + 1;									// You may immediately become Wary with this nation
-					if (makeint(rel) <= REL_AFTERATTACK) relChange = fPoints;							// They are already Wary, so just subtract the number
-					else														// Else, add an explanatory text message
+					relChange = rel  -  REL_AFTERATTACK + 1;												// You may immediately become Wary with this nation
+					if (makeint(rel) <= REL_AFTERATTACK)						relChange = fPoints;		// They are already Wary, so just subtract the number
+					else																					// Else, add an explanatory text message
 					{
 						Preprocessor_Add("nationnamei", XI_ConvertString(GetNationNameByType(i)));
 						Preprocessor_Add("nationdesci", XI_ConvertString(GetNationDescByType(i)));
@@ -746,11 +746,11 @@ bool UpdateRMRelation(ref char, int iNation, float fPoints)
 						Preprocessor_Delete("nationnamei");
 						Preprocessor_Delete("nationnamej");
 						Preprocessor_Delete("nationdesc");
-						if (IsInServiceOf(i)) LeaveService(char, i, true);							// If you had a naval commission or LoM with this nation, lose it
+						if (IsInServiceOf(i)) LeaveService(char, i, true);									// If you had a naval commission or LoM with this nation, lose it
 					}
-					if (ServedNation != PERSONAL_NATION && iActOfPiracy == 0)							// Only if you are serving ONE specific nation and committed no act of piracy
+					if (ServedNation != PERSONAL_NATION && iActOfPiracy == 0)								// Only if you are serving ONE specific nation and committed no act of piracy
 					{
-						rel = GetNationRelation(i, ServedNation);								// Relation between the ally and your own served nation
+						rel = GetNationRelation(i, ServedNation);											// Relation between the ally and your own served nation
 					//	TraceAndLog("Served Nation = " + GetNationNameByType(ServedNation) + ", relation with " + GetNationNameByType(i) + " = " + rel);
 						if(rel == RELATION_NEUTRAL || rel == RELATION_FRIEND)	relChange = 0.0;			// You have a legal reason, so the ally doesn't mind
 					}
@@ -774,12 +774,12 @@ bool UpdateRMRelation(ref char, int iNation, float fPoints)
 			rel = GetRMRelation(char, i);																	// Relation between the checked nation and the player
 			if (GetNationRelation(i, iNation) == RELATION_FRIEND)											// This is the nation you attacked OR an ally
 			{
-				LeaveService(char, i, true);													// Lose navy commission and LoM, also land and title
-				if (i == iNation)														// This is the nation you attacked
+				LeaveService(char, i, true);																// Lose navy commission and LoM, also land and title
+				if (i == iNation)																			// This is the nation you attacked
 				{
-					SetRMRelation(char, i, REL_MIN);											// The nation you attacked REALLY doesn't approve!
+					SetRMRelation(char, i, REL_MIN);														// The nation you attacked REALLY doesn't approve!
 				}
-				else																// This is an ally
+				else																						// This is an ally
 				{
 					if (rel > REL_WAR) SetRMRelation(char, i, REL_WAR);										// These turn hostile too, if they weren't already
 				}
@@ -943,7 +943,7 @@ void SetRelationsAsNation(int iNation)
 	{
 		for (i = 0; i < NATIONS_QUANTITY; i++)
 		{
-			if (i == PIRATE && iNation != PIRATE)	SetRMRelation(PChar, i, (REL_WAR + REL_MIN)/2);	
+			if (i == PIRATE && iNation != PIRATE)	SetRMRelation(PChar, i, (REL_WAR + REL_MIN)/2);
 			else									SetRMRelation(PChar, i, RelationToRMRelation(GetNationRelation(iNation, i)) );
 		}
 	}
@@ -1572,7 +1572,7 @@ void RandomNationsRelationsChange()
 		// STEP 1: Find nations for relation change
 		i = PERSONAL_NATION;
 		j = PERSONAL_NATION;
-		while(i==PERSONAL_NATION || i==PIRATE)			// Pirate relation doesn't change
+		while(i==PERSONAL_NATION || i==PIRATE)				// Pirate relation doesn't change
 		{
 			i = rand(NATIONS_QUANTITY-1);
 		}
@@ -1637,8 +1637,8 @@ void RandomNationsRelationsChange()
 					Preprocessor_Add("nationname2", XI_ConvertString(GetNationNameByType(j)));
 					logTitle = GetTranslatedLog("#snationname1# is at war with #snationname2#");
 					logEntry = GetTranslatedLog("#snationname1# has declared war on #snationname2#.") + " " + GetTranslatedLog("#snationdesc1# ships have attacked a small #snationdesc2# settlement, as I was told.");
-				// original condition was 'if(IsInServiceOf(i) && GetNationRelation2MainCharacter(j)==RELATION_ENEMY)', which doesn't work because you haven't been set hostile to the other nation yet
-				// Only add extra text if you are solely in the service of i or j. You're a patriot and you'll be at war in step 3.  Multi-LoM privateers don't care as much.
+					// original condition was 'if(IsInServiceOf(i) && GetNationRelation2MainCharacter(j)==RELATION_ENEMY)', which doesn't work because you haven't been set hostile to the other nation yet
+					// Only add extra text if you are solely in the service of i or j. You're a patriot and you'll be at war in step 3.  Multi-LoM privateers don't care as much.
 					if(ServedNation == i) logEntry += GetTranslatedLog("\n \nIt was about time to show those #snationdesc2# landlubbers who's in charge in the Caribbean!");
 					if(ServedNation == j) logEntry += GetTranslatedLog("\n \nThose bloody cowards! The next #snationdesc1# ship we encounter will surely pay for this.");
 					newRelation = RELATION_ENEMY;

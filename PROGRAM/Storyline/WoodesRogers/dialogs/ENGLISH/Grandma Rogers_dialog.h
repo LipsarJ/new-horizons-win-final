@@ -14,7 +14,7 @@ string DLG_TEXT[113] = {
 "Well what do people say then?",
 "Ahh young Captain, have you found any medicines yet?",
 "Grandma ... miss Rogers, only this locked chest so far.",
-"I have sent for the apothecary from Bridgetown but it may take some time for him to get here. The boatswain Mr Pope is placed in the port to meet him.",
+"I have sent for the apothecary from Greenford but it may take some time for him to get here. The boatswain Mr Pope is placed in the port to meet him.",
 "I see ...",
 "There may be some cures and drugs in my bedroom - I havn't had the time to check. Perhaps you should come back later!",
 "I'll do that - goodbye miss Rogers.",

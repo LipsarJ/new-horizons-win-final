@@ -10,7 +10,7 @@ void CreateReloadPaths(string groupID)
 	string outLocName,goLocName;
 	aref reloadList,curReload;
 
-	// запишем все переходы в локациях используемой группы
+	// пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
 	for(i=0; i<MAX_LOCATIONS; i++)
 	{
 		if( !CheckAttribute(&Locations[i],"fastreload") ) continue;
@@ -34,7 +34,7 @@ void CreateReloadPaths(string groupID)
 		}
 	}
 
-	// заполним все пути перехода из одной локации в другую
+	// пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
 	aref outLoc,goLoc, tmpLoc;
 	bool yesChange = true;
 	string tmpLocName;
@@ -68,8 +68,8 @@ void CreateReloadPaths(string groupID)
 	}
 }
 
-// получить идентификатор следующей локации для перехода из одной локации в другую
-// возвращает true, если поиск пути завершен
+// пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
+// пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ true, пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 bool GetNextLocationForPath(string outLocName, string goLocName, ref nextLocName, ref reloadName)
 {
 	aref tbl; makearef(tbl,objFastReloadTable.Paths.table);
@@ -80,7 +80,7 @@ bool GetNextLocationForPath(string outLocName, string goLocName, ref nextLocName
 
 	while(outLocName!=goLocName)
 	{
-		// Прописан прямой путь от стартовой локации до искомой
+		// пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 		if( CheckAttribute(tbl,outLocName+"."+goLocName) )
 		{
 			nextLocName = tbl.(outLocName).(goLocName);
@@ -88,10 +88,10 @@ bool GetNextLocationForPath(string outLocName, string goLocName, ref nextLocName
 			break;
 		}
 
-		// Обратный путь так же не прописан
+		// пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 		if( !CheckAttribute(tbl,goLocName+"."+outLocName) ) {break;}
 
-		// Из искомой локации мы можем непосредственно попасть в стартовую локацию
+		// пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 		if( tbl.(goLocName).(outLocName) == finalLocation )
 		{
 			nextLocName = goLocName;

@@ -655,7 +655,7 @@ void StartStoryLine()
 			CharStore = CONCEICAO_STORE; //PW set store for price of goods put on ship
 		break;
 		case AMERICA:
-			loadPort = "Eleuthera_Port";
+			loadPort = "Eleuthera_town";
 			rldLocator_Port = "reload1_back";
 			CharStore = ELEUTHERA_STORE; //PW set store for price of goods put on ship
 		break;

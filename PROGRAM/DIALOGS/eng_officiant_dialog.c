@@ -414,10 +414,17 @@ void ProcessDialogEvent()
 			dialog.text = DLG_TEXT[40];
 			if (GetCharacterShipType(PChar) != SHIP_NOTUSED) {
 				ShipLocationName = GetCharacterShipLocationName(PChar);
-				if (HasSubStr(ShipLocationName, "port"))
-					dialog.text += DLG_TEXT[41] + TranslateString("",ShipLocationName) + DLG_TEXT[42];
+				ShipLocationName = TranslateString("", ShipLocationName);
+				Preprocessor_Add("island_name", XI_ConvertString(GetIslandNameByLocationID(PChar.location)));
+				if (CheckAttribute(&Locations[FindLoadedLocation()], "townsack")) Preprocessor_Add("town_name", FindTownName(GetCurrentTownID()));
+				ShipLocationName = PreprocessText(ShipLocationName);
+				Preprocessor_Remove("island_name");
+				Preprocessor_Remove("town_name");
+				
+				if (HasSubStr(GetCharacterShipLocationName(PChar), "port"))
+					dialog.text = dialog.text + DLG_TEXT[41] + ShipLocationName + DLG_TEXT[42];
 				else
-					dialog.text += DLG_TEXT[41] + DLG_TEXT[42] + TranslateString("",ShipLocationName) + DLG_TEXT[42];
+					dialog.text = dialog.text + DLG_TEXT[41] + DLG_TEXT[28] + ShipLocationName + DLG_TEXT[42];
 			}
 			link.l1 = DLG_TEXT[43];
 			link.l1.go = "ExitS";

@@ -49961,7 +49961,7 @@ void QuestComplete(string sQuestName)
 					break;
 
 					case "29":
-						DoQuestReloadToLocation("Eleuthera_port", "reload", "reload1" ,"Teach_head_29");
+						DoQuestReloadToLocation("Eleuthera_town", "reload", "reload1" ,"Teach_head_29");
 					break;
 
 					case "30":

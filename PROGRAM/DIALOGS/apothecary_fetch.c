@@ -23,7 +23,7 @@ void ProcessDialogEvent()
 		//Fetch Quest -->
 		case "fetch quest":
 			Preprocessor_Add("gender", GetCharacterAddressForm(PChar, ADDR_GENDER, false, false)); // DeathDaisy
-			d.Text = DLG_TEXT[1] + NPChar.fetch_quest.amount + " " + XI_ConvertString(Goods[sti(NPChar.fetch_quest.good)].name) + DLG_TEXT[3]  + NPChar.fetch_quest.expire;
+			d.Text = DLG_TEXT[1] + NPChar.fetch_quest.amount + " " + XI_ConvertString(Goods[sti(NPChar.fetch_quest.good)].name) + DLG_TEXT[2] + NPChar.fetch_quest.money + DLG_TEXT[3]  + NPChar.fetch_quest.expire;
 			Link.l1 = DLG_TEXT[4];
 			Link.l1.go = "agree fetch";
 			Link.l2 = DLG_TEXT[5];

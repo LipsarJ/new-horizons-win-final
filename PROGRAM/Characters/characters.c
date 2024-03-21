@@ -407,16 +407,16 @@ void SetDefaultNormWalk(ref character)
 	character.actions.stsDown = "stairs down";
 	character.actions.stsDownRun = "run stairs down";
 
-   character.actions.stsUpBack = "back stairs up";
-   character.actions.stsDownBack = "back stairs down";
+	character.actions.stsUpBack = "back stairs up";
+	character.actions.stsDownBack = "back stairs down";
 
 
-   character.actions.stsUpRunBack = "back run stairs up";
-   character.actions.stsDownRunBack = "back run stairs down";
-   character.actions.turnLeft = "turn left";
-   character.actions.turnRight = "turn right";
-   character.actions.swim = "swim";
-   character.actions.hit = "face_hit";// MAXIMUS
+	character.actions.stsUpRunBack = "back run stairs up";
+	character.actions.stsDownRunBack = "back run stairs down";
+	character.actions.turnLeft = "turn left";
+	character.actions.turnRight = "turn right";
+	character.actions.swim = "swim";
+	character.actions.hit = "face_hit";// MAXIMUS
 
 	if(StraifCharacter(character))
 	{

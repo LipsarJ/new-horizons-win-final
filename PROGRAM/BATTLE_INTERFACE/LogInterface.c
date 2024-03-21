@@ -436,7 +436,8 @@ void CreateLandActionsEnvironment()
 					IActions.ActiveActions.OpenBox.IconNum	= 1;
 				}
 				else IActions.ActiveActions.OpenBox.IconNum	= 29;
-			}		}
+			}
+		}
 	}
 	// <-- JRH
 

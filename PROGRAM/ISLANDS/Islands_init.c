@@ -314,7 +314,7 @@ void InitIslands()
 
 		rIsland.reload.l1.label = "#stown_name# Port"; // KK
 		rIsland.reload.l1.name = "reload_2";
-		rIsland.reload.l1.go = "Oxbay_port";
+		rIsland.reload.l1.go = "Oxbay_town";
 		rIsland.reload.l1.emerge = "reload2";
 		rIsland.reload.l1.radius = 200.0;
 		rIsland.reload.l1.pic = 32;
@@ -1965,14 +1965,13 @@ void InitIslands()
 		rIsland.refl_model = "Bermudes_refl";
 		rIsland.locators = "Bermudes_locators";
 		rIsland.visible = true;
-		rIsland.smuggling_nation = PIRATE;
+		rIsland.smuggling_nation = ENGLAND;
 		// NK -->
 		rIsland.towns.quantity = 1;
 		rIsland.towns.1 = "Bermudes";
 		// NK <--
 
-		/*
-		rIsland.reload.l1.label = "#stown_name# Port";	mirsaneli: disabled until Peter Blood storyline is ready
+		rIsland.reload.l1.label = "#stown_name# Port";
 		rIsland.reload.l1.name = "reload_1";
 		rIsland.reload.l1.go = "Bermudes_town";
 		rIsland.reload.l1.emerge = "reload1";
@@ -1983,7 +1982,7 @@ void InitIslands()
 		rIsland.reload.l1.ships.l0.ay = 2.5;			// LDH fix until the locators.gm file can be updated - 24Apr09
 		//rIsland.reload.l1.goto_enable = false; // Screwface: Disable Sail-To
 
-		rIsland.reload.l2.label = "Shore3";
+		rIsland.reload.l2.label = "Bermudes_Shore_1";
 		rIsland.reload.l2.name = "reload_2";
 		rIsland.reload.l2.go = "Bermudes_Shore_1";
 		rIsland.reload.l2.emerge = "sea";
@@ -1993,7 +1992,7 @@ void InitIslands()
 		rIsland.reload.l2.tex = "t2";
 		//rIsland.reload.l2.goto_enable = false; // Screwface: Disable Sail-To
 
-		rIsland.reload.l3.label = "Shore_ship1";
+		rIsland.reload.l3.label = "Bermudes_Shore_2";
 		rIsland.reload.l3.name = "reload_3";
 		rIsland.reload.l3.go = "Bermudes_Shore_2";
 		rIsland.reload.l3.emerge = "sea";
@@ -2025,8 +2024,6 @@ void InitIslands()
 		rIsland.Trade.Contraband.id1 = GOOD_ALE;
 		rIsland.Trade.Contraband.id2 = GOOD_SILK;
 		rIsland.Trade.Contraband.id3 = GOOD_TOBACCO;
-		
-	*/
 
 		AddIsland(q, rIsland, locator);
 		

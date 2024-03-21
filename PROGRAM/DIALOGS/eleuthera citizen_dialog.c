@@ -277,7 +277,7 @@ void ProcessDialogEvent()
 				Link.l3.go = "town_store";
 				Link.l4 = DLG_TEXT[166];
 				Link.l4.go = "town_smith";
-            			DeleteAttribute(&locations[FindLocation("Eleuthera_Port")], "reload.l4.goto_disable"); // BOP: Unlock Fast Travel
+            			DeleteAttribute(&locations[FindLocation("Eleuthera_town")], "reload.l4.goto_disable"); // BOP: Unlock Fast Travel
 			}
 			else
 			{
@@ -300,7 +300,7 @@ void ProcessDialogEvent()
 			Link.l4.go = "town_smith";
 			Link.l3 = DLG_TEXT[127];
 			Link.l3.go = "exit";
-            DeleteAttribute(&locations[FindLocation("Eleuthera_Port")], "reload.l5.goto_disable"); // BOP: Unlock Fast Travel
+            DeleteAttribute(&locations[FindLocation("Eleuthera_town")], "reload.l5.goto_disable"); // BOP: Unlock Fast Travel
 		break;
 
 		case "town_store":
@@ -316,7 +316,7 @@ void ProcessDialogEvent()
 			Link.l4.go = "town_smith";
 			Link.l3 = DLG_TEXT[134];
 			Link.l3.go = "exit";
-            DeleteAttribute(&locations[FindLocation("Eleuthera_Port")], "reload.l6.goto_disable"); // BOP: Unlock Fast Travel
+            DeleteAttribute(&locations[FindLocation("Eleuthera_town")], "reload.l6.goto_disable"); // BOP: Unlock Fast Travel
 		break;
 
 		case "town_usurer":

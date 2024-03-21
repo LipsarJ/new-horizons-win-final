@@ -102,7 +102,7 @@ void DailyCrewUpdate()
 		if(CheckFood && foodQ) // NK 04-09-09 divbyzero error fix
 		{
 			float iHighestFoodRatio = 0; //JA Need this to handle special case.
-			for(i=0; i<4; i++)
+			for(i=0; i<COMPANION_MAX; i++)
 			{
 				cn = GetCompanionIndex(pchar,i);
 				if(cn!=-1) { // KK --> // PB: Included GetRemovable(GetCharacter(cn))
@@ -152,7 +152,7 @@ void DailyCrewUpdate()
 		if(CheckFood && rumQ) // NK 04-09-09 divbyzero error fix
 		{
 			float iHighestRumRatio = 0; //JA Need this to handle special case.
-			for(i=0; i<4; i++)
+			for(i=0; i<COMPANION_MAX; i++)
 			{
 				cn = GetCompanionIndex(pchar,i);
 				if(cn!=-1) { // KK --> // PB: Included GetRemovable(GetCharacter(cn))
@@ -193,7 +193,7 @@ void DailyCrewUpdate()
 			}
 
 			//divide remaining food back into ships
-			for(i=0; i<4; i++)
+			for(i=0; i<COMPANION_MAX; i++)
 			{
 				cn = GetCompanionIndex(pchar,i);
 				if(cn!=-1) ft[i] = makeint(makefloat(foodQ)*foodRatio[i]);
@@ -237,7 +237,7 @@ void DailyCrewUpdate()
 			}
 	//JA <-- 1Dec06 reworked Food & Rum system
 
-			for(i=0; i<4; i++)
+			for(i=0; i<COMPANION_MAX; i++)
 			{
 				cn = GetCompanionIndex(pchar,i);
 				if(cn!=-1) SetCharacterGoods(&Characters[cn],GOOD_WHEAT, ft[i]);
@@ -257,7 +257,7 @@ void DailyCrewUpdate()
 				if(tempdie < 0) tempdie = 0.0;
 				if(GetCrewQuantity(pchar) <= makeint(makefloat(GetMaxCrewQuantity(pchar)) / 4.0)) KAM_Mutiny(); //MAXIMUS: new "Mutiny"
 // KK -->
-				for (i = 1; i < 4; i++)
+				for (i = 1; i < COMPANION_MAX; i++)
 				{
 					cn = GetCompanionIndex(pchar, i);
 					if (cn < 0) continue;
@@ -314,7 +314,7 @@ void DailyCrewUpdate()
 			}
 
 			//divide remaining rum back into ships
-			for(i=0; i<4; i++)
+			for(i=0; i<COMPANION_MAX; i++)
 			{
 				cn = GetCompanionIndex(pchar,i);
 				if(cn!=-1) rt[i] = makeint(makefloat(rumQ)*rumRatio[i]);
@@ -358,7 +358,7 @@ void DailyCrewUpdate()
 				}
 			}
 			SetCharacterGoods(pchar, GOOD_RUM, rt[0]);
-			for(i=1; i<4; i++)
+			for(i=1; i<COMPANION_MAX; i++)
 			{
 				cn = GetCompanionIndex(pchar,i);
 				if(cn!=-1) SetCharacterGoods(&Characters[cn],GOOD_RUM, rt[i]);
@@ -408,7 +408,6 @@ void DailyCrewUpdate()
 				float uncursed_percentage = stf(crewQ)/GetSquadronTotalCrewQuantity(pchar);
 				moralescale = moralescale * uncursed_percentage;
 				if(moralescale < 0.5)	moralescale = 0.5;
-			//	LogIt("Captain, " + makeint((1-uncursed_percentage)*100) + "% of the crew is cursed due to " + CursedCoins + " Aztec coins");
 				LogIt(TranslateString("","Captain") + ", " + makeint((1-uncursed_percentage)*100) + "% " + TranslateString("","of the crew is cursed due to") + " "  + CursedCoins + " " + TranslateString("","Aztec coins") );
 			}
 
@@ -483,7 +482,7 @@ void DailyCrewUpdate()
 				if(CheckAttribute(loc, "box1.money"))			money = money + sti(loc.box1.money);
 				//Levis: Check the amount of ships
 				int numship = 1;
-				for(i=1; i<4; i++)
+				for(i=1; i<COMPANION_MAX; i++)
 				{
 					if(GetCompanionIndex(pchar,i) != -1) numship ++;
 				}
@@ -498,7 +497,7 @@ void DailyCrewUpdate()
 					if(!CheckAttribute(pchar, "articles_note"))
 					{
 						pchar.articles_note = true;																					// PB: Show this only once
-						LogIt("Captain, the crew is envious of the amount of money we have on board and wants to sign articles");	// PB: Log message added + effect increased to become visible
+						LogIt(TranslateString("","Captain, the crew is envious of the amount of money we have on board and wants to sign articles"));	// PB: Log message added + effect increased to become visible
 						SetQuestHeader("crew_affairs");																				// PB: Add to Questbook too
 						AddQuestRecord("crew_affairs", 1);																			// PB: Add to Questbook too
 					}
@@ -522,13 +521,13 @@ void DailyCrewUpdate()
 //trace("DailyCrewUpdate: old morale = " + pchar.Ship.Crew.Morale + ", norm_morale = " + norm_morale + ", moralemod = " + moralemod + ", moralech = " + moralech + ", new morale = " + morale);
 		pchar.Ship.Crew.Morale = morale;
 
-        	if (morale <= 10) KAM_Mutiny(); //MAXIMUS: new "Mutiny"
+		if (morale <= 10) KAM_Mutiny(); //MAXIMUS: new "Mutiny"
 		if(LogsToggle > LOG_QUIET)
 		{
-	        	switch (LanguageGetLanguage())
+	       	switch (LanguageGetLanguage())
 			{
 				case "Spanish":
-					Log_SetStringToLog(TranslateString("","The crew now has") + " " + XI_ConvertString("morale") + " " + XI_ConvertString(GetMoraleName(morale)) + " (" + makeint(morale) + ").");            
+					Log_SetStringToLog(TranslateString("","The crew now has") + " " + XI_ConvertString("morale") + " " + XI_ConvertString(GetMoraleName(morale)) + " (" + makeint(morale) + ").");
 				break;
 				// default:
 				Log_SetStringToLog(TranslateString("","The crew now has") + " " + XI_ConvertString(GetMoraleName(morale)) + " " + XI_ConvertString("morale") + " (" + makeint(morale) + ").");
@@ -541,7 +540,7 @@ void DailyCrewUpdate()
 		explength++;
 		pchar.CrewStatus.explength = explength;
 		//apply personal explengths
-		for(i=1; i<4; i++)
+		for(i=1; i<COMPANION_MAX; i++)
 		{
 			cn = GetCompanionIndex(pchar,i);
 			if(cn!=-1)
@@ -562,8 +561,8 @@ void DailyCrewUpdate()
 				if(player_rep <= REPUTATION_NEUTRAL && compan_rep <= REPUTATION_NEUTRAL) ResetEffectiveSkill(chref, SKILL_LEADERSHIP);	// Only apply leadership bonus if companion and player reputations do not conflict
 				skillLead = GetEffectiveSkill(chref,SKILL_LEADERSHIP);									// check captain ONLY
 				moralemod = 0.6 + (stf(skillLead) + stf(PerkIron)*5)/20;								// calculated same as player
-				moralemod = moralemod * moralescale;											// apply food and rum modifiers
-				moralemod = norm_morale * moralemod;
+				moralemod = moralemod * moralescale;													// apply food and rum modifiers
+				moralemod = norm_morale * moralemod;													// apply leadership and perks for companion
 				if(ProfessionalNavyNation() == UNKNOWN_NATION)
 				{
 					if(player_rep > REPUTATION_NEUTRAL && compan_rep < REPUTATION_NEUTRAL)
@@ -606,7 +605,7 @@ void DailyCrewUpdate()
 				else {chref.cexplength = 1;}
 			}
 		}
-		for(i=1; i<4; i++)
+		for(i=1; i<OFFICER_MAX; i++)
 		{
 			cn = GetOfficersIndex(pchar,i);
 			if (cn != -1) {
@@ -652,10 +651,7 @@ void DailyCrewUpdate()
 	//ASVS - playing main_theme music mod <---
 
 // KK & PB -->
-	int wounded_total = 0;
-	int healed_total = 0;
-	int killed_total = 0;
-	for (i = 0; i < 4; i++)
+	for (i = 0; i < COMPANION_MAX; i++)
 	{
 		cn = GetCompanionIndex(pchar, i);
 		if (cn < 0) continue;
@@ -739,5 +735,4 @@ void DailyCrewUpdate()
 
 	if (bCompanionMutiny) ShipMutiny(); // KK
 	DeleteAttribute(pchar, "stormIndex");// PW end temporary immunity from storm
-
 }

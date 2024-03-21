@@ -734,6 +734,7 @@ void CreateCharacters()
 	n = CreateGameCharacters(n, "Ship"); ReloadProgressUpdate();
 	n = CreateGameCharacters(n, "DockyardOwners"); ReloadProgressUpdate(); // Estharos new file 
 	n = CreateGameCharacters(n, "Taverns"); ReloadProgressUpdate(); // Estharos new file
+	n = CreateGameCharacters(n, "MrMyth92"); ReloadProgressUpdate(); // Estharos new file
 
 	n = CreateCommonQuestCharacters(n);
 	ReloadProgressUpdate();

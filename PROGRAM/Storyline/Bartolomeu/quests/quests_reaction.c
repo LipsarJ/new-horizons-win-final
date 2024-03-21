@@ -329,12 +329,13 @@ void QuestComplete(string sQuestName)
 			SetCurrentTime(24, 0);
 			locations[FindLocation("Santiago_outskirts")].vcskip = true;
 			locations[FindLocation("Cuba_Jungle_04")].vcskip = true;
-
-			ChangeCharacterAddressGroup(CharacterFromID("Roxanne Lalliere"), "Cuba_Shore_05", "goto", "locator10");
+			sld = CharacterFromID("Roxanne Lalliere"); //Add
+			sld.chr_ai.type.lock = "0"; //Add
+			ChangeCharacterAddressGroup(sld, "Cuba_Shore_05", "goto", "locator10");
 			Characters[GetCharacterIndex("Roxanne Lalliere")].dialog.currentnode = "begin_13";
-			LAi_ActorDialog(characterFromID("Roxanne Lalliere"), pchar, "", 2.0, 1.0);
-
+			LAi_ActorDialog(sld, pchar, "", 2.0, 1.0);
 			break;
+
 
 		case "surplage":
 
@@ -4912,9 +4913,9 @@ void QuestComplete(string sQuestName)
 		case "ir_PuertoCruzbis":
 			GiveModel2Player("GypsyCaptn_7",true);
 			AddQuestRecord("Hunter", "8");
-			ChangeCharacterAddressGroup(CharacterFromID("spanish_soldier_04"), "Eleuthera_Port", "goto", "goto11");
+			ChangeCharacterAddressGroup(CharacterFromID("spanish_soldier_04"), "Eleuthera_town", "goto", "goto11");
 			pchar.quest.inspection.win_condition.l1 = "location";
-			pchar.quest.inspection.win_condition.l1.location = "Eleuthera_Port";
+			pchar.quest.inspection.win_condition.l1.location = "Eleuthera_town";
 			pchar.quest.inspection.win_condition = "check_entree";
 			break;
 
@@ -5228,8 +5229,8 @@ void QuestComplete(string sQuestName)
 			ChangeCharacterAddressGroup(CharacterFromID("Roxanne Lalliere"), "Cuba_shore_01", "goto", "goto51");
 			EquipCharacterByItem(characterFromID("Roxanne Lalliere"), "blthag02");
 			EquipCharacterByItem(characterFromID("Roxanne Lalliere"), "pistol1a");
-			Build_at("Eleuthera_Port", "Sign", "", -57.6, 2, 7.87, 0.24, "building");
-			Locations[FindLocation("Eleuthera_Port")].dangerous = true;
+			Build_at("Eleuthera_town", "Sign", "", -57.6, 2, 7.87, 0.24, "building");
+			Locations[FindLocation("Eleuthera_town")].dangerous = true;
 			ChangeRMRelation(pchar, SPAIN, -20.0);
 			SetModelfromArray(&pchar, GetModelIndex("GypsyCaptn_5"));
 			LAi_SetActorType(characterFromID("Roxanne Lalliere"));
@@ -5507,8 +5508,8 @@ void QuestComplete(string sQuestName)
 			break;
 
 		case "revenir_bahiabis":
-			Build_at("Eleuthera_Port", "Sign", "", -57.6, 2, 7.87, 0.24, "building");
-			Locations[FindLocation("Eleuthera_Port")].dangerous = true;
+			Build_at("Eleuthera_town", "Sign", "", -57.6, 2, 7.87, 0.24, "building");
+			Locations[FindLocation("Eleuthera_town")].dangerous = true;
 			ChangeRMRelation(pchar, SPAIN, -20.0);
 			SetModelfromArray(&pchar, GetModelIndex("GypsyCaptn_5"));
 			Characters[GetCharacterIndex("Roxanne Lalliere")].dialog.currentnode = "begin_98";

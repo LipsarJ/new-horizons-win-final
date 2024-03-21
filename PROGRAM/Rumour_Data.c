@@ -190,7 +190,7 @@ void SetRumourDefaults(bool isreinit)
 	Rumour[i].chance = 100;
 	i++;
 	
-	Rumour[i].text = LanguageConvertString(tmpLangFileID,"People say someone went in the old church in Bridgetown but he never came out. I wonder what is keeping him there.");
+	Rumour[i].text = LanguageConvertString(tmpLangFileID,"People say someone went in the old church in Greenford but he never came out. I wonder what is keeping him there.");
 	Rumour[i].state = "active";
 	Rumour[i].loc = "Oxbay";
 	Rumour[i].chance = 100;
@@ -268,7 +268,7 @@ void SetRumourDefaults(bool isreinit)
 	Rumour[i].chance = 80;
 	i++;
 	
-	Rumour[i].text = LanguageConvertString(tmpLangFileID,"There seem to be new offices in Port Royal, Bridgetown and Willemstad. I wonder what these offices are for.");
+	Rumour[i].text = LanguageConvertString(tmpLangFileID,"There seem to be new offices in Port Royal, Greenford and Willemstad. I wonder what these offices are for.");
     Rumour[i].state = "active";
 	Rumour[i].loc = "all";
 	Rumour[i].chance = 80;

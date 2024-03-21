@@ -658,7 +658,7 @@ void BI_Refreshseacolor_in()
 		g2 = sti(BattleInterface.tempcol.green2);
 		b2 = sti(BattleInterface.tempcol.blue2);
 	}
-	if(init>sti(BattleInterface.tempcol.framejump)+5)
+	if(init>sti(BattleInterface.tempcol.framejump)+20)
 	{
 		if(r<84) r++;
 		if(g<162) g++;

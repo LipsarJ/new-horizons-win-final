@@ -51,7 +51,7 @@ int	nCurFourNum = -1;
 aref arCurShip; // PRS3
 
 string OldNodeName = "";
-string sLogEntry = "Visited the local shipwright. ";
+string sLogEntry;
 
 aref arShipList;
 
@@ -291,6 +291,8 @@ void InitInterface_R(string iniName,ref shipmaster)
 	SetEventHandler("ExitYes","ProcessExit_yes",0);
 // MAXIMUS cannons MOD <--
 // <-- KK
+
+	sLogEntry = GetTranslatedLog("Visited the local shipwright.")+" ";	// GR: for some reason, if sLogEntry is translated when declared, it is wiped.
 }
 
 void ProcessExit()
@@ -360,7 +362,7 @@ void ProcessCancelExit()
 	gprice[2] = -1;
 	gprice[3] = -1;
 	// NK <--
-	WriteNewLogEntry("Visited "+FindTownName(GetCurrentTownID()),sLogEntry,"Ship",true);
+	WriteNewLogEntry(GetTranslatedLog("Visited")+" "+FindTownName(GetCurrentTownID()),sLogEntry,"Ship",true);
 	DelEventHandler("InterfaceBreak","ProcessCancelExit");
 	DelEventHandler("frame","ProcessFrame");
 	DelEventHandler("exitCancel","ProcessCancelExit");
@@ -508,7 +510,11 @@ void ProcessRepair_yes()
 	int cost = BuyCannons(cn, GetChoosedCannonType(), curQty);
 
 	AddMoneyToCharacter( GetMainCharacter(), 0 - cost );
-	sLogEntry += "The shipwright agreed to repair the '"+curChr.ship.name+"' for the amount of "+cost+" pieces of gold. ";
+	Preprocessor_Add("curchrship", curChr.ship.name);
+	Preprocessor_Add("cost", cost);
+	sLogEntry += PreprocessText(GetTranslatedLog("The shipwright agreed to repair the '#scurchrship#' for the amount of #scost# pieces of gold."))+" ";
+	Preprocessor_Delete("curchrship");
+	Preprocessor_Delete("cost");
 	SetCharacterCannonType(curChr, GetChoosedCannonType());
 	//MAXIMUS -->
 	if(AUTO_SKILL_SYSTEM)
@@ -906,7 +912,7 @@ void SetViewShipData(int cn, int buyPrice, int Reduction) // modded to PRS3, add
 			{
 				EnableString("NoBuyString");
 				SetNodeUsing("NOBUYBOX2", true);
-				GameInterface.strings.NoBuyString = "Cannot Buy - Contraband on board";
+				GameInterface.strings.NoBuyString = XI_ConvertString("Cannot Buy - Contraband on board");
 			}
 		}
 	}
@@ -930,10 +936,19 @@ void SetViewShipData(int cn, int buyPrice, int Reduction) // modded to PRS3, add
 	// TIH <--
 
 // KK -->
-	if (tempnation >= 0 && tempnation < NATIONS_QUANTITY) {
+	if (tempnation >= 0 && tempnation < NATIONS_QUANTITY)
+	{
 		SetNewPicture("NATION", "interfaces\flags\Crest_" + GetNationFlagImage(tempnation) + ".tga");
-		SetFormatedText("NATIONALDESIGN", XI_ConvertString("2"+Nations[tempnation].desc) + " " + XI_ConvertString("design"));
-	} else {
+		switch (LanguageGetLanguage())
+		{
+			case "Spanish":
+				SetFormatedText("NATIONALDESIGN", XI_ConvertString("design") + " " + strlower(XI_ConvertString("2"+Nations[tempnation].desc)));
+			break;
+			SetFormatedText("NATIONALDESIGN", XI_ConvertString("2"+Nations[tempnation].desc) + " " + XI_ConvertString("design"));
+		}
+	}
+	else
+	{
 		if(tempnation == PERSONAL_NATION)
 		{
 			SetNewPicture("NATION", "interfaces\flags\Crest_" + GetNationFlagImage(tempnation) + ".tga");
@@ -1988,9 +2003,9 @@ void FillSScroll()
 	
 	if(bNewInterface==true)
 	{
-	GameInterface.scrollitems.BadPicture2 = "interfaces\blank_ship.tga";
+		GameInterface.scrollitems.BadPicture2 = "interfaces\blank_ship.tga";
 	} else {
-	GameInterface.scrollitems.BadPicture2 = "interfaces\blank_ship2.tga";
+		GameInterface.scrollitems.BadPicture2 = "interfaces\blank_ship2.tga";
 	}
 	
 // KK -->
@@ -2228,9 +2243,9 @@ void FillShipAppearanceScroll()
 	
 	if(bNewInterface==true)
 	{
-	GameInterface.scrollshipappearance.BadPicture2 = "interfaces\blank_ship.tga";
+		GameInterface.scrollshipappearance.BadPicture2 = "interfaces\blank_ship.tga";
 	} else {
-	GameInterface.scrollshipappearance.BadPicture2 = "interfaces\blank_ship2.tga";
+		GameInterface.scrollshipappearance.BadPicture2 = "interfaces\blank_ship2.tga";
 	}
 	
 	if (bNewInterface)
@@ -2424,9 +2439,9 @@ void FillFourImages()
 	
 	if(bNewInterface==true)
 	{
-	GameInterface.FourImage.BadTwoPicture = "interfaces\blank_ship.tga";
+		GameInterface.FourImage.BadTwoPicture = "interfaces\blank_ship.tga";
 	} else {
-	GameInterface.FourImage.BadTwoPicture = "interfaces\blank_ship2.tga";
+		GameInterface.FourImage.BadTwoPicture = "interfaces\blank_ship2.tga";
 	}
 // KK -->
 	if (bNewInterface)
@@ -2772,7 +2787,13 @@ void DoSellShip(string crewHandler, string cargoHandler)
 	// PW: navy officers get some personal wealth <--
 	makearef(arCurShip, Characters[cn].ship); 
 	ref		rShip = GetShipByID(arCurShip.Type);
-	if(sellPrice != 0) sLogEntry += "Sold the '"+arCurShip.name+"', a "+XI_ConvertString(rShip.sname)+" for "+sellPrice+" pieces of gold. ";
+	Preprocessor_Add("arcurship", arCurShip.name);
+	Preprocessor_Add("rship", XI_ConvertString(rShip.sname));
+	Preprocessor_Add("sellprice", sellPrice);
+		if(sellPrice != 0) sLogEntry += PreprocessText(GetTranslatedLog("Sold the '#sarcurship#', a #srship# for #ssellprice# pieces of gold."))+" ";
+	Preprocessor_Delete("arcurship");
+	Preprocessor_Delete("rship");
+	Preprocessor_Delete("sellprice");
 	//MAXIMUS -->
 	if(AUTO_SKILL_SYSTEM)
 	{
@@ -2915,7 +2936,11 @@ void DoBuyShip()
 	DoSellShip("keepcrew","keepcargo");// TIH keep any stuff around as we only swap ships (or add ship to companion) Jul27'06
 
 	AddMoneyToCharacter(GetMainCharacter(),-bPrice); // PW was buyPrice ie the exchanged cost but you got the sell money as well
-	sLogEntry += "Bought a new ship, the '"+GetMyShipName(chref)+"' for "+bPrice+" pieces of gold. "; // PW was buyPrice ie the exchanged cost but you got the sell money as well
+	Preprocessor_Add("newship",GetMyShipName(chref));
+	Preprocessor_Add("bprice", bPrice);
+	sLogEntry += PreprocessText(GetTranslatedLog("Bought a new ship, the '#snewship#' for #sbprice# pieces of gold."))+" "; // PW was buyPrice ie the exchanged cost but you got the sell money as well
+	Preprocessor_Delete("newship");
+	Preprocessor_Delete("bprice");
 	//MAXIMUS -->
 	if(AUTO_SKILL_SYSTEM)
 	{
@@ -3348,7 +3373,8 @@ void ClampShipToType(ref chref)
 	SetTownGold(sTownName, nStoreMoney); // PW: added because changes to store money from excess cargo were not saved on exiting shipyard
 	if( sti(chref.index)==GetMainCharacterIndex() )
 	{
-		if( CheckAttribute(chref,"location.old_from_sea") ) {
+		if( CheckAttribute(chref,"location.old_from_sea") )
+		{
 			chref.location.from_sea = chref.location.old_from_sea;
 			SetFleetInTown(GetTownIDFromLocID(chref.location.from_sea), "pchar"); // NK 05-04-02 WM/IT set fleet.
 			DeleteAttribute(chref,"location.old_from_sea");
@@ -3380,7 +3406,11 @@ void DoSailRepairToPercent(ref chref,int toPerc)
 	}
 
 	AddMoneyToCharacter(mchref,-sailRepairCost);
-	sLogEntry += "Had the sails of the '"+arCurShip.name+"' repaired for "+sailRepairCost+" pieces of gold. ";
+	Preprocessor_Add("arcurship", arCurShip.name);
+	Preprocessor_Add("sailcost",sailRepairCost);
+	sLogEntry += PreprocessText(GetTranslatedLog("Had the sails of the '#sarcurship#' repaired for #ssailcost# pieces of gold."))+" ";
+	Preprocessor_Delete("arcurship");
+	Preprocessor_Delete("sailcost");
 
 	// ccc feb05 shipyard waiting
 	daystowait += 1+makeint(sqrt(sailRepairCost/1000));
@@ -3432,8 +3462,11 @@ void DoHullRepairToPercent(ref chref,int toPerc)
 	}
 
 	AddMoneyToCharacter(mchref,-hullRepairCost);
-	sLogEntry += "Had the hull of the '"+arCurShip.name+"' repaired for "+hullRepairCost+" pieces of gold. ";
-
+	Preprocessor_Add("arcurship", arCurShip.name);
+	Preprocessor_Add("hullcost", hullRepairCost);
+	sLogEntry += PreprocessText(GetTranslatedLog("Had the hull of the '#sarcurship#' repaired for #shullcost# pieces of gold."))+" ";
+	Preprocessor_Delete("arcurship");
+	Preprocessor_Delete("hullcost");
 	// ccc feb05 shipyard waiting
 	daystowait += 1+makeint(sqrt(hullRepairCost/1000));
 	// ccc end
@@ -3475,7 +3508,11 @@ void DoCannonRepair(ref chref)
 		RepairAllCannons(chref);
 		ResetCannons(chref);
 		AddMoneyToCharacter(GetMainCharacter(),-gunRepairCost);
-		sLogEntry += "Had the cannons of the '"+arCurShip.name+"' repaired for "+gunRepairCost+" pieces of gold. ";
+		Preprocessor_Add("arcurship", arCurShip.name);
+		Preprocessor_Add("guncost",gunRepairCost);
+		sLogEntry += PreprocessText(GetTranslatedLog("Had the cannons of the '#sarcurship#' repaired for #sguncost# pieces of gold."))+" ";
+		Preprocessor_Delete("arcurship");
+		Preprocessor_Delete("guncost");
 		nStoreMoney += gunRepairCost;
 		GameInterface.strings.Money = MakeMoneyShow(GetMyMoney(),MONEY_SIGN,MONEY_DELIVER);
 		GameInterface.strings.SMoney = MakeMoneyShow(nStoreMoney,MONEY_SIGN,MONEY_DELIVER);
@@ -3684,7 +3721,7 @@ bool IsEnableSellShip()
 		EnableString("HelpString");
 		SetNodeUsing("BOX1",true);
 		SetNodeUsing("BOX1_RAMKA", true);
-		GameInterface.strings.HelpString = "Cannot Sell - Contraband on board";
+		GameInterface.strings.HelpString = TranslateString ("", "Cannot Sell - Contraband on board");
 		return false;
 	}
 	if(IsMainCharacter(chref) && ProfessionalNavyNation() != UNKNOWN_NATION && GetRank(PChar, GetServedNation()) < 10)
@@ -3699,9 +3736,9 @@ bool IsEnableSellShip()
 	makearef(arCurShip, Characters[cn].ship); // PRS3
 	switch (ShipAcquiredState(arCurShip))
 	{
-		case "bought":	SellButton = "Sell Owned Ship";		break;
-		case "taken":	SellButton = "Auction Prize Ship";	break;
-		case "pirated":	SellButton = "Sell Pirated Ship";	break;
+		case "bought":	SellButton = TranslateString ("", "Sell Owned Ship");		break;
+		case "taken":	SellButton = TranslateString ("", "Auction Prize Ship");	break;
+		case "pirated":	SellButton = TranslateString ("", "Sell Pirated Ship");	break;
 	}
 	SendMessage(&GameInterface, "lsls", MSG_INTERFACE_MSG_TO_NODE, "SELLSHIP_BUTTON", 0, SellButton);
 // PB <--
@@ -3917,14 +3954,14 @@ void ProcessBuyShip()
 			string acquired = "";
 			switch (ShipAcquiredState(arCurShip))
 			{
-				case "bought":	acquired = "owned ship ";		break;
-				case "taken":	acquired = "auction prize ";	break;
-				case "pirated":	acquired = "pirated ship ";		break;
+				case "bought":	acquired = TranslateString("", "owned ship");		break;
+				case "taken":	acquired = TranslateString("", "auction prize");	break;
+				case "pirated":	acquired = TranslateString("", "pirated ship");		break;
 			}
 
 			if (EnableLimitedShipClass() && GetShipMinClassForCharacter(mchr) > sti(ShipsTypes[st].Class)) text = TranslateString("", "This officer has too low Leadership and Sailing skills to command this ship.") + GlobalStringConvert("newline");
 			text += TranslateString("", "Buy this ship for") + " " + MakeMoneyShow(buyPrice,MONEY_SIGN,MONEY_DELIVER) + "?";
-			if (sPrice>0) text += TranslateString("", " ") + GlobalStringConvert("newline") + acquired + "trade-in " + MakeMoneyShow(sPrice,MONEY_SIGN,MONEY_DELIVER) + "  new ship price " + MakeMoneyShow(bPrice,MONEY_SIGN,MONEY_DELIVER);
+			if (sPrice>0) text += " " + GlobalStringConvert("newline") + acquired + " " + TranslateString("", "trade-in") + " " + MakeMoneyShow(sPrice,MONEY_SIGN,MONEY_DELIVER) + TranslateString("", ". New ship price") + " " + MakeMoneyShow(bPrice,MONEY_SIGN,MONEY_DELIVER);
 			SetFormatedText("TEXTWINDOW", text);
 		}
 	/*} else {
@@ -3979,11 +4016,11 @@ void ProcessSellShip()
 			string acquired = "";
 			switch (ShipAcquiredState(arCurShip))
 			{
-				case "bought":	acquired = "owned ship ";		break;
-				case "taken":	acquired = "auction prize ";	break;
-				case "pirated":	acquired = "pirated ship ";		break;
+				case "bought":	acquired = TranslateString("", "owned ship");		break;
+				case "taken":	acquired = TranslateString("", "auction prize");	break;
+				case "pirated":	acquired = TranslateString("", "pirated ship");		break;
 			}
-			string text = TranslateString("", "Sell this ") + acquired + "for" + " " + MakeMoneyShow(GetSellPrice(nCurFourNum,"includecargo"),MONEY_SIGN,MONEY_DELIVER) + "?" + GlobalStringConvert("newline") + "of which " + MakeMoneyShow(shipCost1 - gPrice[nCurFourNum],MONEY_SIGN,MONEY_DELIVER) + " is ship and " + MakeMoneyShow((gPrice[nCurFourNum]),MONEY_SIGN,MONEY_DELIVER) + " is cargo";
+			string text = TranslateString("", "Sell this") + " " + acquired + " " + TranslateString("", "shipyard confirm 2") + MakeMoneyShow(GetSellPrice(nCurFourNum,"includecargo"),MONEY_SIGN,MONEY_DELIVER) + "?" + GlobalStringConvert("newline") + TranslateString("", "of which") + " " + MakeMoneyShow(shipCost1 - gPrice[nCurFourNum],MONEY_SIGN,MONEY_DELIVER) + " " + TranslateString("", "is ship and") + " " + MakeMoneyShow((gPrice[nCurFourNum]),MONEY_SIGN,MONEY_DELIVER) + " " + TranslateString("", "is cargo");
 			SetFormatedText("TEXTWINDOW", text);
 		}
 		else
@@ -4177,7 +4214,11 @@ void ProcessInstallAndBuy()
 
 	AddMoneyToCharacter(PChar, 0 - topay);
 	makearef(arCurShip, Characters[cn].ship);
-	sLogEntry += "Installed new cannons on the '"+arCurShip.name+"' for "+topay+" pieces of gold. ";
+	Preprocessor_Add("arcurship", arCurShip.name);
+	Preprocessor_Add("topay", topay);
+	sLogEntry += PreprocessText(GetTranslatedLog("Installed new cannons on the '#sarcurship#' for #stopay# pieces of gold."))+" ";
+	Preprocessor_Delete("arcurship");
+	Preprocessor_Delete("topay");
 	GameInterface.strings.money = MakeMoneyShow(makeint(GetCharacterMoney(PChar)), MONEY_SIGN, MONEY_DELIVER);
 	GameInterface.strings.CostFullLabel = XI_ConvertString("CostFull") + " (" + 0 +" "+ XI_ConvertString("un")+")"; // PB
 	GameInterface.strings.Cost = 0; // Screwface
@@ -4298,7 +4339,11 @@ void ProcessBuyCannon()
 
 	AddMoneyToCharacter(PChar, 0 - topay);
 	makearef(arCurShip, Characters[cn].ship); 
-	sLogEntry += "Installed new cannons on the '"+arCurShip.name+"' for "+topay+" pieces of gold. ";
+	Preprocessor_Add("arcurship", arCurShip.name);
+	Preprocessor_Add("topay", topay);
+	sLogEntry += PreprocessText(GetTranslatedLog("Installed new cannons on the '#sarcurship#' for #stopay# pieces of gold."))+" ";
+	Preprocessor_Delete("arcurship");
+	Preprocessor_Delete("topay");
 	GameInterface.strings.money = MakeMoneyShow(makeint(GetCharacterMoney(PChar)), MONEY_SIGN, MONEY_DELIVER);
 
 	// PB: Price calculation fixed -->
@@ -4498,7 +4543,13 @@ void ProcessInstallSU()
 		ApplyTun(cn, upgrade, GetTimeTun(cn, upgrade)); // Previously the cost was decreased TWO TIMES !!!!!
 		mainchar.Money = GetCharacterMoney(mainchar) - cost;
 		makearef(arCurShip, Characters[cn].ship); 
-		sLogEntry += "Upgraded the '"+arCurShip.name+"' with new "+XI_ConvertString(upgrade)+" for "+cost+" pieces of gold. ";
+		Preprocessor_Add("arcurship", arCurShip.name);
+		Preprocessor_Add("upgrade", XI_ConvertString(upgrade));
+		Preprocessor_Add("cost", cost);
+		sLogEntry += PreprocessText(GetTranslatedLog("Upgraded the '#sarcurship#' with new #supgrade# for #scost# pieces of gold."))+" ";
+		Preprocessor_Delete("arcurship");
+		Preprocessor_Delete("upgrade");	
+		Preprocessor_Delete("cost");	
 	}
 	if(DEBUG_SHIPYARD_INTERFACE) trace("check="+CheckTun(cn, upgrade));
 //dumpattributes(mainchar);
@@ -4851,7 +4902,7 @@ void SetScreen(int iScreen)
 					EnableString("HelpString");
 					SetNodeUsing("BOX1",true);
 					SetNodeUsing("BOX1_RAMKA", true);
-					GameInterface.strings.HelpString = "Only available in Pirate Shipyards!";
+					GameInterface.strings.HelpString = TranslateString("","Only available in Pirate Shipyards!");
 				}
 				else
 				{
@@ -4891,12 +4942,12 @@ void SetScreen(int iScreen)
 						if(upgrade != "rhull" && upgrade != "flushed")
 						{
 							SetSelectable("INSTALLSU_BUTTON", True);
-							GameInterface.strings.HelpString = "Click Install to Remove the upgrade";
+							GameInterface.strings.HelpString = TranslateString("","Click Install to Remove the upgrade");
 						}
 						else
 						{
 							SetSelectable("INSTALLSU_BUTTON", false);
-							GameInterface.strings.HelpString = "This upgrade can't be removed";
+							GameInterface.strings.HelpString = TranslateString("","This upgrade can't be removed");
 						}
 					}
 				}
@@ -5039,7 +5090,7 @@ void RefreshScreen()
 					EnableString("HelpString");
 					SetNodeUsing("BOX1",true);
 					SetNodeUsing("BOX1_RAMKA", true);
-					GameInterface.strings.HelpString = "Only available in Pirate Shipyards!";
+					GameInterface.strings.HelpString = TranslateString("","Only available in Pirate Shipyards!");
 				}
 				else
 				{
@@ -5079,12 +5130,12 @@ void RefreshScreen()
 						if(upgrade != "rhull" && upgrade != "flushed")
 						{
 							SetSelectable("INSTALLSU_BUTTON", True);
-							GameInterface.strings.HelpString = "Click Install to Remove the upgrade";
+							GameInterface.strings.HelpString = TranslateString("","Click Install to Remove the upgrade");
 						}
 						else
 						{
 							SetSelectable("INSTALLSU_BUTTON", false);
-							GameInterface.strings.HelpString = "This upgrade can't be removed";
+							GameInterface.strings.HelpString = TranslateString("","This upgrade can't be removed");
 						}
 					}
 				}

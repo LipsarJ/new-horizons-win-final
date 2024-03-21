@@ -389,10 +389,6 @@ void Main()
 	SetEventHandler(EVENT_END_VIDEO,"Main_LogoVideo",0);
 	InterfaceStates.videoIdx = 0;
 
-
-
-
-
 	Event(EVENT_END_VIDEO);
 	ReloadProgressEnd();
 }
@@ -412,6 +408,7 @@ void Main_LogoVideo()
 			return;
 		}
 	break;
+
 	case 1:
 		{
 			InterfaceStates.videoIdx = 2;
@@ -477,7 +474,6 @@ void Main_Start()
 	SetCurrentTime(CharHour, CharMinute);
 	SetCurrentDate(CharDay, CharMonth, CharYear);
 
-
 	Trace("Gauging: initgame start");
 	InitGame();
 	Trace("Gauging: initgame done");
@@ -485,9 +481,9 @@ void Main_Start()
 
 	CheckStorylines(); // KK
 
-	 //Boyer add
-	 pchar = GetMainCharacter();
-    if(USE_NEW_WEATHER) {
+	//Boyer add
+	pchar = GetMainCharacter();
+	if(USE_NEW_WEATHER) {
         InterfaceStates.SeaDetails = 1.0;
         WeatherInit();
     }
@@ -1556,6 +1552,7 @@ void ProcessControls()
 						{
 							PostEvent("portugize_on_back", 1000, "i", PChar);
 						}
+
 						if(IsEquipCharacterByItem(Pchar, "shield_hand"))
 						{
 							RemoveCharacterEquip(Pchar, BLADE_ITEM_TYPE );
@@ -1568,6 +1565,7 @@ void ProcessControls()
 						{
 							PostEvent("bax_on_back", 1000, "i", PChar);
 						}
+
 						if(IsEquipCharacterByItem(PChar, "witcher_steel-2") || IsEquipCharacterByItem(PChar, "witcher_steel-1")
 						|| IsEquipCharacterByItem(PChar, "witcher_steel") || IsEquipCharacterByItem(PChar, "witcher_steel+1")
 						|| IsEquipCharacterByItem(PChar, "witcher_steel+2") || IsEquipCharacterByItem(PChar, "witcher_steel+3"))
@@ -2132,11 +2130,11 @@ void ProcessControls()
 
 			// PB: Simplified Time Compression Controls -->
 			case "BOAL_Control":
-			SpeedUpTime();
+				SpeedUpTime();
 			return; break;
 
 			case "BOAL_Control0":
-			SlowDownTime();
+				SlowDownTime();
 			return; break;
 			// PB: Simplified Time Compression Controls <--
 
@@ -2931,50 +2929,50 @@ void ResetDevice()
 
 void SpeedUpTime()  // MrMyth92: added the different timescales for World map
 {
-if(!IsEntity(&worldMap))
-{
-switch (GetTimeScale())
-{
-case  0: PChar.basetime =  1; break;		// New values by El Rapido
-case  1: PChar.basetime =  3; break;
-case  3: PChar.basetime =  5; break;
-case  5: PChar.basetime = 8; break;
-case 8: PChar.basetime = 12; break;
-}
-}
-else
-{
-switch (GetTimeScale())
-{
-case  0: PChar.basetime =  1; break;		// New values by El Rapido
-case  1: PChar.basetime =  3; break;
-case  3: PChar.basetime =  5; break;
-}
-}
-UpdateTimeScale();
-LogIt(XI_ConvertString("Time") + " x" + makeint(GetTimeScale()));
+	if(!IsEntity(&worldMap))
+	{
+		switch (GetTimeScale())
+		{
+			case  0: PChar.basetime =  1; break;
+			case  1: PChar.basetime =  3; break;
+			case  3: PChar.basetime =  5; break;
+			case  5: PChar.basetime =  8; break;
+			case  8: PChar.basetime = 12; break;
+		}
+	}
+	else
+	{
+		switch (GetTimeScale())
+		{
+			case  0: PChar.basetime =  1; break;
+			case  1: PChar.basetime =  3; break;
+			case  3: PChar.basetime =  5; break;
+		}
+	}
+	UpdateTimeScale();
+	LogIt(XI_ConvertString("Time") + " x" + makeint(GetTimeScale()));
 }
 
 void SlowDownTime() // MrMyth92: added the different timescales for World map
 {
-if(!IsEntity(&worldMap))
-{
-switch (GetTimeScale())
-{
-case 12: PChar.basetime = 8; break;		// New values by El Rapido
-case 8: PChar.basetime =  5; break;
-case  5: PChar.basetime =  3; break;
-case  3: PChar.basetime =  1; break;
-}
-}
-else
-{
-switch (GetTimeScale())
-{
-case  5: PChar.basetime =  3; break;		// New values by El Rapido
-case  3: PChar.basetime =  1; break;
-}
-}
-UpdateTimeScale();
-LogIt(XI_ConvertString("Time") + " x" + makeint(GetTimeScale()));
+	if(!IsEntity(&worldMap))
+	{
+		switch (GetTimeScale())
+		{
+			case 12: PChar.basetime =  8; break;		// New values by El Rapido
+			case  8: PChar.basetime =  5; break;
+			case  5: PChar.basetime =  3; break;
+			case  3: PChar.basetime =  1; break;
+		}
+	}
+	else
+	{
+		switch (GetTimeScale())
+		{
+			case  5: PChar.basetime =  3; break;		// New values by El Rapido
+			case  3: PChar.basetime =  1; break;
+		}
+	}
+	UpdateTimeScale();
+	LogIt(XI_ConvertString("Time") + " x" + makeint(GetTimeScale()));
 }

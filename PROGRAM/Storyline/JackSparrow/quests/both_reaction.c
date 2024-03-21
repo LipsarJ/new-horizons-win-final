@@ -3152,7 +3152,7 @@ void BothQuestComplete(string sQuestName)
 
 			Pchar.quest.Artois_Voysey.win_condition.l1 = "location";
 			Pchar.quest.Artois_Voysey.win_condition.l1.character = "Gentleman Jocard";
-			Pchar.quest.Artois_Voysey.win_condition.l1.location = "Eleuthera_port";
+			Pchar.quest.Artois_Voysey.win_condition.l1.location = "Eleuthera_town";
 			PChar.quest.Artois_Voysey.win_condition = "Artois_missed";
 //NK --> fix for Artois quest repeating	
 			pchar.quest.Voysey_lost = "0";
@@ -3320,7 +3320,7 @@ void BothQuestComplete(string sQuestName)
 			Locations[FindLocation("Eleuthera_tavern_upstairs")].reload.l1.disable = false;
 
 			Pchar.quest.fight.win_condition.l1 = "location";
-			Pchar.quest.fight.win_condition.l1.location = "Eleuthera_port";
+			Pchar.quest.fight.win_condition.l1.location = "Eleuthera_town";
 			PChar.quest.fight.win_condition = "Blaze_fight_the_world";
 
 			Pchar.quest.artois_captured.win_condition.l1 = "location";
@@ -3333,7 +3333,7 @@ void BothQuestComplete(string sQuestName)
 			pchar.quest.escape_from_conceicao.win_condition.l1.location = "Eleuthera";
 			pchar.quest.escape_from_conceicao.win_condition = "escape_from_conceicao";
 
-			//Locations[FindLocation("Eleuthera_port")].reload.l3.disable = true;
+			//Locations[FindLocation("Eleuthera_town")].reload.l3.disable = true;
 
 			if (CalcCharacterSkill(pchar, SKILL_SNEAK) < 3)
 			{
@@ -3342,7 +3342,7 @@ void BothQuestComplete(string sQuestName)
 		break;
 
 		case "escape_from_conceicao":
-			//Locations[FindLocation("Eleuthera_port")].reload.l3.disable = false;
+			//Locations[FindLocation("Eleuthera_town")].reload.l3.disable = false;
 
 			PChar.quest.possible_for_resque_artois.win_condition.l1 = "Timer";
 			PChar.quest.possible_for_resque_artois.win_condition.l1.date.day = GetAddingDataDay(0,0,4);
@@ -3690,7 +3690,7 @@ void BothQuestComplete(string sQuestName)
 			pchar.quest.Jocard_follow.win_condition = "Jocard_follow";
 
 			pchar.quest.wrong_Eleuthera1.win_condition.l1 = "location";
-			pchar.quest.wrong_Eleuthera1.win_condition.l1.location = "Eleuthera_Port";
+			pchar.quest.wrong_Eleuthera1.win_condition.l1.location = "Eleuthera_town";
 			pchar.quest.wrong_Eleuthera1.win_condition = "wrong_Eleuthera1";
 
 			pchar.quest.wrong_Eleuthera2.win_condition.l1 = "location";

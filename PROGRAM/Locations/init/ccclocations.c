@@ -1,127 +1,7 @@
 void LocationInitCCCLocations(ref n)
 {
 
-	// ccc Oxbay suburb-------------------------------------------------
-	Locations[n].filespath.models = "locations\Inside\pirateresidence";	
-
-	Locations[n].id = "Oxbayhouse1";
-	locations[n].id.label = "House";
-	Locations[n].image = "Inside_PirateResidence.tga";
-	//Town sack
-	Locations[n].townsack = "Oxbay";
-	//Sound
-	locations[n].type = "house";
-	locations[n].fastreload = "Oxbay";
-	//Models
-	//Always
-	Locations[n].models.always.locators = "resp_l";
-	Locations[n].models.always.l1 = "resp";
-	Locations[n].models.always.window = "resp_w";
-	Locations[n].models.always.window.tech = "LocationWindows";
-	Locations[n].models.always.window.level = 50;
-
-	//Day
-	Locations[n].models.day.charactersPatch = "resp_p";
-
-	//Night
-	Locations[n].models.night.charactersPatch = "resp_p";
-
-	//Environment
-	Locations[n].environment.weather = "false";
-	Locations[n].environment.sea = "false";
-	Locations[n].models.back = "back\qcresp_";
-	//Reload map
-	Locations[n].reload.l1.name = "Reload1";
-	Locations[n].reload.l1.go = "Oxbay_suburb";
-	Locations[n].reload.l1.emerge = "locator19";
-	Locations[n].reload.l1.autoreload = "0";
-
-
-	Locations[n].island = "Oxbay"; // NK 04-08-29
-	n = n + 1;
-
-	// ccc Oxbay suburb------------------------------------------
 	
-	Locations[n].filespath.models = "locations\Inside\Pirate_House";	
-
-	Locations[n].id = "Oxbayhouse2";
-	locations[n].id.label = "House";
-	Locations[n].image = "Inside_Pirate_House.tga";
-	//Town sack
-	Locations[n].townsack = "Oxbay";
-	locations[n].fastreload = "Oxbay";
-	//Sound
-	locations[n].type = "house";
-	//Models
-	//Always
-	Locations[n].models.always.locators = "pirh_l";
-	Locations[n].models.always.house = "pirh";
-	Locations[n].models.always.window = "pirh_w";
-	Locations[n].models.always.window.tech = "LocationWindows";
-	Locations[n].models.always.window.level = 50;
-	//Day
-	Locations[n].models.day.charactersPatch = "pirh_p";
-
-	//Night
-	Locations[n].models.night.charactersPatch = "pirh_p";
-
-	//Environment
-	Locations[n].environment.weather = "false";
-	Locations[n].environment.sea = "false";
-	Locations[n].models.back = "back\qcpirh_";
-
-	//Reload map
-	Locations[n].reload.l1.name = "reload1";
-	Locations[n].reload.l1.go = "Oxbay_suburb";
-	Locations[n].reload.l1.emerge = "locator20";
-	Locations[n].reload.l1.autoreload = "0";
-
-
-	Locations[n].island = "Oxbay"; // NK 04-08-29
-	n = n + 1; 
-
-
-
-	// ccc oxbay suburb-------------------------------------------------
-
-	Locations[n].id = "Oxbayhouse3";		//change, new id
-	Locations[n].id.label = "House";
-	Locations[n].image = "Inside_MediumHouse.tga";
-
-	//Town sack
-	Locations[n].townsack = "Oxbay";
-
-	//Sound
-	locations[n].type = "house";
-	locations[n].fastreload = "Oxbay";
-	//Models
-	//Always
-	Locations[n].filespath.models = "locations\inside\MediumHouse";
-	Locations[n].models.always.locators = "mh_l";
-	Locations[n].models.always.house = "mh";
-	Locations[n].models.always.window = "mh_w";
-	Locations[n].models.always.window.tech = "LocationWindows";
-	Locations[n].models.always.window.level = 50;
-	//Day
-	Locations[n].models.day.charactersPatch = "mh_p";
-
-	//Night
-	Locations[n].models.night.charactersPatch = "mh_p";
-
-	//Environment
-	Locations[n].environment.weather = "false";
-	Locations[n].environment.sea = "false";
-	Locations[n].models.back = "back\oxmh_";
-
-	Locations[n].reload.l1.name = "reload1";
-	Locations[n].reload.l1.go = "Oxbay_suburb";
-	Locations[n].reload.l1.emerge = "locator22";		// change, exit back to new doorlocator
-	Locations[n].reload.l1.autoreload = "0";
-	Locations[n].reload.l1.label = "#stown_name#";
-
-	Locations[n].island = "Oxbay"; // NK 04-08-29
-	n = n + 1;
-
 	// ccc new mansion near yard-------------------------------------------------
 	Locations[n].id = "Oxbay_mansion_hall";	//new ID
 	locations[n].id.label = "Mansion";		//change
@@ -150,7 +30,9 @@ void LocationInitCCCLocations(ref n)
 	Locations[n].models.night.lights.candles = "candelabrum_small";
 
 	//Environment
-	Locations[n].environment.weather = "false";
+	locations[n].environment.weather = "true";
+locations[n].lockWeather = "Inside";
+
 	Locations[n].environment.sea = "false";
 	Locations[n].models.back = "back\redrsb_";	//the view out of windows, leave original, no Oxbay model fits
 
@@ -198,7 +80,9 @@ void LocationInitCCCLocations(ref n)
 	Locations[n].models.night.charactersPatch = "Res03_p";
 
 	//Environment
-	Locations[n].environment.weather = "false";
+	locations[n].environment.weather = "true";
+locations[n].lockWeather = "Inside";
+
 	Locations[n].environment.sea = "false";
 	Locations[n].models.back = "back\mures3_";
 	//Reload map
@@ -240,7 +124,9 @@ void LocationInitCCCLocations(ref n)
 	Locations[n].models.night.charactersPatch = "bed_p";	
 
 	//Environment
-	Locations[n].environment.weather = "false";
+	locations[n].environment.weather = "true";
+locations[n].lockWeather = "Inside";
+
 	Locations[n].environment.sea = "false";
 	Locations[n].models.back = "back\redb_";
 	//Reload map
@@ -250,89 +136,6 @@ void LocationInitCCCLocations(ref n)
 	Locations[n].reload.l1.autoreload = "0";
 	Locations[n].reload.l1.label = "Study.";		//change, just eyecandy
 
-	Locations[n].island = "Oxbay"; // NK 04-08-29
-	n = n + 1;
-
-
-
-	// ccc new suburb cloned from Falaise_de_fleur_location_02 ---------------
-	Locations[n].id = "Oxbay_suburb";		//change
-	locations[n].id.label = "Town";		//change
-	locations[n].worldmap = "Oxbay";		//change
-	Locations[n].image = "Town_FalaiseDeFleur_Town_01_England.tga";	//change
-
-	//Town sack
-	Locations[n].townsack = "Oxbay";		//change
-
-	//Sound
-	locations[n].type = "town";
-	LAi_LocationFantomsGen(&locations[n], true);
-	locations[n].fastreload = "Oxbay";		//change
-	//Models
-	//Always
-	Locations[n].filespath.models = "locations\Town_FalaiseDeFleur\town_01";
-	Locations[n].filespath.textures = "locations\ENGLAND";
-	Locations[n].models.always.city = "OxTown_02"; // Thomas the Terror
-	Locations[n].models.always.locators = "FF01_l";
-	Locations[n].models.always.grassPatch = "FF01_g";
-	Locations[n].models.always.l1 = "plan_1";
-	Locations[n].models.always.l1.level = 9;
-	Locations[n].models.always.l1.tech = "LocationModelBlend";
-	Locations[n].models.always.l2 = "plan_2";
-	Locations[n].models.always.l2.level = 8;
-	Locations[n].models.always.l2.tech = "LocationModelBlend";
-	Locations[n].models.always.l3 = "plan_3";
-	Locations[n].models.always.l3.level = 7;
-	Locations[n].models.always.l3.tech = "LocationModelBlend";
-
-	//Day
-	Locations[n].models.day.fonar = "FF01_fd";
-	Locations[n].models.day.charactersPatch = "FF01_p";
-	//Night
-	Locations[n].models.night.fonar = "FF01_fn";
-	Locations[n].models.night.charactersPatch = "FF01_p";
-	//Environment
-	Locations[n].environment.weather = "true";
-	Locations[n].environment.sea = "false";
-	//Reload map -----------
-	//Do NOT change "Falaise_de_fleur" in the reload..names cause these belong to the model !!!! 
-	Locations[n].reload.l1.name = "Falaise_de_fleur_location_02_01"; //do NOT change
-	Locations[n].reload.l1.go = "Oxbay_town_exit";	//change
-	Locations[n].reload.l1.emerge = "reload3";		//change
-	Locations[n].reload.l1.autoreload = "0";
-
-	Locations[n].reload.l2.name = "Falaise_de_fleur_location_02_03"; //do NOT change
-	Locations[n].reload.l2.go = "Oxbay_town"; //change
-	Locations[n].reload.l2.emerge = "reload12"; //change
-	Locations[n].reload.l2.autoreload = "0";
-
-	Locations[n].reload.l3.name = "Falaise_de_fleur_location_02_perechod"; //do NOT change
-	Locations[n].reload.l3.go = "Oxbay_fakefort1"; //change
-	Locations[n].reload.l3.emerge = "reloadc3"; //change
-	Locations[n].reload.l3.autoreload = "0";
-	Locations[n].reload.l3.label = "MILITARY AREA. NO TRESPASSING!";
-	if(iRealismMode>0 && DISCOVER_FAST_TRAVEL) Locations[n].reload.l3.goto_disable = 1; // Screwface: Disable Go-To location
-
-	Locations[n].reload.l4.name = "locator19";
-	Locations[n].reload.l4.go = "Oxbayhouse1";
-	Locations[n].reload.l4.emerge = "reload1";
-	Locations[n].reload.l4.autoreload = "0";
-
-	Locations[n].reload.l5.name = "locator20";
-	Locations[n].reload.l5.go = "Oxbayhouse2";
-	Locations[n].reload.l5.emerge = "reload1";
-	Locations[n].reload.l5.autoreload = "0";
-
-	Locations[n].reload.l6.name = "locator22";
-	Locations[n].reload.l6.go = "Oxbayhouse3";
-	Locations[n].reload.l6.emerge = "reload1";
-	Locations[n].reload.l6.autoreload = "0";
-
-	Locations[n].reload.l15.name = "home_01";	// ccc building kit 		
-	Locations[n].reload.l15.go = "Oxbay_mansion_hall";	// ccc building kit 
-	Locations[n].reload.l15.emerge = "reload3";	// ccc building kit 
-	Locations[n].reload.l15.autoreload = "0";	// ccc building kit 
-	Locations[n].reload.l15.label = "Mansion.";	// ccc building kit 
 	Locations[n].island = "Oxbay"; // NK 04-08-29
 	n = n + 1;
 
@@ -366,8 +169,8 @@ void LocationInitCCCLocations(ref n)
 
 	//reload map.
 	Locations[n].reload.l1.name = "reloadc3";
-	Locations[n].reload.l1.go = "Oxbay_suburb";
-	Locations[n].reload.l1.emerge = "Falaise_de_fleur_location_02_perechod";
+	Locations[n].reload.l1.go = "Oxbay_Fake_Fort_exit";
+	Locations[n].reload.l1.emerge = "reload3";
 	Locations[n].reload.l1.autoreload = "0";
 
 	Locations[n].reload.l2.name = "reloadC4";
@@ -513,7 +316,9 @@ void LocationInitCCCLocations(ref n)
 	Locations[n].models.night.charactersPatch = "LS_p";
 
 	//Environment
-	Locations[n].environment.weather = "false";
+	locations[n].environment.weather = "true";
+locations[n].lockWeather = "Inside";
+
 	Locations[n].environment.sea = "false";
 	Locations[n].models.back = "back\douls_";
 	//Reload map
@@ -710,7 +515,9 @@ void LocationInitCCCLocations(ref n)
 	Locations[n].models.night.charactersPatch = "LS_p";
 
 	//Environment
-	Locations[n].environment.weather = "false";
+	locations[n].environment.weather = "true";
+locations[n].lockWeather = "Inside";
+
 	Locations[n].environment.sea = "false";
 	Locations[n].models.back = "back\douls_";
 	//Reload map
@@ -767,7 +574,9 @@ void LocationInitCCCLocations(ref n)
 	Locations[n].models.night.lights.candles = "candelabrum_small";
 
 	//Environment
-	Locations[n].environment.weather = "false";
+	locations[n].environment.weather = "true";
+locations[n].lockWeather = "Inside";
+
 	Locations[n].environment.sea = "false";
 	Locations[n].models.back = "back\redrsb_";	//the view out of windows, leave original, no Oxbay model fits
 
@@ -815,7 +624,9 @@ void LocationInitCCCLocations(ref n)
 	Locations[n].models.night.charactersPatch = "Res03_p";
 
 	//Environment
-	Locations[n].environment.weather = "false";
+	locations[n].environment.weather = "true";
+locations[n].lockWeather = "Inside";
+
 	Locations[n].environment.sea = "false";
 	Locations[n].models.back = "back\mures3_";
 	//Reload map
@@ -857,7 +668,9 @@ void LocationInitCCCLocations(ref n)
 	Locations[n].models.night.charactersPatch = "bed_p";	
 
 	//Environment
-	Locations[n].environment.weather = "false";
+	locations[n].environment.weather = "true";
+locations[n].lockWeather = "Inside";
+
 	Locations[n].environment.sea = "false";
 	Locations[n].models.back = "back\redb_";
 	//Reload map
@@ -933,8 +746,8 @@ void LocationInitCCCLocations(ref n)
 	Locations[n].locators_radius.reload.reload_3_2 = 2.0;
 
 	Locations[n].reload.l3.name = "reload_3_3_back";	// to center
-	Locations[n].reload.l3.go = "Greenford_town";
-	Locations[n].reload.l3.emerge = "reload19";
+	Locations[n].reload.l3.go = "Greenford_town_2";
+	Locations[n].reload.l3.emerge = "reload12";
 	Locations[n].reload.l3.autoreload = "0";
 	Locations[n].reload.l3.label = "Towncenter.";
 
@@ -1026,7 +839,9 @@ void LocationInitCCCLocations(ref n)
 	Locations[n].models.night.fn = "sh01_fn";
 
 	//Environment
-	Locations[n].environment.weather = "false";
+	locations[n].environment.weather = "true";
+locations[n].lockWeather = "Inside";
+
 	Locations[n].environment.sea = "false";
 	Locations[n].models.back = "back\oxsh1_";
 	//Reload map
@@ -1070,7 +885,9 @@ void LocationInitCCCLocations(ref n)
 //	Locations[n].models.night.lamp = "FalaiseDeFleur05_night";
 	Locations[n].models.night.charactersPatch = "Res02_p";
 	//Environment
-	Locations[n].environment.weather = "false";
+	locations[n].environment.weather = "true";
+locations[n].lockWeather = "Inside";
+
 	Locations[n].environment.sea = "false";
 	Locations[n].models.back = "back\mures2_";
 	//Reload map
@@ -1119,7 +936,9 @@ void LocationInitCCCLocations(ref n)
 //	Locations[n].models.night.lamp = "FalaiseDeFleur05_night";
 	Locations[n].models.night.charactersPatch = "Church3_p";
 	//Environment
-	Locations[n].environment.weather = "false";
+	locations[n].environment.weather = "true";
+locations[n].lockWeather = "Inside";
+
 	Locations[n].environment.sea = "false";
 	//Reload map
 	Locations[n].reload.l1.name = "reload1";
@@ -1233,7 +1052,9 @@ void LocationInitCCCLocations(ref n)
 //	Locations[n].models.night.env = "d02_fn";
 
 	//Environment
-	Locations[n].environment.weather = "false";
+	locations[n].environment.weather = "true";
+locations[n].lockWeather = "Inside";
+
 	Locations[n].environment.sea = "false";
 	Locations[n].monsters = 1;
 	//Reload map

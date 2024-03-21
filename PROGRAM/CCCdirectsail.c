@@ -53,13 +53,10 @@ bool DirectsailCheck(bool ActualUpdate)  // called hourly by Whr_UpdateWeather -
 	int enemyDistLimit;
 	int neutralDistLimit;
 	int friendlyDistLimit;
-	int scale = WDM_MAP_TO_SEA_SCALE;
-	if (pchar.location == "Cuba") scale = CUBA_MAP_SCALE;
-	if (pchar.location == "SantaCatalina" || pchar.location == "PortoBello" || pchar.location == "Colombia") scale = CONTINENT_SCALE;
 	if (DirectsailCheckFrequency < 15 && CheckAttribute(worldmap, "islands."+pchar.location))
 	{
 		// note: by the time DirectsailCheckFrequency is set to other than default 15, pchar.directsail1 attributes will exist
-		if (pchar.directsail1.closestisland != pchar.location && stf(pchar.directsail1.closestdist) < 2000.0/scale)
+		if (pchar.directsail1.closestisland != pchar.location && stf(pchar.directsail1.closestdist) < 2000.0/WDM_MAP_TO_SEA_SCALE)
 		{
 			// LDH 29Jan09
 			// if we're very close to an island we're not logged in to,
@@ -101,7 +98,7 @@ bool DirectsailCheck(bool ActualUpdate)  // called hourly by Whr_UpdateWeather -
 		GetMapIslandZone(pchar.location); // DirectIslandCoordCheck();				// update the map
 		return false;
 	}
-
+	
 	nextenemy = FindClosestShipofRel(GetMainCharacterIndex(), &enemydist, RELATION_FRIEND);
 	if (ActualUpdate) DSTrace("DirectsailCheck; next friendly ship: "+nextenemy + " dist: "+enemydist);			// LDH changed to DSTrace 08Apr09
 	if(nextenemy!= -1 && enemydist<friendlyDistLimit && Characters[nextenemy].ship.type != SHIP_FORT_NAME )	// LDH added fort check 08Jan09
@@ -208,10 +205,7 @@ void DirectsailRun()  // Jan 07, taken out of DirectsailCheck() to create break
 
 			float islandDistLimit;
 			if (DirectsailCheckFrequency < 15) islandDistLimit = 1500.0; else islandDistLimit = 2000.0;
-			int scale = WDM_MAP_TO_SEA_SCALE;
-            if (pchar.directsail1.closestisland == "Cuba") scale = CUBA_MAP_SCALE;
-			if (pchar.directsail1.closestisland == "SantaCatalina" || pchar.directsail1.closestisland == "PortoBello" || pchar.directsail1.closestisland == "Colombia") scale = CONTINENT_SCALE;
-			if (stf(pchar.directsail1.closestdist) < islandDistLimit/scale)
+			if (stf(pchar.directsail1.closestdist) < islandDistLimit/WDM_MAP_TO_SEA_SCALE)
 			{
 				DSTrace("Directsail encounter aborted, too close to coast of " + FindIslandName(pchar.directsail1.closestisland) + ", " + makeint(sti(pchar.directsail1.closestdist)*WDM_MAP_TO_SEA_SCALE) + " of " + makeint(islandDistLimit) + " yards");
 				return;
@@ -319,15 +313,12 @@ string GetMapIslandzone(string Island)
 
 	float psX = MakeFloat(pchar.Ship.Pos.x);
 	float psZ = MakeFloat(pchar.Ship.Pos.z);
-	float ix = MakeFloat(worldMap.islands.(Island).position.x);
-	float iz = MakeFloat(worldMap.islands.(Island).position.z);
+	float ix = MakeFloat(worldMap.islands.(Island).position.rx);
+	float iz = MakeFloat(worldMap.islands.(Island).position.rz);
 
-	int scale = WDM_MAP_TO_SEA_SCALE;
-	if (Island == "Cuba") scale = CUBA_MAP_SCALE;
-	if (Island == "SantaCatalina" || Island == "PortoBello" || Island == "Colombia") scale = CONTINENT_SCALE;
 	//REAL CONVERTION OF YOUR SEAVIEW COORDS IN WORLD MAP COORDS
-	worldMap.playerShipX = (psX/scale) + ix;
-	worldMap.playerShipZ = (psZ/scale) + iz;
+	worldMap.playerShipX = (psX/WDM_MAP_TO_SEA_SCALE) + ix;
+	worldMap.playerShipZ = (psZ/WDM_MAP_TO_SEA_SCALE) + iz;
 
 	float pmX = MakeFloat(worldMap.playerShipX);
 	float pmZ = MakeFloat(worldMap.playerShipZ);
@@ -431,12 +422,6 @@ string GetMapIslandzone(string Island)
 		tempIslandDist = 99999.0;
 		tempLandfall = "";
 		nLandfalls = GetAttributesNum(arLandfalls);
-		if (LandfallIsland == "Cuba")
-            scale = CUBA_MAP_SCALE;
-		if (LandfallIsland == "SantaCatalina" || LandfallIsland == "PortoBello" || LandfallIsland == "Colombia")
-            scale = CONTINENT_SCALE;
-        else
-            scale = WDM_MAP_TO_SEA_SCALE;
 		for( i=0 ; i<nLandfalls ; i++)
 		{
 			sLandfallName = GetAttributeName(GetAttributeN(arLandfalls,i));
@@ -464,12 +449,6 @@ string GetMapIslandzone(string Island)
 		{
 			if ( LandfallIsland == Islands[i].id) break;
 		}
-		if (LandfallIsland == "Cuba")
-            scale = CUBA_MAP_SCALE;
-		if (LandfallIsland == "SantaCatalina" || LandfallIsland == "PortoBello" || LandfallIsland == "Colombia")
-            scale = CONTINENT_SCALE;
-        else
-            scale = WDM_MAP_TO_SEA_SCALE;
 		makearef(arLandfalls, Islands[i].reload);
 		nLandfalls = GetAttributesNum(arLandfalls);
 		// for each reload, translate the location and get the name
@@ -479,8 +458,8 @@ string GetMapIslandzone(string Island)
 			sLandfallName = arLandfalls.(tempattrname).label;
 			if (CheckAttribute(arLandfalls, tempattrname+".x"))
 			{
-				LFx = stf(arLandfalls.(tempattrname).x)/scale + stf(worldMap.islands.(LandfallIsland).position.x);
-				LFz = stf(arLandfalls.(tempattrname).z)/scale + stf(worldMap.islands.(LandfallIsland).position.z);
+				LFx = stf(arLandfalls.(tempattrname).x)/WDM_MAP_TO_SEA_SCALE + stf(worldMap.islands.(LandfallIsland).position.rx);
+				LFz = stf(arLandfalls.(tempattrname).z)/WDM_MAP_TO_SEA_SCALE + stf(worldMap.islands.(LandfallIsland).position.rz);
 			}
 			else
 			{
@@ -534,7 +513,7 @@ string GetMapIslandzone(string Island)
 	{
 		strLog += StrLeft(ClosestLandfallName1+"                    ",20);
 	}
-	strLog += " distance: " + makeint(ClosestLandfallDist1*scale) + " yards";
+	strLog += " distance: " + makeint(ClosestLandfallDist1*WDM_MAP_TO_SEA_SCALE) + " yards";
 	strLog += " " + ClosestLandfallDir1;
 	DSTrace(strLog);
 
@@ -548,7 +527,7 @@ string GetMapIslandzone(string Island)
 	{
 		strLog += StrLeft(ClosestLandfallName2+"                    ",20);
 	}
-	strLog += " distance: " + makeint(ClosestLandfallDist2*scale) + " yards";
+	strLog += " distance: " + makeint(ClosestLandfallDist2*WDM_MAP_TO_SEA_SCALE) + " yards";
 	strLog += " " + ClosestLandfallDir2;
 	DSTrace(strLog);
 /*
@@ -573,14 +552,14 @@ string GetMapIslandzone(string Island)
 //	if ( ClosestlandfallDist1 + ClosestlandfallDist2 < 5000.0/WDM_MAP_TO_SEA_SCALE )		// under 5000 yards
 	// if we're likely to cross into another island zone in less than 15 minutes - 20Jan09
 	// Note: speed in knots times about 100 gives yards traveled in 15 game minutes, 180 sec real time
-	float transitionDistance = (ClosestlandfallDist2 - ClosestlandfallDist1)/2.0*scale;
+	float transitionDistance = (ClosestlandfallDist2 - ClosestlandfallDist1)/2.0*WDM_MAP_TO_SEA_SCALE;
 	if ( stf(pchar.Ship.Speed.z) * 100.0 > transitionDistance || Island != ClosestLandfallIsland1 )
 		DirectsailCheckFrequency = 5;		// check every 5 minutes
 	else
 		DirectsailCheckFrequency = 15;		// check every 15 minutes
 
 	strLog = "= Directsail speed = " + stf(pchar.Ship.Speed.z) +
-		", Diff in distances / 2 = " + ((ClosestlandfallDist2 - ClosestlandfallDist1)/2.0*scale) +
+		", Diff in distances / 2 = " + ((ClosestlandfallDist2 - ClosestlandfallDist1)/2.0*WDM_MAP_TO_SEA_SCALE) +
 		", Check frequency = " + DirectsailCheckFrequency;
 	DSTrace(strLog);
 
@@ -596,7 +575,7 @@ string GetMapIslandzone(string Island)
 			{
 				LogIt(TranslateString("","Captain, we are approaching") + " " + pchar.directsail1.approaching + ".");
 				//	PlayStereoSound("notebook_note");
-				PlaySound("interface\notebook.wav");	// same sound effect, playing directly removes an alias
+				PlaySound("interface\notebook.wav");	// same sound effect, playing directly removes an alias																			
 			}
 		}
 		else
@@ -609,7 +588,7 @@ string GetMapIslandzone(string Island)
 				{
 					LogIt(TranslateString("","Captain, we are approaching") + " " + pchar.directsail1.approaching + "!");
 					//	PlayStereoSound("notebook_note");
-					PlaySound("interface\notebook.wav");
+					PlaySound("interface\notebook.wav");			 
 				}
 			}
 		}
@@ -619,7 +598,7 @@ string GetMapIslandzone(string Island)
 		DeleteAttribute(pchar, "directsail1.approaching");
 	}
 
-	if (ClosestLandfallDist1 < 6000.0/scale && Island != ClosestLandfallIsland1)
+	if (ClosestLandfallDist1 < 6000.0/WDM_MAP_TO_SEA_SCALE && Island != ClosestLandfallIsland1)
 	{
 		return ClosestLandfallIsland1;
 	}
@@ -671,13 +650,10 @@ void Sea_ReloadDirect() // Jan 07, new version by Screwface that works also with
 		float psX = MakeFloat(worldMap.playerShipX);
 		float psZ = MakeFloat(worldMap.playerShipZ);
 
-		float ix = MakeFloat(worldMap.islands.(toislandname).position.x);
-		float iz = MakeFloat(worldMap.islands.(toislandname).position.z);
-		int scale = WDM_MAP_TO_SEA_SCALE;
-		if (Login.Island == "Cuba") scale = CUBA_MAP_SCALE;
-		if (Login.Island == "SantaCatalina" || Login.Island == "PortoBello" || Login.Island == "Colombia") scale = CONTINENT_SCALE;
-		Login.playerGroup.x = (psX - ix)*scale;
-		Login.playerGroup.z = (psZ - iz)*scale;
+		float ix = MakeFloat(worldMap.islands.(toislandname).position.rx);
+		float iz = MakeFloat(worldMap.islands.(toislandname).position.rz);
+		Login.playerGroup.x = (psX - ix)*WDM_MAP_TO_SEA_SCALE;
+		Login.playerGroup.z = (psZ - iz)*WDM_MAP_TO_SEA_SCALE;
 
 		Login.PlayerGroup.ay = stf(rPlayer.Ship.Ang.y); // your old heading
 	}
@@ -686,16 +662,6 @@ void Sea_ReloadDirect() // Jan 07, new version by Screwface that works also with
 	Login.DirectSail = true;
 
 	SeaLogin(&Login); // KK
-
-	float RTplayerShipX;
-    float RTplayerShipZ;
-    getRTplayerShipXZ(&RTplayerShipX, &RTplayerShipZ, &scale);
-	worldMap.playerShipX = RTplayerShipX;
-	worldMap.playerShipZ = RTplayerShipZ;
-	worldMap.playerShipAY = Login.PlayerGroup.ay();
-	worldMap.island = Login.Island;
-	worldMap.zeroX = ix;
-	worldMap.zeroZ = iz;
 
 	ReloadProgressEnd(); // KK
 }
@@ -1127,7 +1093,6 @@ float GetIslandSize(string island)   // ccc Jan07 returns the aprox radius of an
 		case "Conceicao": return 2000.0; break;
 		case "Hispaniola": return 7000.0; break;
 		case "Cuba": return 8000.0; break;
-		case "Colombia": return 8000.0; break;
 		case "SantaCatalina": return 8000.0; break;
 		case "PortoBello": return 8000.0; break;
 		case "IslaDeMuerte": return 100.0; break; // KK
@@ -1386,26 +1351,4 @@ void checkWMEnctr(float RTplayerShipX, float RTplayerShipZ, int scale, ref _bSto
         return;
 
     return;
-}
-
-void getRTplayerShipXZ(ref RTplayerShipX, ref RTplayerShipZ, ref scale)
-{
-	float zeroX = MakeFloat(worldMap.zeroX);
-	float SeaX = stf(pchar.Ship.Pos.x);
-	float zeroZ = MakeFloat(worldMap.zeroZ);
-	float SeaZ = stf(pchar.Ship.Pos.z);
-	string sIsland = worldMap.island;
-
-	scale = WDM_MAP_TO_SEA_SCALE;
-	if (sIsland == "Cuba")
-	{
-		scale = CUBA_MAP_SCALE;
-	}
-	if (sIsland == "SantaCatalina" || sIsland == "PortoBello" || sIsland == "Colombia")
-	{
-		scale = CONTINENT_SCALE;
-	}
-	RTplayerShipX = (SeaX/scale) + zeroX;
-	RTplayerShipZ = (SeaZ/scale) + zeroZ;
-	return;
 }

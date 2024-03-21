@@ -327,8 +327,8 @@ float Fort_CannonDamage()
 
 		Play3DSound("fort_cann_explode", x, y, z);
 		CreateBlast(x, y, z);
-		CreateParticleSystemXPS("ShipExplode", x, y, z, 0.0, 0.0, 0.0, 0);
-		CreateParticleSystemXPS("blast_inv_explode", x, y, z, 0.0, 0.0, 0.0, 0);
+		CreateParticleSystemXPS("blast_inv", x, y, z, 0.0, 0.0, 0.0, 0);
+		CreateParticleSystemXPS("blast", x, y, z, 0.0, 0.0, 0.0, 0);
 
 // KK -->
 		if (!bImmortal) {

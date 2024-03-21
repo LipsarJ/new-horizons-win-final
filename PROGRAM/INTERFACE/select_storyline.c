@@ -775,6 +775,9 @@ void ChangeStoryline(bool bRight)
 		case 3:
 			CreateString(true, "HelpText", XI_ConvertString("SelectStorylineNoFreePlay"), FONT_NORMAL, COLOR_RED_LIGHT, 320, 470, SCRIPT_ALIGN_CENTER, 1.0);
 		break;
+		case 4:
+			CreateString(true, "HelpText", XI_ConvertString("SelectStorylineStoryAndFreeOpening"), FONT_NORMAL, COLOR_GREEN_LIGHT, 320, 470, SCRIPT_ALIGN_CENTER, 1.0);
+		break;
 		CreateString(true, "HelpText", XI_ConvertString("SelectStorylineCustomize"), FONT_NORMAL, COLOR_NORMAL, 320, 470, SCRIPT_ALIGN_CENTER, 1.0);
 	}
 

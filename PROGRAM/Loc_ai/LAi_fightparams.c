@@ -849,7 +849,7 @@ float LAi_CalcDeadExp(aref attack, aref enemy)
 				//traceandlog("from chr " + enemy.id + " you got " + tmp + " +++++++++++++");
 			}
 		}
-		//	if(enemy.lastname == VC_MONKEY_LNAME)		//ccc monkeyhide, GR - no longer works because name is translated
+	//	if(enemy.lastname == VC_MONKEY_LNAME)		//ccc monkeyhide, GR - no longer works because name is translated
 		if(GetAttribute(enemy, "sex") == "monkey")	// GR: try 'sex' attribute instead, should be set to "monkey" in 'LEnc_monsters.c'
 		{
 			AddCharacterGoods(GetMainCharacter(), GOOD_LEATHER, 1);

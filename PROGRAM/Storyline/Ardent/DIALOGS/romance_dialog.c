@@ -1409,11 +1409,11 @@ void ProcessDialogEvent()
 
 		case "convoy_goodbye":
 			if(CheckAttribute(characterFromID(PChar.quest.romance), "married") && characters[getCharacterIndex(PChar.quest.romance)].married == MR_MARRIED && characters[getCharacterIndex(PChar.quest.romance)].married.id == PChar.id)
-				{
-					if (NPChar.sex == "man") Preprocessor_Add("spouse", XI_ConvertString("husband"));
-					else Preprocessor_Add("spouse", XI_ConvertString("wife"));
-					dialog.text = DLG_TEXT[306] + GetMyName(PChar) + ".";
-				}
+			{
+				if (NPChar.sex == "man") Preprocessor_Add("spouse", XI_ConvertString("husband"));
+				else Preprocessor_Add("spouse", XI_ConvertString("wife"));
+				dialog.text = DLG_TEXT[306] + GetMyName(PChar) + ".";
+			}
 			else
 				dialog.text = DLG_TEXT[305] + GetMyName(PChar) + ".";
 			link.l1 = DLG_TEXT[307] + GetMyName(characterFromID(PChar.quest.romance)) + ".";

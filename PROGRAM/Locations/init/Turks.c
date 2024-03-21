@@ -330,7 +330,9 @@ void LocationInitTurks(ref n)
 	//Night
 	Locations[n].models.night.charactersPatch = "Bank_patch";
 	//Environment
-	Locations[n].environment.weather = "false";
+	locations[n].environment.weather = "true";
+locations[n].lockWeather = "Inside";
+
 	Locations[n].environment.sea = "false";
 
 	//Reload map
@@ -369,7 +371,9 @@ void LocationInitTurks(ref n)
 	//Night
 	Locations[n].models.night.charactersPatch = "Church01_patch";
 	//Environment
-	Locations[n].environment.weather = "false";
+	locations[n].environment.weather = "true";
+locations[n].lockWeather = "Inside";
+
 	Locations[n].environment.sea = "false";	
 	Locations[n].models.back = "back\turkC_";
 
@@ -413,7 +417,9 @@ void LocationInitTurks(ref n)
 	Locations[n].models.night.charactersPatch = "MT_p";
 
 	//Environment
-	Locations[n].environment.weather = "false";
+	locations[n].environment.weather = "true";
+locations[n].lockWeather = "Inside";
+
 	Locations[n].environment.sea = "false";
 	Locations[n].models.back = "back\turkC_";
 
@@ -467,7 +473,9 @@ void LocationInitTurks(ref n)
 	Locations[n].models.night.charactersPatch = "LH_F2_p";
 
 	//Environment
-	Locations[n].environment.weather = "false";
+	locations[n].environment.weather = "true";
+locations[n].lockWeather = "Inside";
+
 	Locations[n].environment.sea = "false";
 	Locations[n].models.back = "back\colf2_";
 
@@ -511,7 +519,9 @@ void LocationInitTurks(ref n)
 	Locations[n].models.night.charactersPatch = "FlamHouse_patch";
 
 	//Environment
-	Locations[n].environment.weather = "false";
+	locations[n].environment.weather = "true";
+locations[n].lockWeather = "Inside";
+
 	Locations[n].environment.sea = "false";
 	Locations[n].models.back = "back\turkK_";
 
@@ -588,7 +598,9 @@ void LocationInitTurks(ref n)
 	Locations[n].models.night.charactersPatch = "JinoRoom_patch";
 
 	//Environment
-	Locations[n].environment.weather = "false";
+	locations[n].environment.weather = "true";
+locations[n].lockWeather = "Inside";
+
 	Locations[n].environment.sea = "false";
 	Locations[n].models.back = "back\turkJ_";
 
@@ -650,7 +662,9 @@ void LocationInitTurks(ref n)
 	Locations[n].models.night.charactersPatch = "Sh03_p";
 
 	//Environment
-	Locations[n].environment.weather = "false";
+	locations[n].environment.weather = "true";
+locations[n].lockWeather = "Inside";
+
 	Locations[n].environment.sea = "false";
 	Locations[n].models.back = "back\shp_";
 
@@ -695,7 +709,9 @@ void LocationInitTurks(ref n)
 	Locations[n].models.night.charactersPatch = "LS_p";
 
 	//Environment
-	Locations[n].environment.weather = "false";
+	locations[n].environment.weather = "true";
+locations[n].lockWeather = "Inside";
+
 	Locations[n].environment.sea = "false";
 	Locations[n].models.back = "back\turkT_";
 
@@ -740,7 +756,9 @@ void LocationInitTurks(ref n)
 	Locations[n].models.night.fonar		   = "ss_fn";
 
 	//Environment
-	Locations[n].environment.weather = "false";
+	locations[n].environment.weather = "true";
+locations[n].lockWeather = "Inside";
+
 	Locations[n].environment.sea = "false";
 	Locations[n].models.back = "back\turkT_";
 
@@ -782,7 +800,9 @@ void LocationInitTurks(ref n)
 	Locations[n].models.night.charactersPatch = "resp_p";
 
 	//Environment
-	Locations[n].environment.weather = "false";
+	locations[n].environment.weather = "true";
+locations[n].lockWeather = "Inside";
+
 	Locations[n].environment.sea = "false";
 	Locations[n].models.back = "back\turkT_";
 
@@ -827,7 +847,9 @@ void LocationInitTurks(ref n)
 	Locations[n].models.night.charactersPatch = "Res04_p";
 
 	//Environment
-	Locations[n].environment.weather = "false";
+	locations[n].environment.weather = "true";
+locations[n].lockWeather = "Inside";
+
 	Locations[n].environment.sea = "false";
 	Locations[n].models.back = "back\turkT_";
 
@@ -1099,7 +1121,9 @@ void LocationInitTurks(ref n)
 	Locations[n].models.night.charactersPatch = "armory_patch";
 
 	//Environment
-	Locations[n].environment.weather = "false";
+	locations[n].environment.weather = "true";
+locations[n].lockWeather = "Inside";
+
 	Locations[n].environment.sea = "false";
 	
 	//Reload map
@@ -1216,7 +1240,9 @@ void LocationInitTurks(ref n)
 	Locations[n].models.night.charactersPatch = "resp_p";
 
 	//Environment
-	Locations[n].environment.weather = "false";
+	locations[n].environment.weather = "true";
+locations[n].lockWeather = "Inside";
+
 	Locations[n].environment.sea = "false";
 	Locations[n].models.back = "back\juch_";
 	//Reload map
@@ -1403,7 +1429,9 @@ void LocationInitTurks(ref n)
 	//Night
 	Locations[n].models.night.charactersPatch = "Grot_p";
 	//Environment
-	Locations[n].environment.weather = "false";
+	locations[n].environment.weather = "true";
+locations[n].lockWeather = "Inside";
+
 	Locations[n].environment.sea = "false";
 	//Reload map
 	Locations[n].reload.l1.name = "reload1";
@@ -1524,7 +1552,9 @@ void LocationInitTurks(ref n)
 	//Night
 	Locations[n].models.night.charactersPatch = "cavern_p";
 	//Environment
-	Locations[n].environment.weather = "false";
+	locations[n].environment.weather = "true";
+locations[n].lockWeather = "Inside";
+
 	Locations[n].environment.sea = "false";
 
 	//Reload map
@@ -1642,7 +1672,9 @@ void LocationInitTurks(ref n)
 	//Night
 	Locations[n].models.night.charactersPatch = "d04_p";
 	//Environment
-	Locations[n].environment.weather = "false";
+	locations[n].environment.weather = "true";
+locations[n].lockWeather = "Inside";
+
 	Locations[n].environment.sea = "false";
 
 	//Reload map
@@ -1883,7 +1915,9 @@ void LocationInitTurks(ref n)
 	//Night
 	Locations[n].models.night.charactersPatch = "SCave_p";
 	//Environment
-	Locations[n].environment.weather = "false";
+	locations[n].environment.weather = "true";
+locations[n].lockWeather = "Inside";
+
 	Locations[n].environment.sea = "false";
 	//Reload map
 	Locations[n].reload.l1.name = "reload1";
@@ -1986,7 +2020,9 @@ void LocationInitTurks(ref n)
 	//Night
 	Locations[n].models.night.charactersPatch = "Res02_p_stairs";
 	//Environment
-	Locations[n].environment.weather = "false";
+	locations[n].environment.weather = "true";
+locations[n].lockWeather = "Inside";
+
 	Locations[n].environment.sea = "false";
 //	Locations[n].models.back = "back\mures2_";
 	Locations[n].models.back = "..\back\inside_back_";
@@ -2058,7 +2094,9 @@ void LocationInitTurks(ref n)
 	//Night
 	Locations[n].models.night.charactersPatch = "res07_gambler_patch";
 	//Environment
-	Locations[n].environment.weather = "false";
+	locations[n].environment.weather = "true";
+locations[n].lockWeather = "Inside";
+
 	Locations[n].environment.sea = "false";
 
 	//Reload map
@@ -2097,7 +2135,9 @@ void LocationInitTurks(ref n)
 	//Night
 	locations[n].models.night.charactersPatch = "residence02_patch";
 	//Environment
-	Locations[n].environment.weather = "false";
+	locations[n].environment.weather = "true";
+locations[n].lockWeather = "Inside";
+
 	Locations[n].environment.sea = "false";
 
 	//Reload map

@@ -10,7 +10,7 @@ string DLG_TEXT[56] = {
 ". Mam siê spotkaæ z angielskim kapitanem, który nazywa siê ",
 ", i pokazaæ mu, gdzie przybiæ do brzegu.\nPo ujawnieniu tego miejsca mia³em spotkaæ siê tam z tym kapitanem na brzegu i zaprowadziæ go do jaskini.",
 "Jestem ciekaw - czemu ¿o³nierze nie mog¹ têdy wejœæ do jaskini?",
-"Dziêki dyskrecji mamy przewagê zaskoczenia. Francuzi maj¹ szpiegów w Bridgetown. Jeœli pójdziemy do jaskini st¹d, Francuzi odkryj¹, co zamierzamy.\nMog¹ wci¹gn¹æ nas do walki, ale jeœli Francuzi wygraj¹, mog¹ postanowiæ zdobyæ równie¿ Bridgetown.",
+"Dziêki dyskrecji mamy przewagê zaskoczenia. Francuzi maj¹ szpiegów w Greenford. Jeœli pójdziemy do jaskini st¹d, Francuzi odkryj¹, co zamierzamy.\nMog¹ wci¹gn¹æ nas do walki, ale jeœli Francuzi wygraj¹, mog¹ postanowiæ zdobyæ równie¿ Greenford.",
 "Chyba masz racjê. To gdzie i kiedy mam wysadziæ ¿o³nierzy na brzeg?",
 "Jest taka odludna pla¿a nazywana Zatok¹ Szarych Ska³, ",
 ". To bêdzie najlepsze miejsce.",

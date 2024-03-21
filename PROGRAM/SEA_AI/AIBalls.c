@@ -341,7 +341,7 @@ bool Ball_AddBall(aref aCharacter, float fX, float fY, float fZ, float fSpeedV0,
 				break;
 				case 2: // Enhanced! High-End Machine Recommended!
 					PostEvent("CreateParticleSystemPost", 50, "sffffffl", "KNBcancloud", fX, fY, fZ, -fHeightAng, fDirAng, 0.0, 20); // Post delay reduced to synchronize the fire and smoke better
-					PostEvent("CreateParticleSystemPost", 60, "sffffffl", "MMcancloud2", fX, fY, fZ, -fHeightAng, fDirAng, 0.0, 20); // Dirty smoke
+					PostEvent("CreateParticleSystemPost", 60, "sffffffl", "KNBcancloud2", fX, fY, fZ, -fHeightAng, fDirAng, 0.0, 20); // Dirty smoke
 					CreateParticleSystem("cannon_embers", fX, fY, fZ, -fHeightAng, fDirAng, 0.0, 20); // Gunpowder embers
 				break;
 			}

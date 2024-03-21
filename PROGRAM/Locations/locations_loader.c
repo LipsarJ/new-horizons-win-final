@@ -17,8 +17,6 @@ bool locDisableUpdateTime = false;
 
 // NK character-style loc functions 05-07-19
 
-//#20190624-01
-
 int GetLocationIndex(string id)
 {
 	return NativeFindLocation(&locations, id);
@@ -46,9 +44,12 @@ int FindLocation(string id)
 
 bool LoadLocation(ref loc)
 {
+    int telap = 0;
+    telap = RDTSC_B();
 	traceif("LoadLocation(ref loc) " + loc.id);
 	PostEvent(EVENT_LOCATION_LOAD,0);
-
+    telap = RDTSC_E(telap);
+    trace("load elapse1: " + telap);
 	int i;
 	bool res;
 	ref mainCharacter = GetMainCharacter(); // KK
@@ -140,6 +141,7 @@ bool LoadLocation(ref loc)
 			isTown = true;
 		}
 	}*/
+	 telap = RDTSC_B();
 	bool isNoBoarding = !LAi_IsBoardingProcess() && !bSeaActive;
 	if (isNoBoarding) {
 		if (!CheckAttribute(loc,"models.back")) {
@@ -190,7 +192,8 @@ bool LoadLocation(ref loc)
 			if (isTown) CreateShipEnvironment();
 		}
 	}
-
+ telap = RDTSC_E(telap);
+    trace("load elapse2: " + telap);
 	if (CheckAttribute(mainCharacter, "location.from_sea") == true && IsPortLandscapeEnabled(mainCharacter.location.from_sea) != "") {
 		CreatePortLandscape(mainCharacter.location.from_sea);
 	}
@@ -217,7 +220,7 @@ bool LoadLocation(ref loc)
 // <-- JRH
 
 	ReloadProgressUpdate();
-
+ telap = RDTSC_B();
 	//SendMessage(Sound,"lf",MSG_SOUND_SET_MASTER_VOLUME,0.0);
 
 	//Create location======================================================================
@@ -236,11 +239,12 @@ bool LoadLocation(ref loc)
 		SendMessage(loc, "ls", MSG_LOCATION_TEXTURESPATH, loc.filespath.textures);
 	}
 	//Set lighting path
+	trace("Mdl: " + loc.filespath.models);
+    trace("lp: " + GetLightingPath());
 	SendMessage(loc, "ls", MSG_LOCATION_LIGHTPATH, GetLightingPath());
 	SendMessage(loc, "ls", MSG_LOCATION_SHADOWPATH, GetLmLightingPath());
-	SendMessage(loc, "lf", MSG_LOCATION_DIAG_RAD, 5.0);
-	SendMessage(loc, "ls", MSG_LOCATION_EX_MSG, "UseNarrowCharRadius"); //Add this line
-
+ telap = RDTSC_E(telap);
+    trace("load elapse3: " + telap);
 	//Loading always models================================================================
 	aref st, at, lit, lit1;
 	string sat;
@@ -265,6 +269,7 @@ bool LoadLocation(ref loc)
 			LocLoadGrass(loc, "models.always." + sat);
 		}
 	}
+	 telap = RDTSC_B();
 	//Loading background model=============================================================
 	if(CheckAttribute(loc, "models.back") == true)
 	{
@@ -281,9 +286,10 @@ bool LoadLocation(ref loc)
 			traceif("LocationLoader: not loaded back model location." + sat + ", id = " + loc.id);
 		}
 	}
-
+ telap = RDTSC_E(telap);
+    trace("load elapse4: " + telap);
 	ReloadProgressUpdate();
-
+ telap = RDTSC_B();
 	//Loading day/night models=============================================================
 	if(Whr_IsDay() != 0)
 	{
@@ -386,6 +392,9 @@ bool LoadLocation(ref loc)
 
 
 	}
+	 telap = RDTSC_E(telap);
+    trace("load elapse5: " + telap);
+     telap = RDTSC_B();
 	//Entry models=========================================================================
 	if(LocIsEntryLocation(loc) == true)
 	{
@@ -405,12 +414,12 @@ bool LoadLocation(ref loc)
 			}
 		}
 	}
-
+ telap = RDTSC_E(telap);
+    trace("load elapse6: " + telap);
 	ReloadProgressUpdate();
-
+ telap = RDTSC_B();
 	//Locators=============================================================================
-	if (bWeatherIsStorm) {Sea.MaxSeaHeight = 3.0;}
-	else {Sea.MaxSeaHeight = 2.0; Sea.Sea2.Transparency = 0.3;}
+	Sea.MaxSeaHeight = 2.0;
 	if(CheckAttribute(loc,"MaxSeaHeight")) Sea.MaxSeaHeight = stf(loc.MaxSeaHeight); // screwface : limit wave height
 	//Locator's radiuses
 	int j, k, gnum, lnum;
@@ -492,9 +501,10 @@ bool LoadLocation(ref loc)
 			}
 		}
 	}
-
+ telap = RDTSC_E(telap);
+    trace("load elapse7: " + telap);
 	ReloadProgressUpdate();
-
+ telap = RDTSC_B();
 	//Particles============================================================================
 	CreateParticles(loc);
 	ReloadProgressUpdate();
@@ -506,6 +516,9 @@ bool LoadLocation(ref loc)
 		if (isTown == true && cdistrict == 1) LocLoadShips(loc);
 	}
 	CreateFlagEnvironment();
+	 telap = RDTSC_E(telap);
+    trace("load elapse8: " + telap);
+     telap = RDTSC_B();
 	ReloadProgressUpdate();
 // <-- KK
 	//Animals===========================================================================
@@ -513,8 +526,17 @@ bool LoadLocation(ref loc)
 	ReloadProgressUpdate();
 	//Characters===========================================================================
 	SetCharacterPostInit(true);
+	 telap = RDTSC_E(telap);
+    trace("load elapse9: " + telap);
+     telap = RDTSC_B();
 	LoginCharactersInLocation(loc);
+	 telap = RDTSC_E(telap);
+    trace("load elapse10: " + telap);
+     telap = RDTSC_B();
 	SetCharacterPostInit(false);
+	 telap = RDTSC_E(telap);
+    trace("load elapse11: " + telap);
+     telap = RDTSC_B();
 	if(DEBUG_POSTINIT>1) DumpAttributes(PostInitQueue);
 	//Main character options===============================================================
 	if(IsEntity(mainCharacter) == 0)
@@ -536,7 +558,9 @@ bool LoadLocation(ref loc)
 	AddCharacterLocatorGroup(mainCharacter, "randitem");
 	AddCharacterLocatorGroup(mainCharacter, "box");
 	AddCharacterLocatorGroup(mainCharacter, "teleport");
-
+ telap = RDTSC_E(telap);
+    trace("load elapse12: " + telap);
+     telap = RDTSC_B();
 	ReloadProgressUpdate();
 
 	// MAXIMUS: Isla de Muerte -->
@@ -559,6 +583,9 @@ bool LoadLocation(ref loc)
 			SetCharacterToNearLocatorFromMe("Pintel", 3);
 		}
 	}
+	 telap = RDTSC_E(telap);
+    trace("load elapse13: " + telap);
+     telap = RDTSC_B();
 	// CTM <--
 	//Camera===============================================================================
 	locCameraEnableFree = FREE_CAMERA;				// PB: For Free Camera Mode
@@ -575,7 +602,9 @@ bool LoadLocation(ref loc)
 		if(lockCamAngle > 1.5) lockCamAngle = 1.5;
 		SendMessage(&locCamera, "lf", MSG_CAMERA_MOVE, lockCamAngle);
 	}
-
+ telap = RDTSC_E(telap);
+    trace("load elapse14: " + telap);
+     telap = RDTSC_B();
 	SetEventHandler("Control Activation","locCameraSwitch",1);
 	if(!LAi_boarding_process && !bDeckEnter && !bMutinyDeckStarted) SetEventHandler("Control Activation","chrCharacterKeys",1); // KK
 
@@ -585,7 +614,7 @@ bool LoadLocation(ref loc)
 	//DumpAttributes(loc);
 	//SendMessage(Sound,"lf",MSG_SOUND_SET_MASTER_VOLUME,1.0);
 
-	if(VISIBLE_LOCATORS)    // LDH 05Dec06 added toggle instead of commenting out line
+	if(VISIBLE_LOCATORS || WITH_BRIGHT_COLOURS)    // LDH 05Dec06 added toggle instead of commenting out line
 	{
 	    if(WITH_BRIGHT_COLOURS)	//JRH
 	    {
@@ -621,6 +650,7 @@ bool LoadLocation(ref loc)
 		VisibleLocatorsGroup("torchlightes_p14", 1.0, 15.0, 255, 255, 255, 55);
 		VisibleLocatorsGroup("ships", 1.0, 300.0, 255, 255, 255, 55);
 		VisibleLocatorsGroup("ships_other", 1.0, 600.0, 255, 255, 255, 55);
+		VisibleLocatorsGroup("carrier", 1.0, 15.0, 155, 0, 255, 255);
 		VisibleLocatorsGroup("patrol", 1.0, 15.0, 155, 0, 255, 255);
 		VisibleLocatorsGroup("soldiers", 1.0, 15.0, 155, 0, 255, 255);
 	    }
@@ -651,6 +681,7 @@ bool LoadLocation(ref loc)
 		VisibleLocatorsGroup("torchlightes_p14", 1.0, 15.0, 55, 55, 55, 55);
 		VisibleLocatorsGroup("ships", 1.0, 300.0, 55, 55, 55, 55);
 		VisibleLocatorsGroup("ships_other", 1.0, 300.0, 55, 55, 55, 55);
+		VisibleLocatorsGroup("carrier", 1.0, 15.0, 155, 0, 55, 55);
 		VisibleLocatorsGroup("patrol", 1.0, 15.0, 155, 0, 55, 55);
 		VisibleLocatorsGroup("soldiers", 1.0, 15.0, 155, 0, 55, 55);
 	    }
@@ -665,7 +696,9 @@ bool LoadLocation(ref loc)
 	VisibleLocatorsGroup("incas_light", 1.0, 15.0, 255, 155, 255, 255);
 	VisibleLocatorsGroup("incas_sky", 1.0, 15.0, 255, 0, 255, 255);
 	*/
-
+ telap = RDTSC_E(telap);
+    trace("load elapse15: " + telap);
+     telap = RDTSC_B();
 	ReloadProgressUpdate();
 
 	ClearScreenShoter();//MAXIMUS: used for QuickSave
@@ -674,7 +707,9 @@ bool LoadLocation(ref loc)
 	Item_OnLoadLocation(loc.id);
 
 	ReloadProgressUpdate();
-
+ telap = RDTSC_E(telap);
+    trace("load elapse16: " + telap);
+     telap = RDTSC_B();
 	if(!CheckAttribute(loc, "models.back") && !LAi_boarding_process && !ownDeckStarted()) Island_Start();
 
 	if(CheckAttribute(&mainCharacter, "lastFightMode") != 0)
@@ -684,6 +719,9 @@ bool LoadLocation(ref loc)
 			SendMessage(&mainCharacter, "lsl", MSG_CHARACTER_EX_MSG, "SetFightMode", 1);
 		}
 	}
+	 telap = RDTSC_E(telap);
+    trace("load elapse17: " + telap);
+     telap = RDTSC_B();
 	LAI_group_SetRelationWithAllStock(LAI_GROUP_CORPSES, LAI_GROUP_NEUTRAL);//MAXIMUS: so we do it once
 	//PostEvent("UpdateLocator", 0, "iiss", loc, mainCharacter, mainCharacter.location.group, mainCharacter.location.locator);//MAXIMUS: labels will always be shown
 	if(CheckAttribute(mainCharacter,"autoreload") && CheckAttribute(mainCharacter,"location.locator.emerge"))
@@ -694,10 +732,14 @@ bool LoadLocation(ref loc)
 			DeleteAttribute(mainCharacter,"autoreload.location");
 		}
 	}
-
+ telap = RDTSC_E(telap);
+    trace("load elapse18: " + telap);
+     telap = RDTSC_B();
 	PostEvent("CheckTimeScale", 1000); // PB: Keep previous time scale
 	if (BUILDING_COLLISION) PostEvent("StartCollideCheck", 1000); //Levis
-
+ telap = RDTSC_E(telap);
+    trace("load elapse19: " + telap);
+     telap = RDTSC_B();
 	// MAXIMUS 20.08.2018 used for localization -->
 	if(CheckAttribute(mainCharacter, "savelang"))
 	{
@@ -709,12 +751,18 @@ bool LoadLocation(ref loc)
 		DeleteAttribute(mainCharacter, "savelang");
 	}
 	// MAXIMUS 20.08.2018 used for localization <--
-
+ telap = RDTSC_E(telap);
+    trace("load elapse20: " + telap);
+     telap = RDTSC_B();
 	//Levis moved it here for better timing
 	StartPostInitChars();
-
+ telap = RDTSC_E(telap);
+    trace("load elapse21: " + telap);
+     telap = RDTSC_B();
 	ReloadProgressUpdate();
-
+ telap = RDTSC_E(telap);
+    trace("load elapse22: " + telap);
+     telap = RDTSC_B();
 	return true;
 }
 
@@ -1264,7 +1312,6 @@ void LocLoadShips(ref Location)
 		rCharacter.Flags.DoRefresh = true; // KK
 		//If(CheckAttribute(GetMainCharacter(),"avoidflagsRe")){DeleteAttribute(GetMainCharacter(),"avoidflagsRe");}
  		// Screwface : end
- 		locShips[n].id = rCharacter.id;
 		SendMessage(&locShips[n],"laa",MSG_SHIP_CREATE,&rCharacter,&rShip);
 	}
 
@@ -1286,7 +1333,6 @@ void LocLoadShips(ref Location)
 				rCharacter.Ship.Speed.z = 0.0;
 				Ship_PrepareShipForLocation(rCharacter);
 				SendMessage(&locShips[n],"laa",MSG_SHIP_CREATE,&rCharacter,&rShip);
-				locShips[n].id = rCharacter.id;
 				locNumShips++;
 			}
 		}
@@ -1298,25 +1344,6 @@ void LocLoadShips(ref Location)
 			traceif("LocLoadShips: Can't find boat locator in location: " + Location.id);
 		}
 	}
-	aref refObj;
-	if(GetEntityByName("", "Player", &refObj))
-    {
-        ReconnectEntity(&Characters[GetMainCharacterIndex()], refObj);
-    }
-    if(GetEntityByName("", "NPCharacter", &refObj))
-    {
-        while(true)
-        {
-            for (i = 0; i < locNumShips; i++)
-            {
-                if(SendMessage(&refObj, "lss", MSG_CHARACTER_EX_MSG, "CheckID", locShips[i].id) != 0) {
-                    if (GetEntityName(characterFromID(locShips[i].id)) != "NPCharacter")
-                        ReconnectEntity(characterFromID(locShips[i].id), refObj);
-                }
-            }
-            if(!GetEntityNextByName("NPCharacter",&refObj)) break;
-        }
-    }
 }
 
 bool Character_LocIsEntryLocation(ref rCharacter, ref rLocation)

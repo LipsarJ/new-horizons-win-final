@@ -268,7 +268,6 @@ void StoreInit()
 	Stores[PIRATE_FORT_STORE].owner	= "Cornelius Vanslyperken"; // Ansel
 	STORE_QUANTITY++;
 
-	/*
 	Stores[BERMUDES_STORE].Island	= "Bermudes";
 	Stores[BERMUDES_STORE].group	= "Bermudes";
 	Stores[BERMUDES_STORE].owner	= "Cornelis Huijser";
@@ -277,5 +276,4 @@ void StoreInit()
 	Stores[BERMUDES_STORE].usurer = "Oranjestad Usurer"; // KK
 	Stores[BERMUDES_STORE].taylor = "Jan Thijs"; // KK
 	STORE_QUANTITY++;
-	*/
 }

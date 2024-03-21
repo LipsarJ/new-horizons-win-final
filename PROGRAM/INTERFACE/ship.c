@@ -40,7 +40,7 @@ void InitInterface_I(string iniName,int bIState)
 	CreateString(true,"Hull","100%",FONT_BOLD_NUMBERS,COLOR_NORMAL,63,154,SCRIPT_ALIGN_CENTER,0.6); // KK
 	CreateString(true,"Sails","100%",FONT_BOLD_NUMBERS,COLOR_NORMAL,191,154,SCRIPT_ALIGN_CENTER,0.6); // KK
 	CreateString(true,"Crew","0",FONT_BOLD_NUMBERS,COLOR_NORMAL,447,154,SCRIPT_ALIGN_CENTER,0.6); // KK
-	CreateString(true,"Cannons","0",FONT_BOLD_NUMBERS,COLOR_NORMAL,575,154,SCRIPT_ALIGN_CENTER,0.6); // KK
+	CreateString(true,"QCannons","0",FONT_BOLD_NUMBERS,COLOR_NORMAL,575,154,SCRIPT_ALIGN_CENTER,0.6); // KK
 	CreateString(true,"Money",MakeMoneyShow(sti(refMyCh.money),MONEY_SIGN,MONEY_DELIVER),FONT_NORMAL,COLOR_MONEY,320,393,SCRIPT_ALIGN_CENTER,1.0);
 	CreateString(true,"ShipName","",FONT_SEADOGS,COLOR_NORMAL,320,234,SCRIPT_ALIGN_CENTER,1.0); // MAXIMUS interface MOD // KK
 
@@ -273,9 +273,9 @@ void FillFourImages()
 	
 	if(bNewInterface==true)
 	{
-	GameInterface.FourImage.BadTwoPicture = "interfaces\blank_ship.tga";
+		GameInterface.FourImage.BadTwoPicture = "interfaces\blank_ship.tga";
 	} else {
-	GameInterface.FourImage.BadTwoPicture = "interfaces\blank_ship2.tga";
+		GameInterface.FourImage.BadTwoPicture = "interfaces\blank_ship2.tga";
 	}
 	
 // KK -->
@@ -462,10 +462,10 @@ void ProcessFrame()
 			aref tmpar; makearef(tmpar, otherCh.ship); // NK can qty 05-04-18
 // KK -->
 			GameInterface.strings.TCannons = GetCannonName(GetCaracterShipCannonsType(otherCh));
-			GameInterface.strings.Cannons = GetLocalShipAttrib(&tmpar, &refBaseShip, "CurCanQty"); // NK can qty05-04-18 refBaseShip.CannonsQuantity;
-			if (sti(GameInterface.strings.Cannons) == 0 && GetCaracterShipCannonsType(refMyCh) == CANNON_TYPE_NONECANNON) {
+			GameInterface.strings.QCannons = GetLocalShipAttrib(&tmpar,&refBaseShip,"CurCanQty");
+			if (sti(GameInterface.strings.QCannons) == 0 && GetCaracterShipCannonsType(refMyCh) == CANNON_TYPE_NONECANNON) {
 				SetSelectable("RCANNONS", false);
-				GameInterface.strings.Cannons = "";
+				GameInterface.strings.QCannons = "";
 			}
 // <-- KK
 		}
@@ -957,10 +957,19 @@ void SetNoneData()
 
 // KK -->
 		SetNodeUsing("NATION", true); // PB
-		if (tempnation >= 0 && tempnation < NATIONS_QUANTITY) {
+		if (tempnation >= 0 && tempnation < NATIONS_QUANTITY)
+		{
 			SetNewPicture("NATION", "interfaces\flags\Crest_" + GetNationFlagImage(tempnation) + ".tga");
-			SetFormatedText("NATIONALDESIGN", XI_ConvertString("2"+Nations[tempnation].desc) + " " + XI_ConvertString("design"));
-		} else {
+			switch (LanguageGetLanguage())
+			{
+				case "Spanish":
+					SetFormatedText("NATIONALDESIGN", XI_ConvertString("design") + " " + strlower(XI_ConvertString("2"+Nations[tempnation].desc)));
+				break;
+				SetFormatedText("NATIONALDESIGN", XI_ConvertString("2"+Nations[tempnation].desc) + " " + XI_ConvertString("design"));
+			}
+		}
+		else
+		{
 			if(tempnation == PERSONAL_NATION)
 			{
 				SetNewPicture("NATION", "interfaces\flags\Crest_" + GetNationFlagImage(tempnation) + ".tga");

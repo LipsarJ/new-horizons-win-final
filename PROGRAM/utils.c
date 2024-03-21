@@ -2635,7 +2635,7 @@ void CreateGrass(string sDataFile, string sTextureFile, float fScale, float fW,f
 		LayerAddObject("realize",&objGrass,1000);
 	}
 	SendMessage(objGrass,"ls",41666, sTextureFile); // #define MSG_GRASS_SET_TEXTURE 41666
-	SendMessage(objGrass,"lffffff",42666, fScale, fW,fH, fMinDist,1800, fMinLod); // #define MSG_GRASS_SET_PARAM 42666
+	SendMessage(objGrass,"lffffff",42666, fScale, fW,fH, fMinDist,fMaxDist, fMinLod); // #define MSG_GRASS_SET_PARAM 42666
 	SendMessage(objGrass,"ls",40666, sDataFile); // #define MSG_GRASS_LOAD_DATA 40666
 }
 

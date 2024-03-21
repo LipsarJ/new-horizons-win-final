@@ -1432,7 +1432,7 @@ void CreateStoryCharacters(ref n)
 	ch.name = TranslateString("","Richard");
 	ch.lastname = TranslateString("","Sharpe");
 	ch.id		= "Richard Sharpe";
-	ch.model = "Sold_E33_Sharp"; //"Soldier_Eng3_18";
+	ch.model = "Soldier_Eng7_18"; //"Soldier_Eng3_18";
 	ch.sex = "man";
 	ch.location	= "";
 	ch.location.group = "";
@@ -1514,7 +1514,7 @@ void CreateStoryCharacters(ref n)
 	ch.name = "";
 	ch.lastname = TranslateString("","Higgins");
 	ch.id		= "Rifleman Higgins";
-	ch.model = "Sold_E33_Higgins"; //"Soldier_Eng2_18";
+	ch.model = "Higgins_Eng2_18"; //"Soldier_Eng2_18";
 	ch.sex = "man";
 	ch.location	= "Antigua_port"; // PB
 	ch.location.group = "reload"; // PB
@@ -1556,7 +1556,7 @@ void CreateStoryCharacters(ref n)
 	ch.name = "";
 	ch.lastname = TranslateString("","Cooper");
 	ch.id		= "Rifleman Cooper";
-	ch.model = "Sold_E33_Cooper"; //"Soldier_Eng6_18";
+	ch.model = "CooperR_Eng6_18"; //"Soldier_Eng6_18";
 	ch.sex = "man";
 	ch.location	= "Antigua_port"; // PB
 	ch.location.group = "reload"; // PB
@@ -1598,7 +1598,7 @@ void CreateStoryCharacters(ref n)
 	ch.name = "";
 	ch.lastname = TranslateString("","Haggman");
 	ch.id		= "Rifleman Haggman";
-	ch.model = "Sold_E33_19_3"; //"Soldier_Eng5_18";
+	ch.model = "Haggman_Eng5_18"; //"Soldier_Eng5_18";
 	ch.sex = "man";
 	ch.location	= "Antigua_port"; // PB
 	ch.location.group = "reload"; // PB
@@ -1640,7 +1640,7 @@ void CreateStoryCharacters(ref n)
 	ch.name = "";
 	ch.lastname = TranslateString("","Harris");
 	ch.id		= "Rifleman Harris";
-	ch.model = "Sold_E33_19_5"; //"Soldier_Eng3_18";
+	ch.model = "HarrisRed_Eng5_18"; //"Soldier_Eng3_18";
 	ch.sex = "man";
 	ch.location	= "Antigua_port"; // PB
 	ch.location.group = "reload"; // PB
@@ -2018,7 +2018,7 @@ void CreateStoryCharacters(ref n)
 	ch.name = "";
 	ch.lastname = TranslateString("","Tongue");
 	ch.id		= "Rifleman Tongue";
-	ch.model = "Sold_E33_19_6"; //"Soldier_Eng_18";
+	ch.model = "TongueR_Eng6_18"; //"Soldier_Eng_18";
 	ch.sex = "man";
 	ch.location	= "Antigua_port"; // PB
 	ch.location.group = "reload"; // PB
@@ -2060,7 +2060,7 @@ void CreateStoryCharacters(ref n)
 	ch.name = "";
 	ch.lastname = TranslateString("","Mansfield");
 	ch.id		= "Rifleman Mansfield";
-	ch.model = "Sold_E33_19_4"; //"Soldier_Eng2_18";
+	ch.model = "Mansfld_Eng6_18"; //"Soldier_Eng2_18";
 	ch.sex = "man";
 	ch.location	= "";
 	ch.location.group = "";

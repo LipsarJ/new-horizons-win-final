@@ -78,7 +78,7 @@ void StartStoryLine()
 	switch(GetCurrentFlag())
 	{
 		case ENGLAND:
-			loadPort = "Oxbay_port";
+			loadPort = "Oxbay_town";
 			rldLocator_Port = "reload2";
 		break;
 		case FRANCE:
@@ -102,7 +102,7 @@ void StartStoryLine()
 			rldLocator_Port = "reload2";
 		break;
 		case AMERICA:
-			loadPort = "Eleuthera_Port";
+			loadPort = "Eleuthera_town";
 			rldLocator_Port = "reload1_back";
 		break;
 		case PERSONAL_NATION:

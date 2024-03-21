@@ -162,8 +162,8 @@ void ProcessDialogEvent()
 			DialogExit();
 			
 			Preprocessor_Add("loanshark", GetMySimpleName(NPChar));
-			WriteNewLogEntry(GetTranslatedLog("Visited")+" "+FindTownName(GetCurrentTownID()),PreProcessText(GetTranslatedLog("I deposited some money at the local loanshark. #sloanshark# promised a good interest for my"))+" "+makeint(Pchar.Quest.Deposits.(NPC_Area).Sum)+" "+GetTranslatedLog("pieces of gold."),"Ship",true);  
-			Preprocessor_Delete("loanshark");			
+			WriteNewLogEntry(GetTranslatedLog("Visited")+" "+FindTownName(GetCurrentTownID()),PreProcessText(GetTranslatedLog("I deposited some money at the local loanshark. #sloanshark# promised a good interest for my"))+" "+makeint(Pchar.Quest.Deposits.(NPC_Area).Sum)+" "+GetTranslatedLog("pieces of gold."),"Ship",true); 
+			Preprocessor_Delete("loanshark");
 		break;
 
 		case "exit":

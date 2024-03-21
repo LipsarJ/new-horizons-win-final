@@ -235,7 +235,7 @@ void BothQuestComplete(string sQuestName)
 					gotoLocator = "goto13";
 				break;
 				case AMERICA: 
-					loadPort = "Eleuthera_Port";
+					loadPort = "Eleuthera_town";
 					gotoLocator = "goto10";
 				break;
 				// TIH --> defaults added (mimics ENGLAND) Aug27'06
@@ -446,7 +446,7 @@ void BothQuestComplete(string sQuestName)
 					Preprocessor_AddQuestData("island", FindTownName("Conceicao")); // KK
 				break;
 				case AMERICA: 
-					loadPort = "Eleuthera_Port";
+					loadPort = "Eleuthera_town";
 					loadTavern = "Eleuthera_tavern";
 					loadStore = "Eleuthera_store";
 					loadShipyard = "Eleuthera_shipyard";
@@ -775,7 +775,7 @@ void BothQuestComplete(string sQuestName)
 					rldLocator = "reload2";
 				break;
 				case AMERICA: 
-					loadPort = "Eleuthera_Port";
+					loadPort = "Eleuthera_town";
 					rldLocator = "reload1"; // on jetty
 				break;
 				// TIH --> defaults added (mimics ENGLAND) Aug27'06
@@ -882,7 +882,7 @@ void BothQuestComplete(string sQuestName)
 				case PIRATE: gotoGroup = "reload"; gotoLocator = "goto4"; loadPort = "QC_port"; break;
 				case HOLLAND: gotoLocator = "goto15"; loadPort = "Douwesen_port"; break;
 				case PORTUGAL: gotoLocator = "goto13"; loadPort = "Conceicao_port"; break;
-				case AMERICA: gotoLocator = "goto10"; loadPort = "Eleuthera_Port"; break;
+				case AMERICA: gotoLocator = "goto10"; loadPort = "Eleuthera_town"; break;
 				case PERSONAL_NATION: gotoLocator = "goto18"; loadPort = "Oxbay_port"; break; // KK
 			}
 			if (NationNoIsland(GetCurrentFlag(), GetCurrentPeriod()))	// GR: If your chosen nation has no starting island, you start at Pirate Settlement
@@ -931,7 +931,7 @@ void BothQuestComplete(string sQuestName)
 				case PIRATE: gotoGroup = "reload"; gotoLocator = "reload3_back"; loadPort = "QC_port"; break;
 				case HOLLAND: gotoLocator = "goto15"; loadPort = "Douwesen_port"; break;
 				case PORTUGAL: gotoLocator = "goto13"; loadPort = "Conceicao_port"; break;
-				case AMERICA: gotoLocator = "goto10"; loadPort = "Eleuthera_Port"; break;
+				case AMERICA: gotoLocator = "goto10"; loadPort = "Eleuthera_town"; break;
 				case PERSONAL_NATION: gotoLocator = "goto18"; loadPort = "Oxbay_port"; break; // KK
 			}
 // added by MAXIMUS [choose character mod] <--
@@ -1176,7 +1176,7 @@ void BothQuestComplete(string sQuestName)
 					gotoLocator = "goto4"; 
 				break;
 				case AMERICA:
-					loadTown = "Eleuthera_Port";
+					loadTown = "Eleuthera_town";
 					rldLocator = "reload6_back";
 					gotoLocator = "reload6_1";
 					gotoGroup = "officer";
@@ -1211,7 +1211,7 @@ void BothQuestComplete(string sQuestName)
 				case PIRATE: rldLocator = "Reload1"; loadPort = "QC_town_exit"; break;
 				case HOLLAND: rldLocator = "Reload3"; loadPort = "Douwesen_port"; break;
 				case PORTUGAL: rldLocator = "Reload1"; loadPort = "Conceicao_port"; break;
-				case AMERICA: rldLocator = "Reload6_back"; loadPort = "Eleuthera_Port"; break;
+				case AMERICA: rldLocator = "Reload6_back"; loadPort = "Eleuthera_town"; break;
 				case PERSONAL_NATION: rldLocator = "Reload1"; loadPort = "Oxbay_port"; break; // KK
 			}
 			if (NationNoIsland(GetCurrentFlag(), GetCurrentPeriod()))	// GR: If your chosen nation has no starting island, you start at Pirate Settlement
@@ -1253,7 +1253,7 @@ void BothQuestComplete(string sQuestName)
 				break;
 				case PORTUGAL: loadPort = "Conceicao_port"; break;
 				case AMERICA:
-					loadPort = "Eleuthera_Port";
+					loadPort = "Eleuthera_town";
 
 					Locations[FindLocation(loadPort)].reload.l2.disable = 0;
 					Locations[FindLocation(loadPort)].reload.l5.disable = 0;
@@ -1371,7 +1371,7 @@ void BothQuestComplete(string sQuestName)
 					EndQuestMovie();TrackQuestMovie("end","Tut_ReloadToOxbay");
 					LAi_SetActorTypeNoGroup(CharacterFromID("Malcolm Hatcher"));
 					//PW: for AMERICA jump to here <--
-					loadTown = "Eleuthera_Port";
+					loadTown = "Eleuthera_town";
 					loadStore =  "Eleuthera_store";
 					rldLocator = "reload6_back";
 					gotoGroup = "reload";
@@ -1439,7 +1439,7 @@ void BothQuestComplete(string sQuestName)
 				case PIRATE: rldLocator = "reload5"; loadTown = "QC_town"; break;
 				case HOLLAND: rldLocator = "reload4"; loadTown = "Douwesen_town"; break;
 				case PORTUGAL: rldLocator = "reload18"; loadTown = "Conceicao_town"; break;
-				case AMERICA: rldLocator = "reload6_back"; loadTown = "Eleuthera_Port"; break;
+				case AMERICA: rldLocator = "reload6_back"; loadTown = "Eleuthera_town"; break;
 				case PERSONAL_NATION: rldLocator = "reload15"; loadTown = "Oxbay_town"; break; // KK
 			}
 			if (NationNoIsland(GetCurrentFlag(), GetCurrentPeriod()))	// GR: If your chosen nation has no starting island, you start at Pirate Settlement
@@ -1492,7 +1492,7 @@ void BothQuestComplete(string sQuestName)
 				case PIRATE: rldLocator = "locator2"; loadTown = "QC_town"; gotoLocator = "goto7"; break;
 				case HOLLAND: rldLocator = "reload1"; loadTown = "Douwesen_town"; gotoLocator = "goto35"; break;
 				case PORTUGAL: rldLocator = "reload1"; loadTown = "Conceicao_town"; gotoLocator = "goto4"; break;
-				case AMERICA: rldLocator = "reload1_back"; loadTown = "Eleuthera_Port"; gotoGroup = "officers"; gotoLocator = "reload6_1"; break;
+				case AMERICA: rldLocator = "reload1_back"; loadTown = "Eleuthera_town"; gotoGroup = "officers"; gotoLocator = "reload6_1"; break;
 				case PERSONAL_NATION: rldLocator = "locator2"; loadTown = "Oxbay_town"; gotoLocator = "goto26"; break; // KK
 			}
 			if (NationNoIsland(GetCurrentFlag(), GetCurrentPeriod()))	// GR: If your chosen nation has no starting island, you start at Pirate Settlement
@@ -1611,7 +1611,7 @@ void BothQuestComplete(string sQuestName)
 					Locations[FindLocation(loadTown)].reload.l12.disable = 1;
 				break;
 				case AMERICA:
-					loadTown = "Eleuthera_Port";
+					loadTown = "Eleuthera_town";
 
 					Locations[FindLocation(loadTown)].reload.l5.disable = 1;
 					Locations[FindLocation(loadTown)].reload.l6.disable = 1;
@@ -1710,7 +1710,7 @@ void BothQuestComplete(string sQuestName)
 				case PIRATE: loadTown = "QC_town"; rldLocator = "reload2"; loadTavern = "QC_Tavern"; gotoLocator = "goto6"; break;
 				case HOLLAND: loadTown = "Douwesen_town"; rldLocator = "reload3"; loadTavern = "Douwesen_tavern"; gotoLocator = "goto4"; break;
 				case PORTUGAL: loadTown = "Conceicao_town"; rldLocator = "reload4"; loadTavern = "Conceicao_Tavern"; gotoLocator = "goto6"; break;
-				case AMERICA: loadTown = "Eleuthera_Port"; rldLocator = "reload4_back"; loadTavern = "Eleuthera_tavern"; gotoLocator = "goto10"; break;
+				case AMERICA: loadTown = "Eleuthera_town"; rldLocator = "reload4_back"; loadTavern = "Eleuthera_tavern"; gotoLocator = "goto10"; break;
 				case PERSONAL_NATION: loadTown = "Oxbay_town"; rldLocator = "Reload13"; loadTavern = "Oxbay_tavern"; gotoLocator = "goto20"; break; // KK
 			}
 			if (NationNoIsland(GetCurrentFlag(), GetCurrentPeriod()))	// GR: If your chosen nation has no starting island, you start at Pirate Settlement
@@ -1741,7 +1741,7 @@ void BothQuestComplete(string sQuestName)
 				case PIRATE: rldLocator = "reload2"; loadTown = "QC_town"; break;
 				case HOLLAND: rldLocator = "reload3"; loadTown = "Douwesen_town"; break;
 				case PORTUGAL: rldLocator = "reload4"; loadTown = "Conceicao_town"; break;
-				case AMERICA: rldLocator = "reload4_back"; loadTown = "Eleuthera_Port"; break;
+				case AMERICA: rldLocator = "reload4_back"; loadTown = "Eleuthera_town"; break;
 				case PERSONAL_NATION: rldLocator = "reload13"; loadTown = "Oxbay_town"; break; // KK
 			}
 			if (NationNoIsland(GetCurrentFlag(), GetCurrentPeriod()))	// GR: If your chosen nation has no starting island, you start at Pirate Settlement
@@ -1791,7 +1791,7 @@ void BothQuestComplete(string sQuestName)
 				case PIRATE: rldLocator = "Reload1"; loadTown = "QC_town"; gotoLocator = "goto12"; break;
 				case HOLLAND: rldLocator = "Reload1"; loadTown = "Douwesen_town"; gotoLocator = "goto33"; break;
 				case PORTUGAL: rldLocator = "Reload1"; loadTown = "Conceicao_town"; gotoLocator = "goto4"; break;
-				case AMERICA: rldLocator = "Reload2_back"; loadTown = "Eleuthera_port"; gotoGroup = "officers"; gotoLocator = "reload4_1"; break;
+				case AMERICA: rldLocator = "Reload2_back"; loadTown = "Eleuthera_town"; gotoGroup = "officers"; gotoLocator = "reload4_1"; break;
 				case PERSONAL_NATION: rldLocator = "Reload1"; loadTown = "Oxbay_town"; gotoLocator = "goto41"; break; // KK
 			}
 			if (NationNoIsland(GetCurrentFlag(), GetCurrentPeriod()))	// GR: If your chosen nation has no starting island, you start at Pirate Settlement
@@ -1894,7 +1894,7 @@ void BothQuestComplete(string sQuestName)
 					Locations[FindLocation(loadTown)].reload.l12.disable = 1;
 				break;
 				case AMERICA:
-					loadTown = "Eleuthera_Port";
+					loadTown = "Eleuthera_town";
 
 					Locations[FindLocation(loadTown)].reload.l8.disable = 1;
 					Locations[FindLocation(loadTown)].reload.l9.disable = 1;
@@ -1941,7 +1941,7 @@ void BothQuestComplete(string sQuestName)
 				case PIRATE: loadTown = "QC_town"; rldLocator = "Reload4"; loadShipyard = "QC_Shipyard"; gotoLocator = "goto7"; break;
 				case HOLLAND: loadTown = "Douwesen_town"; rldLocator = "reload11"; loadShipyard = "Douwesen_shipyard"; gotoLocator = "goto1"; break;
 				case PORTUGAL: loadTown = "Conceicao_town"; rldLocator = "reload13"; loadShipyard = "Conceicao_Shipyard"; gotoLocator = "goto4"; break;
-				case AMERICA: loadTown = "Eleuthera_Port"; rldLocator = "reload5_back"; loadShipyard = "Eleuthera_shipyard"; gotoGroup = "reload"; gotoLocator = "reload1_back"; break;
+				case AMERICA: loadTown = "Eleuthera_town"; rldLocator = "reload5_back"; loadShipyard = "Eleuthera_shipyard"; gotoGroup = "reload"; gotoLocator = "reload1_back"; break;
 				case PERSONAL_NATION: loadTown = "Oxbay_town"; rldLocator = "Reload3"; loadShipyard = "Oxbay_shipyard"; gotoLocator = "goto1"; break; // KK
 			}
 			if (NationNoIsland(GetCurrentFlag(), GetCurrentPeriod()))	// GR: If your chosen nation has no starting island, you start at Pirate Settlement
@@ -1968,7 +1968,7 @@ void BothQuestComplete(string sQuestName)
 				case PIRATE: rldLocator = "Reload4"; loadTown = "QC_town"; break;
 				case HOLLAND: rldLocator = "reload11"; loadTown = "Douwesen_town"; break;
 				case PORTUGAL: rldLocator = "reload13"; loadTown = "Conceicao_town"; break;
-				case AMERICA: rldLocator = "reload5_back"; loadTown = "Eleuthera_Port"; break;
+				case AMERICA: rldLocator = "reload5_back"; loadTown = "Eleuthera_town"; break;
 				case PERSONAL_NATION: rldLocator = "Reload3"; loadTown = "Oxbay_town"; break; // KK
 			}
 			if (NationNoIsland(GetCurrentFlag(), GetCurrentPeriod()))	// GR: If your chosen nation has no starting island, you start at Pirate Settlement
@@ -2021,7 +2021,7 @@ void BothQuestComplete(string sQuestName)
 				case PIRATE: rldLocator = "locator2"; loadTown = "QC_town"; gotoLocator = "goto5"; break;
 				case HOLLAND: rldLocator = "reload1"; loadTown = "Douwesen_town"; gotoLocator = "goto5"; break;
 				case PORTUGAL: rldLocator = "reload1"; loadTown = "Conceicao_town"; gotoLocator = "goto11"; break;
-				case AMERICA: rldLocator = "reload5_back"; loadTown = "Eleuthera_Port"; gotoGroup = "officers"; gotoLocator = "reload5_1"; break;
+				case AMERICA: rldLocator = "reload5_back"; loadTown = "Eleuthera_town"; gotoGroup = "officers"; gotoLocator = "reload5_1"; break;
 				case PERSONAL_NATION: rldLocator = "reload1"; loadTown = "Oxbay_town"; gotoLocator = "goto23"; break; // KK
 			}
 			if (NationNoIsland(GetCurrentFlag(), GetCurrentPeriod()))	// GR: If your chosen nation has no starting island, you start at Pirate Settlement
@@ -2124,7 +2124,7 @@ void BothQuestComplete(string sQuestName)
 					gotoLocator = "goto13";
 				break;
 				case AMERICA:
-					loadPort = "Eleuthera_Port";
+					loadPort = "Eleuthera_town";
 					gotoLocator = "goto10";
 				break;
 
@@ -2224,8 +2224,8 @@ void BothQuestComplete(string sQuestName)
 					rldLocator = "reload2"; 
 				break;
 				case AMERICA:
-					loadPort = "Eleuthera_Port";
-					loadTown = "Eleuthera_Port";
+					loadPort = "Eleuthera_town";
+					loadTown = "Eleuthera_town";
 					gotoLocator = "goto10";
 					rldlocator = "reload2";
 				break;
@@ -2468,8 +2468,8 @@ void BothQuestComplete(string sQuestName)
 					Locations[FindLocation(loadTown)].reload.l12.disable = 0;
 				break;
 				case AMERICA:
-					loadTown = "Eleuthera_Port";
-					loadPort = "Eleuthera_Port";
+					loadTown = "Eleuthera_town";
+					loadPort = "Eleuthera_town";
 					gotoLocator = "goto10";
 
 					Locations[FindLocation(loadTown)].reload.l8.disable = 0;
@@ -2653,8 +2653,8 @@ void BothQuestComplete(string sQuestName)
 					Locations[FindLocation(loadTown)].reload.l12.disable = 0;
 				break;
 				case AMERICA:
-					loadTown = "Eleuthera_Port";
-					loadPort = "Eleuthera_Port";
+					loadTown = "Eleuthera_town";
+					loadPort = "Eleuthera_town";
 					gotoLocator = "goto10";
 
 					Locations[FindLocation(loadTown)].reload.l8.disable = 0;
@@ -2966,7 +2966,7 @@ void BothQuestComplete(string sQuestName)
 						rldLocator = "reload2";
 					break;
 					case AMERICA:
-						loadPort = "Eleuthera_Port";
+						loadPort = "Eleuthera_town";
 						gotoGroup = "reload";
 						rldLocator = "reload1_back";
 					break;
@@ -3804,13 +3804,13 @@ void BothQuestComplete(string sQuestName)
 					PChar.quest.Begining.over = "yes";
 				break;
 				case AMERICA:
-					loadTown = "Eleuthera_Port";
-					loadPort = "Eleuthera_Port";
+					loadTown = "Eleuthera_town";
+					loadPort = "Eleuthera_town";
 					gotoLocator = "goto13";
 					rldLocator = "reload1";
 					switch(PChar.location)
 					{
-						case "Eleuthera_Port": rldLocator = "reload2"; break;
+						case "Eleuthera_town": rldLocator = "reload2"; break;
 					}
 
 					Locations[FindLocation(loadTown)].reload.l8.disable = 0;
@@ -3975,7 +3975,7 @@ void BothQuestComplete(string sQuestName)
 					rldLocator = "reload4_back";
 					switch(PChar.location)
 					{
-						case "Eleuthera_Port": rldLocator = "reload4_back"; break;
+						case "Eleuthera_town": rldLocator = "reload4_back"; break;
 					}
 				break;
 
@@ -4141,13 +4141,13 @@ void BothQuestComplete(string sQuestName)
 					Locations[FindLocation(loadTown)].reload.l12.disable = 0;
 				break;
 				case AMERICA:
-					loadTown = "Eleuthera_Port";
-					loadPort = "Eleuthera_Port";
+					loadTown = "Eleuthera_town";
+					loadPort = "Eleuthera_town";
 					gotoLocator = "goto13";
 					rldLocator = "reload2";
 					switch(PChar.location)
 					{
-						case "Eleuthera_Port": rldLocator = "reload2"; break;
+						case "Eleuthera_town": rldLocator = "reload2"; break;
 					}
 					Locations[FindLocation(loadTown)].reload.l8.disable = 0;
 					Locations[FindLocation(loadTown)].reload.l9.disable = 0;

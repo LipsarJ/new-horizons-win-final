@@ -3927,7 +3927,7 @@ void ProcessDialogEvent()
 
 				Pchar.quest.disable_rebirth = true;
 				GiveShip2Character(pchar,"SloopBermuda","Marquis",-1,PIRATE,true,true);
-				SetCharacterShipLocation(Pchar, "Eleuthera_port");
+				SetCharacterShipLocation(Pchar, "Eleuthera_town");
 				Locations[FindLocation("wr_port")].models.always.locators = "QCport_l_JRHsea";
 				Locations[FindLocation("wr_port")].reload.l2.disable = 1;	//farm locked
 				Island_SetReloadEnableLocal("Redmond", "reload_1", true);	//back to wr_port

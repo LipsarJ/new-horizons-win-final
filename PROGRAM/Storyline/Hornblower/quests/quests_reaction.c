@@ -16511,10 +16511,10 @@ void QuestComplete(string sQuestName)
 			Pchar.quest.French_patrol_setup.win_condition.l1 = "location";
 			Pchar.quest.French_patrol_setup.win_condition.l1.location = "Hispaniola";
 			Pchar.quest.French_patrol_setup.win_condition = "French_patrol_setup";
-			Pchar.quest.back_to_Bridgetown.win_condition.l1 = "location";
-			PChar.quest.back_to_Bridgetown.win_condition.l1.character = Pchar.id;
-			Pchar.quest.back_to_Bridgetown.win_condition.l1.location = "Greenford_port";
-			Pchar.quest.back_to_Bridgetown.win_condition = "back_to_Bridgetown"
+			Pchar.quest.back_to_Greenford.win_condition.l1 = "location";
+			PChar.quest.back_to_Greenford.win_condition.l1.character = Pchar.id;
+			Pchar.quest.back_to_Greenford.win_condition.l1.location = "Greenford_port";
+			Pchar.quest.back_to_Greenford.win_condition = "back_to_Greenford"
 			pchar.quest.riflemen_leave.win_condition.l1 = "location";
 			Pchar.quest.riflemen_leave.win_condition.l1.character = Pchar.id;
 			pchar.quest.riflemen_leave.win_condition.l1.location = "Hispaniola_Jungle_08";
@@ -16550,7 +16550,7 @@ void QuestComplete(string sQuestName)
 			AddQuestRecord("Hunt the Traitors", 10);
 		break;
 
-		case "back_to_Bridgetown":
+		case "back_to_Greenford":
 			Pchar.quest.farewell_to_Sharpe.win_condition.l1 = "location";
 			PChar.quest.farewell_to_Sharpe.win_condition.l1.character = Pchar.id;
 			Pchar.quest.farewell_to_Sharpe.win_condition.l1.location = "Greenford_port";

@@ -3,7 +3,7 @@
 #define LAI_TYPE_CITIZEN	"citizen"
 
 
-//Инициализация
+//пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 void LAi_type_citizen_Init(aref chr)
 {
 	DeleteAttribute(chr, "location.follower");
@@ -18,17 +18,24 @@ void LAi_type_citizen_Init(aref chr)
 	{
 		DeleteAttribute(chr, "chr_ai.type");
 		chr.chr_ai.type = LAI_TYPE_CITIZEN;
-		//Установим шаблон гуляния
+		//пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 		LAi_tmpl_walk_InitTemplate(chr);
 	}	
 	chr.chr_ai.type.notalk = rand(10);
 	chr.chr_ai.type.checkFight = rand(5)+2;
-	//Установим анимацию персонажу
+	//пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+	if(chr.model.animation == "carrier")
+	{
+	LAi_SetDefaultCarrierAnimation(chr);	
+	}
+	else
+	{
 	LAi_SetDefaultStayAnimation(chr);
+	}
 	SendMessage(&chr, "lsl", MSG_CHARACTER_EX_MSG, "SetFightWOWeapon", false);
 }
 
-//Процессирование типа персонажа
+//пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 void LAi_type_citizen_CharacterUpdate(aref chr, float dltTime)
 {	
 	int i;
@@ -41,15 +48,15 @@ void LAi_type_citizen_CharacterUpdate(aref chr, float dltTime)
 		{
 			if(LAi_IsSetBale(chr))
 			{
-				//Переходим в боевой режим
+				//пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
 				LAi_tmpl_SetFight(chr, &Characters[trg]);
 			}else{
-				//Боимся
+				//пїЅпїЅпїЅпїЅпїЅпїЅ
 				LAi_tmpl_afraid_SetAfraidCharacter(chr, &Characters[trg], true);
 				LAi_SetAfraidDead(chr);
 			}
 		}else{
-			//Думаем о возможности поговорить
+			//пїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 			// NK 05-07-17 allow citizens to pause when player is near for dlg.
 			bool isDialog = false; // NK move here
 			time = stf(chr.chr_ai.type.notalk) - dltTime;
@@ -96,7 +103,7 @@ void LAi_type_citizen_CharacterUpdate(aref chr, float dltTime)
 					if(idx > 0) // TIH changed from '>=' to '>' : to not include mainchar in this block, mainchar handled below Nov15'06
 					{
 						ref by = &Characters[idx];
-						//Тип
+						//пїЅпїЅпїЅ
 						if(CheckAttribute(by, "chr_ai.type"))
 						{
 							// NK moved out of this if - bool isDialog = false;
@@ -112,7 +119,7 @@ void LAi_type_citizen_CharacterUpdate(aref chr, float dltTime)
 								isDialog = true;
 								break;
 							}
-							//Дистанция
+							//пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 							time = -1.0;
 							if(GetCharacterDistByChr(chr, by, &time))
 							{
@@ -189,7 +196,7 @@ void LAi_type_citizen_CharacterUpdate(aref chr, float dltTime)
 	}else{
 		if(chr.chr_ai.tmpl == LAI_TMPL_FIGHT)
 		{
-			//Воюем, посматривая на убийство цели
+			//пїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ
 			bool isValidate = false;
 			trg = LAi_tmpl_fight_GetTarget(chr);
 			if(trg >= 0)
@@ -204,7 +211,7 @@ void LAi_type_citizen_CharacterUpdate(aref chr, float dltTime)
 			}
 			if(!isValidate)
 			{
-				//Смотрим остальные цели
+				//пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ
 				trg = LAi_type_citizen_FindNearEnemy(chr);
 				if(trg >= 0)
 				{
@@ -218,7 +225,7 @@ void LAi_type_citizen_CharacterUpdate(aref chr, float dltTime)
 			{
 				if(LAi_tmpl_afraid_IsNoActive(chr))
 				{
-					//Вернёмся к нормальной жизни
+					//пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
 					LAi_SetDefaultDead(chr);
 					LAi_tmpl_walk_InitTemplate(chr);
 				}
@@ -227,36 +234,36 @@ void LAi_type_citizen_CharacterUpdate(aref chr, float dltTime)
 	}
 }
 
-//Загрузка персонажа в локацию
+//пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 bool LAi_type_citizen_CharacterLogin(aref chr)
 {
 	return true;
 }
 
-//Выгрузка персонажа из локацию
+//пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 bool LAi_type_citizen_CharacterLogoff(aref chr)
 {
 	return true;
 }
 
-//Завершение работы темплейта
+//пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 void LAi_type_citizen_TemplateComplite(aref chr, string tmpl)
 {
 
 }
 
-//Сообщить о желании завести диалог
+//пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
 void LAi_type_citizen_NeedDialog(aref chr, aref by)
 {
 }
 
-//Запрос на диалог, если возвратить true то в этот момент можно начать диалог
+//пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ true пїЅпїЅ пїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
 bool LAi_type_citizen_CanDialog(aref chr, aref by)
 {
 	// NK this kills dialog! return false;	// ccc Greater Oxbay, so that even enemies talk
 	// NK allow dlg in boarding 05-07-12 - if(LAi_IsBoardingProcess()) return false;
 	// this is I think what you want false, CCC - if(LAi_CanNearEnemy(chr, 5.0)) return false;
-	//Если просто стоим, то согласимся на диалог
+	//пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ, пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
 	if(chr.chr_ai.tmpl == LAI_TMPL_WALK)
 	{
 		if(sti(by.index) != GetMainCharacterIndex())
@@ -270,7 +277,7 @@ bool LAi_type_citizen_CanDialog(aref chr, aref by)
 		return true;
 	}
 	if(chr.chr_ai.tmpl == LAI_TMPL_STAY) return true;
-	if(chr.chr_ai.tmpl == LAI_TMPL_DIALOG)	
+	if(chr.chr_ai.tmpl == LAI_TMPL_DIALOG)
 	{
 		if(sti(by.index) == GetMainCharacterIndex())
 		{
@@ -280,16 +287,16 @@ bool LAi_type_citizen_CanDialog(aref chr, aref by)
 	return false;
 }
 
-//Начать диалог
+//пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
 void LAi_type_citizen_StartDialog(aref chr, aref by)
 {
-	//Если мы пасивны, запускаем шаблон без времени завершения
+	//пїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 	LAi_CharacterSaveAy(chr);
 	CharacterTurnByChr(chr, by);
 	LAi_tmpl_SetActivatedDialog(chr, by);
 }
 
-//Закончить диалог
+//пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
 void LAi_type_citizen_EndDialog(aref chr, aref by)
 {
 	LAi_CharacterRestoreAy(chr);
@@ -297,26 +304,26 @@ void LAi_type_citizen_EndDialog(aref chr, aref by)
 	chr.chr_ai.type.notalk = 10.0 + rand(20);
 }
 
-//Персонаж атаковал другого персонажа
+//пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 void LAi_type_citizen_Attack(aref attack, aref enemy, float attackDmg, float hitDmg)
 {
 
 }
 
-//Персонаж атоковал заблокировавшегося персонажа
+//пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 void LAi_type_citizen_Block(aref attack, aref enemy, float attackDmg, float hitDmg)
 {
 
 }
 
-//Персонаж выстрелил
+//пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 void LAi_type_citizen_Fire(aref attack, aref enemy, float kDist, bool isFindedEnemy)
 {
 
 }
 
 
-//Персонаж атакован
+//пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 void LAi_type_citizen_Attacked(aref chr, aref by)
 {
 	if(chr.chr_ai.tmpl == LAI_TMPL_DIALOG)

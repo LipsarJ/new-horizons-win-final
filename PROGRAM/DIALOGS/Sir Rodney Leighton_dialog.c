@@ -162,7 +162,7 @@ void ProcessDialogEvent()
 			DialogExit();
 		break;
 
-		case "bridgetown_intro":
+		case "Greenford_intro":
 			dialog.text = "";
 			link.l1 = your_rank_name + " " + GetMyLastName(PChar) + DLG_TEXT[40];
 			link.l1.go = "lady_barbara_aboard";

@@ -248,7 +248,9 @@ locations[n].models.day.charactersPatch = "sklad_patch";
 //Night
 locations[n].models.night.charactersPatch = "sklad_patch";
 //Environment
-locations[n].environment.weather = "false";
+locations[n].environment.weather = "true";
+locations[n].lockWeather = "Inside";
+
 locations[n].environment.sea = "false";
 Locations[n].models.back = "back\farm2_";
 //Reload map
@@ -306,7 +308,7 @@ n = n + 1;
 // –≈«»ƒ≈Õ÷»ﬂ
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 locations[n].id = "Bermudes_townhall";
-locations[n].id.label = "Townhall";
+locations[n].id.label = "#stown_name# townhall";
 locations[n].filespath.models = "locations\inside\Residence05";
 locations[n].image = "loading\inside\smallresidence.tga.tx";
 //Town sack
@@ -342,11 +344,11 @@ locations[n].reload.l2.name = "reload2";
 locations[n].reload.l2.go = "Bermudes_townhall_room";
 locations[n].reload.l2.emerge = "reload1";
 locations[n].reload.l2.autoreload = "0";
-locations[n].reload.l2.label = "Room";
+locations[n].reload.l2.label = "#stown_name# townhall";
 LAi_LocationFightDisable(&locations[n], true);
 n = n + 1;
 locations[n].id = "Bermudes_townhall_room";
-locations[n].id.label = "Townhall";
+locations[n].id.label = "#stown_name# townhall";
 Locations[n].image = "Inside_MediumHouse2.tga";
 //Town sack
 locations[n].townsack = "Bermudes";
@@ -547,7 +549,9 @@ Locations[n].models.day.charactersPatch = "MH_p";
 //Night
 Locations[n].models.night.charactersPatch = "MH_p";
 //Environment
-Locations[n].environment.weather = "false";
+locations[n].environment.weather = "true";
+locations[n].lockWeather = "Inside";
+
 Locations[n].environment.sea = "false";
 Locations[n].models.back = "back\smumh_";
 //Reload map

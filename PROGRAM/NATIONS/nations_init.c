@@ -99,7 +99,7 @@ void InitNations()
 		rNation.boardingModel.enemy.m7 = "soldier_eng6_17";
 		rNation.boardingModel.enemy.m7.ani = "man";
 	}
-	if (period == PERIOD_COLONIAL_POWERS || period == PERIOD_REVOLUTIONS) {
+	if (period == PERIOD_COLONIAL_POWERS || period == PERIOD_REVOLUTIONS || period == PERIOD_NAPOLEONIC) {
 
 		rNation.Name = "Britain";		//the Kingdom of Britain was founded 1707
 		rNation.Desc = "British";
@@ -115,46 +115,17 @@ void InitNations()
 		//Boarding models
 		rNation.boardingModel.enemy.m1 = "offic_eng_18";
 		rNation.boardingModel.enemy.m1.ani = "man";
-		rNation.boardingModel.enemy.m2 = "BrtSol18_1";
+		rNation.boardingModel.enemy.m2 = "Soldier_Eng_18";
 		rNation.boardingModel.enemy.m2.ani = "man";
-		rNation.boardingModel.enemy.m3 = "BrtSol18_2";
+		rNation.boardingModel.enemy.m3 = "Soldier_Eng2_18";
 		rNation.boardingModel.enemy.m3.ani = "man";
-		rNation.boardingModel.enemy.m4 = "BrtSol18_3";
+		rNation.boardingModel.enemy.m4 = "Soldier_Eng3_18";
 		rNation.boardingModel.enemy.m4.ani = "man";
-		rNation.boardingModel.enemy.m5 = "BrtSol18_4";
+		rNation.boardingModel.enemy.m5 = "Soldier_Eng4_18";
 		rNation.boardingModel.enemy.m5.ani = "man";
-		rNation.boardingModel.enemy.m6 = "BrtSol18_5";
+		rNation.boardingModel.enemy.m6 = "Soldier_Eng5_18";
 		rNation.boardingModel.enemy.m6.ani = "man";
-		rNation.boardingModel.enemy.m7 = "BrtSol18_6";
-		rNation.boardingModel.enemy.m7.ani = "man";
-	}
-	if (period ==  PERIOD_NAPOLEONIC) {
-
-		rNation.Name = "Britain";		//the Kingdom of Britain was founded 1707
-		rNation.Desc = "British";
-
-		//Location fantom models
-		rNation.fantomModel.m0 = "offic_eng_18";
-		rNation.fantomModel.m1 = "soldier_eng_19";
-		rNation.fantomModel.m2 = "soldier_eng2_19";
-		rNation.fantomModel.m3 = "soldier_eng3_19";
-		rNation.fantomModel.m4 = "soldier_eng4_19";
-		rNation.fantomModel.m5 = "soldier_eng5_19";
-		rNation.fantomModel.m6 = "soldier_eng6_19";
-		//Boarding models
-		rNation.boardingModel.enemy.m1 = "offic_eng_18";
-		rNation.boardingModel.enemy.m1.ani = "man";
-		rNation.boardingModel.enemy.m2 = "soldier_eng_19";
-		rNation.boardingModel.enemy.m2.ani = "man";
-		rNation.boardingModel.enemy.m3 = "soldier_eng2_19";
-		rNation.boardingModel.enemy.m3.ani = "man";
-		rNation.boardingModel.enemy.m4 = "soldier_eng3_19";
-		rNation.boardingModel.enemy.m4.ani = "man";
-		rNation.boardingModel.enemy.m5 = "soldier_eng4_19";
-		rNation.boardingModel.enemy.m5.ani = "man";
-		rNation.boardingModel.enemy.m6 = "soldier_eng5_19";
-		rNation.boardingModel.enemy.m6.ani = "man";
-		rNation.boardingModel.enemy.m7 = "soldier_eng6_19";
+		rNation.boardingModel.enemy.m7 = "Soldier_Eng6_18";
 		rNation.boardingModel.enemy.m7.ani = "man";
 	}
 // <-- PB
